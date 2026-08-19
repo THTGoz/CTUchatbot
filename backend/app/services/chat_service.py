@@ -98,10 +98,10 @@ _ALLOWED_ANCHOR_NODE_TYPES = {
 _ALLOWED_ANSWER_SHAPES = {"single", "list", "path", "summary"}
 
 _VECTOR_INDEX_CANDIDATES = {
-    "HocPhan": ["hoc_phan_vector_index", "hocphan_vector_index", "global_knowledge_index"],
-    "DieuKienTotNghiep": ["dieu_kien_tot_nghiep_vector_index", "global_knowledge_index"],
-    "ChuanDauRa": ["chuan_dau_ra_vector_index", "global_knowledge_index"],
-    "VanBanPhapLy": ["van_ban_phap_ly_vector_index", "global_knowledge_index"],
+    "HocPhan": ["vector_hocphan_embedding", "global_knowledge_index"],
+    "DieuKienTotNghiep": ["vector_dieukientotnghiep_embedding", "global_knowledge_index"],
+    "ChuanDauRa": ["vector_chuandaura_embedding", "global_knowledge_index"],
+    "VanBanPhapLy": ["vector_vanbanphaply_embedding", "global_knowledge_index"],
 }
 
 _HUMANIZE_KEYS = {
