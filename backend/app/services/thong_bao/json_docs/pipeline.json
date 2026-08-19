@@ -1,0 +1,138 @@
+{
+  "file_name": "pipeline.py",
+  "file_path": "backend/app/services/thong_bao/pipeline.py",
+  "bien_chung": [
+    {
+      "ten_bien": "logger",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "logging.getLogger('app.thong_bao')"
+    },
+    {
+      "ten_bien": "EmbeddingProvider",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "Callable[[str], list[float]]"
+    },
+    {
+      "ten_bien": "CandidateExpander",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "Callable[[Candidate, bool, list[float]], list[Candidate]]"
+    },
+    {
+      "ten_bien": "QueryNormalizer",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "Callable[[str], object]"
+    }
+  ],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Fallback / Phản Hồi Mặc Định",
+      "noi_dung_rule": "Phản hồi dự phòng khi cơ sở dữ liệu không tìm thấy dữ liệu phù hợp",
+      "dieu_kien_va_hanh_dong": "Trả về thông báo hướng dẫn hoặc gọi LLM trả lời xã giao"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "_shared_embedding_provider",
+      "chuc_nang": "Sinh embedding bằng model dùng chung nhưng không làm pipeline phụ thuộc ChatService.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "query",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `query` cho hàm `_shared_embedding_provider`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "list[float]",
+        "mo_ta": "Kết quả trả về của hàm `_shared_embedding_provider`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "get_embedding_model().get_embedding_batch",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "get_embedding_model",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/pipeline.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (query).\n2. Khởi tạo / gán biến `embeddings`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `list[float]`."
+    },
+    {
+      "ten_ham": "__init__",
+      "chuc_nang": "Cho phép thay dependency khi test nhưng mặc định dùng toàn bộ service thật.",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "None",
+        "mo_ta": "Kết quả trả về của hàm `__init__`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "ThongBaoRetriever",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/pipeline.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Khởi tạo / gán biến `self._retriever`.\n3. Khởi tạo / gán biến `self._embedding_provider`.\n4. Khởi tạo / gán biến `self._candidate_expander`.\n5. Kiểm tra điều kiện rẽ nhánh `query_normalizer is None`.\n6. Khởi tạo / gán biến `self._query_normalizer`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `None`."
+    },
+    {
+      "ten_ham": "run",
+      "chuc_nang": "Chạy tuần tự các tầng chính và song song expansion của các candidate đã chọn.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "query",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `query` cho hàm `run`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "ThongBaoPipelineResult",
+        "mo_ta": "Kết quả trả về của hàm `run`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "now",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "(query or '').strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "log_event",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "asks_list",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "select_notification_top_k",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "build_context",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "log_context",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "ThongBaoPipelineResult",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "ValueError",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "self._query_normalizer",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/pipeline.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (query).\n2. Khởi tạo / gán biến `total_started`.\n3. Khởi tạo / gán biến `original_query`.\n4. Kiểm tra điều kiện rẽ nhánh `not original_query`.\n5. Kiểm tra điều kiện rẽ nhánh `top_k <= 0`.\n6. Kiểm tra điều kiện rẽ nhánh `max_context_chars <= 0`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `ThongBaoPipelineResult`."
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 import os
 from threading import Lock
+from typing import Any, Mapping
 
 from neo4j import GraphDatabase
 
@@ -28,3 +29,12 @@ def close_driver():
         if _driver is not None:
             _driver.close()
             _driver = None
+
+
+def read_query(
+    cypher: str,
+    parameters: Mapping[str, Any] | None = None,
+) -> list[dict[str, Any]]:
+    database = os.getenv("NEO4J_DATABASE") or None
+    with get_driver().session(database=database) as session:
+        return session.run(cypher, **dict(parameters or {})).data()

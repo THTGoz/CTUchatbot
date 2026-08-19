@@ -1,0 +1,540 @@
+{
+  "file_name": "expander.py",
+  "file_path": "backend/app/services/thong_bao/expander.py",
+  "bien_chung": [
+    {
+      "ten_bien": "ReadQuery",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "Callable[[str, dict[str, Any]], list[dict[str, Any]]]"
+    },
+    {
+      "ten_bien": "_LIST_SIGNALS",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "('danh sach', 'nhung ai', 'ai duoc', 'ai bi', 'sinh vien nao', 'nhung sinh vien nao', 'cac sinh vien nao', 'hoc phan nao', 'nhung hoc phan nao', 'cac hoc phan nao', 'lop nao', 'nhung lop nao', 'cac lo"
+    }
+  ],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Ngưỡng Độ Tương Đồng Vector (Similarity Score Threshold)",
+      "noi_dung_rule": "Lọc danh sách kết quả truy vấn theo ngưỡng điểm tương đồng vector",
+      "dieu_kien_va_hanh_dong": "Chỉ giữ lại các candidate đạt điểm độ tương đồng đạt yêu cầu"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "_resolve_reader",
+      "chuc_nang": "Dùng reader được truyền vào khi test, nếu không thì dùng Neo4j chung.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "reader",
+          "kieu_du_lieu": "ReadQuery | None",
+          "mo_ta": "Tham số đầu vào `reader` cho hàm `_resolve_reader`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "ReadQuery",
+        "mo_ta": "Kết quả trả về của hàm `_resolve_reader`"
+      },
+      "cac_ham_con_ben_trong": [],
+      "nguon_goc_ham": "backend/app/services/thong_bao/expander.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (reader).\n2. Kiểm tra điều kiện rẽ nhánh `reader is not None`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `ReadQuery`."
+    },
+    {
+      "ten_ham": "asks_list",
+      "chuc_nang": "Nhận biết yêu cầu liệt kê bằng tín hiệu nhỏ, deterministic và không gọi LLM.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "normalized_query",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `normalized_query` cho hàm `asks_list`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "bool",
+        "mo_ta": "Kết quả trả về của hàm `asks_list`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "' '.join",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "any",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "bo_dau(normalized_query).split",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "bo_dau",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/expander.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (normalized_query).\n2. Khởi tạo / gán biến `query`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `bool`."
+    },
+    {
+      "ten_ham": "_anchor_metadata",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_anchor_metadata` của file `expander.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "seed",
+          "kieu_du_lieu": "Candidate",
+          "mo_ta": "Tham số đầu vào `seed` cho hàm `_anchor_metadata`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "dict[str, Any]",
+        "mo_ta": "Kết quả trả về của hàm `_anchor_metadata`"
+      },
+      "cac_ham_con_ben_trong": [],
+      "nguon_goc_ham": "backend/app/services/thong_bao/expander.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (seed).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `dict[str, Any]`."
+    },
+    {
+      "ten_ham": "_build_exact_constraints",
+      "chuc_nang": "Chỉ lấy các điều kiện exact có cột tương ứng trong Bang hiện tại.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "headers",
+          "kieu_du_lieu": "list[Any]",
+          "mo_ta": "Tham số đầu vào `headers` cho hàm `_build_exact_constraints`"
+        },
+        {
+          "ten_tham_so": "exact_columns",
+          "kieu_du_lieu": "dict[str, str]",
+          "mo_ta": "Tham số đầu vào `exact_columns` cho hàm `_build_exact_constraints`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "dict[str, str]",
+        "mo_ta": "Kết quả trả về của hàm `_build_exact_constraints`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "_loai_exact_cua_header",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "exact_columns.get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/expander.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (headers, exact_columns).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `dict[str, str]`."
+    },
+    {
+      "ten_ham": "_row_matches_constraints",
+      "chuc_nang": "So khớp mọi exact value tại đúng vị trí cột của Bang.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "headers",
+          "kieu_du_lieu": "list[Any]",
+          "mo_ta": "Tham số đầu vào `headers` cho hàm `_row_matches_constraints`"
+        },
+        {
+          "ten_tham_so": "values",
+          "kieu_du_lieu": "list[Any]",
+          "mo_ta": "Tham số đầu vào `values` cho hàm `_row_matches_constraints`"
+        },
+        {
+          "ten_tham_so": "constraints",
+          "kieu_du_lieu": "dict[str, str]",
+          "mo_ta": "Tham số đầu vào `constraints` cho hàm `_row_matches_constraints`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "bool",
+        "mo_ta": "Kết quả trả về của hàm `_row_matches_constraints`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "constraints.items",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "enumerate",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "_gia_tri_khop",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "_loai_exact_cua_header",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/expander.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (headers, values, constraints).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `bool`."
+    },
+    {
+      "ten_ham": "load_seed_provenance",
+      "chuc_nang": "Tìm đúng TaiLieu tổ tiên và provenance của seed mà không tạo candidate phụ.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "seed",
+          "kieu_du_lieu": "Candidate",
+          "mo_ta": "Tham số đầu vào `seed` cho hàm `load_seed_provenance`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "dict[str, Any]",
+        "mo_ta": "Kết quả trả về của hàm `load_seed_provenance`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "_resolve_reader",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "provenance.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "seed['metadata'].update",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "document.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "notice.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "table.get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/expander.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (seed).\n2. Kiểm tra điều kiện rẽ nhánh `seed['domain'] != DOMAIN_THONG_BAO`.\n3. Kiểm tra điều kiện rẽ nhánh `seed['label'] == 'Muc'`.\n4. Khởi tạo / gán biến `rows`.\n5. Khởi tạo / gán biến `provenance`.\n6. Khởi tạo / gán biến `seed['metadata']['provenance']`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `dict[str, Any]`."
+    },
+    {
+      "ten_ham": "_load_document_tables",
+      "chuc_nang": "Đọc metadata bảng cùng TaiLieu và dùng vector đã có để xếp bảng gián tiếp.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "seed",
+          "kieu_du_lieu": "Candidate",
+          "mo_ta": "Tham số đầu vào `seed` cho hàm `_load_document_tables`"
+        },
+        {
+          "ten_tham_so": "tai_lieu_id",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `tai_lieu_id` cho hàm `_load_document_tables`"
+        },
+        {
+          "ten_tham_so": "query_vector",
+          "kieu_du_lieu": "list[float]",
+          "mo_ta": "Tham số đầu vào `query_vector` cho hàm `_load_document_tables`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "list[dict[str, Any]]",
+        "mo_ta": "Kết quả trả về của hàm `_load_document_tables`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "_resolve_reader",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/expander.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (seed, tai_lieu_id, query_vector).\n2. Khởi tạo / gán biến `score_expression`.\n3. Khởi tạo / gán biến `cypher`.\n4. Trả về kết quả cho caller.\n5. Hoàn tất tính toán và trả về kết quả kiểu `list[dict[str, Any]]`."
+    },
+    {
+      "ten_ham": "_select_relevant_tables",
+      "chuc_nang": "Ưu tiên bảng trực tiếp của Muc; nếu không có thì lấy bảng semantic tốt nhất.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "seed",
+          "kieu_du_lieu": "Candidate",
+          "mo_ta": "Tham số đầu vào `seed` cho hàm `_select_relevant_tables`"
+        },
+        {
+          "ten_tham_so": "table_rows",
+          "kieu_du_lieu": "list[dict[str, Any]]",
+          "mo_ta": "Tham số đầu vào `table_rows` cho hàm `_select_relevant_tables`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "list[dict[str, Any]]",
+        "mo_ta": "Kết quả trả về của hàm `_select_relevant_tables`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "seed['metadata'].get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_build_exact_constraints",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "seen.add",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "eligible.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "max",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "(item.get('table_properties') or {}).get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "item.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "float",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/expander.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (seed, table_rows).\n2. Khởi tạo / gán biến `exact_columns`.\n3. Khởi tạo / gán biến `direct_tables`.\n4. Kiểm tra điều kiện rẽ nhánh `direct_tables`.\n5. Kiểm tra điều kiện rẽ nhánh `not eligible`.\n6. Trả về kết quả cho caller.\n7. Hoàn tất tính toán và trả về kết quả kiểu `list[dict[str, Any]]`."
+    },
+    {
+      "ten_ham": "semantic_score",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `semantic_score` của file `expander.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "item",
+          "kieu_du_lieu": "dict[str, Any]",
+          "mo_ta": "Tham số đầu vào `item` cho hàm `semantic_score`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "float",
+        "mo_ta": "Kết quả trả về của hàm `semantic_score`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "float",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "item.get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/expander.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (item).\n2. Thực hiện các bước tính toán logic bên trong hàm.\n3. Trả về kết quả đầu ra."
+    },
+    {
+      "ten_ham": "_load_selected_table_rows",
+      "chuc_nang": "Đọc dòng của các bảng đã chọn theo đúng DongBang.thu_tu.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "table_node_ids",
+          "kieu_du_lieu": "list[str]",
+          "mo_ta": "Tham số đầu vào `table_node_ids` cho hàm `_load_selected_table_rows`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "list[dict[str, Any]]",
+        "mo_ta": "Kết quả trả về của hàm `_load_selected_table_rows`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "_resolve_reader",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/expander.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (table_node_ids).\n2. Kiểm tra điều kiện rẽ nhánh `not table_node_ids`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `list[dict[str, Any]]`."
+    },
+    {
+      "ten_ham": "expand_muc_list_tables",
+      "chuc_nang": "Chỉ khi hỏi list, chọn Bang trong TaiLieu rồi lấy các dòng đúng thứ tự.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "seed",
+          "kieu_du_lieu": "Candidate",
+          "mo_ta": "Tham số đầu vào `seed` cho hàm `expand_muc_list_tables`"
+        },
+        {
+          "ten_tham_so": "tai_lieu_id",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `tai_lieu_id` cho hàm `expand_muc_list_tables`"
+        },
+        {
+          "ten_tham_so": "query_vector",
+          "kieu_du_lieu": "list[float]",
+          "mo_ta": "Tham số đầu vào `query_vector` cho hàm `expand_muc_list_tables`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "list[Candidate]",
+        "mo_ta": "Kết quả trả về của hàm `expand_muc_list_tables`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "_load_document_tables",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "_select_relevant_tables",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "_load_selected_table_rows",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "seed['metadata'].get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_build_exact_constraints",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "result.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "rows_by_table[table_id].append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "table_properties.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "make_candidate",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "item.get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/expander.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (seed, tai_lieu_id, query_vector).\n2. Khởi tạo / gán biến `available_tables`.\n3. Khởi tạo / gán biến `selected_tables`.\n4. Khởi tạo / gán biến `table_ids`.\n5. Khởi tạo / gán biến `row_records`.\n6. Khởi tạo / gán biến `exact_columns`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `list[Candidate]`."
+    },
+    {
+      "ten_ham": "expand_same_table_rows",
+      "chuc_nang": "Với DongBang list seed, lấy dòng cùng Bang và lọc exact tại đúng cột.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "seed",
+          "kieu_du_lieu": "Candidate",
+          "mo_ta": "Tham số đầu vào `seed` cho hàm `expand_same_table_rows`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "list[Candidate]",
+        "mo_ta": "Kết quả trả về của hàm `expand_same_table_rows`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "_build_exact_constraints",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "seed['metadata'].get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_resolve_reader",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "_tu_ban_ghi",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "expanded['metadata'].update",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "result.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "(item.get('properties') or {}).get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_anchor_metadata",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "_row_matches_constraints",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "item.get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/expander.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (seed).\n2. Kiểm tra điều kiện rẽ nhánh `seed['label'] != 'DongBang'`.\n3. Khởi tạo / gán biến `table_id`.\n4. Khởi tạo / gán biến `notification_id`.\n5. Khởi tạo / gán biến `exact_columns`.\n6. Khởi tạo / gán biến `headers`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `list[Candidate]`."
+    },
+    {
+      "ten_ham": "expand_notification_candidate",
+      "chuc_nang": "Chỉ mở rộng dữ liệu bảng cần thiết; không lấy các Mục khác cùng Tài liệu.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "seed",
+          "kieu_du_lieu": "Candidate",
+          "mo_ta": "Tham số đầu vào `seed` cho hàm `expand_notification_candidate`"
+        },
+        {
+          "ten_tham_so": "list_requested",
+          "kieu_du_lieu": "bool",
+          "mo_ta": "Tham số đầu vào `list_requested` cho hàm `expand_notification_candidate`"
+        },
+        {
+          "ten_tham_so": "query_vector",
+          "kieu_du_lieu": "list[float]",
+          "mo_ta": "Tham số đầu vào `query_vector` cho hàm `expand_notification_candidate`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "list[Candidate]",
+        "mo_ta": "Kết quả trả về của hàm `expand_notification_candidate`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "load_seed_provenance",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "provenance.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "seed['metadata'].get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "evidence.extend",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "document.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "expand_same_table_rows",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "expand_muc_list_tables",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/expander.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (seed, list_requested, query_vector).\n2. Kiểm tra điều kiện rẽ nhánh `seed['domain'] != DOMAIN_THONG_BAO`.\n3. Khởi tạo / gán biến `provenance`.\n4. Khởi tạo / gán biến `document`.\n5. Khởi tạo / gán biến `tai_lieu_id`.\n6. Khởi tạo / gán biến `seed['metadata']['asks_list']`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `list[Candidate]`."
+    }
+  ]
+}

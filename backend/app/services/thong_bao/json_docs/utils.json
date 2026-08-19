@@ -1,0 +1,49 @@
+{
+  "file_name": "utils.py",
+  "file_path": "backend/app/services/thong_bao/utils.py",
+  "bien_chung": [],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Chuẩn Hóa Cấu Trúc Module",
+      "noi_dung_rule": "Tuân thủ quy tắc xử lý và chuẩn hóa mã nguồn của module",
+      "dieu_kien_va_hanh_dong": "Đảm bảo tính toàn vẹn khi thực thi"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "bo_dau",
+      "chuc_nang": "Chuẩn hóa một giá trị về chữ thường không dấu để so khớp ổn định.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "value",
+          "kieu_du_lieu": "object",
+          "mo_ta": "Tham số đầu vào `value` cho hàm `bo_dau`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `bo_dau`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "''.join",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "unicodedata.normalize",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(value).casefold",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "unicodedata.combining",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/utils.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (value).\n2. Khởi tạo / gán biến `normalized`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    }
+  ]
+}

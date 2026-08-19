@@ -299,16 +299,36 @@ class LLMService:
             return str(cached)
 
         prompt = f"""
-            Phân loại domain của câu hỏi thành 1 trong 2:
-            - ctdt: hỏi về môn học, chương trình đào tạo, ngành, tín chỉ
-            - quy_che: hỏi về quy định, điều kiện, có được hay không
+            Phân loại câu hỏi của người dùng vào đúng 1 trong 3 miền:
 
-            Nguyên tắc:
-            - Chỉ chọn 1 domain
-            - Ưu tiên "quy_che" nếu câu hỏi liên quan đến điều kiện hoặc quy định
+            - ctdt:
+              Hỏi về chương trình đào tạo, ngành, học phần, số tín chỉ,
+              học phần tiên quyết/song hành, chuẩn đầu ra, kế hoạch đào tạo.
 
-            Output JSON:
-            {{"domain": "ctdt | quy_che"}}
+            - quy_che:
+              Hỏi về quy định học vụ, khái niệm/quy tắc chung, điều kiện,
+              quyền và nghĩa vụ sinh viên, cảnh báo học tập, tốt nghiệp,
+              học bổng, học cùng lúc hai chương trình.
+
+            - thong_bao:
+              Hỏi thông tin từ thông báo hoặc kế hoạch cụ thể theo thời gian,
+              năm học, học kỳ, đợt; lịch đăng ký/điều chỉnh học phần,
+              thời hạn, ngày bắt đầu/kết thúc, lịch thu học phí,
+              danh sách hoặc sự kiện được công bố trong thông báo.
+
+            Quy tắc phân biệt quan trọng:
+            - Câu hỏi về QUY ĐỊNH hoặc KHÁI NIỆM CHUNG -> quy_che.
+            - Câu hỏi về CẤU TRÚC CHƯƠNG TRÌNH/HỌC PHẦN -> ctdt.
+            - Câu hỏi về MỐC THỜI GIAN, LỊCH, ĐỢT, NĂM HỌC/HỌC KỲ
+              hoặc một thông báo/kế hoạch cụ thể -> thong_bao.
+            - "Kế hoạch học tập chuẩn toàn khóa" là khái niệm học vụ,
+              không phải thông báo -> quy_che.
+            - Nếu hỏi "khi nào được điều chỉnh đăng ký học phần",
+              ngày đăng ký, thời gian bắt đầu học kỳ hoặc lịch cụ thể
+              -> thong_bao.
+
+            Chỉ trả JSON:
+            {{"domain": "ctdt | quy_che | thong_bao"}}
 
             Query: {query}
         """

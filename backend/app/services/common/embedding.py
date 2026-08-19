@@ -1,6 +1,7 @@
+"""Model embedding dùng chung cho runtime services và các luồng ingestion."""
+
 from typing import List, Union, Optional
-from llama_index.core import Settings
-from sentence_transformers import SentenceTransformer, util
+from sentence_transformers import SentenceTransformer
 import torch
 import os
 from pathlib import Path
@@ -13,9 +14,21 @@ _embedding_model: Optional['EmbeddingModel'] = None
 
 
 def _find_model_path() -> tuple[str, bool]:
-    """Tìm đường dẫn model local"""
+    """Trả về (model_path_or_name, local_files_only).
+
+    Ưu tiên EMBEDDING_MODEL_PATH, sau đó cache local của project. Nếu không có,
+    dùng tên model Hugging Face để SentenceTransformer tải/cache ở lần chạy đầu.
+    """
+    configured_path = os.getenv("EMBEDDING_MODEL_PATH", "").strip()
+    if configured_path:
+        candidate = Path(configured_path).expanduser().resolve()
+        if not candidate.exists():
+            raise RuntimeError(f"EMBEDDING_MODEL_PATH does not exist: {candidate}")
+        return str(candidate), True
+
     script_dir = Path(__file__).resolve().parent
-    project_root = script_dir.parents[2]
+    # File nằm trong app/services/common nên project root cách thư mục hiện tại bốn cấp.
+    project_root = script_dir.parents[3]
     model_root = project_root / "my_model_weights" / "bge_m3" / "models--BAAI--bge-m3"
     snapshots_dir = model_root / "snapshots"
 
@@ -97,44 +110,4 @@ class EmbeddingModel:
         embeddings = self.model.encode(cleaned_texts, convert_to_tensor=False)
         return [list(emb) if hasattr(emb, '__iter__') else emb for emb in embeddings]
     
-    def get_similarity(self, text_a: str, text_b: str):
-        """So sánh nhanh 2 câu văn bản"""
-        vec_a, vec_b = self.get_embedding_batch([text_a, text_b])
-        # util.cos_sim trả về một ma trận, .item() để lấy giá trị số duy nhất
-        return util.cos_sim(vec_a, vec_b).item()
-
-    def find_best_match(self, query: str, document_list: List[str], top_k=3):
-        """Tìm top K đoạn văn bản giống với câu hỏi nhất"""
-        query_vec = self.get_embedding_batch([query])[0]
-        doc_vecs = self.get_embedding_batch(document_list)
-        
-        # Tính toán độ tương đồng 1 lúc cho cả danh sách
-        cos_scores = util.cos_sim(query_vec, doc_vecs)[0]
-        
-        # Lấy top k kết quả cao nhất
-        top_results = torch.topk(cos_scores, k=min(top_k, len(document_list)))
-        
-        return top_results
     
-# emb = EmbeddingModel()
-# texts = ["Hello world!", "This is a test.", "   ", "", "Another sentence.  "]
-# embeddings = emb.get_embedding_batch(texts)
-# cos = emb.get_similarity("Giỏi lắm", "Tệ thật")
-# print(embeddings[3])
-# print(len(embeddings))
-# print(cos)
-
-# query = "Đại học Cần Thơ nằm ở đâu?"
-# ans = [
-#     "Đại học Cần Thơ nằm ở thành phố Cần Thơ, Việt Nam.",
-#     "Đại học Cần Thơ là một trong những trường đại học lớn nhất ở miền Tây Việt Nam.",
-#     "Đại học Cần Thơ có nhiều ngành đào tạo khác nhau.",
-#     "Đại học Cần Thơ được thành lập vào năm 1966."
-# ]
-
-# results = emb.find_best_match(query, ans, top_k=2)
-# scores, indices = results.values, results.indices
-# print(scores)
-# print(indices)
-# for score, idx in zip(scores, indices):
-#     print(f"Score: {score:.4f}, Text: {ans[idx]}")

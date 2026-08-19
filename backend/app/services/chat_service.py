@@ -10,6 +10,7 @@ from app.services.llm_service import LLMService
 from app.services.quyche_service import quyche_service
 from app.services.retrieval_service import RetrievalResult, RetrievalService
 from app.services.strategy_service import StrategyService
+from app.services.thong_bao.pipeline import ThongBaoPipeline
 
 logger = logging.getLogger("app.chat")
 
@@ -57,6 +58,7 @@ class ChatService:
         self.strategy_service = StrategyService()
         self.retrieval_service = RetrievalService()
         self.evaluator_service = EvaluatorService()
+        self.thong_bao_pipeline = ThongBaoPipeline()
 
 
     async def handle_query(self, query: str, history: List[Dict[str, Any]]) -> Dict[str, Any]:
@@ -93,6 +95,17 @@ class ChatService:
             logger.info("[chat][step] route_to_quy_che")
             result = await quyche_service.handle_query(state.query, clean_history)
             return {"answer": result["answer"], "state": state.__dict__}
+
+        if state.domain == "thong_bao":
+            logger.info("[chat][step] route_to_thong_bao")
+            result = await self.thong_bao_pipeline.run(state.query)
+            state.rewritten_query = result.normalized_query
+            state.context = result.context
+            answer = await self.llm_service.generate(
+                result.normalized_query or state.query,
+                result.context,
+            )
+            return {"answer": answer, "state": state.__dict__}
 
         logger.info("[chat][step] route_to_ctdt_pipeline")
         answer = await self._run_ctdt_pipeline(state, clean_history)

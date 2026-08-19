@@ -17,7 +17,7 @@ class DomainService:
         logger.info("[domain] classify started")
         if self.llm_service:
             predicted = await self.llm_service.classify_domain(query)
-            if predicted in {"ctdt", "quy_che"}:
+            if predicted in {"ctdt", "quy_che", "thong_bao"}:
                 logger.info("[domain] classify=%s", predicted)
                 return predicted
 
