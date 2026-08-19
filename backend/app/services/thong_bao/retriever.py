@@ -34,7 +34,7 @@ class ThongBaoRetrievalResult:
     temporal_scope: MocThoiGian
     type_classification: NotificationTypeClassification
     notification_ids: list[str]
-    exact_values: dict[str, str]
+    exact_values: dict[str, list[str]]
     exact_candidates: list[Candidate]
     grouped_exact_candidates: list[Candidate]
     vector_candidates: list[Candidate]
@@ -77,7 +77,7 @@ def _loai_exact_cua_header(header: str) -> str | None:
 
 
 def _gia_tri_khop(loai: str, gia_tri_o: object, gia_tri_exact: str) -> bool:
-    """Kiểm tra giá trị một ô bảng có thỏa ràng buộc exact tương ứng hay không."""
+    """Kiểm tra giá trị một ô bảng có thỏa một giá trị exact hay không."""
     cell = _chuan_hoa_gia_tri(gia_tri_o)
     exact = _chuan_hoa_gia_tri(gia_tri_exact)
     if loai == "khoa":
@@ -89,23 +89,56 @@ def _gia_tri_khop(loai: str, gia_tri_o: object, gia_tri_exact: str) -> bool:
     return exact == cell or exact in cell
 
 
-def doc_gia_tri_exact_co_ban(cau_hoi: str) -> dict[str, str]:
-    exact: dict[str, str] = {}
-    course = re.search(
+def _danh_sach_exact(value: object) -> list[str]:
+    """Chuẩn hóa exact metadata cũ/mới về list[str] và loại trùng theo thứ tự."""
+    if value is None:
+        return []
+    raw_values = value if isinstance(value, (list, tuple, set)) else [value]
+    result: list[str] = []
+    seen: set[str] = set()
+    for item in raw_values:
+        text = str(item or "").strip()
+        if not text:
+            continue
+        key = _chuan_hoa_gia_tri(text)
+        if key in seen:
+            continue
+        seen.add(key)
+        result.append(text)
+    return result
+
+
+def _gia_tri_khop_bat_ky(
+    loai: str,
+    gia_tri_o: object,
+    gia_tri_exact: object,
+) -> bool:
+    """OR giữa các exact value cùng loại; dùng cho K48/K50, CT219/CT177, ..."""
+    return any(
+        _gia_tri_khop(loai, gia_tri_o, value)
+        for value in _danh_sach_exact(gia_tri_exact)
+    )
+
+
+def doc_gia_tri_exact_co_ban(cau_hoi: str) -> dict[str, list[str]]:
+    """Rút tất cả giá trị exact cơ bản; một loại có thể có nhiều giá trị."""
+    exact: dict[str, list[str]] = {}
+    courses = re.findall(
         r"(?<![A-Z0-9])([A-Z]{2,4}\d{3}[A-Z]?)(?![A-Z0-9])",
         cau_hoi.upper(),
     )
-    student = re.search(
+    students = re.findall(
         r"(?<![A-Z0-9])([A-Z]\d{7})(?![A-Z0-9])",
         cau_hoi.upper(),
     )
-    cohort = re.search(r"\b(?:khoa|k)\s*(\d{2})\b", bo_dau(cau_hoi))
-    if course:
-        exact["ma_hoc_phan"] = course.group(1)
-    if student:
-        exact["ma_sinh_vien"] = student.group(1)
-    if cohort:
-        exact["khoa"] = f"K{cohort.group(1)}"
+    cohorts = re.findall(r"\b(?:khoa|k)\s*(\d{2})\b", bo_dau(cau_hoi))
+
+    if values := _danh_sach_exact(courses):
+        exact["ma_hoc_phan"] = values
+    if values := _danh_sach_exact(students):
+        exact["ma_sinh_vien"] = values
+    if values := _danh_sach_exact([f"K{cohort}" for cohort in cohorts]):
+        exact["khoa"] = values
     return exact
 
 
@@ -312,7 +345,7 @@ class ThongBaoRetriever:
             parameters = {"loai": notice_type}
         return [str(item["id"]) for item in self._read(cypher, parameters)]
 
-    def _exact_columns(self, cau_hoi: str, thong_bao_ids: list[str]) -> dict[str, str]:
+    def _exact_columns(self, cau_hoi: str, thong_bao_ids: list[str]) -> dict[str, list[str]]:
         """Rút các mã học phần, mã sinh viên, khóa và ngành để exact-match bảng."""
         exact = doc_gia_tri_exact_co_ban(cau_hoi)
 
@@ -335,17 +368,20 @@ class ThongBaoRetriever:
             key=len,
             reverse=True,
         )
-        for value in values:
-            if value and bo_dau(value) in query_without_accents:
-                exact["nganh"] = value
-                break
+        matched_majors = [
+            value
+            for value in values
+            if value and bo_dau(value) in query_without_accents
+        ]
+        if matched_majors:
+            exact["nganh"] = _danh_sach_exact(matched_majors)
         return exact
 
     def _exact(
         self,
         vector: list[float],
         thong_bao_ids: list[str],
-        exact_columns: dict[str, str],
+        exact_columns: dict[str, list[str]],
     ) -> list[Candidate]:
         """Exact ngay trong Cypher, sau đó giữ lớp kiểm tra Python để bảo toàn kết quả."""
         if not exact_columns:
@@ -381,9 +417,10 @@ class ThongBaoRetriever:
         relevant_header_clauses: list[str] = []
         match_clauses: list[str] = []
 
-        for exact_type, exact_value in exact_columns.items():
+        for exact_type, raw_exact_values in exact_columns.items():
             header_condition = header_conditions.get(exact_type)
-            if header_condition is None:
+            exact_values = _danh_sach_exact(raw_exact_values)
+            if header_condition is None or not exact_values:
                 continue
 
             header_exists = (
@@ -392,26 +429,37 @@ class ThongBaoRetriever:
             )
 
             parameter_name = f"exact_{exact_type}"
-            parameters[parameter_name] = exact_value
+            parameters[parameter_name] = exact_values
 
             if exact_type in {"ma_hoc_phan", "ma_sinh_vien"}:
                 value_condition = (
-                    f"toUpper(trim(toString(d.gia_tri[i]))) = "
-                    f"toUpper(trim(${parameter_name}))"
+                    f"any(expected IN ${parameter_name} WHERE "
+                    "toUpper(trim(toString(d.gia_tri[i]))) = "
+                    "toUpper(trim(toString(expected))))"
                 )
             elif exact_type == "khoa":
-                # Cypher dùng một pre-filter rộng; lớp Python phía dưới vẫn
-                # kiểm tra lại bằng _gia_tri_khop để giữ nguyên semantics cũ.
-                match = re.search(r"(?<!\d)(\d{2})(?!\d)", exact_value)
-                if not match:
+                # OR giữa các khóa cùng loại (K48 hoặc K50); Python vẫn kiểm
+                # tra lại bằng cùng semantics exact để tránh regex pre-filter sai.
+                patterns: list[str] = []
+                for exact_value in exact_values:
+                    match = re.search(r"(?<!\d)(\d{2})(?!\d)", exact_value)
+                    if match:
+                        patterns.append(
+                            rf".*(^|\D){re.escape(match.group(1))}(\D|$).*"
+                        )
+                if not patterns:
                     continue
-                pattern_name = "exact_khoa_pattern"
-                parameters[pattern_name] = rf".*(^|\D){re.escape(match.group(1))}(\D|$).*"
-                value_condition = f"toString(d.gia_tri[i]) =~ ${pattern_name}"
+                pattern_name = "exact_khoa_patterns"
+                parameters[pattern_name] = patterns
+                value_condition = (
+                    f"any(pattern IN ${pattern_name} WHERE "
+                    "toString(d.gia_tri[i]) =~ pattern)"
+                )
             else:  # nganh
                 value_condition = (
-                    f"toLower(trim(toString(d.gia_tri[i]))) CONTAINS "
-                    f"toLower(trim(${parameter_name}))"
+                    f"any(expected IN ${parameter_name} WHERE "
+                    "toLower(trim(toString(d.gia_tri[i]))) CONTAINS "
+                    "toLower(trim(toString(expected))))"
                 )
 
             relevant_header_clauses.append(header_exists)
@@ -419,8 +467,8 @@ class ThongBaoRetriever:
                 "any(i IN range(0, size(b.cot) - 1) WHERE "
                 f"{header_condition} AND i < size(d.gia_tri) AND {value_condition})"
             )
-            # Giữ đúng logic cũ: exact type nào không tồn tại trong bảng thì
-            # không ép bảng phải thỏa type đó; type có cột thì bắt buộc match.
+            # AND giữa các loại exact khác nhau; OR giữa nhiều giá trị cùng loại.
+            # Ví dụ: (K48 OR K50) AND (CT219 OR CT177).
             match_clauses.append(f"(NOT {header_exists} OR {matching_value})")
 
         if not relevant_header_clauses:
@@ -454,11 +502,11 @@ class ThongBaoRetriever:
             headers = item.get("table_headers") or []
             values = (item.get("properties") or {}).get("gia_tri") or []
             constraints = {
-                exact_type: value
+                exact_type: exact_values
                 for header in headers
                 for exact_type in [_loai_exact_cua_header(str(header))]
                 if exact_type is not None
-                and (value := exact_columns.get(exact_type)) is not None
+                and (exact_values := _danh_sach_exact(exact_columns.get(exact_type)))
             }
             if not constraints:
                 continue
@@ -466,10 +514,10 @@ class ThongBaoRetriever:
                 exact_type: any(
                     _loai_exact_cua_header(str(header)) == exact_type
                     and index < len(values)
-                    and _gia_tri_khop(exact_type, values[index], value)
+                    and _gia_tri_khop_bat_ky(exact_type, values[index], exact_values)
                     for index, header in enumerate(headers)
                 )
-                for exact_type, value in constraints.items()
+                for exact_type, exact_values in constraints.items()
             }
             if all(matches.values()):
                 result.append(
@@ -513,7 +561,7 @@ class ThongBaoRetriever:
             WHERE tb.id IN $ids AND node.embedding IS NOT NULL
             WITH tb, b, node,
                  vector.similarity.cosine(node.embedding, $vector) AS score
-
+ 
             // Sắp xếp trước khi collect để phần tử đầu tiên của mỗi bảng là
             // DongBang có cosine cao nhất trong chính bảng đó.
             ORDER BY tb.id, b.id, score DESC, node.id
@@ -521,7 +569,7 @@ class ThongBaoRetriever:
             WITH tb, b,
                  representative.node AS node,
                  representative.score AS score
-
+ 
             // Từ đây mỗi bảng chỉ còn đúng một representative; các bảng mới
             // cạnh tranh trực tiếp bằng cosine trước khi cắt top-k theo label.
             ORDER BY score DESC, node.id

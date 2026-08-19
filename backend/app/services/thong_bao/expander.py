@@ -8,7 +8,8 @@ from typing import Any
 
 from app.services.common.candidate import DOMAIN_THONG_BAO, Candidate, make_candidate
 from app.services.thong_bao.retriever import (
-    _gia_tri_khop,
+    _danh_sach_exact,
+    _gia_tri_khop_bat_ky,
     _loai_exact_cua_header,
     _tu_ban_ghi,
 )
@@ -60,34 +61,38 @@ def _anchor_metadata(seed: Candidate, **extra: Any) -> dict[str, Any]:
 
 def _build_exact_constraints(
     headers: list[Any],
-    exact_columns: dict[str, str],
-) -> dict[str, str]:
+    exact_columns: dict[str, list[str]],
+) -> dict[str, list[str]]:
     """Chỉ lấy các điều kiện exact có cột tương ứng trong Bang hiện tại."""
-    constraints: dict[str, str] = {}
+    constraints: dict[str, list[str]] = {}
     for header in headers:
         exact_type = _loai_exact_cua_header(str(header))
         if exact_type is None:
             continue
-        exact_value = exact_columns.get(exact_type)
-        if exact_value is not None:
-            constraints[exact_type] = exact_value
+        exact_values = _danh_sach_exact(exact_columns.get(exact_type))
+        if exact_values:
+            constraints[exact_type] = exact_values
     return constraints
 
 
 def _row_matches_constraints(
     headers: list[Any],
     values: list[Any],
-    constraints: dict[str, str],
+    constraints: dict[str, list[str]],
 ) -> bool:
     """So khớp mọi exact value tại đúng vị trí cột của Bang."""
-    for exact_type, exact_value in constraints.items():
+    for exact_type, exact_values in constraints.items():
         found_match = False
         for column_index, header in enumerate(headers):
             if _loai_exact_cua_header(str(header)) != exact_type:
                 continue
             if column_index >= len(values):
                 continue
-            if _gia_tri_khop(exact_type, values[column_index], exact_value):
+            if _gia_tri_khop_bat_ky(
+                exact_type,
+                values[column_index],
+                exact_values,
+            ):
                 found_match = True
                 break
         if not found_match:
@@ -156,106 +161,105 @@ def load_seed_provenance(
     if document:
         seed["metadata"]["tai_lieu_id"] = document.get("id")
     if table:
-        seed["metadata"]["parent_table_id"] = table.get("id")
-        seed["metadata"]["table_headers"] = table.get("cot") or []
+        seed["metadata"].update({
+            "parent_table_id": table.get("id"),
+            "table_headers": table.get("cot") or [],
+        })
     return provenance
 
 
-def _order_mucs_within_tailieu(
-    mucs: list[dict[str, Any]],
-    *,
+def _load_document_tables(
+    seed: Candidate,
     tai_lieu_id: str,
+    query_vector: list[float],
+    *,
     reader: ReadQuery | None = None,
 ) -> list[dict[str, Any]]:
-    """Giữ thứ tự duyệt DFS của cây Mục trong TaiLieu."""
-    if len(mucs) <= 1:
-        return mucs
-
-    muc_ids = [str(item["id"]) for item in mucs if item.get("id")]
-    order_rows = _resolve_reader(reader)(
-        """
-        MATCH (tl:TaiLieu {id: $tai_lieu_id})
-        MATCH path=(tl)-[:CO_MUC*1..]->(m:Muc)
-        WHERE m.id IN $muc_ids
-        RETURN m.id AS id,
-               [node IN nodes(path)[1..] | coalesce(node.thu_tu, 0)] AS sort_key
-        """,
-        {"tai_lieu_id": tai_lieu_id, "muc_ids": muc_ids},
+    """Đọc metadata bảng cùng TaiLieu và dùng vector đã có để xếp bảng gián tiếp."""
+    score_expression = (
+        "max(CASE WHEN row.embedding IS NULL THEN null "
+        "ELSE vector.similarity.cosine(row.embedding, $query_vector) END)"
+        if query_vector
+        else "null"
     )
-    sort_keys = {
-        str(row["id"]): list(row.get("sort_key") or [])
-        for row in order_rows
-    }
-    return sorted(
-        mucs,
-        key=lambda item: (sort_keys.get(str(item.get("id")), []), str(item.get("id"))),
+    cypher = f"""
+    MATCH path=(tl:TaiLieu {{id: $tai_lieu_id}})-[:CO_MUC*1..]->(owner:Muc)
+          -[:CO_BANG]->(b:Bang)
+    OPTIONAL MATCH (b)-[:CO_DONG]->(row:DongBang)
+    RETURN owner.id AS owner_node_id,
+           b.id AS table_node_id,
+           b{{.*}} AS table_properties,
+           b.thu_tu AS table_order,
+           b.id AS table_id,
+           owner.id = $seed_node_id AS direct_to_seed,
+           [node IN nodes(path) | coalesce(node.id, '')] AS document_path,
+           {score_expression} AS table_score
+    ORDER BY direct_to_seed DESC, table_score DESC, document_path, table_order, table_id
+    """
+    return _resolve_reader(reader)(
+        cypher,
+        {
+            "tai_lieu_id": tai_lieu_id,
+            "seed_node_id": seed["node_id"],
+            "query_vector": query_vector,
+        },
     )
 
 
-def expand_same_table_rows(
+def _select_relevant_tables(
     seed: Candidate,
+    table_rows: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """Ưu tiên bảng trực tiếp của Muc; nếu không có thì lấy bảng semantic tốt nhất."""
+    exact_columns = seed["metadata"].get("exact_columns") or {}
+    eligible: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    for item in table_rows:
+        table_id = str(item.get("table_node_id") or "")
+        if not table_id or table_id in seen:
+            continue
+        headers = (item.get("table_properties") or {}).get("cot") or []
+        constraints = _build_exact_constraints(headers, exact_columns)
+        # Có exact value thì bảng phải có ít nhất một cột tương ứng mới phù hợp.
+        if exact_columns and not constraints:
+            continue
+        seen.add(table_id)
+        eligible.append(item)
+
+    direct_tables = [item for item in eligible if item.get("direct_to_seed")]
+    if direct_tables:
+        return direct_tables
+    if not eligible:
+        return []
+
+    def semantic_score(item: dict[str, Any]) -> float:
+        try:
+            return float(item.get("table_score"))
+        except (TypeError, ValueError):
+            return float("-inf")
+
+    return [max(eligible, key=semantic_score)]
+
+
+def _load_selected_table_rows(
+    table_node_ids: list[str],
     *,
     reader: ReadQuery | None = None,
-) -> list[Candidate]:
-    """Mở rộng các DongBang khác trong cùng bảng có cùng giá trị exact."""
-    if seed["label"] != "DongBang":
+) -> list[dict[str, Any]]:
+    """Đọc dòng của các bảng đã chọn theo đúng DongBang.thu_tu."""
+    if not table_node_ids:
         return []
-
-    parent_table_id = str(seed["metadata"].get("parent_table_id") or "")
-    if not parent_table_id:
-        return []
-
-    exact_columns = seed["metadata"].get("exact_columns") or {}
-    rows = _resolve_reader(reader)(
+    return _resolve_reader(reader)(
         """
-        MATCH (tb:ThongBao)-[:CO_TAI_LIEU]->(:TaiLieu)-[:CO_MUC*1..]->(:Muc)
-              -[:CO_BANG]->(b:Bang {id: $table_id})-[:CO_DONG]->(d:DongBang)
-        WHERE d.id <> $node_id
-        RETURN d.id AS node_id,
-               d{.*, embedding: null} AS properties,
-               b.cot AS table_headers,
-               tb.id AS notification_id,
-               tb.tieu_de AS ten_thong_bao,
-               tb.nam_hoc AS nam_hoc,
-               tb.hoc_ky AS hoc_ky
-        ORDER BY d.thu_tu, d.id
+        MATCH (b:Bang)-[:CO_DONG]->(d:DongBang)
+        WHERE b.id IN $table_node_ids
+        RETURN b.id AS table_node_id,
+               d.id AS row_node_id,
+               d{.*, embedding: null} AS row_properties
+        ORDER BY b.thu_tu, b.id, d.thu_tu
         """,
-        {"table_id": parent_table_id, "node_id": seed["node_id"]},
+        {"table_node_ids": table_node_ids},
     )
-    if not rows:
-        return []
-
-    headers = seed["metadata"].get("table_headers") or rows[0].get("table_headers") or []
-    constraints = _build_exact_constraints(headers, exact_columns)
-    matching_items = [
-        item for item in rows
-        if _row_matches_constraints(
-            headers,
-            (item.get("properties") or {}).get("gia_tri") or [],
-            constraints,
-        )
-    ]
-    result: list[Candidate] = []
-    for item in matching_items:
-        result.append(make_candidate(
-            node_id=item.get("node_id"),
-            label="DongBang",
-            cosine_score=0.0,
-            properties=item.get("properties"),
-            source="document_table_row_expansion",
-            domain=DOMAIN_THONG_BAO,
-            metadata=_anchor_metadata(
-                seed,
-                parent_table_id=parent_table_id,
-                table_node_id=parent_table_id,
-                table_headers=headers,
-                notification_id=item.get("notification_id"),
-                ten_thong_bao=item.get("ten_thong_bao"),
-                nam_hoc=item.get("nam_hoc"),
-                hoc_ky=item.get("hoc_ky"),
-            ),
-        ))
-    return result
 
 
 def expand_muc_list_tables(
@@ -265,108 +269,130 @@ def expand_muc_list_tables(
     *,
     reader: ReadQuery | None = None,
 ) -> list[Candidate]:
-    """Mở rộng bảng và các dòng liên quan khi seed Muc nhận diện yêu cầu danh sách."""
-    if seed["label"] != "Muc":
-        return []
-
-    raw_reader = _resolve_reader(reader)
-    direct_tables = raw_reader(
-        """
-        MATCH (tb:ThongBao)-[:CO_TAI_LIEU]->(:TaiLieu)-[:CO_MUC*1..]->(m:Muc {id: $node_id})
-              -[:CO_BANG]->(b:Bang)
-        RETURN b.id AS id, b.thu_tu AS thu_tu, b.tieu_de AS tieu_de, b.cot AS cot,
-               tb.id AS notification_id, tb.tieu_de AS ten_thong_bao,
-               tb.nam_hoc AS nam_hoc, tb.hoc_ky AS hoc_ky
-        ORDER BY b.thu_tu, b.id
-        """,
-        {"node_id": seed["node_id"]},
+    """Chỉ khi hỏi list, chọn Bang trong TaiLieu rồi lấy các dòng đúng thứ tự."""
+    available_tables = _load_document_tables(
+        seed,
+        tai_lieu_id,
+        query_vector,
+        reader=reader,
     )
-    candidate_tables = direct_tables
-    if not candidate_tables and tai_lieu_id and query_vector:
-        candidate_tables = raw_reader(
-            """
-            MATCH (tb:ThongBao)-[:CO_TAI_LIEU]->(tl:TaiLieu {id: $tai_lieu_id})
-                  -[:CO_MUC*1..]->(:Muc)-[:CO_BANG]->(b:Bang)-[:CO_DONG]->(d:DongBang)
-            WHERE d.embedding IS NOT NULL
-            WITH tb, b, d, vector.similarity.cosine(d.embedding, $query_vector) AS score
-            ORDER BY score DESC, d.id
-            WITH tb, b, max(score) AS max_score
-            ORDER BY max_score DESC, b.id
-            LIMIT 1
-            RETURN b.id AS id, b.thu_tu AS thu_tu, b.tieu_de AS tieu_de, b.cot AS cot,
-                   tb.id AS notification_id, tb.tieu_de AS ten_thong_bao,
-                   tb.nam_hoc AS nam_hoc, tb.hoc_ky AS hoc_ky
-            """,
-            {"tai_lieu_id": tai_lieu_id, "query_vector": query_vector},
-        )
-    if not candidate_tables:
-        return []
-
-    chosen_table = candidate_tables[0]
-    table_id = str(chosen_table["id"])
-    headers = chosen_table.get("cot") or []
-
-    rows = raw_reader(
-        """
-        MATCH (b:Bang {id: $table_id})-[:CO_DONG]->(d:DongBang)
-        RETURN d.id AS node_id, d{.*, embedding: null} AS properties
-        ORDER BY d.thu_tu, d.id
-        """,
-        {"table_id": table_id},
-    )
+    selected_tables = _select_relevant_tables(seed, available_tables)
+    table_ids = [str(item.get("table_node_id") or "") for item in selected_tables]
+    row_records = _load_selected_table_rows(table_ids, reader=reader)
+    rows_by_table: dict[str, list[dict[str, Any]]] = {table_id: [] for table_id in table_ids}
+    for row in row_records:
+        table_id = str(row.get("table_node_id") or "")
+        if table_id in rows_by_table:
+            rows_by_table[table_id].append(row)
 
     exact_columns = seed["metadata"].get("exact_columns") or {}
-    constraints = _build_exact_constraints(headers, exact_columns)
-    matching_rows = [
-        item for item in rows
-        if _row_matches_constraints(
-            headers,
-            (item.get("properties") or {}).get("gia_tri") or [],
-            constraints,
-        )
-    ]
+    result: list[Candidate] = []
+    for item in selected_tables:
+        table_node_id = str(item.get("table_node_id") or "")
+        table_properties = dict(item.get("table_properties") or {})
+        headers = table_properties.get("cot") or []
+        constraints = _build_exact_constraints(headers, exact_columns)
+        matching_rows = [
+            row
+            for row in rows_by_table.get(table_node_id, [])
+            if not constraints
+            or _row_matches_constraints(
+                headers,
+                (row.get("row_properties") or {}).get("gia_tri") or [],
+                constraints,
+            )
+        ]
+        if constraints and not matching_rows:
+            continue
 
-    result: list[Candidate] = [make_candidate(
-        node_id=table_id,
-        label="Bang",
-        cosine_score=0.0,
-        properties={
-            "id": table_id,
-            "thu_tu": chosen_table.get("thu_tu"),
-            "tieu_de": chosen_table.get("tieu_de"),
-            "cot": headers,
-        },
-        source="document_table_expansion",
-        domain=DOMAIN_THONG_BAO,
-        metadata=_anchor_metadata(
-            seed,
-            tai_lieu_id=tai_lieu_id,
-            table_headers=headers,
-            notification_id=chosen_table.get("notification_id"),
-            ten_thong_bao=chosen_table.get("ten_thong_bao"),
-            nam_hoc=chosen_table.get("nam_hoc"),
-            hoc_ky=chosen_table.get("hoc_ky"),
-        ),
-    )]
-    for item in matching_rows:
         result.append(make_candidate(
-            node_id=item.get("node_id"),
-            label="DongBang",
+            node_id=table_node_id,
+            label="Bang",
             cosine_score=0.0,
-            properties=item.get("properties"),
-            source="document_table_row_expansion",
+            properties=table_properties,
+            source="document_table_expansion",
             domain=DOMAIN_THONG_BAO,
             metadata=_anchor_metadata(
                 seed,
                 tai_lieu_id=tai_lieu_id,
-                table_node_id=table_id,
+                parent_table_id=table_properties.get("id"),
                 table_headers=headers,
-                notification_id=chosen_table.get("notification_id"),
-                ten_thong_bao=chosen_table.get("ten_thong_bao"),
-                nam_hoc=chosen_table.get("nam_hoc"),
-                hoc_ky=chosen_table.get("hoc_ky"),
+                direct_to_seed=bool(item.get("direct_to_seed")),
+                table_score=item.get("table_score"),
             ),
         ))
+        for row in matching_rows:
+            result.append(make_candidate(
+                node_id=row.get("row_node_id"),
+                label="DongBang",
+                cosine_score=0.0,
+                properties=row.get("row_properties"),
+                source="document_table_row_expansion",
+                domain=DOMAIN_THONG_BAO,
+                metadata=_anchor_metadata(
+                    seed,
+                    tai_lieu_id=tai_lieu_id,
+                    parent_table_id=table_properties.get("id"),
+                    table_node_id=table_node_id,
+                    table_headers=headers,
+                    exact_columns=constraints,
+                ),
+            ))
+    return result
+
+
+def expand_same_table_rows(
+    seed: Candidate,
+    *,
+    reader: ReadQuery | None = None,
+) -> list[Candidate]:
+    """Với DongBang list seed, lấy dòng cùng Bang và lọc exact tại đúng cột."""
+    if seed["label"] != "DongBang":
+        return []
+    table_id = str(seed["metadata"].get("parent_table_id") or "")
+    notification_id = str(seed["metadata"].get("notification_id") or "")
+    exact_columns = seed["metadata"].get("exact_columns") or {}
+    headers = seed["metadata"].get("table_headers") or []
+    if not table_id or not headers:
+        return []
+
+    constraints = _build_exact_constraints(headers, exact_columns)
+    if exact_columns and not constraints:
+        return []
+
+    rows = _resolve_reader(reader)(
+        """
+        MATCH (tb:ThongBao)-[:CO_TAI_LIEU]->(:TaiLieu)
+              -[:CO_MUC*1..]->(:Muc)-[:CO_BANG]->(b:Bang {id: $table_id})
+              -[:CO_DONG]->(d:DongBang)
+        WHERE $notification_id = '' OR tb.id = $notification_id
+        RETURN d.id AS node_id, 'DongBang' AS label,
+               0.0 AS score, d{.*, embedding: null} AS properties,
+               tb.id AS notification_id, tb.nam_hoc AS nam_hoc,
+               tb.hoc_ky AS hoc_ky, tb.tieu_de AS ten_thong_bao,
+               b.id AS parent_table_id, b.cot AS table_headers
+        ORDER BY d.thu_tu
+        """,
+        {"table_id": table_id, "notification_id": notification_id},
+    )
+    result: list[Candidate] = []
+    for item in rows:
+        if str(item.get("node_id") or "") == seed["node_id"]:
+            continue
+        values = (item.get("properties") or {}).get("gia_tri") or []
+        if constraints and not _row_matches_constraints(headers, values, constraints):
+            continue
+        expanded = _tu_ban_ghi(
+            item,
+            source="document_table_row_expansion",
+            exact_columns=constraints,
+        )
+        expanded["metadata"].update(_anchor_metadata(
+            seed,
+            tai_lieu_id=seed["metadata"].get("tai_lieu_id"),
+            table_node_id=seed["metadata"].get("provenance", {}).get("bang", {}).get("id"),
+        ))
+        result.append(expanded)
     return result
 
 
@@ -374,7 +400,7 @@ def expand_owner_muc(
     seed: Candidate,
     provenance: dict[str, Any],
 ) -> list[Candidate]:
-    """DongBang luôn lấy Muc trực tiếp chứa nó để bổ sung ngữ cảnh."""
+    """Với DongBang seed, luôn thêm Muc trực tiếp chứa Bang vào evidence."""
     if seed["label"] != "DongBang":
         return []
 

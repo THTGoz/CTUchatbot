@@ -49,7 +49,7 @@ class ThongBaoPipelineResult:
     notice_type: str | None = None
     notice_type_signals: tuple[str, ...] = ()
     notification_ids: list[str] = field(default_factory=list)
-    exact_values: dict[str, str] = field(default_factory=dict)
+    exact_values: dict[str, list[str]] = field(default_factory=dict)
     exact_candidates: list[Candidate] = field(default_factory=list)
     grouped_exact_candidates: list[Candidate] = field(default_factory=list)
     vector_candidates: list[Candidate] = field(default_factory=list)
