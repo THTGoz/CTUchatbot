@@ -1,0 +1,69 @@
+{
+  "ten_luong_mien": "Luồng Xử Lý Tra Cứu Thông Báo & Lịch Trình (THONG_BAO Domain Flow)",
+  "thu_muc_chinh": "backend/app/services/thong_bao",
+  "bien_dau_vao": {
+    "query": "Câu hỏi nguyên bản (str)",
+    "top_k": "Số lượng candidate tối đa (int, mặc định 6)",
+    "max_context_chars": "Độ dài context tối đa (int, mặc định 12000)"
+  },
+  "cac_buoc_thuc_thi_trong_luong": [
+    {
+      "bước": 1,
+      "ten_thao_tac": "Chuẩn hóa câu hỏi Thông báo",
+      "thu_muc_truy_cap": "backend/app/services/thong_bao",
+      "file_thuc_thi": "query_normalizer.py",
+      "ham_kich_hoat": "normalize_notification_query(query)",
+      "dau_vao": "query (str)",
+      "dau_ra": "normalized_query (str)"
+    },
+    {
+      "bước": 2,
+      "ten_thao_tac": "Tạo Embedding Vector & Trích Xuất Mốc Thời Gian (Temporal Scope)",
+      "thu_muc_truy_cap": "backend/app/services/common & backend/app/services/thong_bao",
+      "file_thuc_thi": "embedding.py & temporal.py",
+      "ham_kich_hoat": "_shared_embedding_provider() & doc_moc_thoi_gian()",
+      "dau_vao": "normalized_query (str)",
+      "dau_ra": "vector (List[float] 768 dimensions), temporal_scope (MocThoiGian)"
+    },
+    {
+      "bước": 3,
+      "ten_thao_tac": "Retrieval Kết Hợp (Lọc Mốc Thời Gian, Phân Loại Loại TB & Vector Search)",
+      "thu_muc_truy_cap": "backend/app/services/thong_bao",
+      "file_thuc_thi": "retriever.py",
+      "ham_kich_hoat": "self._retriever.retrieve_with_trace(normalized_query, vector)",
+      "dau_vao": "normalized_query (str), vector (list[float])",
+      "dau_ra": "retrieval trace (candidates, exact_candidates, vector_candidates, notification_ids)"
+    },
+    {
+      "bước": 4,
+      "ten_thao_tac": "Xếp Hạng Top-K & Mở Rộng Văn Bản Candidate (Expansion)",
+      "thu_muc_truy_cap": "backend/app/services/thong_bao",
+      "file_thuc_thi": "retriever.py & expander.py",
+      "ham_kich_hoat": "select_notification_top_k() & expand_notification_candidate()",
+      "dau_vao": "candidates, top_k, list_requested, vector",
+      "dau_ra": "selected_candidates & expanded_candidates (List[Candidate])"
+    },
+    {
+      "bước": 5,
+      "ten_thao_tac": "Dựng Context Văn Bản & Sinh Câu Trả Lời Qua LLM Service",
+      "thu_muc_truy_cap": "backend/app/services/common",
+      "file_thuc_thi": "candidate.py & llm_service.py",
+      "ham_kich_hoat": "build_context() & llm.generate(normalized_query, context)",
+      "dau_vao": "normalized_query, context",
+      "dau_ra": "answer (str)"
+    }
+  ],
+  "ket_qua_tra_ve_cuoi_cung": {
+    "kieu_du_lieu": "ThongBaoPipelineResult + answer dict",
+    "cac_truong": {
+      "answer": "Câu trả lời thông tin thông báo / lịch trình chi tiết (str)",
+      "domain": "THONG_BAO (str)",
+      "debug": {
+        "normalized_query": "Câu hỏi đã chuẩn hóa (str)",
+        "temporal_scope": "Thông tin mốc thời gian lọc (dict)",
+        "notification_ids": "Danh sách ID các thông báo được trích xuất (list)",
+        "candidate_count": "Số lượng candidate tìm thấy (int)"
+      }
+    }
+  }
+}

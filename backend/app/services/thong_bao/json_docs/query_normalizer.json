@@ -1,0 +1,357 @@
+{
+  "file_name": "query_normalizer.py",
+  "file_path": "backend/app/services/thong_bao/query_normalizer.py",
+  "bien_chung": [
+    {
+      "ten_bien": "ABBREVIATIONS",
+      "kieu_du_lieu": "dict[str, str]",
+      "gia_tri_hoac_mo_ta": "{'khht': 'kế hoạch học tập', 'dkhp': 'đăng ký học phần', 'đkhp': 'đăng ký học phần', 'ctđt': 'chương trình đào tạo', 'ctdt': 'chương trình đào tạo', 'khmt': 'khoa học máy tính', 'cntt': 'công nghệ thô"
+    },
+    {
+      "ten_bien": "KEEP_ORIGINAL_ABBREVS",
+      "kieu_du_lieu": "frozenset[str]",
+      "gia_tri_hoac_mo_ta": "frozenset({'khht', 'dkhp', 'đkhp', 'ctđt', 'ctdt', 'khmt', 'cntt', 'lvtn', 'mssv'})"
+    },
+    {
+      "ten_bien": "SYNONYMS",
+      "kieu_du_lieu": "dict[str, str]",
+      "gia_tri_hoac_mo_ta": "{'đăng kí': 'đăng ký', 'học kì': 'học kỳ', 'môn học': 'học phần', 'mã sv': 'mã sinh viên', 'mã số sv': 'mã số sinh viên', 'khoá': 'khóa'}"
+    },
+    {
+      "ten_bien": "KNOWN_TYPOS",
+      "kieu_du_lieu": "dict[str, str]",
+      "gia_tri_hoac_mo_ta": "{'đăn ký': 'đăng ký', 'đăng ky': 'đăng ký', 'học ki': 'học kỳ', 'sinh vien': 'sinh viên', 'hoc phan': 'học phần'}"
+    },
+    {
+      "ten_bien": "PROTECTED_PATTERN",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "re.compile('\\n    (?:\\n        \\\\b\\\\d{4}-\\\\d{1,2}-\\\\d{1,2}\\\\b                              # ISO date\\n      | \\\\b\\\\d{1,2}[/-]\\\\d{1,2}[/-]\\\\d{2,4}\\\\b                    # dd/mm/yyyy\\n      | \\\\b\\\\d{4}"
+    },
+    {
+      "ten_bien": "notification_query_normalizer",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "NotificationQueryNormalizer()"
+    }
+  ],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Xử Lý Chuỗi & Regular Expression",
+      "noi_dung_rule": "Sử dụng các quy tắc regex để loại bỏ ký tự đặc biệt, lọc khoảng trắng và tìm kiếm pattern",
+      "dieu_kien_va_hanh_dong": "Khớp điều kiện chuỗi đầu vào để thực hiện tiền xử lý văn bản"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "__init__",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `__init__` của file `query_normalizer.py`",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "None",
+        "mo_ta": "Kết quả trả về của hàm `__init__`"
+      },
+      "cac_ham_con_ben_trong": [],
+      "nguon_goc_ham": "backend/app/services/thong_bao/query_normalizer.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Khởi tạo / gán biến `self.abbreviations`.\n3. Khởi tạo / gán biến `self.synonyms`.\n4. Khởi tạo / gán biến `self.known_typos`.\n5. Hoàn tất tính toán và trả về kết quả kiểu `None`."
+    },
+    {
+      "ten_ham": "_normalize_whitespace",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_normalize_whitespace` của file `query_normalizer.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "text",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `text` cho hàm `_normalize_whitespace`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `_normalize_whitespace`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "re.sub",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "text.strip",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/query_normalizer.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (text).\n2. Kiểm tra điều kiện rẽ nhánh `not text`.\n3. Khởi tạo / gán biến `text`.\n4. Khởi tạo / gán biến `text`.\n5. Trả về kết quả cho caller.\n6. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "_protect_values",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_protect_values` của file `query_normalizer.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "text",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `text` cho hàm `_protect_values`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "tuple[str, dict[str, str]]",
+        "mo_ta": "Kết quả trả về của hàm `_protect_values`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "match.group",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "PROTECTED_PATTERN.sub",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/query_normalizer.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (text).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `tuple[str, dict[str, str]]`."
+    },
+    {
+      "ten_ham": "replace",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `replace` của file `query_normalizer.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "match",
+          "kieu_du_lieu": "re.Match[str]",
+          "mo_ta": "Tham số đầu vào `match` cho hàm `replace`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `replace`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "match.group",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/query_normalizer.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (match).\n2. Khởi tạo / gán biến `token`.\n3. Khởi tạo / gán biến `protected[token]`.\n4. Trả về kết quả cho caller.\n5. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "_restore_values",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_restore_values` của file `query_normalizer.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "text",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `text` cho hàm `_restore_values`"
+        },
+        {
+          "ten_tham_so": "protected",
+          "kieu_du_lieu": "dict[str, str]",
+          "mo_ta": "Tham số đầu vào `protected` cho hàm `_restore_values`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `_restore_values`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "protected.items",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "text.replace",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/query_normalizer.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (text, protected).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "_build_rule_pattern",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_build_rule_pattern` của file `query_normalizer.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "key",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `key` cho hàm `_build_rule_pattern`"
+        },
+        {
+          "ten_tham_so": "keep_original",
+          "kieu_du_lieu": "bool",
+          "mo_ta": "Tham số đầu vào `keep_original` cho hàm `_build_rule_pattern`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "re.Pattern[str]",
+        "mo_ta": "Kết quả trả về của hàm `_build_rule_pattern`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "re.escape",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "re.compile",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/query_normalizer.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (key, keep_original).\n2. Khởi tạo / gán biến `escaped`.\n3. Kiểm tra điều kiện rẽ nhánh `keep_original`.\n4. Trả về kết quả cho caller.\n5. Hoàn tất tính toán và trả về kết quả kiểu `re.Pattern[str]`."
+    },
+    {
+      "ten_ham": "_apply_dictionary",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_apply_dictionary` của file `query_normalizer.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "text",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `text` cho hàm `_apply_dictionary`"
+        },
+        {
+          "ten_tham_so": "rules",
+          "kieu_du_lieu": "dict[str, str]",
+          "mo_ta": "Tham số đầu vào `rules` cho hàm `_apply_dictionary`"
+        },
+        {
+          "ten_tham_so": "rule_type",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `rule_type` cho hàm `_apply_dictionary`"
+        },
+        {
+          "ten_tham_so": "applied_rules",
+          "kieu_du_lieu": "list[dict[str, str]]",
+          "mo_ta": "Tham số đầu vào `applied_rules` cho hàm `_apply_dictionary`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `_apply_dictionary`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "sorted",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "self._build_rule_pattern",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "pattern.sub",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "match.group",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "source.casefold",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "replacement.casefold",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "applied_rules.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "key.upper",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/query_normalizer.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (text, rules, rule_type, applied_rules).\n2. Khởi tạo / gán biến `current`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "repl",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `repl` của file `query_normalizer.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "match",
+          "kieu_du_lieu": "re.Match[str]",
+          "mo_ta": "Tham số đầu vào `match` cho hàm `repl`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `repl`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "match.group",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "source.casefold",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "replacement.casefold",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "applied_rules.append",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/query_normalizer.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (match).\n2. Khởi tạo / gán biến `source`.\n3. Kiểm tra điều kiện rẽ nhánh `source.casefold() != replacement.casefold()`.\n4. Trả về kết quả cho caller.\n5. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "normalize",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `normalize` của file `query_normalizer.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "query",
+          "kieu_du_lieu": "str | None",
+          "mo_ta": "Tham số đầu vào `query` cho hàm `normalize`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "dict[str, Any]",
+        "mo_ta": "Kết quả trả về của hàm `normalize`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "self._normalize_whitespace",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._protect_values",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._apply_dictionary",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._restore_values",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/query_normalizer.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (query).\n2. Khởi tạo / gán biến `raw_query`.\n3. Khởi tạo / gán biến `text`.\n4. Kiểm tra điều kiện rẽ nhánh `not text`.\n5. Khởi tạo / gán biến `(text, protected)`.\n6. Khởi tạo / gán biến `text`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `dict[str, Any]`."
+    },
+    {
+      "ten_ham": "normalize_notification_query",
+      "chuc_nang": "Convenience function dùng chung trong pipeline/test.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "query",
+          "kieu_du_lieu": "str | None",
+          "mo_ta": "Tham số đầu vào `query` cho hàm `normalize_notification_query`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "dict[str, Any]",
+        "mo_ta": "Kết quả trả về của hàm `normalize_notification_query`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "notification_query_normalizer.normalize",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/query_normalizer.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (query).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `dict[str, Any]`."
+    }
+  ]
+}

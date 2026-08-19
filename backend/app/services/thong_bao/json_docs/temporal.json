@@ -1,0 +1,74 @@
+{
+  "file_name": "temporal.py",
+  "file_path": "backend/app/services/thong_bao/temporal.py",
+  "bien_chung": [],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Xử Lý Chuỗi & Regular Expression",
+      "noi_dung_rule": "Sử dụng các quy tắc regex để loại bỏ ký tự đặc biệt, lọc khoảng trắng và tìm kiếm pattern",
+      "dieu_kien_va_hanh_dong": "Khớp điều kiện chuỗi đầu vào để thực hiện tiền xử lý văn bản"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "co_thoi_gian",
+      "chuc_nang": "Cho biết câu hỏi có chứa ít nhất một mốc năm hoặc học kỳ.",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "bool",
+        "mo_ta": "Kết quả trả về của hàm `co_thoi_gian`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "any",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/temporal.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `bool`."
+    },
+    {
+      "ten_ham": "doc_moc_thoi_gian",
+      "chuc_nang": "Đọc năm học, năm dương lịch và học kỳ từ câu hỏi người dùng.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "cau_hoi",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `cau_hoi` cho hàm `doc_moc_thoi_gian`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "MocThoiGian",
+        "mo_ta": "Kết quả trả về của hàm `doc_moc_thoi_gian`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "bo_dau",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "re.search",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "MocThoiGian",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "nam_hoc.group",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "nam.group",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "hoc_ky.group",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/temporal.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (cau_hoi).\n2. Khởi tạo / gán biến `khong_dau`.\n3. Khởi tạo / gán biến `nam_hoc`.\n4. Khởi tạo / gán biến `hoc_ky`.\n5. Kiểm tra điều kiện rẽ nhánh `nam_hoc`.\n6. Khởi tạo / gán biến `nam`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `MocThoiGian`."
+    }
+  ]
+}

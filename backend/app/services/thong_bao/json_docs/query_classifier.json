@@ -1,0 +1,87 @@
+{
+  "file_name": "query_classifier.py",
+  "file_path": "backend/app/services/thong_bao/query_classifier.py",
+  "bien_chung": [
+    {
+      "ten_bien": "_TYPE_SIGNALS",
+      "kieu_du_lieu": "dict[str, tuple[str, ...]]",
+      "gia_tri_hoac_mo_ta": "{'xoa_lop_hoc_phan': ('xoa lop hoc phan', 'lop hoc phan bi xoa', 'huy lop hoc phan', 'lop hoc phan bi huy', 'si so khong du', 'khong du mo lop'), 'xet_chuyen_nganh': ('chuyen nganh', 'doi nganh', 'tha"
+    }
+  ],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Chuẩn Hóa Cấu Trúc Module",
+      "noi_dung_rule": "Tuân thủ quy tắc xử lý và chuẩn hóa mã nguồn của module",
+      "dieu_kien_va_hanh_dong": "Đảm bảo tính toàn vẹn khi thực thi"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "confident",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `confident` của file `query_classifier.py`",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "bool",
+        "mo_ta": "Kết quả trả về của hàm `confident`"
+      },
+      "cac_ham_con_ben_trong": [],
+      "nguon_goc_ham": "backend/app/services/thong_bao/query_classifier.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `bool`."
+    },
+    {
+      "ten_ham": "classify_notification_type",
+      "chuc_nang": "Phân loại bằng cụm từ đặc trưng; mơ hồ thì không ép một loại thông báo.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "query",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `query` cho hàm `classify_notification_type`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "NotificationTypeClassification",
+        "mo_ta": "Kết quả trả về của hàm `classify_notification_type`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "' '.join",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_TYPE_SIGNALS.items",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "next",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "NotificationTypeClassification",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "bo_dau(query).split",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "iter",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "matches.items",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "tuple",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "bo_dau",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/query_classifier.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (query).\n2. Khởi tạo / gán biến `normalized`.\n3. Kiểm tra điều kiện rẽ nhánh `not normalized`.\n4. Kiểm tra điều kiện rẽ nhánh `not matches`.\n5. Kiểm tra điều kiện rẽ nhánh `len(matches) > 1`.\n6. Khởi tạo / gán biến `(notice_type, matched)`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `NotificationTypeClassification`."
+    }
+  ]
+}

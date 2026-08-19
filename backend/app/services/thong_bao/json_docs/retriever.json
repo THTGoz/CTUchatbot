@@ -1,0 +1,710 @@
+{
+  "file_name": "retriever.py",
+  "file_path": "backend/app/services/thong_bao/retriever.py",
+  "bien_chung": [
+    {
+      "ten_bien": "CAC_LABEL_THONG_BAO",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "('Muc', 'DongBang')"
+    },
+    {
+      "ten_bien": "ReadQuery",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "Callable[[str, dict[str, Any]], list[dict[str, Any]]]"
+    }
+  ],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Xử Lý Chuỗi & Regular Expression",
+      "noi_dung_rule": "Sử dụng các quy tắc regex để loại bỏ ký tự đặc biệt, lọc khoảng trắng và tìm kiếm pattern",
+      "dieu_kien_va_hanh_dong": "Khớp điều kiện chuỗi đầu vào để thực hiện tiền xử lý văn bản"
+    },
+    {
+      "ten_luat": "Rule Ngưỡng Độ Tương Đồng Vector (Similarity Score Threshold)",
+      "noi_dung_rule": "Lọc danh sách kết quả truy vấn theo ngưỡng điểm tương đồng vector",
+      "dieu_kien_va_hanh_dong": "Chỉ giữ lại các candidate đạt điểm độ tương đồng đạt yêu cầu"
+    },
+    {
+      "ten_luat": "Rule Fallback / Phản Hồi Mặc Định",
+      "noi_dung_rule": "Phản hồi dự phòng khi cơ sở dữ liệu không tìm thấy dữ liệu phù hợp",
+      "dieu_kien_va_hanh_dong": "Trả về thông báo hướng dẫn hoặc gọi LLM trả lời xã giao"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "_shared_reader",
+      "chuc_nang": "Chạy Cypher bằng Neo4j driver dùng chung của backend.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "cypher",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `cypher` cho hàm `_shared_reader`"
+        },
+        {
+          "ten_tham_so": "parameters",
+          "kieu_du_lieu": "dict[str, Any]",
+          "mo_ta": "Tham số đầu vào `parameters` cho hàm `_shared_reader`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "list[dict[str, Any]]",
+        "mo_ta": "Kết quả trả về của hàm `_shared_reader`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "read_query",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (cypher, parameters).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `list[dict[str, Any]]`."
+    },
+    {
+      "ten_ham": "_positive_int_env",
+      "chuc_nang": "Đọc một cấu hình số nguyên dương và dùng default nếu cấu hình sai.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "name",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `name` cho hàm `_positive_int_env`"
+        },
+        {
+          "ten_tham_so": "default",
+          "kieu_du_lieu": "int",
+          "mo_ta": "Tham số đầu vào `default` cho hàm `_positive_int_env`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "int",
+        "mo_ta": "Kết quả trả về của hàm `_positive_int_env`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "os.getenv",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (name, default).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `int`."
+    },
+    {
+      "ten_ham": "_chuan_hoa_gia_tri",
+      "chuc_nang": "Chuẩn hóa khoảng trắng và dấu tiếng Việt trước khi exact-match.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "value",
+          "kieu_du_lieu": "object",
+          "mo_ta": "Tham số đầu vào `value` cho hàm `_chuan_hoa_gia_tri`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `_chuan_hoa_gia_tri`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "re.sub('\\\\s+', ' ', bo_dau(value)).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "re.sub",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "bo_dau",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (value).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "_loai_exact_cua_header",
+      "chuc_nang": "Ánh xạ tiêu đề cột bảng về loại thực thể có thể exact-match.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "header",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `header` cho hàm `_loai_exact_cua_header`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str | None",
+        "mo_ta": "Kết quả trả về của hàm `_loai_exact_cua_header`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "_chuan_hoa_gia_tri",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (header).\n2. Khởi tạo / gán biến `khong_dau`.\n3. Kiểm tra điều kiện rẽ nhánh `'ma hp' in khong_dau or 'ma hoc phan' in khong_dau`.\n4. Kiểm tra điều kiện rẽ nhánh `'ma sv' in khong_dau or 'ma sinh vien' in khong_dau`.\n5. Kiểm tra điều kiện rẽ nhánh `khong_dau in {'khoa', 'khoa hoc'}`.\n6. Kiểm tra điều kiện rẽ nhánh `'nganh' in khong_dau`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `str | None`."
+    },
+    {
+      "ten_ham": "_gia_tri_khop",
+      "chuc_nang": "Kiểm tra giá trị một ô bảng có thỏa ràng buộc exact tương ứng hay không.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "loai",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `loai` cho hàm `_gia_tri_khop`"
+        },
+        {
+          "ten_tham_so": "gia_tri_o",
+          "kieu_du_lieu": "object",
+          "mo_ta": "Tham số đầu vào `gia_tri_o` cho hàm `_gia_tri_khop`"
+        },
+        {
+          "ten_tham_so": "gia_tri_exact",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `gia_tri_exact` cho hàm `_gia_tri_khop`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "bool",
+        "mo_ta": "Kết quả trả về của hàm `_gia_tri_khop`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "_chuan_hoa_gia_tri",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "re.search",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "bool",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "cell.upper",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "exact.upper",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "cell_number.group",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "exact_number.group",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (loai, gia_tri_o, gia_tri_exact).\n2. Khởi tạo / gán biến `cell`.\n3. Khởi tạo / gán biến `exact`.\n4. Kiểm tra điều kiện rẽ nhánh `loai == 'khoa'`.\n5. Kiểm tra điều kiện rẽ nhánh `loai in {'ma_hoc_phan', 'ma_sinh_vien'}`.\n6. Trả về kết quả cho caller.\n7. Hoàn tất tính toán và trả về kết quả kiểu `bool`."
+    },
+    {
+      "ten_ham": "doc_gia_tri_exact_co_ban",
+      "chuc_nang": "Đọc mã học phần, mã sinh viên và khóa mà không cần truy vấn Neo4j.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "cau_hoi",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `cau_hoi` cho hàm `doc_gia_tri_exact_co_ban`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "dict[str, str]",
+        "mo_ta": "Kết quả trả về của hàm `doc_gia_tri_exact_co_ban`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "re.search",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "cau_hoi.upper",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "bo_dau",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "course.group",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "student.group",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "cohort.group",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (cau_hoi).\n2. Khởi tạo / gán biến `course`.\n3. Khởi tạo / gán biến `student`.\n4. Khởi tạo / gán biến `cohort`.\n5. Kiểm tra điều kiện rẽ nhánh `course`.\n6. Kiểm tra điều kiện rẽ nhánh `student`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `dict[str, str]`."
+    },
+    {
+      "ten_ham": "_group_exact_rows_by_table",
+      "chuc_nang": "Giữ một dòng cosine cao nhất mỗi bảng rồi xếp các bảng theo cosine.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "candidates",
+          "kieu_du_lieu": "list[Candidate]",
+          "mo_ta": "Tham số đầu vào `candidates` cho hàm `_group_exact_rows_by_table`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "list[Candidate]",
+        "mo_ta": "Kết quả trả về của hàm `_group_exact_rows_by_table`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "sorted",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "by_table.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "rows_without_table.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "candidate['metadata'].get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "by_table.values",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (candidates).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `list[Candidate]`."
+    },
+    {
+      "ten_ham": "_so_nguyen",
+      "chuc_nang": "Đổi metadata thời gian về số nguyên an toàn cho ranking.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "value",
+          "kieu_du_lieu": "object",
+          "mo_ta": "Tham số đầu vào `value` cho hàm `_so_nguyen`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "int",
+        "mo_ta": "Kết quả trả về của hàm `_so_nguyen`"
+      },
+      "cac_ham_con_ben_trong": [],
+      "nguon_goc_ham": "backend/app/services/thong_bao/retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (value).\n2. Thực hiện các bước tính toán logic bên trong hàm.\n3. Trả về kết quả đầu ra."
+    },
+    {
+      "ten_ham": "_ngay_ban_hanh_key",
+      "chuc_nang": "Chuẩn hóa YYYY, YYYY-MM hoặc YYYY-MM-DD thành khóa thời gian.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "value",
+          "kieu_du_lieu": "object",
+          "mo_ta": "Tham số đầu vào `value` cho hàm `_ngay_ban_hanh_key`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "tuple[int, int, int]",
+        "mo_ta": "Kết quả trả về của hàm `_ngay_ban_hanh_key`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "re.findall",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (value).\n2. Khởi tạo / gán biến `parts`.\n3. Kiểm tra điều kiện rẽ nhánh `not parts`.\n4. Khởi tạo / gán biến `year`.\n5. Khởi tạo / gán biến `month`.\n6. Khởi tạo / gán biến `day`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `tuple[int, int, int]`."
+    },
+    {
+      "ten_ham": "_notification_time_key",
+      "chuc_nang": "Khóa mới→cũ: năm học, học kỳ, rồi ngày ban hành.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "candidate",
+          "kieu_du_lieu": "Candidate",
+          "mo_ta": "Tham số đầu vào `candidate` cho hàm `_notification_time_key`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "tuple[int, int, int, int, int, int]",
+        "mo_ta": "Kết quả trả về của hàm `_notification_time_key`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "_ngay_ban_hanh_key",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "_so_nguyen",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "metadata.get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (candidate).\n2. Khởi tạo / gán biến `metadata`.\n3. Khởi tạo / gán biến `(issue_year, issue_month, issue_day)`.\n4. Kiểm tra điều kiện rẽ nhánh `not issue_year`.\n5. Khởi tạo / gán biến `school_end`.\n6. Khởi tạo / gán biến `school_start`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `tuple[int, int, int, int, int, int]`."
+    },
+    {
+      "ten_ham": "select_notification_top_k",
+      "chuc_nang": "Chọn top-k: cosine giữa các loại, thời gian mới trước trong cùng loại.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "candidates",
+          "kieu_du_lieu": "Iterable[Candidate]",
+          "mo_ta": "Tham số đầu vào `candidates` cho hàm `select_notification_top_k`"
+        },
+        {
+          "ten_tham_so": "top_k",
+          "kieu_du_lieu": "int",
+          "mo_ta": "Tham số đầu vào `top_k` cho hàm `select_notification_top_k`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "list[Candidate]",
+        "mo_ta": "Kết quả trả về của hàm `select_notification_top_k`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "merge_candidates",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "defaultdict",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "enumerate",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "candidates_by_type.items",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "ValueError",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "positions_by_type[notice_type].append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "candidates_by_type[notice_type].append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "group.sort",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "zip",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "candidate['metadata'].get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (candidates, top_k).\n2. Kiểm tra điều kiện rẽ nhánh `top_k <= 0`.\n3. Khởi tạo / gán biến `ranked`.\n4. Trả về kết quả cho caller.\n5. Hoàn tất tính toán và trả về kết quả kiểu `list[Candidate]`."
+    },
+    {
+      "ten_ham": "_tu_ban_ghi",
+      "chuc_nang": "Chuyển một record Neo4j thành candidate chung của chatbot.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "item",
+          "kieu_du_lieu": "dict[str, Any]",
+          "mo_ta": "Tham số đầu vào `item` cho hàm `_tu_ban_ghi`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Candidate",
+        "mo_ta": "Kết quả trả về của hàm `_tu_ban_ghi`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "make_candidate",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "item.get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (item).\n2. Kiểm tra điều kiện rẽ nhánh `exact_columns`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `Candidate`."
+    },
+    {
+      "ten_ham": "__init__",
+      "chuc_nang": "Khởi tạo retriever với giới hạn từng label và reader có thể thay thế khi test.",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "None",
+        "mo_ta": "Kết quả trả về của hàm `__init__`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "_positive_int_env",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Khởi tạo / gán biến `self._top_k_per_label`.\n3. Khởi tạo / gán biến `self._read`.\n4. Hoàn tất tính toán và trả về kết quả kiểu `None`."
+    },
+    {
+      "ten_ham": "_tai_lieu_duoc_phep",
+      "chuc_nang": "Chọn tập thông báo theo thời gian và loại chắc chắn nếu có.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "moc",
+          "kieu_du_lieu": "MocThoiGian",
+          "mo_ta": "Tham số đầu vào `moc` cho hàm `_tai_lieu_duoc_phep`"
+        },
+        {
+          "ten_tham_so": "notice_type",
+          "kieu_du_lieu": "str | None",
+          "mo_ta": "Tham số đầu vào `notice_type` cho hàm `_tai_lieu_duoc_phep`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "list[str]",
+        "mo_ta": "Kết quả trả về của hàm `_tai_lieu_duoc_phep`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "self._read",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (moc, notice_type).\n2. Kiểm tra điều kiện rẽ nhánh `moc.co_thoi_gian`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `list[str]`."
+    },
+    {
+      "ten_ham": "_exact_columns",
+      "chuc_nang": "Rút các mã học phần, mã sinh viên, khóa và ngành để exact-match bảng.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "cau_hoi",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `cau_hoi` cho hàm `_exact_columns`"
+        },
+        {
+          "ten_tham_so": "thong_bao_ids",
+          "kieu_du_lieu": "list[str]",
+          "mo_ta": "Tham số đầu vào `thong_bao_ids` cho hàm `_exact_columns`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "dict[str, str]",
+        "mo_ta": "Kết quả trả về của hàm `_exact_columns`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "doc_gia_tri_exact_co_ban",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "self._read",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "bo_dau",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "sorted",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "str(item.get('gia_tri') or '').strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "item.get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (cau_hoi, thong_bao_ids).\n2. Khởi tạo / gán biến `exact`.\n3. Khởi tạo / gán biến `major_rows`.\n4. Khởi tạo / gán biến `query_without_accents`.\n5. Khởi tạo / gán biến `values`.\n6. Trả về kết quả cho caller.\n7. Hoàn tất tính toán và trả về kết quả kiểu `dict[str, str]`."
+    },
+    {
+      "ten_ham": "_exact",
+      "chuc_nang": "Tìm các dòng bảng đồng thời thỏa toàn bộ cột exact đã phát hiện.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "vector",
+          "kieu_du_lieu": "list[float]",
+          "mo_ta": "Tham số đầu vào `vector` cho hàm `_exact`"
+        },
+        {
+          "ten_tham_so": "thong_bao_ids",
+          "kieu_du_lieu": "list[str]",
+          "mo_ta": "Tham số đầu vào `thong_bao_ids` cho hàm `_exact`"
+        },
+        {
+          "ten_tham_so": "exact_columns",
+          "kieu_du_lieu": "dict[str, str]",
+          "mo_ta": "Tham số đầu vào `exact_columns` cho hàm `_exact`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "list[Candidate]",
+        "mo_ta": "Kết quả trả về của hàm `_exact`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "self._read",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "all",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "item.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "(item.get('properties') or {}).get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "any",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "matches.values",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "result.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "constraints.items",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_tu_ban_ghi",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "_loai_exact_cua_header",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (vector, thong_bao_ids, exact_columns).\n2. Kiểm tra điều kiện rẽ nhánh `not exact_columns`.\n3. Khởi tạo / gán biến `rows`.\n4. Trả về kết quả cho caller.\n5. Hoàn tất tính toán và trả về kết quả kiểu `list[Candidate]`."
+    },
+    {
+      "ten_ham": "_vector_mot_label",
+      "chuc_nang": "Tìm vector candidate cho một label Muc hoặc DongBang.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "label",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `label` cho hàm `_vector_mot_label`"
+        },
+        {
+          "ten_tham_so": "vector",
+          "kieu_du_lieu": "list[float]",
+          "mo_ta": "Tham số đầu vào `vector` cho hàm `_vector_mot_label`"
+        },
+        {
+          "ten_tham_so": "thong_bao_ids",
+          "kieu_du_lieu": "list[str]",
+          "mo_ta": "Tham số đầu vào `thong_bao_ids` cho hàm `_vector_mot_label`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "list[Candidate]",
+        "mo_ta": "Kết quả trả về của hàm `_vector_mot_label`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "self._read",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_tu_ban_ghi",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (label, vector, thong_bao_ids).\n2. Khởi tạo / gán biến `path`.\n3. Khởi tạo / gán biến `cypher`.\n4. Khởi tạo / gán biến `rows`.\n5. Trả về kết quả cho caller.\n6. Hoàn tất tính toán và trả về kết quả kiểu `list[Candidate]`."
+    },
+    {
+      "ten_ham": "retrieve_with_trace",
+      "chuc_nang": "Chạy retrieval và giữ riêng kết quả exact/vector để phục vụ debug.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "cau_hoi",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `cau_hoi` cho hàm `retrieve_with_trace`"
+        },
+        {
+          "ten_tham_so": "vector",
+          "kieu_du_lieu": "list[float] | None",
+          "mo_ta": "Tham số đầu vào `vector` cho hàm `retrieve_with_trace`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "ThongBaoRetrievalResult",
+        "mo_ta": "Kết quả trả về của hàm `retrieve_with_trace`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "doc_moc_thoi_gian",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "classify_notification_type",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "self._tai_lieu_duoc_phep",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._exact_columns",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "ThongBaoRetrievalResult",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "get_embedding_model().get_embedding_batch",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._exact",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_group_exact_rows_by_table",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "get_embedding_model",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "self._vector_mot_label",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/thong_bao/retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (cau_hoi, vector).\n2. Khởi tạo / gán biến `temporal_scope`.\n3. Khởi tạo / gán biến `type_classification`.\n4. Kiểm tra điều kiện rẽ nhánh `vector is None`.\n5. Kiểm tra điều kiện rẽ nhánh `not vector`.\n6. Khởi tạo / gán biến `notification_ids`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `ThongBaoRetrievalResult`."
+    }
+  ]
+}
