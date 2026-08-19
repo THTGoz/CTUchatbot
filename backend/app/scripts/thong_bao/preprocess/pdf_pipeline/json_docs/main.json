@@ -1,0 +1,80 @@
+{
+  "file_name": "main.py",
+  "file_path": "backend/app/scripts/thong_bao/preprocess/pdf_pipeline/main.py",
+  "bien_chung": [],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Fallback / Phản Hồi Mặc Định",
+      "noi_dung_rule": "Phản hồi dự phòng khi cơ sở dữ liệu không tìm thấy dữ liệu phù hợp",
+      "dieu_kien_va_hanh_dong": "Trả về thông báo hướng dẫn hoặc gọi LLM trả lời xã giao"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "parse_args",
+      "chuc_nang": "Đọc phạm vi các bước và tùy chọn dọn output từ command line.",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "argparse.Namespace",
+        "mo_ta": "Kết quả trả về của hàm `parse_args`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "argparse.ArgumentParser",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "parser.add_argument",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "parser.parse_args",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/pdf_pipeline/main.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Khởi tạo / gán biến `parser`.\n3. Gọi thực thi hàm `parser.add_argument`.\n4. Gọi thực thi hàm `parser.add_argument`.\n5. Gọi thực thi hàm `parser.add_argument`.\n6. Trả về kết quả cho caller.\n7. Hoàn tất tính toán và trả về kết quả kiểu `argparse.Namespace`."
+    },
+    {
+      "ten_ham": "main",
+      "chuc_nang": "Chạy các bước đã chọn và in báo cáo thời gian.",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "int",
+        "mo_ta": "Kết quả trả về của hàm `main`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "configure_utf8_console",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "parse_args",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "select_steps",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "validate_project",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "time.perf_counter",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "clean_outputs",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "run_batch_step",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/pdf_pipeline/main.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Gọi thực thi hàm `configure_utf8_console`.\n3. Khởi tạo / gán biến `args`.\n4. Hoàn tất tính toán và trả về kết quả kiểu `int`."
+    }
+  ]
+}

@@ -1,0 +1,255 @@
+{
+  "file_name": "pipeline.py",
+  "file_path": "backend/app/services/ctdt/pipeline.py",
+  "bien_chung": [
+    {
+      "ten_bien": "logger",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "logging.getLogger('app.ctdt')"
+    },
+    {
+      "ten_bien": "ctdt_pipeline",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "CTDTPipeline()"
+    }
+  ],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Ngưỡng Độ Tương Đồng Vector (Similarity Score Threshold)",
+      "noi_dung_rule": "Lọc danh sách kết quả truy vấn theo ngưỡng điểm tương đồng vector",
+      "dieu_kien_va_hanh_dong": "Chỉ giữ lại các candidate đạt điểm độ tương đồng đạt yêu cầu"
+    },
+    {
+      "ten_luat": "Rule Fallback / Phản Hồi Mặc Định",
+      "noi_dung_rule": "Phản hồi dự phòng khi cơ sở dữ liệu không tìm thấy dữ liệu phù hợp",
+      "dieu_kien_va_hanh_dong": "Trả về thông báo hướng dẫn hoặc gọi LLM trả lời xã giao"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "_format_hybrid_context",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_format_hybrid_context` của file `pipeline.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "graph_context",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `graph_context` cho hàm `_format_hybrid_context`"
+        },
+        {
+          "ten_tham_so": "vector_context",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `vector_context` cho hàm `_format_hybrid_context`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `_format_hybrid_context`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "graph_context.strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "vector_context.strip",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/pipeline.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (graph_context, vector_context).\n2. Khởi tạo / gán biến `graph_section`.\n3. Khởi tạo / gán biến `vector_section`.\n4. Trả về kết quả cho caller.\n5. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "__init__",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `__init__` của file `pipeline.py`",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "None",
+        "mo_ta": "Kết quả trả về của hàm `__init__`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "SubgraphRetriever",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/pipeline.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Khởi tạo / gán biến `self.subgraph_retriever`.\n3. Hoàn tất tính toán và trả về kết quả kiểu `None`."
+    },
+    {
+      "ten_ham": "_retrieve_hybrid_context",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_retrieve_hybrid_context` của file `pipeline.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "query",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `query` cho hàm `_retrieve_hybrid_context`"
+        },
+        {
+          "ten_tham_so": "graph_result",
+          "kieu_du_lieu": "GraphBuildResult",
+          "mo_ta": "Tham số đầu vào `graph_result` cho hàm `_retrieve_hybrid_context`"
+        },
+        {
+          "ten_tham_so": "vector_targets",
+          "kieu_du_lieu": "List[str]",
+          "mo_ta": "Tham số đầu vào `vector_targets` cho hàm `_retrieve_hybrid_context`"
+        },
+        {
+          "ten_tham_so": "relations",
+          "kieu_du_lieu": "List[str]",
+          "mo_ta": "Tham số đầu vào `relations` cho hàm `_retrieve_hybrid_context`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "tuple[str, str]",
+        "mo_ta": "Kết quả trả về của hàm `_retrieve_hybrid_context`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "now",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "format_vector_expansions",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "log_event",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "graph_result.graph_text.strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "format_vector_candidates",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "asyncio.gather",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "asyncio.to_thread",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "'\\n\\n'.join",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "elapsed_ms",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "zip",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/pipeline.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (query, graph_result, vector_targets, relations).\n2. Khởi tạo / gán biến `graph_context`.\n3. Khởi tạo / gán biến `selected_targets`.\n4. Khởi tạo / gán biến `vector_started`.\n5. Kiểm tra điều kiện rẽ nhánh `not graph_result.is_graph_sufficient and selected_targets`.\n6. Khởi tạo / gán biến `all_candidates`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `tuple[str, str]`."
+    },
+    {
+      "ten_ham": "_generate_answer",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_generate_answer` của file `pipeline.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "original_query",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `original_query` cho hàm `_generate_answer`"
+        },
+        {
+          "ten_tham_so": "rewritten_query",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `rewritten_query` cho hàm `_generate_answer`"
+        },
+        {
+          "ten_tham_so": "context",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `context` cho hàm `_generate_answer`"
+        },
+        {
+          "ten_tham_so": "used_default_ctdt",
+          "kieu_du_lieu": "bool",
+          "mo_ta": "Tham số đầu vào `used_default_ctdt` cho hàm `_generate_answer`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `_generate_answer`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "call_model_9b",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/pipeline.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (original_query, rewritten_query, context, used_default_ctdt).\n2. Khởi tạo / gán biến `default_note`.\n3. Khởi tạo / gán biến `prompt`.\n4. Trả về kết quả cho caller.\n5. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "handle_query",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `handle_query` của file `pipeline.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "query",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `query` cho hàm `handle_query`"
+        },
+        {
+          "ten_tham_so": "history",
+          "kieu_du_lieu": "List[Dict[str, Any]]",
+          "mo_ta": "Tham số đầu vào `history` cho hàm `handle_query`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "CTDTPipelineResult",
+        "mo_ta": "Kết quả trả về của hàm `handle_query`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "now",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "normalize_history",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "history_text",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "normalize_ctdt_query",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "log_event",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "_format_hybrid_context",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "log_context",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "CTDTPipelineResult",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "analyze_ctdt_query",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "analysis.get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/pipeline.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (query, history).\n2. Khởi tạo / gán biến `total_started`.\n3. Khởi tạo / gán biến `cleaned_history`.\n4. Khởi tạo / gán biến `history_string`.\n5. Khởi tạo / gán biến `normalization`.\n6. Khởi tạo / gán biến `normalized_query`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `CTDTPipelineResult`."
+    }
+  ]
+}

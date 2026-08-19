@@ -1,0 +1,222 @@
+{
+  "file_name": "vector_expander.py",
+  "file_path": "backend/app/services/ctdt/vector_expander.py",
+  "bien_chung": [
+    {
+      "ten_bien": "_ALLOWED_COURSE_RELATIONS",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "{'YEU_CAU_TIEN_QUYET', 'CO_THE_SONG_HANH'}"
+    },
+    {
+      "ten_bien": "_RELATION_DISPLAY",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "{'YEU_CAU_TIEN_QUYET': 'Yêu cầu tiên quyết', 'CO_THE_SONG_HANH': 'Có thể song hành'}"
+    }
+  ],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Ngưỡng Độ Tương Đồng Vector (Similarity Score Threshold)",
+      "noi_dung_rule": "Lọc danh sách kết quả truy vấn theo ngưỡng điểm tương đồng vector",
+      "dieu_kien_va_hanh_dong": "Chỉ giữ lại các candidate đạt điểm độ tương đồng đạt yêu cầu"
+    },
+    {
+      "ten_luat": "Rule Fallback / Phản Hồi Mặc Định",
+      "noi_dung_rule": "Phản hồi dự phòng khi cơ sở dữ liệu không tìm thấy dữ liệu phù hợp",
+      "dieu_kien_va_hanh_dong": "Trả về thông báo hướng dẫn hoặc gọi LLM trả lời xã giao"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "_resolve_course_relations",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_resolve_course_relations` của file `vector_expander.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "query",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `query` cho hàm `_resolve_course_relations`"
+        },
+        {
+          "ten_tham_so": "relations",
+          "kieu_du_lieu": "List[str]",
+          "mo_ta": "Tham số đầu vào `relations` cho hàm `_resolve_course_relations`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "List[str]",
+        "mo_ta": "Kết quả trả về của hàm `_resolve_course_relations`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "str(query or '').casefold",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(relation or '').strip().upper",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "resolved.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(relation or '').strip",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/vector_expander.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (query, relations).\n2. Kiểm tra điều kiện rẽ nhánh `resolved`.\n3. Khởi tạo / gán biến `lowered`.\n4. Kiểm tra điều kiện rẽ nhánh `'tiên quyết' in lowered`.\n5. Kiểm tra điều kiện rẽ nhánh `'song hành' in lowered`.\n6. Trả về kết quả cho caller.\n7. Hoàn tất tính toán và trả về kết quả kiểu `List[str]`."
+    },
+    {
+      "ten_ham": "_expand_one_course",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_expand_one_course` của file `vector_expander.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "origin_id",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `origin_id` cho hàm `_expand_one_course`"
+        },
+        {
+          "ten_tham_so": "relations",
+          "kieu_du_lieu": "List[str]",
+          "mo_ta": "Tham số đầu vào `relations` cho hàm `_expand_one_course`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "List[Dict[str, Any]]",
+        "mo_ta": "Kết quả trả về của hàm `_expand_one_course`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "'|'.join",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "get_driver().session",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "session.run(cypher, origin_id=origin_id).data",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "get_driver",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "session.run",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/vector_expander.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (origin_id, relations).\n2. Kiểm tra điều kiện rẽ nhánh `not origin_id or not relations`.\n3. Khởi tạo / gán biến `rel_pattern`.\n4. Khởi tạo / gán biến `cypher`.\n5. Hoàn tất tính toán và trả về kết quả kiểu `List[Dict[str, Any]]`."
+    },
+    {
+      "ten_ham": "expand_vector_candidates",
+      "chuc_nang": "Expand candidate HocPhan theo relation intent và giữ provenance origin.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "candidates",
+          "kieu_du_lieu": "List[Dict[str, Any]]",
+          "mo_ta": "Tham số đầu vào `candidates` cho hàm `expand_vector_candidates`"
+        },
+        {
+          "ten_tham_so": "query",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `query` cho hàm `expand_vector_candidates`"
+        },
+        {
+          "ten_tham_so": "relations",
+          "kieu_du_lieu": "List[str]",
+          "mo_ta": "Tham số đầu vào `relations` cho hàm `expand_vector_candidates`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "List[Dict[str, Any]]",
+        "mo_ta": "Kết quả trả về của hàm `expand_vector_candidates`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "_resolve_course_relations",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "str(candidate.get('node_id') or '').strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_expand_one_course",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "str(row.get('node_id') or '').strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(row.get('relationship_type') or '').strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "seen.add",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "expanded.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "candidate.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "row.get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/vector_expander.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (candidates, query, relations).\n2. Khởi tạo / gán biến `course_relations`.\n3. Kiểm tra điều kiện rẽ nhánh `not course_relations`.\n4. Trả về kết quả cho caller.\n5. Hoàn tất tính toán và trả về kết quả kiểu `List[Dict[str, Any]]`."
+    },
+    {
+      "ten_ham": "format_vector_expansions",
+      "chuc_nang": "Format expansion theo origin để LLM biết quan hệ thuộc candidate nào.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "expanded",
+          "kieu_du_lieu": "List[Dict[str, Any]]",
+          "mo_ta": "Tham số đầu vào `expanded` cho hàm `format_vector_expansions`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `format_vector_expansions`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "defaultdict",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "grouped.items",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "'\\n'.join",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "lines.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_RELATION_DISPLAY.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "row.get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/vector_expander.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (expanded).\n2. Kiểm tra điều kiện rẽ nhánh `not expanded`.\n3. Khởi tạo / gán biến `lines`.\n4. Trả về kết quả cho caller.\n5. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    }
+  ]
+}

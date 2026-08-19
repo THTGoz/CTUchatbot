@@ -1,0 +1,297 @@
+{
+  "file_name": "quyche_llm_service.py",
+  "file_path": "backend/app/services/qchv/quyche_llm_service.py",
+  "bien_chung": [
+    {
+      "ten_bien": "logger",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "logging.getLogger('app.quyche_llm')"
+    },
+    {
+      "ten_bien": "OLLAMA_BASE_URL",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "_get_env('OLLAMA_BASE_URL', 'OLLAMA_HOST', default='http://localhost:11434').rstrip('/')"
+    },
+    {
+      "ten_bien": "OLLAMA_GENERATE_URL",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "os.getenv('OLLAMA_GENERATE_URL', f'{OLLAMA_BASE_URL}/api/generate')"
+    },
+    {
+      "ten_bien": "OLLAMA_CHAT_URL",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "os.getenv('OLLAMA_CHAT_URL', f'{OLLAMA_BASE_URL}/api/chat')"
+    },
+    {
+      "ten_bien": "DEFAULT_TIMEOUT_SECONDS",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "int(os.getenv('OLLAMA_TIMEOUT_SECONDS', '180'))"
+    },
+    {
+      "ten_bien": "MODEL_PRIMARY_9B",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "_get_env('QWEN3_5_MODEL_9B', 'OLLAMA_MODEL_9B', default='qwen3.5:9b')"
+    },
+    {
+      "ten_bien": "MODEL_AUX_7B",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "_get_env('QWEN2_5_MODEL_7B', 'OLLAMA_MODEL_7B', default='qwen2.5-coder:7b-instruct')"
+    },
+    {
+      "ten_bien": "MODEL_AUX_4B",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "_get_env('QWEN3_5_MODEL_4B', 'OLLAMA_MODEL_4B', default='qwen3.5:4b')"
+    },
+    {
+      "ten_bien": "EMBEDDING_MODEL_NAME",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "os.getenv('EMBEDDING_MODEL_NAME', 'BAAI/bge-m3')"
+    },
+    {
+      "ten_bien": "VANBAN_MAP",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "{'quychehocvu': 'quychehocvu', 'quydinhdaotaotructuyen': 'quydinhdaotaotructuyen', 'QCDTVHVL': 'QCDTVHVL', 'QCDTTuXa': 'QCDTTuXa'}"
+    },
+    {
+      "ten_bien": "VANBAN_DISPLAY",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "{'quychehocvu': 'Quy chế Học vụ', 'quydinhdaotaotructuyen': 'Quy định Đào tạo Trực tuyến', 'QCDTVHVL': 'Quy chế Đào tạo Vừa học vừa làm', 'QCDTTuXa': 'Quy chế Đào tạo Từ xa'}"
+    },
+    {
+      "ten_bien": "VANBAN_KEYWORDS",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "{'quydinhdaotaotructuyen': ['trực tuyến', 'online', 'e-learning', 'đào tạo trực tuyến'], 'QCDTVHVL': ['vừa học vừa làm', 'vhvl', 'tại chức', 'hệ vừa học'], 'QCDTTuXa': ['từ xa', 'đào tạo từ xa', 'hệ t"
+    },
+    {
+      "ten_bien": "VANBAN_CLASSIFY_SYSTEM",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "'Bạn là hệ thống phân loại văn bản quy chế đào tạo của Đại học Cần Thơ (CTU).\\n## Nhiệm vụ:\\nDựa vào câu hỏi, phân loại văn bản quy chế đào tạo liên quan nhất mà người hỏi đang đề cập tới, dựa trên 4 "
+    },
+    {
+      "ten_bien": "PREPROCESS_SYSTEM",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "'Bạn là công cụ CHUẨN HÓA văn bản, KHÔNG phải trợ lý giải đáp.\\n## Nhiệm vụ:\\n1. Sửa lỗi chính tả, gõ phím, thiếu dấu tiếng Việt.\\n2. CHỈ đổi số sau từ \"Chương\" sang số La Mã. VD: \"chương 1\" → \"Chương"
+    },
+    {
+      "ten_bien": "ANSWER_SYSTEM",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "'Bạn là trợ lý tư vấn đào tạo Đại học Cần Thơ (CTU).\\n\\n## Nhiệm vụ\\nCHỈ trả lời câu hỏi dựa trên NỘI DUNG ĐƯỢC CUNG CẤP.\\n\\n## Quy tắc bắt buộc\\n- Chỉ sử dụng thông tin trong CONTEXT, không dùng kiến"
+    },
+    {
+      "ten_bien": "quyche_llm_service",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "QuyCheLLMService()"
+    }
+  ],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Fallback / Phản Hồi Mặc Định",
+      "noi_dung_rule": "Phản hồi dự phòng khi cơ sở dữ liệu không tìm thấy dữ liệu phù hợp",
+      "dieu_kien_va_hanh_dong": "Trả về thông báo hướng dẫn hoặc gọi LLM trả lời xã giao"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "_load_env_files",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_load_env_files` của file `quyche_llm_service.py`",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "None",
+        "mo_ta": "Kết quả trả về của hàm `_load_env_files`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "load_dotenv",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "Path(__file__).resolve",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "Path",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/qchv/quyche_llm_service.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Khởi tạo / gán biến `backend_root`.\n3. Khởi tạo / gán biến `repo_root`.\n4. Gọi thực thi hàm `load_dotenv`.\n5. Gọi thực thi hàm `load_dotenv`.\n6. Hoàn tất tính toán và trả về kết quả kiểu `None`."
+    },
+    {
+      "ten_ham": "_get_env",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_get_env` của file `quyche_llm_service.py`",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `_get_env`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "os.getenv",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/qchv/quyche_llm_service.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "__init__",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `__init__` của file `quyche_llm_service.py`",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "None",
+        "mo_ta": "Kết quả trả về của hàm `__init__`"
+      },
+      "cac_ham_con_ben_trong": [],
+      "nguon_goc_ham": "backend/app/services/qchv/quyche_llm_service.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Khởi tạo / gán biến `self.model_primary`.\n3. Khởi tạo / gán biến `self.timeout_seconds`.\n4. Hoàn tất tính toán và trả về kết quả kiểu `None`."
+    },
+    {
+      "ten_ham": "_call_llm",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_call_llm` của file `quyche_llm_service.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "messages",
+          "kieu_du_lieu": "list",
+          "mo_ta": "Tham số đầu vào `messages` cho hàm `_call_llm`"
+        },
+        {
+          "ten_tham_so": "temperature",
+          "kieu_du_lieu": "float",
+          "mo_ta": "Tham số đầu vào `temperature` cho hàm `_call_llm`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `_call_llm`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "requests.post",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "resp.raise_for_status",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "resp.json()['message']['content'].strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "logger.error",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "resp.json",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/qchv/quyche_llm_service.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (messages, temperature).\n2. Khởi tạo / gán biến `url`.\n3. Khởi tạo / gán biến `payload`.\n4. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "preprocess_question",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `preprocess_question` của file `quyche_llm_service.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "raw",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `raw` cho hàm `preprocess_question`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `preprocess_question`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "self._call_llm",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "result.strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "raw.strip",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/qchv/quyche_llm_service.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (raw).\n2. Khởi tạo / gán biến `msgs`.\n3. Khởi tạo / gán biến `result`.\n4. Kiểm tra điều kiện rẽ nhánh `not result or len(result) > 500`.\n5. Trả về kết quả cho caller.\n6. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "detect_vanban",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `detect_vanban` của file `quyche_llm_service.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "question",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `question` cho hàm `detect_vanban`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `detect_vanban`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "question.lower",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "VANBAN_KEYWORDS.items",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "logger.info",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._call_llm",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/qchv/quyche_llm_service.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (question).\n2. Khởi tạo / gán biến `q_lower`.\n3. Khởi tạo / gán biến `msgs`.\n4. Khởi tạo / gán biến `raw_out`.\n5. Khởi tạo / gán biến `default_result`.\n6. Gọi thực thi hàm `logger.info`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "generate_answer",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `generate_answer` của file `quyche_llm_service.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "question",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `question` cho hàm `generate_answer`"
+        },
+        {
+          "ten_tham_so": "context",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `context` cho hàm `generate_answer`"
+        },
+        {
+          "ten_tham_so": "history",
+          "kieu_du_lieu": "list",
+          "mo_ta": "Tham số đầu vào `history` cho hàm `generate_answer`"
+        },
+        {
+          "ten_tham_so": "vb_display",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `vb_display` cho hàm `generate_answer`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `generate_answer`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "self._call_llm",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/qchv/quyche_llm_service.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (question, context, history, vb_display).\n2. Khởi tạo / gán biến `history_msgs`.\n3. Khởi tạo / gán biến `source_note`.\n4. Khởi tạo / gán biến `user_content`.\n5. Khởi tạo / gán biến `messages`.\n6. Trả về kết quả cho caller.\n7. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    }
+  ]
+}

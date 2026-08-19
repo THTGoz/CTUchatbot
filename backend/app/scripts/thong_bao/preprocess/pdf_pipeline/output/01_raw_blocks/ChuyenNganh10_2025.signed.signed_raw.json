@@ -1,0 +1,1149 @@
+{
+  "ten_file": "ChuyenNganh10_2025.signed.signed.pdf",
+  "trang": [
+    {
+      "so_trang": 1,
+      "kich_thuoc": [
+        595.32,
+        842.04
+      ],
+      "items": [
+        {
+          "loai": "van_ban",
+          "bbox": [
+            78.02,
+            56.97,
+            536.24,
+            116.22
+          ],
+          "noi_dung": "BỘ GIÁO DỤC VÀ ĐÀO TẠO CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM\nTRƯỜNG ĐẠI HỌC CẦN THƠ\nĐộc lập - Tự do - Hạnh phúc\nSố: 6293/QĐ-ĐHCT\nCần Thơ, ngày 17 tháng 11năm 2025"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            199.61,
+            132.09,
+            424.13,
+            163.74
+          ],
+          "noi_dung": "QUYẾT ĐỊNH\nVề việc thay đổi ngành học cho sinh viên"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            172.22,
+            179.27,
+            451.41,
+            193.62
+          ],
+          "noi_dung": "HIỆU TRƯỞNG TRƯỜNG ĐẠI HỌC CẦN THƠ"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.1,
+            211.79,
+            538.66,
+            241.14
+          ],
+          "noi_dung": "Căn cứ Luật Giáo dục đại học ngày 18 tháng 6 năm 2012 và Luật sửa đổi, bổ\nsung một số điều của Luật Giáo dục đại học ngày 19 tháng 11 năm 2018;"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.1,
+            247.67,
+            538.78,
+            291.93
+          ],
+          "noi_dung": "Căn cứ Nghị định số 99/2019/NĐ-CP ngày 30 tháng 12 năm 2019 quy định chi\ntiết và hướng dẫn thi hành một số điều của Luật sửa đổi, bổ sung một số điều của Luật\nGiáo dục đại học;"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.1,
+            292.58,
+            538.78,
+            381.69
+          ],
+          "noi_dung": "Căn cứ Nghị quyết số 99/NQ-HĐT ngày 19 tháng 4 năm 2023 của Hội đồng\nTrường Đại học Cần Thơ ban hành Quy chế Tổ chức và hoạt động của Trường Đại học\nCần Thơ; Nghị quyết số 181/NQ-HĐT ngày 19 tháng 4 năm 2024 và Nghị quyết 185/NQ\n– HĐT ngày 03 tháng 7 năm 2024 của Hội đồng trường Trường Đại học Cần Thơ về\nsửa đổi, bổ sung một số điều của Quy chế tổ chức và hoạt động Trường Đại học Cần\nThơ;"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.1,
+            382.22,
+            538.66,
+            426.45
+          ],
+          "noi_dung": "Căn cứ Quy định Công tác học vụ dành cho sinh viên trình độ đại học hệ chính\nquy, ban hành kèm theo Quyết định số 3266/QĐ-ĐHCT, ngày 15/8/2024 của Hiệu\ntrưởng Trường Đại học Cần Thơ;"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.1,
+            427.1,
+            538.78,
+            456.47
+          ],
+          "noi_dung": "Căn cứ Đơn xin chuyển chương trình, ngành đào tạo của sinh viên, ý kiến của\nphụ huynh và ý kiến của Thủ trưởng đơn vị có liên quan;"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.1,
+            457.0,
+            538.65,
+            486.35
+          ],
+          "noi_dung": "Căn cứ theo Tờ trình 431 ngày 13/11/2025 của Phòng Công tác Sinh viên về việc\nsinh viên xin chuyển ngành đợt tháng 10 năm 2025"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            121.1,
+            487.0,
+            394.32,
+            501.35
+          ],
+          "noi_dung": "Theo đề nghị của Trưởng phòng Công tác Sinh viên,"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            261.29,
+            508.22,
+            362.42,
+            524.83
+          ],
+          "noi_dung": "QUYẾT ĐỊNH:"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.1,
+            531.16,
+            538.78,
+            560.39
+          ],
+          "noi_dung": "Điều 1. Chấp thuận cho 69 sinh viên có tên sau đây thuộc Trường Đại học Cần\nThơ được chuyển ngành học từ học kỳ 2, năm học 2025 – 2026 theo nguyện vọng:"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            254.69,
+            561.04,
+            369.11,
+            575.39
+          ],
+          "noi_dung": "(Danh sách kèm theo)"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.1,
+            581.92,
+            538.78,
+            611.27
+          ],
+          "noi_dung": "Điều 2. Mọi chế độ, quyền lợi của sinh viên được tiếp tục thực hiện khi chuyển\nsang lớp học mới."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.1,
+            617.83,
+            538.66,
+            677.06
+          ],
+          "noi_dung": "Điều 3. Quyết định có hiệu lực kể từ ngày ký. Chánh văn phòng Trường Đại học\nCần Thơ; các Trưởng phòng: Công tác Sinh viên, Kế hoạch và Tài chính, Đào tạo; Thủ\ntrưởng các đơn vị có liên quan và sinh viên có tên tại Điều 1 chịu trách nhiệm thi hành\nquyết định này./."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.1,
+            684.07,
+            476.33,
+            784.58
+          ],
+          "noi_dung": "HIỆU TRƯỞNG\nNơi nhận:\n- Như Điều 3;\n- Lưu: VT,CTSV.\nTrần Trung Tính"
+        }
+      ]
+    },
+    {
+      "so_trang": 2,
+      "kich_thuoc": [
+        842.04,
+        595.32
+      ],
+      "items": [
+        {
+          "loai": "van_ban",
+          "bbox": [
+            200.66,
+            42.81,
+            687.56,
+            72.54
+          ],
+          "noi_dung": "BỘ GIÁO DỤC VÀ ĐÀO TẠO CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM\nTRƯỜNG ĐẠI HỌC CẦN THƠ\nĐộc lập - Tự do - Hạnh phúc"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            122.18,
+            87.83,
+            719.83,
+            118.14
+          ],
+          "noi_dung": "DANH SÁCH SINH VIÊN CHUYỂN NGÀNH ĐỢT THÁNG 10/2025\n(Kèm theo Quyết định số /QĐ – ĐHCT ngày tháng năm 2025 của Hiệu trưởng Trường Đại học Cần Thơ)"
+        },
+        {
+          "loai": "bang",
+          "bbox": [
+            56.86,
+            133.68,
+            833.06,
+            518.16
+          ],
+          "du_lieu": [
+            [
+              "Stt",
+              "Mã SV",
+              "Họ và tên",
+              "Khoá",
+              "Phương\nthức\nxét\nchuyển",
+              "Lớp cũ",
+              "Lớp\nchuyển đến",
+              "Ngành chuyển đến",
+              "Đơn vị chuyển đến"
+            ],
+            [
+              "1",
+              "B2304911",
+              "Nguyễn Trọng\nNhân",
+              "49",
+              "học bạ\nTHPT",
+              "TN23T1A1",
+              "XH2380A1",
+              "Thông tin - Thư viện",
+              "Khoa Khoa học Chính trị, Xã hội và Nhân\nvăn"
+            ],
+            [
+              "2",
+              "B2402147",
+              "Lê Minh Lộc",
+              "50",
+              "học bạ\nTHPT",
+              "HG2423A2",
+              "ML24U3A1",
+              "Triết học",
+              "Khoa Khoa học Chính trị, Xã hội và Nhân\nvăn"
+            ],
+            [
+              "3",
+              "B2407361",
+              "Lê Thế Bảo",
+              "50",
+              "học bạ\nTHPT",
+              "TN24T7F1",
+              "ML24U3A1",
+              "Triết học",
+              "Khoa Khoa học Chính trị, Xã hội và Nhân\nvăn"
+            ],
+            [
+              "4",
+              "B2407987",
+              "Nguyễn Thị\nHuỳnh Trâm",
+              "50",
+              "học bạ\nTHPT",
+              "HG24U7A1",
+              "ML24U3A1",
+              "Triết học",
+              "Khoa Khoa học Chính trị, Xã hội và Nhân\nvăn"
+            ],
+            [
+              "5",
+              "B2408185",
+              "Nguyễn Tường\nVy",
+              "50",
+              "học bạ\nTHPT",
+              "FL24Z8A1",
+              "XH24W7A1",
+              "Văn học",
+              "Khoa Khoa học Chính trị, Xã hội và Nhân\nvăn"
+            ],
+            [
+              "6",
+              "B2408376",
+              "Nguyễn Hoàng\nThành Đạt",
+              "50",
+              "điểm thi\nTHPT",
+              "HG24V1A1",
+              "LK2463A2",
+              "Luật\n(chuyên ngành Luật hành\nchính)",
+              "Khoa Luật"
+            ],
+            [
+              "7",
+              "B2410482",
+              "Nguyễn Ngọc\nTường Vy",
+              "50",
+              "học bạ\nTHPT",
+              "NN24S6A1",
+              "MT2438A1",
+              "Khoa học môi trường",
+              "Khoa Môi trường và TNTN"
+            ],
+            [
+              "8",
+              "B2405680",
+              "Thái Anh Nhật",
+              "50",
+              "điểm thi\nTHPT",
+              "MT24D4A1",
+              "MT2425A2",
+              "Quản lý đất đai",
+              "Khoa Môi trường và TNTN"
+            ],
+            [
+              "9",
+              "B2400760",
+              "Nguyễn Duy Bảo",
+              "50",
+              "học bạ\nTHPT",
+              "TS2413A3",
+              "MT24S8A1",
+              "Quy hoạch vùng và đô\nthị",
+              "Khoa Môi trường và TNTN"
+            ],
+            [
+              "10",
+              "B2401724",
+              "Lê Kim Vy",
+              "50",
+              "điểm thi\nTHPT",
+              "KT2422A3",
+              "FL24V1A3",
+              "Ngôn ngữ Anh",
+              "Khoa Ngoại ngữ"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "so_trang": 3,
+      "kich_thuoc": [
+        842.04,
+        595.32
+      ],
+      "items": [
+        {
+          "loai": "bang",
+          "bbox": [
+            56.86,
+            42.82,
+            833.06,
+            540.24
+          ],
+          "du_lieu": [
+            [
+              "Stt",
+              "Mã SV",
+              "Họ và tên",
+              "Khoá",
+              "Phương\nthức\nxét\nchuyển",
+              "Lớp cũ",
+              "Lớp\nchuyển đến",
+              "Ngành chuyển đến",
+              "Đơn vị chuyển đến"
+            ],
+            [
+              "11",
+              "B2409112",
+              "Cao Thị Kim Lộc",
+              "50",
+              "điểm thi\nTHPT",
+              "ML24V9A1",
+              "FL24Z8A1",
+              "Ngôn ngữ Anh\n(chuyên ngành Biên -\nPhiên dịch)",
+              "Khoa Ngoại ngữ"
+            ],
+            [
+              "12",
+              "B2408393",
+              "Trần Tuyết Ngân",
+              "50",
+              "điểm thi\nTHPT",
+              "HG24V1A1",
+              "FL24V1F3",
+              "Ngôn ngữ Anh\n(chương trình chất lượng\ncao)",
+              "Khoa Ngoại ngữ"
+            ],
+            [
+              "13",
+              "B2408411",
+              "Nguyễn Như\nThảo",
+              "50",
+              "điểm thi\nTHPT",
+              "HG24V1A1",
+              "FL24V1F3",
+              "Ngôn ngữ Anh\n(chương trình chất lượng\ncao)",
+              "Khoa Ngoại ngữ"
+            ],
+            [
+              "14",
+              "B2408412",
+              "Nguyễn Quốc\nThịnh",
+              "50",
+              "điểm thi\nTHPT",
+              "HG24V1A1",
+              "FL24V1F3",
+              "Ngôn ngữ Anh\n(chương trình chất lượng\ncao)",
+              "Khoa Ngoại ngữ"
+            ],
+            [
+              "15",
+              "B2408885",
+              "Võ Duy Thịnh",
+              "50",
+              "học bạ\nTHPT",
+              "DI24V7A2",
+              "FL24Z9A1",
+              "Ngôn ngữ Pháp",
+              "Khoa Ngoại ngữ"
+            ],
+            [
+              "16",
+              "B2409044",
+              "Cao Hồng Ngọc\nMai",
+              "50",
+              "học bạ\nTHPT",
+              "NN24V8A1",
+              "FL24Z9A1",
+              "Ngôn ngữ Pháp",
+              "Khoa Ngoại ngữ"
+            ],
+            [
+              "17",
+              "B2400710",
+              "Nguyễn Thái Duy\nLâm",
+              "50",
+              "điểm thi\nTHPT",
+              "TS2413A2",
+              "TN24V6F1",
+              "Công nghệ Kỹ thuật\nhóa học (chương trình\nchất lượng cao)",
+              "Trường Bách khoa"
+            ],
+            [
+              "18",
+              "B2405214",
+              "Phạm Trần Minh\nQuân",
+              "50",
+              "V-sat",
+              "TN24B1A1",
+              "TN2484A1",
+              "Kỹ thuật cơ khí\n(Chuyên ngành Cơ khí\nchế tạo máy)",
+              "Trường Bách khoa"
+            ],
+            [
+              "19",
+              "B2405235",
+              "Lý Anh Tuấn",
+              "50",
+              "học bạ\nTHPT",
+              "TN24B1A1",
+              "TN2484A1",
+              "Kỹ thuật cơ khí\n(Chuyên ngành Cơ khí\nchế tạo máy)",
+              "Trường Bách khoa"
+            ],
+            [
+              "20",
+              "B2405750",
+              "Trương Khải Văn",
+              "50",
+              "điểm thi\nTHPT",
+              "TN24D5A1",
+              "TN2484A1",
+              "Kỹ thuật cơ khí\n(Chuyên ngành Cơ khí\nchế tạo máy)",
+              "Trường Bách khoa"
+            ],
+            [
+              "21",
+              "B2305630",
+              "Nguyễn Hồng\nHiển Đạt",
+              "49",
+              "điểm thi\nTHPT",
+              "KH23U1A1",
+              "TN23T5A1",
+              "Kỹ thuật điện",
+              "Trường Bách khoa"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "so_trang": 4,
+      "kich_thuoc": [
+        842.04,
+        595.32
+      ],
+      "items": [
+        {
+          "loai": "bang",
+          "bbox": [
+            56.86,
+            42.82,
+            833.06,
+            539.52
+          ],
+          "du_lieu": [
+            [
+              "Stt",
+              "Mã SV",
+              "Họ và tên",
+              "Khoá",
+              "Phương\nthức\nxét\nchuyển",
+              "Lớp cũ",
+              "Lớp\nchuyển đến",
+              "Ngành chuyển đến",
+              "Đơn vị chuyển đến"
+            ],
+            [
+              "22",
+              "B2407697",
+              "Mai Anh Quốc",
+              "50",
+              "điểm thi\nTHPT",
+              "KH24U1A2",
+              "TN24T5F1",
+              "Kỹ thuật điện\n(chương trình chất lượng\ncao)",
+              "Trường Bách khoa"
+            ],
+            [
+              "23",
+              "B2400293",
+              "Lê Duy Tiến",
+              "50",
+              "điểm thi\nTHPT",
+              "DA2408A4",
+              "TN24T7A2",
+              "Kỹ thuật xây dựng",
+              "Trường Bách khoa"
+            ],
+            [
+              "24",
+              "B2408900",
+              "Trần Thanh\nCường",
+              "50",
+              "điểm thi\nTHPT",
+              "HG24V7A1",
+              "TN24T7A2",
+              "Kỹ thuật xây dựng",
+              "Trường Bách khoa"
+            ],
+            [
+              "25",
+              "B2407493",
+              "Dương Hoàng\nPhúc",
+              "50",
+              "điểm thi\nTHPT",
+              "TN24T8A1",
+              "TN24T1A2",
+              "Kỹ thuật xây dựng công\ntrình giao thông",
+              "Trường Bách khoa"
+            ],
+            [
+              "26",
+              "B2407494",
+              "Đào Văn Quang\nPhúc",
+              "50",
+              "điểm thi\nTHPT",
+              "TN24T8A1",
+              "TN24T1A1",
+              "Kỹ thuật xây dựng công\ntrình giao thông",
+              "Trường Bách khoa"
+            ],
+            [
+              "27",
+              "B2410237",
+              "Huỳnh Phúc Tiến",
+              "50",
+              "học bạ\nTHPT",
+              "MT24X7A1",
+              "TN24T8A1",
+              "Kỹ thuật xây dựng công\ntrình thủy",
+              "Trường Bách khoa"
+            ],
+            [
+              "28",
+              "B2405176",
+              "Diệp Hoàng Kha",
+              "50",
+              "học bạ\nTHPT",
+              "TN24B1A1",
+              "TN24D5A1",
+              "Logistics và Quản lý\nchuỗi cung ứng",
+              "Trường Bách khoa"
+            ],
+            [
+              "29",
+              "B2409205",
+              "Phan Tấn Đạt",
+              "50",
+              "học bạ\nTHPT",
+              "KT24W1A1",
+              "TN24D5A1",
+              "Logistics và Quản lý\nchuỗi cung ứng",
+              "Trường Bách khoa"
+            ],
+            [
+              "30",
+              "B2410281",
+              "Lê Thị Kim Ngân",
+              "50",
+              "V-sat",
+              "MT24X7A2",
+              "TN2483A1",
+              "Quản lý công nghiệp",
+              "Trường Bách khoa"
+            ],
+            [
+              "31",
+              "B2410852",
+              "Sơn Ngọc Tú",
+              "50",
+              "điểm thi\nTHPT",
+              "FL24Z9A2",
+              "TN2483A1",
+              "Quản lý công nghiệp",
+              "Trường Bách khoa"
+            ],
+            [
+              "32",
+              "B2408897",
+              "Huỳnh Trung Bảo",
+              "50",
+              "điểm thi\nTHPT",
+              "HG24V7A1",
+              "DI24D2A1",
+              "An toàn thông tin",
+              "Trường Công nghệ Thông tin & TT"
+            ],
+            [
+              "33",
+              "B2405222",
+              "Nguyễn Hoàng\nThắng",
+              "50",
+              "điểm thi\nTHPT",
+              "TN24B1A1",
+              "DI2495A1",
+              "Hệ thống thông tin",
+              "Trường Công nghệ Thông tin & TT"
+            ],
+            [
+              "34",
+              "B2402800",
+              "Nguyễn Văn Phú",
+              "50",
+              "điểm thi\nTHPT",
+              "KT2445A1",
+              "DI24Z6A1",
+              "Khoa học máy tính",
+              "Trường Công nghệ Thông tin & TT"
+            ],
+            [
+              "35",
+              "B2402918",
+              "Nguyễn Điền\nNguyên",
+              "50",
+              "điểm thi\nTHPT",
+              "TN2484A1",
+              "DI24Z6A1",
+              "Khoa học máy tính",
+              "Trường Công nghệ Thông tin & TT"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "so_trang": 5,
+      "kich_thuoc": [
+        842.04,
+        595.32
+      ],
+      "items": [
+        {
+          "loai": "bang",
+          "bbox": [
+            56.86,
+            42.82,
+            833.06,
+            549.72
+          ],
+          "du_lieu": [
+            [
+              "Stt",
+              "Mã SV",
+              "Họ và tên",
+              "Khoá",
+              "Phương\nthức\nxét\nchuyển",
+              "Lớp cũ",
+              "Lớp\nchuyển đến",
+              "Ngành chuyển đến",
+              "Đơn vị chuyển đến"
+            ],
+            [
+              "36",
+              "B2408815",
+              "Trần Cẩm Sơn",
+              "50",
+              "điểm thi\nTHPT",
+              "DI24V7A1",
+              "DI24Z6A1",
+              "Khoa học máy tính",
+              "Trường Công nghệ Thông tin & TT"
+            ],
+            [
+              "37",
+              "B2408898",
+              "Nguyễn Gia Bảo",
+              "50",
+              "điểm thi\nTHPT",
+              "HG24V7A1",
+              "DI24Z6A1",
+              "Khoa học máy tính",
+              "Trường Công nghệ Thông tin & TT"
+            ],
+            [
+              "38",
+              "B2401507",
+              "Nguyễn Ngọc\nQuốc Anh",
+              "50",
+              "điểm thi\nTHPT",
+              "KT2421F1",
+              "KT2420A1",
+              "Kế toán",
+              "Trường Kinh tế"
+            ],
+            [
+              "39",
+              "B2401646",
+              "Cao Huỳnh Hồng\nPhúc",
+              "50",
+              "V-sat",
+              "KT2422A2",
+              "KT24V5A1",
+              "Kiểm toán",
+              "Trường Kinh tế"
+            ],
+            [
+              "40",
+              "B2401753",
+              "Đặng Huỳnh Anh\nKiệt",
+              "50",
+              "điểm thi\nTHPT",
+              "HG2422A1",
+              "KT2423A2",
+              "Kinh tế nông nghiệp",
+              "Trường Kinh tế"
+            ],
+            [
+              "41",
+              "B2402170",
+              "Huỳnh Thị Ngọc\nNhi",
+              "50",
+              "điểm thi\nTHPT",
+              "HG2423A1",
+              "KT2423A2",
+              "Kinh tế nông nghiệp",
+              "Trường Kinh tế"
+            ],
+            [
+              "42",
+              "B2305209",
+              "Đỗ Thái Dân",
+              "49",
+              "điểm thi\nTHPT",
+              "TN23T6A1",
+              "KT2390A1",
+              "Kinh tế tài nguyên thiên\nnhiên",
+              "Trường Kinh tế"
+            ],
+            [
+              "43",
+              "B2404291",
+              "Huỳnh Ngân",
+              "50",
+              "V-sat",
+              "XH2480A1",
+              "KT2490A1",
+              "Kinh tế tài nguyên thiên\nnhiên",
+              "Trường Kinh tế"
+            ],
+            [
+              "44",
+              "B2407933",
+              "Nhâm Ngọc Trâm\nAnh",
+              "50",
+              "học bạ\nTHPT",
+              "HG24U7A1",
+              "KT2490A1",
+              "Kinh tế tài nguyên thiên\nnhiên",
+              "Trường Kinh tế"
+            ],
+            [
+              "45",
+              "B2407540",
+              "Nguyễn Thị Bích\nNgọc",
+              "50",
+              "V-sat",
+              "DI24T9A1",
+              "KT24W2A2",
+              "Quản trị dịch vụ du lịch\nvà lữ hành",
+              "Trường Kinh tế"
+            ],
+            [
+              "46",
+              "B2407559",
+              "Nguyễn Thị\nTrang",
+              "50",
+              "V-sat",
+              "DI24T9A1",
+              "KT24W2A2",
+              "Quản trị dịch vụ du lịch\nvà lữ hành",
+              "Trường Kinh tế"
+            ],
+            [
+              "47",
+              "B2410206",
+              "Đinh Đăng Khôi",
+              "50",
+              "V-sat",
+              "MT24X7A1",
+              "KT24W2A2",
+              "Quản trị dịch vụ du lịch\nvà lữ hành",
+              "Trường Kinh tế"
+            ],
+            [
+              "48",
+              "B2407581",
+              "Quang Thanh\nKhang",
+              "50",
+              "học bạ\nTHPT",
+              "DI24T9A2",
+              "KT2422A3",
+              "Quản trị kinh doanh",
+              "Trường Kinh tế"
+            ],
+            [
+              "49",
+              "B2401822",
+              "Trần Hạnh\nNguyên",
+              "50",
+              "điểm thi\nTHPT",
+              "KT2422F1",
+              "KT2421F1",
+              "Tài chính - Ngân hàng\n(chương trình chất\nlượng cao)",
+              "Trường Kinh tế"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "so_trang": 6,
+      "kich_thuoc": [
+        842.04,
+        595.32
+      ],
+      "items": [
+        {
+          "loai": "bang",
+          "bbox": [
+            56.86,
+            42.82,
+            833.06,
+            547.68
+          ],
+          "du_lieu": [
+            [
+              "Stt",
+              "Mã SV",
+              "Họ và tên",
+              "Khoá",
+              "Phương\nthức\nxét\nchuyển",
+              "Lớp cũ",
+              "Lớp\nchuyển đến",
+              "Ngành chuyển đến",
+              "Đơn vị chuyển đến"
+            ],
+            [
+              "50",
+              "B2400054",
+              "Thạch Thị Tuyết\nAnh",
+              "50",
+              "điểm thi\nTHPT",
+              "DA2408A1",
+              "KH24T3A2",
+              "Hóa dược",
+              "Trường Khoa học Tự nhiên"
+            ],
+            [
+              "51",
+              "B2401683",
+              "Nguyễn Phúc Huy",
+              "50",
+              "điểm thi\nTHPT",
+              "KT2422A3",
+              "KH24T3A2",
+              "Hóa dược",
+              "Trường Khoa học Tự nhiên"
+            ],
+            [
+              "52",
+              "B2403024",
+              "Nguyễn Ngọc\nThảo Nguyên",
+              "50",
+              "điểm thi\nTHPT",
+              "MT2457A1",
+              "KH24D3A2",
+              "Thống kê",
+              "Trường Khoa học Tự nhiên"
+            ],
+            [
+              "53",
+              "B2407132",
+              "Trần Thanh Sang",
+              "50",
+              "điểm thi\nTHPT",
+              "TN24T6A1",
+              "KH24D3A2",
+              "Thống kê",
+              "Trường Khoa học Tự nhiên"
+            ],
+            [
+              "54",
+              "B2407135",
+              "Nguyễn Ngọc Tấn",
+              "50",
+              "học bạ\nTHPT",
+              "TN24T6A2",
+              "KH24D3A2",
+              "Thống kê",
+              "Trường Khoa học Tự nhiên"
+            ],
+            [
+              "55",
+              "B2402156",
+              "Trương Thanh\nMỹ",
+              "50",
+              "học bạ\nTHPT",
+              "HG2423A1",
+              "KH24U1A1",
+              "Vật lý kỹ thuật",
+              "Trường Khoa học Tự nhiên"
+            ],
+            [
+              "56",
+              "B2406882",
+              "Nguyễn Văn Mau",
+              "50",
+              "học bạ\nTHPT",
+              "TN24T4A1",
+              "KH24U1A2",
+              "Vật lý kỹ thuật",
+              "Trường Khoa học Tự nhiên"
+            ],
+            [
+              "57",
+              "B2400094",
+              "Dương Ngọc\nTrung Kiên",
+              "50",
+              "điểm thi\nTHPT",
+              "DA2408A2",
+              "NN2473A2",
+              "Bảo vệ thực vật",
+              "Trường Nông nghiệp"
+            ],
+            [
+              "58",
+              "B2407479",
+              "Võ Chí Khang",
+              "50",
+              "học bạ\nTHPT",
+              "TN24T8A1",
+              "NN24X9A1",
+              "Công nghệ rau hoa quả\nvà cảnh quan",
+              "Trường Nông nghiệp"
+            ],
+            [
+              "59",
+              "B2408042",
+              "Nguyễn Ngọc\nThành",
+              "50",
+              "học bạ\nTHPT",
+              "HG24U7A2",
+              "NN24X9A1",
+              "Công nghệ rau hoa quả\nvà cảnh quan",
+              "Trường Nông nghiệp"
+            ],
+            [
+              "60",
+              "B2407567",
+              "Phạm Nhân Anh",
+              "50",
+              "điểm thi\nTHPT",
+              "DI24T9A2",
+              "NN2467A3",
+              "Thú y",
+              "Trường Nông nghiệp"
+            ],
+            [
+              "61",
+              "B2400695",
+              "Phan Thị Kim\nHận",
+              "50",
+              "điểm thi\nTHPT",
+              "TS2413A2",
+              "TS2482A1",
+              "Công nghệ Chế biến\nthủy sản",
+              "Trường Thuỷ sản"
+            ],
+            [
+              "62",
+              "B2401780",
+              "Lý Thị Na Rươl",
+              "50",
+              "học bạ\nTHPT",
+              "HG2422A1",
+              "TS2482A1",
+              "Công nghệ Chế biến\nthủy sản",
+              "Trường Thuỷ sản"
+            ],
+            [
+              "63",
+              "B2408919",
+              "Phạm Minh Luân",
+              "50",
+              "điểm thi\nTHPT",
+              "HG24V7A1",
+              "TS2413A1",
+              "Nuôi trồng thủy sản",
+              "Trường Thuỷ sản"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "so_trang": 7,
+      "kich_thuoc": [
+        842.04,
+        595.32
+      ],
+      "items": [
+        {
+          "loai": "bang",
+          "bbox": [
+            56.88,
+            42.84,
+            833.04,
+            291.65
+          ],
+          "du_lieu": [
+            [
+              "Stt",
+              "Mã SV",
+              "Họ và tên",
+              "Khoá",
+              "Phương\nthức\nxét\nchuyển",
+              "Lớp cũ",
+              "Lớp\nchuyển đến",
+              "Ngành chuyển đến",
+              "Đơn vị chuyển đến"
+            ],
+            [
+              "64",
+              "B2304091",
+              "Thái Thanh Trúc",
+              "49",
+              "điểm thi\nTHPT",
+              "DI23D2A1",
+              "DA2366A1",
+              "Công nghệ Sinh học",
+              "Viện Công Nghệ Sinh học và Thực phẩm"
+            ],
+            [
+              "65",
+              "B2410385",
+              "Trương Thiên\nThanh",
+              "50",
+              "điểm thi\nTHPT",
+              "NN24S6A1",
+              "DA2466A3",
+              "Công nghệ Sinh học",
+              "Viện Công Nghệ Sinh học và Thực phẩm"
+            ],
+            [
+              "66",
+              "B2400516",
+              "Trần Huỳnh Cẩm\nHồng",
+              "50",
+              "điểm thi\nTHPT",
+              "DA2408F2",
+              "DA2408A1",
+              "Công nghệ Thực phẩm",
+              "Viện Công Nghệ Sinh học và Thực phẩm"
+            ],
+            [
+              "67",
+              "B2400528",
+              "Võ Văn Năng",
+              "50",
+              "điểm thi\nTHPT",
+              "DA2408F2",
+              "DA2408A1",
+              "Công nghệ Thực phẩm",
+              "Viện Công Nghệ Sinh học và Thực phẩm"
+            ],
+            [
+              "68",
+              "B2400763",
+              "Huỳnh Phúc Danh",
+              "50",
+              "điểm thi\nTHPT",
+              "TS2413A3",
+              "DA2408A1",
+              "Công nghệ Thực phẩm",
+              "Viện Công Nghệ Sinh học và Thực phẩm"
+            ],
+            [
+              "69",
+              "B2404384",
+              "Lâm Thị Như\nTuyết",
+              "50",
+              "điểm thi\nTHPT",
+              "TS2482A1",
+              "DA2408A3",
+              "Công nghệ Thực phẩm",
+              "Viện Công Nghệ Sinh học và Thực phẩm"
+            ]
+          ]
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            56.64,
+            292.1,
+            203.51,
+            306.45
+          ],
+          "noi_dung": "Danh sách có 69 sinh viên./."
+        }
+      ]
+    }
+  ]
+}

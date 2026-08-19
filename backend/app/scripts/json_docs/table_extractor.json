@@ -1,0 +1,61 @@
+{
+  "file_name": "table_extractor.py",
+  "file_path": "backend/app/scripts/table_extractor.py",
+  "bien_chung": [],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Chuẩn Hóa Cấu Trúc Module",
+      "noi_dung_rule": "Tuân thủ quy tắc xử lý và chuẩn hóa mã nguồn của module",
+      "dieu_kien_va_hanh_dong": "Đảm bảo tính toàn vẹn khi thực thi"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "extract_curriculum",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `extract_curriculum` của file `table_extractor.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "pdf_path",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `pdf_path` cho hàm `extract_curriculum`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `extract_curriculum`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "pdfplumber.open",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "enumerate",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "pd.DataFrame",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "page.extract_tables",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "all_rows.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(cell).replace('\\n', ' ').strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(cell).replace",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/table_extractor.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (pdf_path).\n2. Khởi tạo / gán biến `all_rows`.\n3. Khởi tạo / gán biến `table_settings`.\n4. Kiểm tra điều kiện rẽ nhánh `all_rows`.\n5. Trả về kết quả cho caller.\n6. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "file_name": "schema.py",
+  "file_path": "backend/app/services/ctdt/schema.py",
+  "bien_chung": [
+    {
+      "ten_bien": "GRAPH_SCHEMA",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "'Nodes:\\n- ChuongTrinhDaoTao(ma_chuong_trinh, khoa, he, ngon_ngu, tong_tin_chi, thoi_gian_dao_tao, thang_diem): Thực thể trung tâm quản lý chương trình đào tạo.\\n- DoiTuongTuyenSinh(noi_dung): Đối tượ"
+    }
+  ],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Chuẩn Hóa Cấu Trúc Module",
+      "noi_dung_rule": "Tuân thủ quy tắc xử lý và chuẩn hóa mã nguồn của module",
+      "dieu_kien_va_hanh_dong": "Đảm bảo tính toàn vẹn khi thực thi"
+    }
+  ],
+  "danh_sach_ham": []
+}

@@ -1,0 +1,84 @@
+{
+  "file_name": "config.py",
+  "file_path": "backend/app/scripts/thong_bao/preprocess/kg_importer/config.py",
+  "bien_chung": [
+    {
+      "ten_bien": "PROJECT_DIR",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "Path(__file__).resolve().parent"
+    },
+    {
+      "ten_bien": "PREPROCESS_DIR",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "PROJECT_DIR.parent"
+    },
+    {
+      "ten_bien": "BACKEND_ROOT",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "Path(__file__).resolve().parents[5]"
+    },
+    {
+      "ten_bien": "DEFAULT_INPUT_DIR",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "PREPROCESS_DIR / 'pdf_pipeline' / 'output' / '06_chunks'"
+    }
+  ],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Fallback / Phản Hồi Mặc Định",
+      "noi_dung_rule": "Phản hồi dự phòng khi cơ sở dữ liệu không tìm thấy dữ liệu phù hợp",
+      "dieu_kien_va_hanh_dong": "Trả về thông báo hướng dẫn hoặc gọi LLM trả lời xã giao"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "load_settings",
+      "chuc_nang": "Đọc cấu hình từ `backend/.env` và áp dụng default an toàn.",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "Settings",
+        "mo_ta": "Kết quả trả về của hàm `load_settings`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "load_dotenv",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "os.getenv('NEO4J_PASSWORD', '').strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "Settings",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "ValueError",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "os.getenv",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "os.getenv('NEO4J_USERNAME', 'neo4j').strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "os.getenv('NEO4J_DATABASE', 'NienLuan2').strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "os.getenv('EMBEDDING_DEVICE', 'cpu').strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "Path",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/kg_importer/config.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Gọi thực thi hàm `load_dotenv`.\n3. Khởi tạo / gán biến `password`.\n4. Kiểm tra điều kiện rẽ nhánh `not password`.\n5. Khởi tạo / gán biến `input_dir`.\n6. Trả về kết quả cho caller.\n7. Hoàn tất tính toán và trả về kết quả kiểu `Settings`."
+    }
+  ]
+}

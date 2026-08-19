@@ -1,0 +1,400 @@
+{
+  "file_name": "pipeline.py",
+  "file_path": "backend/app/scripts/thong_bao/preprocess/pdf_pipeline/pipeline.py",
+  "bien_chung": [
+    {
+      "ten_bien": "ROOT_DIR",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "Path(__file__).resolve().parent"
+    },
+    {
+      "ten_bien": "STAGES_DIR",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "ROOT_DIR / 'stages'"
+    },
+    {
+      "ten_bien": "INPUT_DIR",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "ROOT_DIR / 'input'"
+    },
+    {
+      "ten_bien": "OUTPUT_DIR",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "ROOT_DIR / 'output'"
+    },
+    {
+      "ten_bien": "BACKEND_DIR",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "ROOT_DIR.parents[4]"
+    },
+    {
+      "ten_bien": "PACKAGE_PREFIX",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "'app.scripts.thong_bao.preprocess.pdf_pipeline.stages'"
+    },
+    {
+      "ten_bien": "PIPELINE_STEPS",
+      "kieu_du_lieu": "tuple[PipelineStep, ...]",
+      "gia_tri_hoac_mo_ta": "(PipelineStep(1, 'extract_raw', 'Trích xuất PDF thô', 'input', '01_raw_blocks', 'process_pdf'), PipelineStep(2, 'clean_data', 'Làm sạch dữ liệu', '01_raw_blocks', '02_clean', 'process_file'), Pipeline"
+    }
+  ],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Chuẩn Hóa Cấu Trúc Module",
+      "noi_dung_rule": "Tuân thủ quy tắc xử lý và chuẩn hóa mã nguồn của module",
+      "dieu_kien_va_hanh_dong": "Đảm bảo tính toàn vẹn khi thực thi"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "source_path",
+      "chuc_nang": "Trả về file Python của bước để kiểm tra cấu trúc dự án.",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "Path",
+        "mo_ta": "Kết quả trả về của hàm `source_path`"
+      },
+      "cac_ham_con_ben_trong": [],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/pdf_pipeline/pipeline.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `Path`."
+    },
+    {
+      "ten_ham": "script_path",
+      "chuc_nang": "Alias tương thích với code kiểm tra cấu trúc trước khi sắp xếp lại.",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "Path",
+        "mo_ta": "Kết quả trả về của hàm `script_path`"
+      },
+      "cac_ham_con_ben_trong": [],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/pdf_pipeline/pipeline.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `Path`."
+    },
+    {
+      "ten_ham": "import_path",
+      "chuc_nang": "Trả về module path dùng cho import và ``python -m``.",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `import_path`"
+      },
+      "cac_ham_con_ben_trong": [],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/pdf_pipeline/pipeline.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "output_path",
+      "chuc_nang": "Trả về thư mục output mặc định của bước.",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "Path",
+        "mo_ta": "Kết quả trả về của hàm `output_path`"
+      },
+      "cac_ham_con_ben_trong": [],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/pdf_pipeline/pipeline.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `Path`."
+    },
+    {
+      "ten_ham": "configure_utf8_console",
+      "chuc_nang": "Cho phép in tiếng Việt ổn định trên Windows và tiến trình con.",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "None",
+        "mo_ta": "Kết quả trả về của hàm `configure_utf8_console`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "getattr",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "callable",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "reconfigure",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/pdf_pipeline/pipeline.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Thực hiện các bước tính toán logic bên trong hàm.\n3. Trả về kết quả đầu ra."
+    },
+    {
+      "ten_ham": "select_steps",
+      "chuc_nang": "Chọn một khoảng bước liên tục và kiểm tra thứ tự hợp lệ.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "from_step",
+          "kieu_du_lieu": "int",
+          "mo_ta": "Tham số đầu vào `from_step` cho hàm `select_steps`"
+        },
+        {
+          "ten_tham_so": "to_step",
+          "kieu_du_lieu": "int",
+          "mo_ta": "Tham số đầu vào `to_step` cho hàm `select_steps`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "tuple[PipelineStep, ...]",
+        "mo_ta": "Kết quả trả về của hàm `select_steps`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "tuple",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "ValueError",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/pdf_pipeline/pipeline.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (from_step, to_step).\n2. Kiểm tra điều kiện rẽ nhánh `not 1 <= from_step <= 6 or not 1 <= to_step <= 6`.\n3. Kiểm tra điều kiện rẽ nhánh `from_step > to_step`.\n4. Trả về kết quả cho caller.\n5. Hoàn tất tính toán và trả về kết quả kiểu `tuple[PipelineStep, ...]`."
+    },
+    {
+      "ten_ham": "validate_project",
+      "chuc_nang": "Kiểm tra source và dữ liệu đầu vào trước khi chạy batch.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "selected_steps",
+          "kieu_du_lieu": "tuple[PipelineStep, ...]",
+          "mo_ta": "Tham số đầu vào `selected_steps` cho hàm `validate_project`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "None",
+        "mo_ta": "Kết quả trả về của hàm `validate_project`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "ValueError",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "'\\n'.join",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "FileNotFoundError",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "input_path.is_dir",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "input_path.glob",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "step.source_path.is_file",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/pdf_pipeline/pipeline.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (selected_steps).\n2. Kiểm tra điều kiện rẽ nhánh `not selected_steps`.\n3. Khởi tạo / gán biến `missing_sources`.\n4. Kiểm tra điều kiện rẽ nhánh `missing_sources`.\n5. Khởi tạo / gán biến `first_step`.\n6. Khởi tạo / gán biến `input_path`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `None`."
+    },
+    {
+      "ten_ham": "clean_outputs",
+      "chuc_nang": "Xóa đúng các thư mục output được người dùng chọn bằng ``--clean``.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "selected_steps",
+          "kieu_du_lieu": "tuple[PipelineStep, ...]",
+          "mo_ta": "Tham số đầu vào `selected_steps` cho hàm `clean_outputs`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "None",
+        "mo_ta": "Kết quả trả về của hàm `clean_outputs`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "step.output_path.resolve",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "output_path.exists",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "OUTPUT_DIR.resolve",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "ValueError",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "shutil.rmtree",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/pdf_pipeline/pipeline.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (selected_steps).\n2. Thực hiện các bước tính toán logic bên trong hàm.\n3. Trả về kết quả đầu ra."
+    },
+    {
+      "ten_ham": "run_batch_step",
+      "chuc_nang": "Chạy một bước cho toàn bộ file bằng cùng Python interpreter hiện tại.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "step",
+          "kieu_du_lieu": "PipelineStep",
+          "mo_ta": "Tham số đầu vào `step` cho hàm `run_batch_step`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "float",
+        "mo_ta": "Kết quả trả về của hàm `run_batch_step`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "os.environ.copy",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "time.perf_counter",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "subprocess.run",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "RuntimeError",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/pdf_pipeline/pipeline.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (step).\n2. Khởi tạo / gán biến `separator`.\n3. Gọi thực thi hàm `print`.\n4. Gọi thực thi hàm `print`.\n5. Gọi thực thi hàm `print`.\n6. Gọi thực thi hàm `print`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `float`."
+    },
+    {
+      "ten_ham": "load_step",
+      "chuc_nang": "Nạp module của một bước khi cần, tránh import PyMuPDF ngoài bước 01.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "step",
+          "kieu_du_lieu": "PipelineStep",
+          "mo_ta": "Tham số đầu vào `step` cho hàm `load_step`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "ModuleType",
+        "mo_ta": "Kết quả trả về của hàm `load_step`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "importlib.import_module",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/pdf_pipeline/pipeline.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (step).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `ModuleType`."
+    },
+    {
+      "ten_ham": "expected_output",
+      "chuc_nang": "Tính đúng file mà bước vừa chạy phải tạo ra.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "module",
+          "kieu_du_lieu": "ModuleType",
+          "mo_ta": "Tham số đầu vào `module` cho hàm `expected_output`"
+        },
+        {
+          "ten_tham_so": "step",
+          "kieu_du_lieu": "PipelineStep",
+          "mo_ta": "Tham số đầu vào `step` cho hàm `expected_output`"
+        },
+        {
+          "ten_tham_so": "input_path",
+          "kieu_du_lieu": "Path",
+          "mo_ta": "Tham số đầu vào `input_path` cho hàm `expected_output`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Path",
+        "mo_ta": "Kết quả trả về của hàm `expected_output`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "getattr",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "Path",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "output_name",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/pdf_pipeline/pipeline.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (module, step, input_path).\n2. Kiểm tra điều kiện rẽ nhánh `step.number == 1`.\n3. Khởi tạo / gán biến `output_name`.\n4. Trả về kết quả cho caller.\n5. Hoàn tất tính toán và trả về kết quả kiểu `Path`."
+    },
+    {
+      "ten_ham": "run_single_input",
+      "chuc_nang": "Chạy một PDF hoặc JSON trung gian qua một khoảng bước liên tục.\n\nHàm này được dùng cho chế độ debug một file và kiểm thử golden master.\nMỗi bước ghi vào thư mục con riêng, không thay đổi output chính của dự án.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "input_path",
+          "kieu_du_lieu": "Path",
+          "mo_ta": "Tham số đầu vào `input_path` cho hàm `run_single_input`"
+        },
+        {
+          "ten_tham_so": "output_root",
+          "kieu_du_lieu": "Path",
+          "mo_ta": "Tham số đầu vào `output_root` cho hàm `run_single_input`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Path",
+        "mo_ta": "Kết quả trả về của hàm `run_single_input`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "configure_utf8_console",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "select_steps",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "input_path.expanduser().resolve",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "output_root.expanduser().resolve",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "output_root.mkdir",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "input_path.is_file",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "FileNotFoundError",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "input_path.suffix.casefold",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "ValueError",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "step_output.mkdir",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/pdf_pipeline/pipeline.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (input_path, output_root).\n2. Gọi thực thi hàm `configure_utf8_console`.\n3. Khởi tạo / gán biến `selected_steps`.\n4. Khởi tạo / gán biến `input_path`.\n5. Khởi tạo / gán biến `output_root`.\n6. Kiểm tra điều kiện rẽ nhánh `not input_path.is_file()`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `Path`."
+    }
+  ]
+}

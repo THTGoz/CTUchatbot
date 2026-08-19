@@ -1,0 +1,83 @@
+{
+  "file_name": "main.py",
+  "file_path": "backend/app/main.py",
+  "bien_chung": [
+    {
+      "ten_bien": "app",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "FastAPI(title='CTU GraphRAG Assistant API')"
+    }
+  ],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Chuẩn Hóa Cấu Trúc Module",
+      "noi_dung_rule": "Tuân thủ quy tắc xử lý và chuẩn hóa mã nguồn của module",
+      "dieu_kien_va_hanh_dong": "Đảm bảo tính toàn vẹn khi thực thi"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "startup_event",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `startup_event` của file `main.py`",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `startup_event`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "app.on_event",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "graph.start_ingestion_worker",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/main.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Thực hiện các bước tính toán logic bên trong hàm.\n3. Trả về kết quả đầu ra."
+    },
+    {
+      "ten_ham": "shutdown_event",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `shutdown_event` của file `main.py`",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `shutdown_event`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "app.on_event",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "close_driver",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "graph.stop_ingestion_worker",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/main.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Gọi thực thi hàm `close_driver`.\n3. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "root",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `root` của file `main.py`",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `root`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "app.get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/main.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    }
+  ]
+}

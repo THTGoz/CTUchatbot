@@ -1,0 +1,458 @@
+{
+  "ten_file": "Xoalop_HK2_2024_2025_dot2.pdf",
+  "ma_van_ban": "",
+  "ngay_ban_hanh": "2025-01",
+  "tieu_de": "Về việc xóa các lớp học phần có sĩ số không đủ mở lớp học kỳ 2, năm học 2024-2025 (đợt 2)",
+  "so_trang": 2,
+  "trang": [
+    {
+      "so_trang": 1,
+      "kich_thuoc": [
+        595.32,
+        842.04
+      ],
+      "items": [
+        {
+          "loai": "van_ban",
+          "dang": "tieu_de",
+          "bbox": [
+            66.62,
+            56.85,
+            533.73,
+            147.18
+          ],
+          "noi_dung": "V/v xóa các lớp học phần có sĩ số không đủ mở lớp học kỳ 2, năm học 2024-2025 (đợt 2)"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            65.18,
+            269.06,
+            544.3,
+            313.29
+          ],
+          "noi_dung": "Hiện nay, công tác đăng ký học phần đợt 2 (đợt cuối) học kỳ 2, năm học 2024-2025 đã kết thúc. Qua rà soát, một số lớp học phần có số lượng sinh viên đăng ký không đủ điều kiện mở lớp theo quy định của công tác học vụ, Trường thông báo như sau:"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            101.18,
+            319.94,
+            542.4,
+            334.29
+          ],
+          "noi_dung": "- Xóa các lớp học phần có sĩ số đăng ký không đủ điều kiện mở lớp (danh sách đính kèm)."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            65.18,
+            340.82,
+            544.29,
+            400.07
+          ],
+          "noi_dung": "- Sinh viên đăng ký vào các lớp học phần thông báo xóa, nếu có nhu cầu chuyển đổi sang các lớp học phần khác phải liên hệ Phòng Đào tạo (email: nhdnhan@ctu.edu.vn) để được hỗ trợ từ ngày ra thông báo đến hết ngày 10/01/2025. Sau thời gian này, Trường sẽ chính thức xóa kết quả đăng ký của sinh viên."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            65.18,
+            406.6,
+            544.4,
+            435.95
+          ],
+          "noi_dung": "Đề nghị lãnh đạo các đơn vị phổ biến nội dung công văn này đến toàn thể giảng viên, cố vấn học tập và sinh viên biết để triển khai thực hiện đúng quy định."
+        }
+      ]
+    },
+    {
+      "so_trang": 2,
+      "kich_thuoc": [
+        595.32,
+        842.04
+      ],
+      "items": [
+        {
+          "loai": "van_ban",
+          "dang": "tieu_de",
+          "bbox": [
+            65.18,
+            57.09,
+            533.39,
+            102.33
+          ],
+          "noi_dung": "DANH SÁCH LỚP HỌC PHẦN XÓA LỚP\nHỌC KỲ 2, NĂM HỌC 2024-2025 (ĐỢT 2)\n(Đính kèm CV số: /ĐHCT-ĐT, ngày /01/2025, V/v xóa các lớp học phần có sĩ số không đủ mở lớp)"
+        },
+        {
+          "loai": "bang",
+          "bbox": [
+            38.63,
+            116.75,
+            570.85,
+            733.71
+          ],
+          "tieu_de_bang": "DANH SÁCH LỚP HỌC PHẦN XÓA LỚP\nHỌC KỲ 2, NĂM HỌC 2024-2025 (ĐỢT 2)",
+          "du_lieu": [
+            [
+              "TT",
+              "Mã HP",
+              "Tên học phần",
+              "TC",
+              "Ký hiệu",
+              "Mã số CBGD",
+              "Họ và tên CBGD"
+            ],
+            [
+              "1",
+              "CT174",
+              "Phân tích và thiết kế thuật toán",
+              "3",
+              "05",
+              "02995",
+              "Nguyễn Thanh Khoa"
+            ],
+            [
+              "2",
+              "CT384",
+              "Mạng nơ-ron nhân tạo",
+              "3",
+              "01",
+              "01941",
+              "Nguyễn Chánh Nghiệm"
+            ],
+            [
+              "3",
+              "FL001",
+              "Pháp văn căn bản 1 (*)",
+              "4",
+              "02",
+              "02009",
+              "Nguyễn Ngọc Phương Thảo"
+            ],
+            [
+              "4",
+              "KC146H",
+              "Kỹ thuật sản xuất chất kết dính",
+              "2",
+              "M01",
+              "01807",
+              "Đặng Huỳnh Giao"
+            ],
+            [
+              "5",
+              "KC191",
+              "Kỹ thuật cao áp",
+              "3",
+              "01",
+              "01476",
+              "Nguyễn Văn Dũng"
+            ],
+            [
+              "6",
+              "KC240",
+              "Nền móng công trình",
+              "3",
+              "01",
+              "01926",
+              "Trần Thị Phượng"
+            ],
+            [
+              "7",
+              "KL369",
+              "Luật kinh tế",
+              "2",
+              "03",
+              "01697",
+              "Nguyễn Mai Hân"
+            ],
+            [
+              "8",
+              "KL376",
+              "Tư pháp quốc tế",
+              "3",
+              "01",
+              "02561",
+              "Nguyễn Huỳnh Anh"
+            ],
+            [
+              "9",
+              "KT118E",
+              "Kinh tế học hành vi",
+              "3",
+              "01",
+              "02600",
+              "Cao Minh Tuấn"
+            ],
+            [
+              "10",
+              "KT118E",
+              "Kinh tế học hành vi",
+              "3",
+              "02",
+              "02600",
+              "Cao Minh Tuấn"
+            ],
+            [
+              "11",
+              "KT119",
+              "PP tư duy và kỹ năng giải quyết vấn đề",
+              "2",
+              "09",
+              "01877",
+              "Lê Thị Thu Trang"
+            ],
+            [
+              "12",
+              "KT140",
+              "Nghiệp vụ bảo hiểm",
+              "3",
+              "01",
+              "02278",
+              "Khưu Thị Phương Đông"
+            ],
+            [
+              "13",
+              "KT207",
+              "Mô phỏng tình huống trong kinh doanh",
+              "3",
+              "02",
+              "02709",
+              "Huỳnh Hữu Thọ"
+            ],
+            [
+              "14",
+              "KT270E",
+              "Lịch sử các học thuyết kinh tế",
+              "2",
+              "01",
+              "01989",
+              "Huỳnh Thị Kim Uyên"
+            ],
+            [
+              "15",
+              "KT305",
+              "Kinh tế môi trường",
+              "3",
+              "H01",
+              "01783",
+              "Ngô Thị Thanh Trúc"
+            ],
+            [
+              "16",
+              "KT310",
+              "Phân tích chính sách kinh tế",
+              "3",
+              "01",
+              "02600",
+              "Cao Minh Tuấn"
+            ],
+            [
+              "17",
+              "KT314E",
+              "Hệ thống thông tin kinh tế",
+              "2",
+              "01",
+              "01537",
+              "Huỳnh Việt Khải"
+            ],
+            [
+              "18",
+              "KT330",
+              "Thuế",
+              "3",
+              "04",
+              "02278",
+              "Khưu Thị Phương Đông"
+            ],
+            [
+              "19",
+              "KT336",
+              "Nghiệp vụ ngoại thương",
+              "3",
+              "01",
+              "02115",
+              "Lê Trần Thiên ý"
+            ],
+            [
+              "20",
+              "KT404",
+              "Hệ thống kiểm soát nội bộ",
+              "2",
+              "01",
+              "01987",
+              "Trần Quế Anh"
+            ],
+            [
+              "21",
+              "KT428",
+              "Kỹ thuật đàm phán",
+              "2",
+              "01",
+              "01543",
+              "Võ Hồng Phượng"
+            ],
+            [
+              "22",
+              "KT495",
+              "Hành vi khách du lịch",
+              "3",
+              "01",
+              "01543",
+              "Võ Hồng Phượng"
+            ],
+            [
+              "23",
+              "MT340E",
+              "Quản lý tài nguyên nước",
+              "2",
+              "01",
+              "02643",
+              "Võ Thị Phương Linh"
+            ],
+            [
+              "24",
+              "NN124",
+              "TT. Sinh hóa",
+              "1",
+              "04",
+              "02420",
+              "Lê Hồng Giang"
+            ],
+            [
+              "25",
+              "NN176",
+              "Quản lý và khai thác tài nguyên đất đai",
+              "2",
+              "01",
+              "01273",
+              "Huỳnh Thị Thu Hương"
+            ],
+            [
+              "26",
+              "NS198E",
+              "PP NCKH và thống kê phép thí nghiệm",
+              "2",
+              "01",
+              "02431",
+              "Nguyễn Minh Đông"
+            ],
+            [
+              "27",
+              "SG284",
+              "Âm vị học tiếng Anh",
+              "2",
+              "01",
+              "700797",
+              "Nguyễn Hồng Quí"
+            ],
+            [
+              "28",
+              "SG431",
+              "Phát triển chương trình GD Toán và KHTN",
+              "2",
+              "01",
+              "01858",
+              "Đỗ Thị Phương Thảo"
+            ],
+            [
+              "29",
+              "SP317",
+              "Phương trình đạo hàm riêng",
+              "2",
+              "01",
+              "02236",
+              "Nguyễn Trung Kiên"
+            ],
+            [
+              "30",
+              "TN033H",
+              "Tin học căn bản (*)",
+              "1",
+              "M01",
+              "01044",
+              "Nguyễn Nhị Gia Vinh"
+            ],
+            [
+              "31",
+              "TN033H",
+              "Tin học căn bản (*)",
+              "1",
+              "M06",
+              "01044",
+              "Nguyễn Nhị Gia Vinh"
+            ],
+            [
+              "32",
+              "TN034H",
+              "Thực hành Tin học căn bản (*)",
+              "2",
+              "M05",
+              "01044",
+              "Nguyễn Nhị Gia Vinh"
+            ],
+            [
+              "33",
+              "TN346E",
+              "Xử lý số liệu thống kê",
+              "3",
+              "01",
+              "01846",
+              "Lê Thị Mỹ Xuân"
+            ],
+            [
+              "34",
+              "TS365E",
+              "Phụ gia chế biến thủy sản",
+              "2",
+              "01",
+              "02073",
+              "Trương Thị Mộng Thu"
+            ],
+            [
+              "35",
+              "TS432",
+              "Marketing thủy sản",
+              "2",
+              "01",
+              "02331",
+              "Nguyễn Thị Kim Quyên"
+            ],
+            [
+              "36",
+              "XH025",
+              "Anh văn căn bản 3 (*)",
+              "3",
+              "15",
+              "02034",
+              "Phạm Xuân Bình"
+            ],
+            [
+              "37",
+              "XH415",
+              "Du lịch sinh thái",
+              "2",
+              "H01",
+              "02006",
+              "Nguyễn Trọng Nhân"
+            ]
+          ]
+        },
+        {
+          "loai": "van_ban",
+          "dang": "ghi_chu",
+          "bbox": [
+            65.18,
+            740.03,
+            216.48,
+            753.31
+          ],
+          "noi_dung": "Danh sách có: 37 lớp học phần."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "ten_file": "QuocKhanh2025.pdf",
+  "trang": [
+    {
+      "so_trang": 1,
+      "kich_thuoc": [
+        595.3,
+        841.9
+      ],
+      "items": [
+        {
+          "loai": "van_ban",
+          "bbox": [
+            81.65,
+            57.25,
+            249.55,
+            71.64
+          ],
+          "noi_dung": "BỘ GIÁO DỤC VÀ ĐÀO TẠO"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            283.2,
+            57.25,
+            554.4,
+            71.64
+          ],
+          "noi_dung": "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            105.47,
+            72.2,
+            225.73,
+            86.59
+          ],
+          "noi_dung": "ĐẠI HỌC CẦN THƠ"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            333.11,
+            72.25,
+            504.49,
+            87.74
+          ],
+          "noi_dung": "Độc lập - Tự do - Hạnh phúc"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            123.71,
+            103.25,
+            523.45,
+            118.79
+          ],
+          "noi_dung": "Số: /TB-ĐHCT\nCần Thơ, ngày tháng 8 năm 2025"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            143.5,
+            103.72,
+            415.56,
+            119.72
+          ],
+          "noi_dung": "2859\n05"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            196.51,
+            153.44,
+            427.14,
+            185.04
+          ],
+          "noi_dung": "THÔNG BÁO\nVề việc nghỉ Lễ Quốc khánh năm 2025"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            113.4,
+            201.74,
+            317.35,
+            217.24
+          ],
+          "noi_dung": "Căn cứ Bộ luật Lao động năm 2019;"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            226.25,
+            538.61,
+            260.26
+          ],
+          "noi_dung": "Căn cứ Thông báo số 6150/TB-LĐTBXH ngày 03/12/2024 của Bộ Lao động\n- Thương binh và Xã hội về lịch nghỉ Tết Âm lịch và Lễ Quốc khánh năm 2025;"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            269.28,
+            538.61,
+            302.48
+          ],
+          "noi_dung": "Căn cứ tình hình thực tế, Đại học Cần thơ thông báo lịch nghỉ Lễ Quốc khánh\nnăm 2025 như sau:"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            310.7,
+            538.61,
+            343.9
+          ],
+          "noi_dung": "- Viên chức, người lao động và người học của Trường sẽ được nghỉ Lễ Quốc\nkhánh từ Thứ Hai, ngày 01/9/2025 đến hết Thứ Ba, ngày 02/9/2025 Dương lịch."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            352.11,
+            538.61,
+            403.02
+          ],
+          "noi_dung": "- Lịch dạy và học trong các ngày từ 01/9/2025 đến ngày 02/9/2025 sẽ được\nbù vào tuần dự trữ của học kỳ với tiết học, phòng học không thay đổi hoặc vào\nthời gian thích hợp do giảng viên sắp xếp và thống nhất với người học."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            113.4,
+            411.24,
+            538.61,
+            426.73
+          ],
+          "noi_dung": "- Phòng Công tác Sinh viên thực hiện treo cờ Tổ quốc tại các khu của Trường."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            434.94,
+            538.61,
+            468.15
+          ],
+          "noi_dung": "- Các đơn vị chủ động đảm bảo an ninh trật tự, an toàn phòng cháy chữa cháy\ntrong thời gian nghỉ Lễ."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            476.36,
+            538.61,
+            528.88
+          ],
+          "noi_dung": "Đề nghị thủ trưởng các đơn vị thuộc và trực thuộc Trường phổ biến rộng rãi\nThông báo này đến toàn thể viên chức, người lao động và người học trong đơn vị\nđể thực hiện."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            113.4,
+            537.9,
+            183.77,
+            553.4
+          ],
+          "noi_dung": "Trân trọng./."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            90.45,
+            589.81,
+            209.78,
+            641.04
+          ],
+          "noi_dung": "Nơi nhận:\n- Các đơn vị trong Trường;\n- BGH, TVĐU, HDT;\n- Lưu: VT, VPT."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            384.18,
+            595.85,
+            478.67,
+            610.24
+          ],
+          "noi_dung": "HIỆU TRƯỞNG"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            383.02,
+            692.38,
+            479.83,
+            706.77
+          ],
+          "noi_dung": "Trần Trung Tính"
+        }
+      ]
+    }
+  ]
+}

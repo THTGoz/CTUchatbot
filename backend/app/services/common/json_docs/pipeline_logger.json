@@ -1,0 +1,470 @@
+{
+  "file_name": "pipeline_logger.py",
+  "file_path": "backend/app/services/common/pipeline_logger.py",
+  "bien_chung": [
+    {
+      "ten_bien": "_LOGGER_NAME",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "'ctu.pipeline'"
+    },
+    {
+      "ten_bien": "_TRUTHY",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "{'1', 'true', 'yes', 'on'}"
+    },
+    {
+      "ten_bien": "logger",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "_get_logger()"
+    }
+  ],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Giới Hạn Cấu Hình Context & Top-K Retrieval",
+      "noi_dung_rule": "CHAT_GLOBAL_TOP_K (Mặc định 6) & MAX_CONTEXT_CHARS (Mặc định 12000 kí tự)",
+      "dieu_kien_va_hanh_dong": "Cắt bớt tài liệu context tối đa theo cấu hình trước khi gửi cho LLM"
+    },
+    {
+      "ten_luat": "Rule Ngưỡng Độ Tương Đồng Vector (Similarity Score Threshold)",
+      "noi_dung_rule": "Lọc danh sách kết quả truy vấn theo ngưỡng điểm tương đồng vector",
+      "dieu_kien_va_hanh_dong": "Chỉ giữ lại các candidate đạt điểm độ tương đồng đạt yêu cầu"
+    },
+    {
+      "ten_luat": "Rule Fallback / Phản Hồi Mặc Định",
+      "noi_dung_rule": "Phản hồi dự phòng khi cơ sở dữ liệu không tìm thấy dữ liệu phù hợp",
+      "dieu_kien_va_hanh_dong": "Trả về thông báo hướng dẫn hoặc gọi LLM trả lời xã giao"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "_enabled",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_enabled` của file `pipeline_logger.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "name",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `name` cho hàm `_enabled`"
+        },
+        {
+          "ten_tham_so": "default",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `default` cho hàm `_enabled`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "bool",
+        "mo_ta": "Kết quả trả về của hàm `_enabled`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "os.getenv(name, default).strip().casefold",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "os.getenv(name, default).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "os.getenv",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/pipeline_logger.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (name, default).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `bool`."
+    },
+    {
+      "ten_ham": "_positive_int",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_positive_int` của file `pipeline_logger.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "name",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `name` cho hàm `_positive_int`"
+        },
+        {
+          "ten_tham_so": "default",
+          "kieu_du_lieu": "int",
+          "mo_ta": "Tham số đầu vào `default` cho hàm `_positive_int`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "int",
+        "mo_ta": "Kết quả trả về của hàm `_positive_int`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "os.getenv",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/pipeline_logger.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (name, default).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `int`."
+    },
+    {
+      "ten_ham": "_get_logger",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_get_logger` của file `pipeline_logger.py`",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "logging.Logger",
+        "mo_ta": "Kết quả trả về của hàm `_get_logger`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "logging.getLogger",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "logger.setLevel",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "logging.StreamHandler",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "handler.setFormatter",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "logger.addHandler",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "getattr",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "logging.Formatter",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "os.getenv('PIPELINE_LOG_LEVEL', 'INFO').strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "os.getenv",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/pipeline_logger.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Khởi tạo / gán biến `logger`.\n3. Kiểm tra điều kiện rẽ nhánh `not logger.handlers`.\n4. Khởi tạo / gán biến `level_name`.\n5. Gọi thực thi hàm `logger.setLevel`.\n6. Trả về kết quả cho caller.\n7. Hoàn tất tính toán và trả về kết quả kiểu `logging.Logger`."
+    },
+    {
+      "ten_ham": "elapsed_ms",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `elapsed_ms` của file `pipeline_logger.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "started_at",
+          "kieu_du_lieu": "float",
+          "mo_ta": "Tham số đầu vào `started_at` cho hàm `elapsed_ms`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "float",
+        "mo_ta": "Kết quả trả về của hàm `elapsed_ms`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "round",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "time.perf_counter",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/pipeline_logger.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (started_at).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `float`."
+    },
+    {
+      "ten_ham": "now",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `now` của file `pipeline_logger.py`",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "float",
+        "mo_ta": "Kết quả trả về của hàm `now`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "time.perf_counter",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/pipeline_logger.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `float`."
+    },
+    {
+      "ten_ham": "_trim_text",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_trim_text` của file `pipeline_logger.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "value",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `value` cho hàm `_trim_text`"
+        },
+        {
+          "ten_tham_so": "limit",
+          "kieu_du_lieu": "int",
+          "mo_ta": "Tham số đầu vào `limit` cho hàm `_trim_text`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `_trim_text`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "str(value or '').strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "text[:limit].rstrip",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/pipeline_logger.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (value, limit).\n2. Khởi tạo / gán biến `text`.\n3. Kiểm tra điều kiện rẽ nhánh `len(text) <= limit`.\n4. Trả về kết quả cho caller.\n5. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "_safe_value",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_safe_value` của file `pipeline_logger.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "value",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `value` cho hàm `_safe_value`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `_safe_value`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "hasattr",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "_safe_value",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "vars",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "value.items",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/pipeline_logger.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (value).\n2. Kiểm tra điều kiện rẽ nhánh `isinstance(value, dict)`.\n3. Kiểm tra điều kiện rẽ nhánh `isinstance(value, (list, tuple, set))`.\n4. Kiểm tra điều kiện rẽ nhánh `isinstance(value, (str, int, float, bool)) or value is None`.\n5. Kiểm tra điều kiện rẽ nhánh `hasattr(value, '__dict__')`.\n6. Trả về kết quả cho caller.\n7. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "log_event",
+      "chuc_nang": "Ghi một sự kiện pipeline dạng JSON trên một dòng.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "scope",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `scope` cho hàm `log_event`"
+        },
+        {
+          "ten_tham_so": "step",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `step` cho hàm `log_event`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "None",
+        "mo_ta": "Kết quả trả về của hàm `log_event`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "_safe_value",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "json.dumps",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "logger.info",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_enabled",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "scope.upper",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "step.upper",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/pipeline_logger.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (scope, step).\n2. Kiểm tra điều kiện rẽ nhánh `not _enabled('PIPELINE_LOG_ENABLED')`.\n3. Khởi tạo / gán biến `payload`.\n4. Khởi tạo / gán biến `rendered`.\n5. Gọi thực thi hàm `logger.info`.\n6. Hoàn tất tính toán và trả về kết quả kiểu `None`."
+    },
+    {
+      "ten_ham": "log_context",
+      "chuc_nang": "In context nếu PIPELINE_LOG_CONTEXT bật; mặc định bật.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "domain",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `domain` cho hàm `log_context`"
+        },
+        {
+          "ten_tham_so": "context",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `context` cho hàm `log_context`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "None",
+        "mo_ta": "Kết quả trả về của hàm `log_context`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "_positive_int",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "logger.info",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "domain.upper",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_trim_text",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "_enabled",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/pipeline_logger.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (domain, context).\n2. Kiểm tra điều kiện rẽ nhánh `not _enabled('PIPELINE_LOG_ENABLED') or not _enabled('PIPELINE_LOG_CONTEXT')`.\n3. Khởi tạo / gán biến `limit`.\n4. Gọi thực thi hàm `logger.info`.\n5. Hoàn tất tính toán và trả về kết quả kiểu `None`."
+    },
+    {
+      "ten_ham": "log_answer",
+      "chuc_nang": "In câu trả lời cuối; giới hạn độc lập với context.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "domain",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `domain` cho hàm `log_answer`"
+        },
+        {
+          "ten_tham_so": "answer",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `answer` cho hàm `log_answer`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "None",
+        "mo_ta": "Kết quả trả về của hàm `log_answer`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "_positive_int",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "logger.info",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_enabled",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "domain.upper",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_trim_text",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/pipeline_logger.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (domain, answer).\n2. Kiểm tra điều kiện rẽ nhánh `not _enabled('PIPELINE_LOG_ENABLED')`.\n3. Khởi tạo / gán biến `limit`.\n4. Gọi thực thi hàm `logger.info`.\n5. Hoàn tất tính toán và trả về kết quả kiểu `None`."
+    },
+    {
+      "ten_ham": "summarize_candidate",
+      "chuc_nang": "Rút candidate về các field cần để debug ranking mà không in embedding.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "candidate",
+          "kieu_du_lieu": "dict[str, Any]",
+          "mo_ta": "Tham số đầu vào `candidate` cho hàm `summarize_candidate`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "dict[str, Any]",
+        "mo_ta": "Kết quả trả về của hàm `summarize_candidate`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "candidate.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "properties.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "round",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "metadata.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "float",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/pipeline_logger.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (candidate).\n2. Khởi tạo / gán biến `metadata`.\n3. Khởi tạo / gán biến `properties`.\n4. Trả về kết quả cho caller.\n5. Hoàn tất tính toán và trả về kết quả kiểu `dict[str, Any]`."
+    },
+    {
+      "ten_ham": "summarize_candidates",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `summarize_candidates` của file `pipeline_logger.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "candidates",
+          "kieu_du_lieu": "Iterable[dict[str, Any]]",
+          "mo_ta": "Tham số đầu vào `candidates` cho hàm `summarize_candidates`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "list[dict[str, Any]]",
+        "mo_ta": "Kết quả trả về của hàm `summarize_candidates`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "_positive_int",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "summarize_candidate",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "summarized.append",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/pipeline_logger.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (candidates).\n2. Khởi tạo / gán biến `items`.\n3. Khởi tạo / gán biến `limit`.\n4. Khởi tạo / gán biến `summarized`.\n5. Kiểm tra điều kiện rẽ nhánh `len(items) > limit`.\n6. Trả về kết quả cho caller.\n7. Hoàn tất tính toán và trả về kết quả kiểu `list[dict[str, Any]]`."
+    }
+  ]
+}

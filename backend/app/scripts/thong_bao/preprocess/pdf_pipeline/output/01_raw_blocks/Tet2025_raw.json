@@ -1,0 +1,352 @@
+{
+  "ten_file": "Tet2025.pdf",
+  "trang": [
+    {
+      "so_trang": 1,
+      "kich_thuoc": [
+        595.3,
+        841.9
+      ],
+      "items": [
+        {
+          "loai": "van_ban",
+          "bbox": [
+            303.63,
+            60.06,
+            553.97,
+            73.35
+          ],
+          "noi_dung": "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            82.86,
+            60.1,
+            264.39,
+            89.44
+          ],
+          "noi_dung": "BỘ GIÁO DỤC VÀ ĐÀO TẠO\nTRƯỜNG ĐẠI HỌC CẦN THƠ"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            349.23,
+            73.9,
+            508.37,
+            88.29
+          ],
+          "noi_dung": "Độc lập - Tự do - Hạnh phúc"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            328.37,
+            102.65,
+            529.23,
+            117.04
+          ],
+          "noi_dung": "Cần Thơ, ngày tháng 01 năm 2025"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            141.5,
+            103.72,
+            426.56,
+            118.72
+          ],
+          "noi_dung": "06\n03"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            117.11,
+            103.8,
+            230.14,
+            118.19
+          ],
+          "noi_dung": "Số: /TB-ĐHCT"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            204.61,
+            163.04,
+            409.54,
+            194.64
+          ],
+          "noi_dung": "THÔNG BÁO\nVề việc đón Tết Âm lịch năm 2025"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            220.79,
+            538.6,
+            352.19
+          ],
+          "noi_dung": "Căn cứ Điều 112 Bộ luật Lao động; Công văn số 8726/VPCP-KGVX ngày\n26 tháng 11 năm 2024 của Văn phòng Chính phủ về việc nghỉ Tết Âm lịch và\nmột số dịp lễ trong năm 2025; Căn cứ Kế hoạch khung công tác năm 2025 của\nTrường Đại học Cần Thơ (ĐHCT) ban hành kèm theo Quyết định số 5171/QĐ-\nĐHCT ngày 01 tháng 11 năm 2024, Hiệu trưởng thông báo đến các đơn vị, viên\nchức, người lao động (VC-NLĐ) và người học kế hoạch nghỉ tết Âm lịch năm\n2025 như sau:"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            116.65,
+            362.01,
+            242.27,
+            377.51
+          ],
+          "noi_dung": "1. Thời gian nghỉ Tết"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            387.33,
+            538.6,
+            460.78
+          ],
+          "noi_dung": "Viên chức, người lao động và người học của Trường ĐHCT được nghỉ dịp\ntết Âm lịch năm 2025 từ ngày 20/01/2025 dương lịch đến hết Chủ nhật ngày\n02/02/2025 dương lịch (từ ngày 21 tháng Chạp năm Giáp Thìn đế ngày mùng\n5 tháng Giêng năm Ất Tỵ)."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            121.05,
+            470.6,
+            232.47,
+            486.1
+          ],
+          "noi_dung": "2. Việc tổ chức Tết"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            495.92,
+            538.6,
+            530.74
+          ],
+          "noi_dung": "- Văn phòng Trường phối hợp với Phòng Công tác Chính trị chuẩn bị kế\nhoạch đón Tết của Trường trước ngày 12/01/2025."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            540.56,
+            538.6,
+            633.33
+          ],
+          "noi_dung": "- Phòng Công tác Chính trị treo cờ, khẩu hiệu chào mừng ở cổng chính 03\nkhu của Trường từ ngày 27/01/2025 (28 Tết) đến hết ngày 31/01/2025 (mùng 3\nTết); đồng thời chỉ đạo Tổ Bảo vệ bố trí người trực bảo vệ an ninh trật tự, an\ntoàn chung và có kế hoạch tuần tra canh gác, bảo vệ an toàn trong các ngày\nnghỉ; kế hoạch bảo vệ trình cho Hiệu trưởng trước ngày 12/01/2025."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            643.15,
+            538.6,
+            677.96
+          ],
+          "noi_dung": "- Phòng Quản trị Thiết bị bố trí người trực để giải quyết các vấn đề có liên\nquan đến chức năng và nhiệm vụ của đơn vị trong thời gian nghỉ Tết."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            687.78,
+            538.59,
+            722.6
+          ],
+          "noi_dung": "- Phòng Tài chính chuẩn bị kinh phí để cấp phát tiền Tết và các khoản phụ\ncấp trước ngày 17/01/2025."
+        }
+      ]
+    },
+    {
+      "so_trang": 2,
+      "kich_thuoc": [
+        595.3,
+        841.9
+      ],
+      "items": [
+        {
+          "loai": "van_ban",
+          "bbox": [
+            308.83,
+            36.51,
+            314.83,
+            49.79
+          ],
+          "noi_dung": "2"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            64.19,
+            538.6,
+            118.33
+          ],
+          "noi_dung": "- Công đoàn Trường cùng với Đoàn Thanh niên, Hội Cựu Chiến binh và\ncác phòng, ban tổ chức đoàn thăm viếng tặng quà cho VC-NLĐ Trường đã nghỉ\nhưu."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            128.15,
+            538.6,
+            182.28
+          ],
+          "noi_dung": "- Thủ trưởng các đơn vị có trách nhiệm phân công người trực để bảo vệ an\ntoàn tài sản đơn vị mình trong thời gian nghỉ Tết. Danh sách cán bộ trực bảo vệ\ncủa đơn vị gửi về Văn phòng Trường trước ngày 15/01/2025."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            192.1,
+            538.59,
+            226.92
+          ],
+          "noi_dung": "- Các đơn vị tổ chức tổng vệ sinh sạch đẹp khu vực của mình phụ trách và\nquản lý trước khi nghỉ Tết."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            236.74,
+            538.6,
+            290.87
+          ],
+          "noi_dung": "- Các đơn vị phân công người chuẩn bị phòng học, phòng thí nghiệm, cơ sở\nvật chất và các điều kiện có liên quan để đảm bảo việc giảng dạy ngay sau kỳ\nnghỉ Tết (bắt đầu từ thứ Hai 03/02/2025)."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            113.4,
+            300.69,
+            260.11,
+            316.19
+          ],
+          "noi_dung": "3. Những điểm cần lưu ý"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            326.01,
+            538.6,
+            399.46
+          ],
+          "noi_dung": "Trong suốt thời gian nghỉ Tết, các đơn vị cần tổ chức công tác bảo vệ và\nphòng cháy chữa cháy một cách chu đáo, phân công người trực để đảm bảo an\ntoàn cho tài sản của đơn vị. Những cá nhân được phân công trực phải có mặt và\nchịu trách nhiệm suốt thời gian trực."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            409.28,
+            538.6,
+            444.1
+          ],
+          "noi_dung": "Trong thời gian trực, nếu có sự việc xảy ra cần báo cáo ngay cho các đơn vị\ncó liên quan sau:"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            148.85,
+            453.92,
+            254.42,
+            469.42
+          ],
+          "noi_dung": "- Bộ phận bảo vệ:"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            148.85,
+            472.64,
+            493.72,
+            647.29
+          ],
+          "noi_dung": " Khu I\n(0292) 3838 962\n Khu II\n(0292) 3781781\n Khu\n(0292) 3831300\n Nhà Điều hành\n(0292) 3872110\n- Ký túc xá (PCTSV):\n(0292) 3872275\n- Tổ Ô tô:\n(0292) 3872200\n- Khoa Phát triển Nông thôn:\n(0293) 3982857\n- Khu Sóc Trăng:\n(0299) 38 38 688\n- Một số điện thoại khẩn:"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            163.05,
+            650.52,
+            486.72,
+            748.96
+          ],
+          "noi_dung": " Cứu hỏa\n114\n Cảnh sát\n113\n Cấp cứu y tế\n115\n Công an Phường Xuân Khánh\n(0292) 3820186\n Công an Quận Ninh Kiều\n(0292) 3898741"
+        }
+      ]
+    },
+    {
+      "so_trang": 3,
+      "kich_thuoc": [
+        595.3,
+        841.9
+      ],
+      "items": [
+        {
+          "loai": "van_ban",
+          "bbox": [
+            308.83,
+            36.51,
+            314.83,
+            49.79
+          ],
+          "noi_dung": "3"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            64.19,
+            538.59,
+            99.01
+          ],
+          "noi_dung": "Thủ trưởng các đơn vị báo cáo tình hình nghỉ Tết của đơn vị mình trong\nbuổi họp giao ban vào thứ Hai, ngày 03/02/2025."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            108.83,
+            538.59,
+            143.65
+          ],
+          "noi_dung": "Đề nghị thủ trưởng các đơn vị phổ biến Thông báo này cho toàn thể VC-\nNLĐ và người học biết và thực hiện tốt các nội dung nêu trên./."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            178.7,
+            239.01,
+            229.93
+          ],
+          "noi_dung": "Nơi nhận:\n- Các đơn vị trong Trường;\n- BGH, HĐT, TVĐU (để báo cáo);\n- Lưu: VT, VPT."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            383.3,
+            184.78,
+            485.07,
+            200.28
+          ],
+          "noi_dung": "HIỆU TRƯỞNG"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            383.3,
+            286.06,
+            487.56,
+            301.55
+          ],
+          "noi_dung": "Trần Trung Tính"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "file_name": "chay_mot_pdf.py",
+  "file_path": "backend/app/scripts/thong_bao/preprocess/pdf_pipeline/chay_mot_pdf.py",
+  "bien_chung": [],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Chuẩn Hóa Cấu Trúc Module",
+      "noi_dung_rule": "Tuân thủ quy tắc xử lý và chuẩn hóa mã nguồn của module",
+      "dieu_kien_va_hanh_dong": "Đảm bảo tính toàn vẹn khi thực thi"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "parse_args",
+      "chuc_nang": "Đọc PDF đầu vào và thư mục output tùy chọn.",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "argparse.Namespace",
+        "mo_ta": "Kết quả trả về của hàm `parse_args`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "argparse.ArgumentParser",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "parser.add_argument",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "parser.parse_args",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/pdf_pipeline/chay_mot_pdf.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Khởi tạo / gán biến `parser`.\n3. Gọi thực thi hàm `parser.add_argument`.\n4. Gọi thực thi hàm `parser.add_argument`.\n5. Trả về kết quả cho caller.\n6. Hoàn tất tính toán và trả về kết quả kiểu `argparse.Namespace`."
+    },
+    {
+      "ten_ham": "create_output_directory",
+      "chuc_nang": "Tạo thư mục mới để một lần debug không ghi đè kết quả trước.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "pdf",
+          "kieu_du_lieu": "Path",
+          "mo_ta": "Tham số đầu vào `pdf` cho hàm `create_output_directory`"
+        },
+        {
+          "ten_tham_so": "output",
+          "kieu_du_lieu": "Path | None",
+          "mo_ta": "Tham số đầu vào `output` cho hàm `create_output_directory`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Path",
+        "mo_ta": "Kết quả trả về của hàm `create_output_directory`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "output.exists",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "output.mkdir",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "datetime.now().strftime",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "output.expanduser().resolve",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "FileExistsError",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "datetime.now",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "output.expanduser",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/pdf_pipeline/chay_mot_pdf.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (pdf, output).\n2. Kiểm tra điều kiện rẽ nhánh `output is None`.\n3. Kiểm tra điều kiện rẽ nhánh `output.exists()`.\n4. Gọi thực thi hàm `output.mkdir`.\n5. Trả về kết quả cho caller.\n6. Hoàn tất tính toán và trả về kết quả kiểu `Path`."
+    },
+    {
+      "ten_ham": "chay_pipeline",
+      "chuc_nang": "Giữ entrypoint tiếng Việt cũ và chuyển việc điều phối về một nơi chung.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "pdf",
+          "kieu_du_lieu": "Path",
+          "mo_ta": "Tham số đầu vào `pdf` cho hàm `chay_pipeline`"
+        },
+        {
+          "ten_tham_so": "output",
+          "kieu_du_lieu": "Path",
+          "mo_ta": "Tham số đầu vào `output` cho hàm `chay_pipeline`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Path",
+        "mo_ta": "Kết quả trả về của hàm `chay_pipeline`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "run_single_input",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/pdf_pipeline/chay_mot_pdf.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (pdf, output).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `Path`."
+    },
+    {
+      "ten_ham": "main",
+      "chuc_nang": "Xác thực tham số, chạy một PDF và thông báo JSON cuối.",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "int",
+        "mo_ta": "Kết quả trả về của hàm `main`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "configure_utf8_console",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "parse_args",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "args.pdf.expanduser().resolve",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "create_output_directory",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "chay_pipeline",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "args.pdf.expanduser",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "pdf.is_file",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "FileNotFoundError",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "pdf.suffix.casefold",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "ValueError",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/pdf_pipeline/chay_mot_pdf.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Gọi thực thi hàm `configure_utf8_console`.\n3. Khởi tạo / gán biến `args`.\n4. Khởi tạo / gán biến `pdf`.\n5. Gọi thực thi hàm `print`.\n6. Trả về kết quả cho caller.\n7. Hoàn tất tính toán và trả về kết quả kiểu `int`."
+    }
+  ]
+}

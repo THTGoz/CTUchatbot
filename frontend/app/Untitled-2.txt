@@ -1,0 +1,14 @@
+Đầu vào: Câu hỏi đã chuẩn hóa
+Đầu ra: Tập các giá trị mã học phần, mã sinh viên, khóa 
+
+1. Khởi tạo tập rỗng.
+2. Kiểm tra câu hỏi có chứa mã học phần hay không.
+3. Nếu có, lưu mã học phần tập kết quả.
+4. Kiểm tra có chứa mã sinh viên hay không.
+5. Nếu có, lưu mã sinh viên vào tập kết quả .
+6. Kiểm tra có chứa thông tin khóa  hay không.
+7. Nếu có, lưu khóa vào tập kết quả.
+8. Trả về tập kết quả.
+
+
+

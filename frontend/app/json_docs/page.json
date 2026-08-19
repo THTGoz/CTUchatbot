@@ -1,0 +1,479 @@
+{
+  "file_name": "page.tsx",
+  "file_path": "frontend/app/page.tsx",
+  "bien_chung": [
+    {
+      "ten_bien": "REACT_APP_CONFIG",
+      "kieu_du_lieu": "Frontend Component / Props",
+      "gia_tri_hoac_mo_ta": "Giao diện Chatbot Next.js React Client Page"
+    }
+  ],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Hiển Thị Tin Nhắn & Stream UI Vercel AI SDK",
+      "noi_dung_rule": "Xử lý stream chunks dạng `0:\"text\"` để hiển thị trực tiếp lên UI chat theo thời gian thực",
+      "dieu_kien_va_hanh_dong": "Nhận data stream từ backend `/api/chat` và append nội dung vào giao diện"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "response",
+      "chuc_nang": "React Component / Helper Function `response` rendering UI chatbot interface",
+      "dau_vao": [
+        {
+          "ten_tham_so": "props",
+          "kieu_du_lieu": "ReactProps",
+          "mo_ta": "Thuộc tính truyền vào component"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "JSX.Element",
+        "mo_ta": "Render giao diện người dùng"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "useState",
+          "nguon_goc": "react"
+        },
+        {
+          "ten_ham_con": "fetch",
+          "nguon_goc": "browser"
+        }
+      ],
+      "nguon_goc_ham": "frontend/app/page.tsx",
+      "mo_ta_luong_xu_ly": "1. Khởi tạo state UI.\n2. Quản lý sự kiện người dùng nhập câu hỏi.\n3. Gọi API Chat backend và render luồng phản hồi."
+    },
+    {
+      "ten_ham": "text",
+      "chuc_nang": "React Component / Helper Function `text` rendering UI chatbot interface",
+      "dau_vao": [
+        {
+          "ten_tham_so": "props",
+          "kieu_du_lieu": "ReactProps",
+          "mo_ta": "Thuộc tính truyền vào component"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "JSX.Element",
+        "mo_ta": "Render giao diện người dùng"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "useState",
+          "nguon_goc": "react"
+        },
+        {
+          "ten_ham_con": "fetch",
+          "nguon_goc": "browser"
+        }
+      ],
+      "nguon_goc_ham": "frontend/app/page.tsx",
+      "mo_ta_luong_xu_ly": "1. Khởi tạo state UI.\n2. Quản lý sự kiện người dùng nhập câu hỏi.\n3. Gọi API Chat backend và render luồng phản hồi."
+    },
+    {
+      "ten_ham": "handleSend",
+      "chuc_nang": "React Component / Helper Function `handleSend` rendering UI chatbot interface",
+      "dau_vao": [
+        {
+          "ten_tham_so": "props",
+          "kieu_du_lieu": "ReactProps",
+          "mo_ta": "Thuộc tính truyền vào component"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "JSX.Element",
+        "mo_ta": "Render giao diện người dùng"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "useState",
+          "nguon_goc": "react"
+        },
+        {
+          "ten_ham_con": "fetch",
+          "nguon_goc": "browser"
+        }
+      ],
+      "nguon_goc_ham": "frontend/app/page.tsx",
+      "mo_ta_luong_xu_ly": "1. Khởi tạo state UI.\n2. Quản lý sự kiện người dùng nhập câu hỏi.\n3. Gọi API Chat backend và render luồng phản hồi."
+    },
+    {
+      "ten_ham": "flushBuffer",
+      "chuc_nang": "React Component / Helper Function `flushBuffer` rendering UI chatbot interface",
+      "dau_vao": [
+        {
+          "ten_tham_so": "props",
+          "kieu_du_lieu": "ReactProps",
+          "mo_ta": "Thuộc tính truyền vào component"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "JSX.Element",
+        "mo_ta": "Render giao diện người dùng"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "useState",
+          "nguon_goc": "react"
+        },
+        {
+          "ten_ham_con": "fetch",
+          "nguon_goc": "browser"
+        }
+      ],
+      "nguon_goc_ham": "frontend/app/page.tsx",
+      "mo_ta_luong_xu_ly": "1. Khởi tạo state UI.\n2. Quản lý sự kiện người dùng nhập câu hỏi.\n3. Gọi API Chat backend và render luồng phản hồi."
+    },
+    {
+      "ten_ham": "flushTimer",
+      "chuc_nang": "React Component / Helper Function `flushTimer` rendering UI chatbot interface",
+      "dau_vao": [
+        {
+          "ten_tham_so": "props",
+          "kieu_du_lieu": "ReactProps",
+          "mo_ta": "Thuộc tính truyền vào component"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "JSX.Element",
+        "mo_ta": "Render giao diện người dùng"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "useState",
+          "nguon_goc": "react"
+        },
+        {
+          "ten_ham_con": "fetch",
+          "nguon_goc": "browser"
+        }
+      ],
+      "nguon_goc_ham": "frontend/app/page.tsx",
+      "mo_ta_luong_xu_ly": "1. Khởi tạo state UI.\n2. Quản lý sự kiện người dùng nhập câu hỏi.\n3. Gọi API Chat backend và render luồng phản hồi."
+    },
+    {
+      "ten_ham": "Chat",
+      "chuc_nang": "React Component / Helper Function `Chat` rendering UI chatbot interface",
+      "dau_vao": [
+        {
+          "ten_tham_so": "props",
+          "kieu_du_lieu": "ReactProps",
+          "mo_ta": "Thuộc tính truyền vào component"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "JSX.Element",
+        "mo_ta": "Render giao diện người dùng"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "useState",
+          "nguon_goc": "react"
+        },
+        {
+          "ten_ham_con": "fetch",
+          "nguon_goc": "browser"
+        }
+      ],
+      "nguon_goc_ham": "frontend/app/page.tsx",
+      "mo_ta_luong_xu_ly": "1. Khởi tạo state UI.\n2. Quản lý sự kiện người dùng nhập câu hỏi.\n3. Gọi API Chat backend và render luồng phản hồi."
+    },
+    {
+      "ten_ham": "reader",
+      "chuc_nang": "React Component / Helper Function `reader` rendering UI chatbot interface",
+      "dau_vao": [
+        {
+          "ten_tham_so": "props",
+          "kieu_du_lieu": "ReactProps",
+          "mo_ta": "Thuộc tính truyền vào component"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "JSX.Element",
+        "mo_ta": "Render giao diện người dùng"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "useState",
+          "nguon_goc": "react"
+        },
+        {
+          "ten_ham_con": "fetch",
+          "nguon_goc": "browser"
+        }
+      ],
+      "nguon_goc_ham": "frontend/app/page.tsx",
+      "mo_ta_luong_xu_ly": "1. Khởi tạo state UI.\n2. Quản lý sự kiện người dùng nhập câu hỏi.\n3. Gọi API Chat backend và render luồng phản hồi."
+    },
+    {
+      "ten_ham": "assistantId",
+      "chuc_nang": "React Component / Helper Function `assistantId` rendering UI chatbot interface",
+      "dau_vao": [
+        {
+          "ten_tham_so": "props",
+          "kieu_du_lieu": "ReactProps",
+          "mo_ta": "Thuộc tính truyền vào component"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "JSX.Element",
+        "mo_ta": "Render giao diện người dùng"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "useState",
+          "nguon_goc": "react"
+        },
+        {
+          "ten_ham_con": "fetch",
+          "nguon_goc": "browser"
+        }
+      ],
+      "nguon_goc_ham": "frontend/app/page.tsx",
+      "mo_ta_luong_xu_ly": "1. Khởi tạo state UI.\n2. Quản lý sự kiện người dùng nhập câu hỏi.\n3. Gọi API Chat backend và render luồng phản hồi."
+    },
+    {
+      "ten_ham": "lines",
+      "chuc_nang": "React Component / Helper Function `lines` rendering UI chatbot interface",
+      "dau_vao": [
+        {
+          "ten_tham_so": "props",
+          "kieu_du_lieu": "ReactProps",
+          "mo_ta": "Thuộc tính truyền vào component"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "JSX.Element",
+        "mo_ta": "Render giao diện người dùng"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "useState",
+          "nguon_goc": "react"
+        },
+        {
+          "ten_ham_con": "fetch",
+          "nguon_goc": "browser"
+        }
+      ],
+      "nguon_goc_ham": "frontend/app/page.tsx",
+      "mo_ta_luong_xu_ly": "1. Khởi tạo state UI.\n2. Quản lý sự kiện người dùng nhập câu hỏi.\n3. Gọi API Chat backend và render luồng phản hồi."
+    },
+    {
+      "ten_ham": "token",
+      "chuc_nang": "React Component / Helper Function `token` rendering UI chatbot interface",
+      "dau_vao": [
+        {
+          "ten_tham_so": "props",
+          "kieu_du_lieu": "ReactProps",
+          "mo_ta": "Thuộc tính truyền vào component"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "JSX.Element",
+        "mo_ta": "Render giao diện người dùng"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "useState",
+          "nguon_goc": "react"
+        },
+        {
+          "ten_ham_con": "fetch",
+          "nguon_goc": "browser"
+        }
+      ],
+      "nguon_goc_ham": "frontend/app/page.tsx",
+      "mo_ta_luong_xu_ly": "1. Khởi tạo state UI.\n2. Quản lý sự kiện người dùng nhập câu hỏi.\n3. Gọi API Chat backend và render luồng phản hồi."
+    },
+    {
+      "ten_ham": "line",
+      "chuc_nang": "React Component / Helper Function `line` rendering UI chatbot interface",
+      "dau_vao": [
+        {
+          "ten_tham_so": "props",
+          "kieu_du_lieu": "ReactProps",
+          "mo_ta": "Thuộc tính truyền vào component"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "JSX.Element",
+        "mo_ta": "Render giao diện người dùng"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "useState",
+          "nguon_goc": "react"
+        },
+        {
+          "ten_ham_con": "fetch",
+          "nguon_goc": "browser"
+        }
+      ],
+      "nguon_goc_ham": "frontend/app/page.tsx",
+      "mo_ta_luong_xu_ly": "1. Khởi tạo state UI.\n2. Quản lý sự kiện người dùng nhập câu hỏi.\n3. Gọi API Chat backend và render luồng phản hồi."
+    },
+    {
+      "ten_ham": "bufferRef",
+      "chuc_nang": "React Component / Helper Function `bufferRef` rendering UI chatbot interface",
+      "dau_vao": [
+        {
+          "ten_tham_so": "props",
+          "kieu_du_lieu": "ReactProps",
+          "mo_ta": "Thuộc tính truyền vào component"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "JSX.Element",
+        "mo_ta": "Render giao diện người dùng"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "useState",
+          "nguon_goc": "react"
+        },
+        {
+          "ten_ham_con": "fetch",
+          "nguon_goc": "browser"
+        }
+      ],
+      "nguon_goc_ham": "frontend/app/page.tsx",
+      "mo_ta_luong_xu_ly": "1. Khởi tạo state UI.\n2. Quản lý sự kiện người dùng nhập câu hỏi.\n3. Gọi API Chat backend và render luồng phản hồi."
+    },
+    {
+      "ten_ham": "userMsg",
+      "chuc_nang": "React Component / Helper Function `userMsg` rendering UI chatbot interface",
+      "dau_vao": [
+        {
+          "ten_tham_so": "props",
+          "kieu_du_lieu": "ReactProps",
+          "mo_ta": "Thuộc tính truyền vào component"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "JSX.Element",
+        "mo_ta": "Render giao diện người dùng"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "useState",
+          "nguon_goc": "react"
+        },
+        {
+          "ten_ham_con": "fetch",
+          "nguon_goc": "browser"
+        }
+      ],
+      "nguon_goc_ham": "frontend/app/page.tsx",
+      "mo_ta_luong_xu_ly": "1. Khởi tạo state UI.\n2. Quản lý sự kiện người dùng nhập câu hỏi.\n3. Gọi API Chat backend và render luồng phản hồi."
+    },
+    {
+      "ten_ham": "chunk",
+      "chuc_nang": "React Component / Helper Function `chunk` rendering UI chatbot interface",
+      "dau_vao": [
+        {
+          "ten_tham_so": "props",
+          "kieu_du_lieu": "ReactProps",
+          "mo_ta": "Thuộc tính truyền vào component"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "JSX.Element",
+        "mo_ta": "Render giao diện người dùng"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "useState",
+          "nguon_goc": "react"
+        },
+        {
+          "ten_ham_con": "fetch",
+          "nguon_goc": "browser"
+        }
+      ],
+      "nguon_goc_ham": "frontend/app/page.tsx",
+      "mo_ta_luong_xu_ly": "1. Khởi tạo state UI.\n2. Quản lý sự kiện người dùng nhập câu hỏi.\n3. Gọi API Chat backend và render luồng phản hồi."
+    },
+    {
+      "ten_ham": "decoder",
+      "chuc_nang": "React Component / Helper Function `decoder` rendering UI chatbot interface",
+      "dau_vao": [
+        {
+          "ten_tham_so": "props",
+          "kieu_du_lieu": "ReactProps",
+          "mo_ta": "Thuộc tính truyền vào component"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "JSX.Element",
+        "mo_ta": "Render giao diện người dùng"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "useState",
+          "nguon_goc": "react"
+        },
+        {
+          "ten_ham_con": "fetch",
+          "nguon_goc": "browser"
+        }
+      ],
+      "nguon_goc_ham": "frontend/app/page.tsx",
+      "mo_ta_luong_xu_ly": "1. Khởi tạo state UI.\n2. Quản lý sự kiện người dùng nhập câu hỏi.\n3. Gọi API Chat backend và render luồng phản hồi."
+    },
+    {
+      "ten_ham": "scrollRef",
+      "chuc_nang": "React Component / Helper Function `scrollRef` rendering UI chatbot interface",
+      "dau_vao": [
+        {
+          "ten_tham_so": "props",
+          "kieu_du_lieu": "ReactProps",
+          "mo_ta": "Thuộc tính truyền vào component"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "JSX.Element",
+        "mo_ta": "Render giao diện người dùng"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "useState",
+          "nguon_goc": "react"
+        },
+        {
+          "ten_ham_con": "fetch",
+          "nguon_goc": "browser"
+        }
+      ],
+      "nguon_goc_ham": "frontend/app/page.tsx",
+      "mo_ta_luong_xu_ly": "1. Khởi tạo state UI.\n2. Quản lý sự kiện người dùng nhập câu hỏi.\n3. Gọi API Chat backend và render luồng phản hồi."
+    },
+    {
+      "ten_ham": "newMessages",
+      "chuc_nang": "React Component / Helper Function `newMessages` rendering UI chatbot interface",
+      "dau_vao": [
+        {
+          "ten_tham_so": "props",
+          "kieu_du_lieu": "ReactProps",
+          "mo_ta": "Thuộc tính truyền vào component"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "JSX.Element",
+        "mo_ta": "Render giao diện người dùng"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "useState",
+          "nguon_goc": "react"
+        },
+        {
+          "ten_ham_con": "fetch",
+          "nguon_goc": "browser"
+        }
+      ],
+      "nguon_goc_ham": "frontend/app/page.tsx",
+      "mo_ta_luong_xu_ly": "1. Khởi tạo state UI.\n2. Quản lý sự kiện người dùng nhập câu hỏi.\n3. Gọi API Chat backend và render luồng phản hồi."
+    }
+  ]
+}

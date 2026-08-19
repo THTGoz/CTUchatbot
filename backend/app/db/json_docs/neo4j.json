@@ -1,0 +1,103 @@
+{
+  "file_name": "neo4j.py",
+  "file_path": "backend/app/db/neo4j.py",
+  "bien_chung": [
+    {
+      "ten_bien": "_driver",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "None"
+    },
+    {
+      "ten_bien": "_driver_lock",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "Lock()"
+    }
+  ],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Chuẩn Hóa Cấu Trúc Module",
+      "noi_dung_rule": "Tuân thủ quy tắc xử lý và chuẩn hóa mã nguồn của module",
+      "dieu_kien_va_hanh_dong": "Đảm bảo tính toàn vẹn khi thực thi"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "get_driver",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `get_driver` của file `neo4j.py`",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `get_driver`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "os.getenv",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "GraphDatabase.driver",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/db/neo4j.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Kiểm tra điều kiện rẽ nhánh `_driver is not None`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "close_driver",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `close_driver` của file `neo4j.py`",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `close_driver`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "_driver.close",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/db/neo4j.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Thực hiện các bước tính toán logic bên trong hàm.\n3. Trả về kết quả đầu ra."
+    },
+    {
+      "ten_ham": "read_query",
+      "chuc_nang": "Run a read query through the single application driver.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "cypher",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `cypher` cho hàm `read_query`"
+        },
+        {
+          "ten_tham_so": "parameters",
+          "kieu_du_lieu": "Mapping[str, Any] | None",
+          "mo_ta": "Tham số đầu vào `parameters` cho hàm `read_query`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "list[dict[str, Any]]",
+        "mo_ta": "Kết quả trả về của hàm `read_query`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "os.getenv",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "get_driver().session",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "get_driver",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "session.run",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/db/neo4j.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (cypher, parameters).\n2. Khởi tạo / gán biến `database`.\n3. Hoàn tất tính toán và trả về kết quả kiểu `list[dict[str, Any]]`."
+    }
+  ]
+}

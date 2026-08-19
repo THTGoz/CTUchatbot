@@ -1,0 +1,106 @@
+{
+  "ten_file": "QuocKhanh2024.pdf",
+  "ma_van_ban": "",
+  "ngay_ban_hanh": "2024-08",
+  "tieu_de": "Về việc nghỉ Lễ Quốc khánh ngày 02 tháng 09 năm 2024",
+  "so_trang": 1,
+  "trang": [
+    {
+      "so_trang": 1,
+      "kich_thuoc": [
+        595.3,
+        841.9
+      ],
+      "items": [
+        {
+          "loai": "van_ban",
+          "dang": "tieu_de",
+          "bbox": [
+            162.0,
+            136.28,
+            497.65,
+            170.09
+          ],
+          "noi_dung": "THÔNG BÁO\nVề việc nghỉ Lễ Quốc khánh ngày 02 tháng 09 năm 2024"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            85.05,
+            213.74,
+            538.6,
+            317.78
+          ],
+          "noi_dung": "Căn cứ Điều 111 và Điều 112 của Bộ Luật Lao động; Công văn số 8662/VPCP-KGVX ngày 03/11/2023 của Văn phòng Chính phủ, hướng dẫn về việc nghỉ Tết Nguyên đán và Quốc khánh năm 2024; Thông báo số 5015/TB- LĐTBXH ngày 22/11/2023 của Bộ Lao động - Thương binh và Xã hội về việc nghỉ tết Âm lịch và nghỉ Lễ Quốc khánh năm 2024 đối với cán bộ, công chức, viên chức và người lao động;"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            85.05,
+            325.99,
+            538.6,
+            359.19
+          ],
+          "noi_dung": "Căn cứ tình hình thực tế, Trường Đại học Cần Thơ thông báo lịch nghỉ Lễ Quốc khánh năm 2024 như sau:"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            85.05,
+            367.4,
+            538.6,
+            400.61
+          ],
+          "noi_dung": "- Viên chức, người lao động và người học của Trường được nghỉ Lễ Quốc khánh từ ngày 02 tháng 9 năm 2024 đến hết ngày 03 tháng 9 năm 2024."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            85.05,
+            408.82,
+            538.61,
+            459.73
+          ],
+          "noi_dung": "- Lịch dạy và học trong các ngày từ 02/9/2024 đến ngày 03/9/2024 sẽ được bù vào tuần lễ dự trữ của học kỳ với tiết học, phòng học không thay đổi hoặc vào thời gian thích hợp do giảng viên sắp xếp và thống nhất với người học."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            85.05,
+            467.94,
+            538.59,
+            518.86
+          ],
+          "noi_dung": "Phòng Công tác Chính trị thực hiện treo cờ Tổ quốc tại các khu của Trường trong dịp Lễ. Trong thời gian nghỉ Lễ, các đơn vị tổ chức chu đáo việc bảo vệ an ninh, trật tự, an toàn và phòng cháy chữa cháy."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            85.05,
+            527.07,
+            538.61,
+            577.98
+          ],
+          "noi_dung": "Đề nghị thủ trưởng các đơn vị thuộc và trực thuộc Trường phổ biến rộng rãi"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "tieu_de",
+          "bbox": [
+            85.05,
+            527.07,
+            538.61,
+            577.98
+          ],
+          "noi_dung": "Thông báo này cho toàn thể viên chức, người lao động và người học biết và thực hiện."
+        }
+      ]
+    }
+  ]
+}

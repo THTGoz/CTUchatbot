@@ -1,0 +1,230 @@
+{
+  "file_name": "run.py",
+  "file_path": "backend/app/scripts/run.py",
+  "bien_chung": [],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Chuẩn Hóa Cấu Trúc Module",
+      "noi_dung_rule": "Tuân thủ quy tắc xử lý và chuẩn hóa mã nguồn của module",
+      "dieu_kien_va_hanh_dong": "Đảm bảo tính toàn vẹn khi thực thi"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "process_quy_che_hoc_vu",
+      "chuc_nang": "Async pipeline để xử lý Quy chế học vụ:\n1. PDF → JSON (PDFProcessor)\n2. JSON → Neo4j Graph (Neo4jGraphBuilder)\n\nArgs:\n    pdf_path: Đường dẫn tới file PDF\n    db_connector: Neo4jConnector instance để kết nối DB\n    \nReturns:\n    dict với kết quả ingestion (nodes, edges, metadata)",
+      "dau_vao": [
+        {
+          "ten_tham_so": "pdf_path",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `pdf_path` cho hàm `process_quy_che_hoc_vu`"
+        },
+        {
+          "ten_tham_so": "db_connector",
+          "kieu_du_lieu": "'Neo4jConnector'",
+          "mo_ta": "Tham số đầu vào `db_connector` cho hàm `process_quy_che_hoc_vu`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "dict",
+        "mo_ta": "Kết quả trả về của hàm `process_quy_che_hoc_vu`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "PDFProcessor",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "QuyCheDocument",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "Neo4jGraphBuilder",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "_count_nodes_from_doc",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "_count_edges_from_doc",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "_count_sections_from_doc",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "_collect_text_from_doc",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "asyncio.to_thread",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "builder.build",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/run.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (pdf_path, db_connector).\n2. Thực hiện các bước tính toán logic bên trong hàm.\n3. Trả về kết quả đầu ra."
+    },
+    {
+      "ten_ham": "_count_nodes_from_doc",
+      "chuc_nang": "Đếm số nodes từ QuyCheDocument",
+      "dau_vao": [
+        {
+          "ten_tham_so": "doc",
+          "kieu_du_lieu": "QuyCheDocument",
+          "mo_ta": "Tham số đầu vào `doc` cho hàm `_count_nodes_from_doc`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "int",
+        "mo_ta": "Kết quả trả về của hàm `_count_nodes_from_doc`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "doc.raw.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "chuong.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "dieu.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "khoan.get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/run.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (doc).\n2. Khởi tạo / gán biến `count`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `int`."
+    },
+    {
+      "ten_ham": "_count_edges_from_doc",
+      "chuc_nang": "Đếm số edges từ QuyCheDocument",
+      "dau_vao": [
+        {
+          "ten_tham_so": "doc",
+          "kieu_du_lieu": "QuyCheDocument",
+          "mo_ta": "Tham số đầu vào `doc` cho hàm `_count_edges_from_doc`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "int",
+        "mo_ta": "Kết quả trả về của hàm `_count_edges_from_doc`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "doc.raw.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "chuong.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "dieu.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "khoan.get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/run.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (doc).\n2. Khởi tạo / gán biến `count`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `int`."
+    },
+    {
+      "ten_ham": "_count_sections_from_doc",
+      "chuc_nang": "Đếm số section chính (Điều) để hiển thị metadata.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "doc",
+          "kieu_du_lieu": "QuyCheDocument",
+          "mo_ta": "Tham số đầu vào `doc` cho hàm `_count_sections_from_doc`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "int",
+        "mo_ta": "Kết quả trả về của hàm `_count_sections_from_doc`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "doc.raw.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "doc.raw.get('quyet_dinh_ban_hanh', {}).get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "chuong.get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/run.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (doc).\n2. Khởi tạo / gán biến `total`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `int`."
+    },
+    {
+      "ten_ham": "_collect_text_from_doc",
+      "chuc_nang": "Ghép nội dung đã parse thành text để thống kê và tạo preview.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "doc",
+          "kieu_du_lieu": "QuyCheDocument",
+          "mo_ta": "Tham số đầu vào `doc` cho hàm `_collect_text_from_doc`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `_collect_text_from_doc`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "doc.raw.get('quyet_dinh_ban_hanh', {}).get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "doc.raw.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "' '.join",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "parts.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "dieu.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "chuong.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "khoan.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "p.strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "diem.get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/run.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (doc).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "ten_file": "GioTo2026.pdf",
+  "ma_van_ban": "",
+  "ngay_ban_hanh": "2026-04",
+  "tieu_de": "Về việc nghỉ Lễ Giỗ Tổ Hùng Vương (10/3 Âm lịch), Ngày chiến thắng (30/4) và Ngày Quốc tế Lao động (01/5) năm 2026",
+  "so_trang": 1,
+  "trang": [
+    {
+      "so_trang": 1,
+      "kich_thuoc": [
+        595.3,
+        841.9
+      ],
+      "items": [
+        {
+          "loai": "van_ban",
+          "dang": "tieu_de",
+          "bbox": [
+            87.38,
+            146.0,
+            543.38,
+            193.69
+          ],
+          "noi_dung": "THÔNG BÁO\nVề việc nghỉ Lễ Giỗ Tổ Hùng Vương (10/3 Âm lịch), Ngày chiến thắng (30/4) và Ngày Quốc tế Lao động (01/5) năm 2026"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            113.4,
+            216.39,
+            317.35,
+            231.89
+          ],
+          "noi_dung": "Căn cứ Bộ luật Lao động năm 2019;"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            85.05,
+            241.71,
+            538.6,
+            311.5
+          ],
+          "noi_dung": "Căn cứ Kế hoạch khung công tác năm 2026 của Đại học Cần Thơ ban hành kèm theo Quyết định số 6311/QĐ-ĐHCT ngày 18 tháng 11 năm 2025, Đại học Cần Thơ thông báo lịch nghỉ các ngày lễ như sau:"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "heading",
+          "bbox": [
+            85.05,
+            326.15,
+            538.6,
+            438.24
+          ],
+          "noi_dung": "1. Lễ Giỗ Tổ Hùng Vương (10/3 Âm lịch): Do trùng ngày nghỉ cuối tuần, viên chức, người lao động và người học được nghỉ bù vào Thứ Hai, ngày 27/4/2026."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "heading",
+          "bbox": [
+            85.05,
+            326.15,
+            538.6,
+            438.24
+          ],
+          "noi_dung": "2. Ngày Chiến thắng (30/4) và Ngày Quốc tế Lao động (01/5): Viên chức, người lao động và người học được nghỉ vào Thứ Năm, ngày 30/4/2026 và Thứ Sáu, ngày 01/5/2026."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            85.05,
+            448.06,
+            538.6,
+            521.51
+          ],
+          "noi_dung": "Phòng Công tác Sinh viên chủ trì, phối hợp với các đơn vị thuộc, trực thuộc Đại học Cần Thơ bố trí lực lượng trực, bảo đảm an ninh, trật tự, phòng cháy và chữa cháy trong toàn Trường; tổ chức treo cờ Tổ quốc tại các khu của Đại học Cần Thơ theo đúng quy định."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            85.05,
+            531.33,
+            538.6,
+            566.15
+          ],
+          "noi_dung": "Đề nghị Thủ trưởng các đơn vị nghiêm túc tổ chức thực hiện các nội dung theo thông báo./."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "file_name": "deps.py",
+  "file_path": "backend/app/api/deps.py",
+  "bien_chung": [
+    {
+      "ten_bien": "security",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "HTTPBearer()"
+    }
+  ],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Chuẩn Hóa Cấu Trúc Module",
+      "noi_dung_rule": "Tuân thủ quy tắc xử lý và chuẩn hóa mã nguồn của module",
+      "dieu_kien_va_hanh_dong": "Đảm bảo tính toàn vẹn khi thực thi"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "require_admin",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `require_admin` của file `deps.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "credentials",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `credentials` cho hàm `require_admin`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `require_admin`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "Depends",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "decode_token",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "payload.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "HTTPException",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/api/deps.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (credentials).\n2. Khởi tạo / gán biến `token`.\n3. Kiểm tra điều kiện rẽ nhánh `payload.get('role') != 'admin'`.\n4. Trả về kết quả cho caller.\n5. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    }
+  ]
+}

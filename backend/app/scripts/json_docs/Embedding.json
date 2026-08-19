@@ -1,0 +1,164 @@
+{
+  "file_name": "Embedding.py",
+  "file_path": "backend/app/scripts/Embedding.py",
+  "bien_chung": [],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Ngưỡng Độ Tương Đồng Vector (Similarity Score Threshold)",
+      "noi_dung_rule": "Lọc danh sách kết quả truy vấn theo ngưỡng điểm tương đồng vector",
+      "dieu_kien_va_hanh_dong": "Chỉ giữ lại các candidate đạt điểm độ tương đồng đạt yêu cầu"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "__init__",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `__init__` của file `Embedding.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "model_name",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `model_name` cho hàm `__init__`"
+        },
+        {
+          "ten_tham_so": "cache_folder",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `cache_folder` cho hàm `__init__`"
+        },
+        {
+          "ten_tham_so": "device",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `device` cho hàm `__init__`"
+        },
+        {
+          "ten_tham_so": "embed_batch_size",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `embed_batch_size` cho hàm `__init__`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `__init__`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "HuggingFaceEmbedding",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "os.getenv",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/Embedding.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (model_name, cache_folder, device, embed_batch_size).\n2. Khởi tạo / gán biến `self.model`.\n3. Khởi tạo / gán biến `Settings.embed_model`.\n4. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "get_embedding_batch",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `get_embedding_batch` của file `Embedding.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "texts",
+          "kieu_du_lieu": "Union[str, List[str]]",
+          "mo_ta": "Tham số đầu vào `texts` cho hàm `get_embedding_batch`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `get_embedding_batch`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "self.model.get_text_embedding_batch",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "t.strip",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/Embedding.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (texts).\n2. Kiểm tra điều kiện rẽ nhánh `isinstance(texts, str)`.\n3. Khởi tạo / gán biến `cleaned_texts`.\n4. Kiểm tra điều kiện rẽ nhánh `not cleaned_texts`.\n5. Trả về kết quả cho caller.\n6. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "get_similarity",
+      "chuc_nang": "So sánh nhanh 2 câu văn bản",
+      "dau_vao": [
+        {
+          "ten_tham_so": "text_a",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `text_a` cho hàm `get_similarity`"
+        },
+        {
+          "ten_tham_so": "text_b",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `text_b` cho hàm `get_similarity`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `get_similarity`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "self.get_embedding_batch",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "util.cos_sim(vec_a, vec_b).item",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "util.cos_sim",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/Embedding.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (text_a, text_b).\n2. Khởi tạo / gán biến `(vec_a, vec_b)`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "find_best_match",
+      "chuc_nang": "Tìm top K đoạn văn bản giống với câu hỏi nhất",
+      "dau_vao": [
+        {
+          "ten_tham_so": "query",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `query` cho hàm `find_best_match`"
+        },
+        {
+          "ten_tham_so": "document_list",
+          "kieu_du_lieu": "List[str]",
+          "mo_ta": "Tham số đầu vào `document_list` cho hàm `find_best_match`"
+        },
+        {
+          "ten_tham_so": "top_k",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `top_k` cho hàm `find_best_match`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `find_best_match`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "self.get_embedding_batch",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "torch.topk",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "util.cos_sim",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "min",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/Embedding.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (query, document_list, top_k).\n2. Khởi tạo / gán biến `query_vec`.\n3. Khởi tạo / gán biến `doc_vecs`.\n4. Khởi tạo / gán biến `cos_scores`.\n5. Khởi tạo / gán biến `top_results`.\n6. Trả về kết quả cho caller.\n7. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    }
+  ]
+}

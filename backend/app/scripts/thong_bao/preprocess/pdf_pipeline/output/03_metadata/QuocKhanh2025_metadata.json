@@ -1,0 +1,139 @@
+{
+  "ten_file": "QuocKhanh2025.pdf",
+  "ma_van_ban": "",
+  "ngay_ban_hanh": "2025-08",
+  "tieu_de": "Về việc nghỉ Lễ Quốc khánh năm 2025",
+  "so_trang": 1,
+  "trang": [
+    {
+      "so_trang": 1,
+      "kich_thuoc": [
+        595.3,
+        841.9
+      ],
+      "items": [
+        {
+          "loai": "van_ban",
+          "dang": "tieu_de",
+          "bbox": [
+            196.51,
+            153.44,
+            427.14,
+            185.04
+          ],
+          "noi_dung": "THÔNG BÁO\nVề việc nghỉ Lễ Quốc khánh năm 2025"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            113.4,
+            201.74,
+            317.35,
+            217.24
+          ],
+          "noi_dung": "Căn cứ Bộ luật Lao động năm 2019;"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            85.05,
+            226.25,
+            538.61,
+            260.26
+          ],
+          "noi_dung": "Căn cứ Thông báo số 6150/TB-LĐTBXH ngày 03/12/2024 của Bộ Lao động"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            85.05,
+            226.25,
+            538.61,
+            260.26
+          ],
+          "noi_dung": "- Thương binh và Xã hội về lịch nghỉ Tết Âm lịch và Lễ Quốc khánh năm 2025;"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            85.05,
+            269.28,
+            538.61,
+            302.48
+          ],
+          "noi_dung": "Căn cứ tình hình thực tế, Đại học Cần thơ thông báo lịch nghỉ Lễ Quốc khánh năm 2025 như sau:"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            85.05,
+            310.7,
+            538.61,
+            343.9
+          ],
+          "noi_dung": "- Viên chức, người lao động và người học của Trường sẽ được nghỉ Lễ Quốc khánh từ Thứ Hai, ngày 01/9/2025 đến hết Thứ Ba, ngày 02/9/2025 Dương lịch."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            85.05,
+            352.11,
+            538.61,
+            403.02
+          ],
+          "noi_dung": "- Lịch dạy và học trong các ngày từ 01/9/2025 đến ngày 02/9/2025 sẽ được bù vào tuần dự trữ của học kỳ với tiết học, phòng học không thay đổi hoặc vào thời gian thích hợp do giảng viên sắp xếp và thống nhất với người học."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            113.4,
+            411.24,
+            538.61,
+            426.73
+          ],
+          "noi_dung": "- Phòng Công tác Sinh viên thực hiện treo cờ Tổ quốc tại các khu của Trường."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            85.05,
+            434.94,
+            538.61,
+            468.15
+          ],
+          "noi_dung": "- Các đơn vị chủ động đảm bảo an ninh trật tự, an toàn phòng cháy chữa cháy trong thời gian nghỉ Lễ."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            85.05,
+            476.36,
+            538.61,
+            528.88
+          ],
+          "noi_dung": "Đề nghị thủ trưởng các đơn vị thuộc và trực thuộc Trường phổ biến rộng rãi"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "tieu_de",
+          "bbox": [
+            85.05,
+            476.36,
+            538.61,
+            528.88
+          ],
+          "noi_dung": "Thông báo này đến toàn thể viên chức, người lao động và người học trong đơn vị để thực hiện."
+        }
+      ]
+    }
+  ]
+}

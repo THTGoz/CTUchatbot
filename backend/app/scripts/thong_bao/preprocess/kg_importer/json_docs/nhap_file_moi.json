@@ -1,0 +1,458 @@
+{
+  "file_name": "nhap_file_moi.py",
+  "file_path": "backend/app/scripts/thong_bao/preprocess/kg_importer/nhap_file_moi.py",
+  "bien_chung": [],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Chuẩn Hóa Cấu Trúc Module",
+      "noi_dung_rule": "Tuân thủ quy tắc xử lý và chuẩn hóa mã nguồn của module",
+      "dieu_kien_va_hanh_dong": "Đảm bảo tính toàn vẹn khi thực thi"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "cau_hinh_console_utf8",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `cau_hinh_console_utf8` của file `nhap_file_moi.py`",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "None",
+        "mo_ta": "Kết quả trả về của hàm `cau_hinh_console_utf8`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "getattr",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "callable",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "reconfigure",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/kg_importer/nhap_file_moi.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Thực hiện các bước tính toán logic bên trong hàm.\n3. Trả về kết quả đầu ra."
+    },
+    {
+      "ten_ham": "doc_file_chunks",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `doc_file_chunks` của file `nhap_file_moi.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "duong_dan",
+          "kieu_du_lieu": "Path",
+          "mo_ta": "Tham số đầu vào `duong_dan` cho hàm `doc_file_chunks`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "dict[str, Any]",
+        "mo_ta": "Kết quả trả về của hàm `doc_file_chunks`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "duong_dan.expanduser().resolve",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "duong_dan.is_file",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "FileNotFoundError",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "duong_dan.name.casefold().endswith",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "ValueError",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "duong_dan.open",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "json.load",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "TypeError",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "duong_dan.expanduser",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "du_lieu.get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/kg_importer/nhap_file_moi.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (duong_dan).\n2. Khởi tạo / gán biến `duong_dan`.\n3. Kiểm tra điều kiện rẽ nhánh `not duong_dan.is_file()`.\n4. Kiểm tra điều kiện rẽ nhánh `not duong_dan.name.casefold().endswith('_chunks.json')`.\n5. Kiểm tra điều kiện rẽ nhánh `not isinstance(du_lieu, dict)`.\n6. Kiểm tra điều kiện rẽ nhánh `not isinstance(du_lieu.get('metadata'), dict)`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `dict[str, Any]`."
+    },
+    {
+      "ten_ham": "lay_id_thong_bao",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `lay_id_thong_bao` của file `nhap_file_moi.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "du_lieu",
+          "kieu_du_lieu": "dict[str, Any]",
+          "mo_ta": "Tham số đầu vào `du_lieu` cho hàm `lay_id_thong_bao`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `lay_id_thong_bao`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "thongbao_id_from_filename",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "metadata.get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/kg_importer/nhap_file_moi.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (du_lieu).\n2. Khởi tạo / gán biến `metadata`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "them_thong_bao_moi",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `them_thong_bao_moi` của file `nhap_file_moi.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "tx",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `tx` cho hàm `them_thong_bao_moi`"
+        },
+        {
+          "ten_tham_so": "du_lieu",
+          "kieu_du_lieu": "dict[str, Any]",
+          "mo_ta": "Tham số đầu vào `du_lieu` cho hàm `them_thong_bao_moi`"
+        },
+        {
+          "ten_tham_so": "id_thong_bao",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `id_thong_bao` cho hàm `them_thong_bao_moi`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "dict[str, int]",
+        "mo_ta": "Kết quả trả về của hàm `them_thong_bao_moi`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "import_thongbao",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "ValueError",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "tx.run",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/kg_importer/nhap_file_moi.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (tx, du_lieu, id_thong_bao).\n2. Khởi tạo / gán biến `ban_ghi`.\n3. Kiểm tra điều kiện rẽ nhánh `ban_ghi is not None`.\n4. Trả về kết quả cho caller.\n5. Hoàn tất tính toán và trả về kết quả kiểu `dict[str, int]`."
+    },
+    {
+      "ten_ham": "lay_node_trong_cay",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `lay_node_trong_cay` của file `nhap_file_moi.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "tx",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `tx` cho hàm `lay_node_trong_cay`"
+        },
+        {
+          "ten_tham_so": "nhan",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `nhan` cho hàm `lay_node_trong_cay`"
+        },
+        {
+          "ten_tham_so": "id_thong_bao",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `id_thong_bao` cho hàm `lay_node_trong_cay`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "list[dict[str, str]]",
+        "mo_ta": "Kết quả trả về của hàm `lay_node_trong_cay`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "ValueError",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "tx.run",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/kg_importer/nhap_file_moi.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (tx, nhan, id_thong_bao).\n2. Kiểm tra điều kiện rẽ nhánh `nhan not in NODE_LABELS`.\n3. Khởi tạo / gán biến `truy_van`.\n4. Trả về kết quả cho caller.\n5. Hoàn tất tính toán và trả về kết quả kiểu `list[dict[str, str]]`."
+    },
+    {
+      "ten_ham": "tao_embedding_trong_transaction",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `tao_embedding_trong_transaction` của file `nhap_file_moi.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "tx",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `tx` cho hàm `tao_embedding_trong_transaction`"
+        },
+        {
+          "ten_tham_so": "id_thong_bao",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `id_thong_bao` cho hàm `tao_embedding_trong_transaction`"
+        },
+        {
+          "ten_tham_so": "model",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `model` cho hàm `tao_embedding_trong_transaction`"
+        },
+        {
+          "ten_tham_so": "kich_thuoc_batch",
+          "kieu_du_lieu": "int",
+          "mo_ta": "Tham số đầu vào `kich_thuoc_batch` cho hàm `tao_embedding_trong_transaction`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "dict[str, int]",
+        "mo_ta": "Kết quả trả về của hàm `tao_embedding_trong_transaction`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "lay_node_trong_cay",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "model.encode",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "save_embeddings",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "vector.tolist",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "zip",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/kg_importer/nhap_file_moi.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (tx, id_thong_bao, model, kich_thuoc_batch).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `dict[str, int]`."
+    },
+    {
+      "ten_ham": "them_thong_bao_kem_embedding",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `them_thong_bao_kem_embedding` của file `nhap_file_moi.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "tx",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `tx` cho hàm `them_thong_bao_kem_embedding`"
+        },
+        {
+          "ten_tham_so": "du_lieu",
+          "kieu_du_lieu": "dict[str, Any]",
+          "mo_ta": "Tham số đầu vào `du_lieu` cho hàm `them_thong_bao_kem_embedding`"
+        },
+        {
+          "ten_tham_so": "id_thong_bao",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `id_thong_bao` cho hàm `them_thong_bao_kem_embedding`"
+        },
+        {
+          "ten_tham_so": "model",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `model` cho hàm `them_thong_bao_kem_embedding`"
+        },
+        {
+          "ten_tham_so": "kich_thuoc_batch",
+          "kieu_du_lieu": "int",
+          "mo_ta": "Tham số đầu vào `kich_thuoc_batch` cho hàm `them_thong_bao_kem_embedding`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "dict[str, Any]",
+        "mo_ta": "Kết quả trả về của hàm `them_thong_bao_kem_embedding`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "them_thong_bao_moi",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "tao_embedding_trong_transaction",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/kg_importer/nhap_file_moi.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (tx, du_lieu, id_thong_bao, model, kich_thuoc_batch).\n2. Khởi tạo / gán biến `so_luong_nut`.\n3. Khởi tạo / gán biến `so_luong_embedding`.\n4. Trả về kết quả cho caller.\n5. Hoàn tất tính toán và trả về kết quả kiểu `dict[str, Any]`."
+    },
+    {
+      "ten_ham": "nap_model_embedding",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `nap_model_embedding` của file `nhap_file_moi.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "ten_model",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `ten_model` cho hàm `nap_model_embedding`"
+        },
+        {
+          "ten_tham_so": "thiet_bi",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `thiet_bi` cho hàm `nap_model_embedding`"
+        },
+        {
+          "ten_tham_so": "so_chieu_yeu_cau",
+          "kieu_du_lieu": "int",
+          "mo_ta": "Tham số đầu vào `so_chieu_yeu_cau` cho hàm `nap_model_embedding`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `nap_model_embedding`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "SentenceTransformer",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "model.get_embedding_dimension",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "ValueError",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/kg_importer/nhap_file_moi.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (ten_model, thiet_bi, so_chieu_yeu_cau).\n2. Gọi thực thi hàm `print`.\n3. Khởi tạo / gán biến `model`.\n4. Khởi tạo / gán biến `so_chieu`.\n5. Kiểm tra điều kiện rẽ nhánh `so_chieu != so_chieu_yeu_cau`.\n6. Trả về kết quả cho caller.\n7. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "nhap_file_moi",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `nhap_file_moi` của file `nhap_file_moi.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "duong_dan",
+          "kieu_du_lieu": "Path",
+          "mo_ta": "Tham số đầu vào `duong_dan` cho hàm `nhap_file_moi`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "dict[str, Any]",
+        "mo_ta": "Kết quả trả về của hàm `nhap_file_moi`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "doc_file_chunks",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "lay_id_thong_bao",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "load_settings",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "Neo4jConnection",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "ket_noi.verify",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "ket_noi.create_constraints",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "nap_model_embedding",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "ket_noi.execute_write",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "ket_noi.close",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "ket_noi.driver.session",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/kg_importer/nhap_file_moi.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (duong_dan).\n2. Khởi tạo / gán biến `du_lieu`.\n3. Khởi tạo / gán biến `id_thong_bao`.\n4. Khởi tạo / gán biến `cau_hinh`.\n5. Khởi tạo / gán biến `ket_noi`.\n6. Hoàn tất tính toán và trả về kết quả kiểu `dict[str, Any]`."
+    },
+    {
+      "ten_ham": "doc_tham_so",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `doc_tham_so` của file `nhap_file_moi.py`",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "argparse.Namespace",
+        "mo_ta": "Kết quả trả về của hàm `doc_tham_so`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "argparse.ArgumentParser",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "parser.add_argument",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "parser.parse_args",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/kg_importer/nhap_file_moi.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Khởi tạo / gán biến `parser`.\n3. Gọi thực thi hàm `parser.add_argument`.\n4. Trả về kết quả cho caller.\n5. Hoàn tất tính toán và trả về kết quả kiểu `argparse.Namespace`."
+    },
+    {
+      "ten_ham": "main",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `main` của file `nhap_file_moi.py`",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "int",
+        "mo_ta": "Kết quả trả về của hàm `main`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "cau_hinh_console_utf8",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "doc_tham_so",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "nhap_file_moi",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "json.dumps",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/kg_importer/nhap_file_moi.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Gọi thực thi hàm `cau_hinh_console_utf8`.\n3. Khởi tạo / gán biến `tham_so`.\n4. Hoàn tất tính toán và trả về kết quả kiểu `int`."
+    }
+  ]
+}

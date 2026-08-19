@@ -1,0 +1,820 @@
+{
+  "file_name": "subgraph_retriever.py",
+  "file_path": "backend/app/services/ctdt/subgraph_retriever.py",
+  "bien_chung": [
+    {
+      "ten_bien": "DEFAULT_KHOA",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "51"
+    },
+    {
+      "ten_bien": "DEFAULT_HE",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "'đại trà'"
+    },
+    {
+      "ten_bien": "_NAME_KEYS",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "('ten_hoc_phan', 'ten_nganh_vi', 'ten_khoi', 'ten', 'noi_dung', 'ma_hoc_phan', 'ma_chuong_trinh')"
+    },
+    {
+      "ten_bien": "_PROP_KEYS",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "('ma_hoc_phan', 'ten_hoc_phan', 'so_tin_chi', 'ma_nganh', 'ten_nganh_vi', 'khoa', 'he', 'tong_tin_chi', 'ten_khoi', 'loai', 'nhom', 'ten')"
+    },
+    {
+      "ten_bien": "_SEARCHABLE_PROP_KEYS",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "tuple(dict.fromkeys(_NAME_KEYS + _PROP_KEYS))"
+    },
+    {
+      "ten_bien": "_ALLOWED_RELATION_HINTS",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "{'BAN_HANH_THEO', 'DAO_TAO', 'THUOC_VE', 'CAP', 'CO', 'THAM_KHAO', 'DAT_DUOC', 'YEU_CAU', 'GOM', 'DOI_VOI', 'YEU_CAU_TIEN_QUYET', 'CO_THE_SONG_HANH'}"
+    },
+    {
+      "ten_bien": "_ALLOWED_ANCHOR_NODE_TYPES",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "{'ChuongTrinhDaoTao', 'Nganh', 'KhoiKienThuc', 'HocPhan', 'ChuanDauRa', 'DieuKienTotNghiep', 'VanBanPhapLy', 'Khoa', 'BoMon'}"
+    }
+  ],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Fallback / Phản Hồi Mặc Định",
+      "noi_dung_rule": "Phản hồi dự phòng khi cơ sở dữ liệu không tìm thấy dữ liệu phù hợp",
+      "dieu_kien_va_hanh_dong": "Trả về thông báo hướng dẫn hoặc gọi LLM trả lời xã giao"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "_is_embedding_key",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_is_embedding_key` của file `subgraph_retriever.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "key",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `key` cho hàm `_is_embedding_key`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "bool",
+        "mo_ta": "Kết quả trả về của hàm `_is_embedding_key`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "str(key or '').strip().lower",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "lowered.endswith",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(key or '').strip",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/subgraph_retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (key).\n2. Khởi tạo / gán biến `lowered`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `bool`."
+    },
+    {
+      "ten_ham": "_sanitize_props",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_sanitize_props` của file `subgraph_retriever.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "props",
+          "kieu_du_lieu": "Dict[str, Any]",
+          "mo_ta": "Tham số đầu vào `props` cho hàm `_sanitize_props`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Dict[str, Any]",
+        "mo_ta": "Kết quả trả về của hàm `_sanitize_props`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "(props or {}).items",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_is_embedding_key",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/subgraph_retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (props).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `Dict[str, Any]`."
+    },
+    {
+      "ten_ham": "__init__",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `__init__` của file `subgraph_retriever.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "seed_limit",
+          "kieu_du_lieu": "int",
+          "mo_ta": "Tham số đầu vào `seed_limit` cho hàm `__init__`"
+        },
+        {
+          "ten_tham_so": "max_depth",
+          "kieu_du_lieu": "int",
+          "mo_ta": "Tham số đầu vào `max_depth` cho hàm `__init__`"
+        },
+        {
+          "ten_tham_so": "path_limit",
+          "kieu_du_lieu": "int",
+          "mo_ta": "Tham số đầu vào `path_limit` cho hàm `__init__`"
+        },
+        {
+          "ten_tham_so": "max_nodes",
+          "kieu_du_lieu": "int",
+          "mo_ta": "Tham số đầu vào `max_nodes` cho hàm `__init__`"
+        },
+        {
+          "ten_tham_so": "max_relationships",
+          "kieu_du_lieu": "int",
+          "mo_ta": "Tham số đầu vào `max_relationships` cho hàm `__init__`"
+        },
+        {
+          "ten_tham_so": "max_text_chars",
+          "kieu_du_lieu": "int",
+          "mo_ta": "Tham số đầu vào `max_text_chars` cho hàm `__init__`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "None",
+        "mo_ta": "Kết quả trả về của hàm `__init__`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "max",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "min",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/subgraph_retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (seed_limit, max_depth, path_limit, max_nodes, max_relationships, max_text_chars).\n2. Khởi tạo / gán biến `self.seed_limit`.\n3. Khởi tạo / gán biến `self.max_depth`.\n4. Khởi tạo / gán biến `self.path_limit`.\n5. Khởi tạo / gán biến `self.max_nodes`.\n6. Khởi tạo / gán biến `self.max_relationships`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `None`."
+    },
+    {
+      "ten_ham": "retrieve",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `retrieve` của file `subgraph_retriever.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "analysis",
+          "kieu_du_lieu": "Dict[str, Any]",
+          "mo_ta": "Tham số đầu vào `analysis` cho hàm `retrieve`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "GraphBuildResult",
+        "mo_ta": "Kết quả trả về của hàm `retrieve`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "self._normalize_graph_plan",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._normalize_filters",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._build_keywords",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._fetch_seed_nodes",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._prioritize_seed_ids",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._expand_subgraph",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self.serialize_subgraph",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._is_graph_sufficient",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "GraphBuildResult",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "analysis.get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/subgraph_retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (analysis).\n2. Khởi tạo / gán biến `rewrite`.\n3. Khởi tạo / gán biến `entities`.\n4. Khởi tạo / gán biến `ctdt_filters`.\n5. Khởi tạo / gán biến `plan`.\n6. Khởi tạo / gán biến `relation_hints`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `GraphBuildResult`."
+    },
+    {
+      "ten_ham": "_normalize_graph_plan",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_normalize_graph_plan` của file `subgraph_retriever.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "raw_plan",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `raw_plan` cho hàm `_normalize_graph_plan`"
+        },
+        {
+          "ten_tham_so": "analysis",
+          "kieu_du_lieu": "Dict[str, Any]",
+          "mo_ta": "Tham số đầu vào `analysis` cho hàm `_normalize_graph_plan`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Dict[str, Any]",
+        "mo_ta": "Kết quả trả về của hàm `_normalize_graph_plan`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "self._normalize_relation_hints",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "raw_expansion.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "plan.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(item).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "analysis.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str((entity or {}).get('type', '')).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(plan.get('answer_shape', 'summary')).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "max",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "anchor_node_types.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "min",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/subgraph_retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (raw_plan, analysis).\n2. Khởi tạo / gán biến `plan`.\n3. Khởi tạo / gán biến `raw_anchor_types`.\n4. Khởi tạo / gán biến `anchor_node_types`.\n5. Kiểm tra điều kiện rẽ nhánh `not anchor_node_types`.\n6. Khởi tạo / gán biến `focus_relations`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `Dict[str, Any]`."
+    },
+    {
+      "ten_ham": "_normalize_relation_hints",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_normalize_relation_hints` của file `subgraph_retriever.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "raw_relations",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `raw_relations` cho hàm `_normalize_relation_hints`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "List[str]",
+        "mo_ta": "Kết quả trả về của hàm `_normalize_relation_hints`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "str(rel or '').strip().upper",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "hints.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(rel or '').strip",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/subgraph_retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (raw_relations).\n2. Kiểm tra điều kiện rẽ nhánh `not isinstance(raw_relations, list)`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `List[str]`."
+    },
+    {
+      "ten_ham": "_normalize_filters",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_normalize_filters` của file `subgraph_retriever.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "raw_filters",
+          "kieu_du_lieu": "Dict[str, Any]",
+          "mo_ta": "Tham số đầu vào `raw_filters` cho hàm `_normalize_filters`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Tuple[Dict[str, Any], bool]",
+        "mo_ta": "Kết quả trả về của hàm `_normalize_filters`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "filters.get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/subgraph_retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (raw_filters).\n2. Khởi tạo / gán biến `filters`.\n3. Khởi tạo / gán biến `used_default`.\n4. Khởi tạo / gán biến `khoa`.\n5. Kiểm tra điều kiện rẽ nhánh `khoa is None`.\n6. Khởi tạo / gán biến `he`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `Tuple[Dict[str, Any], bool]`."
+    },
+    {
+      "ten_ham": "_build_keywords",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_build_keywords` của file `subgraph_retriever.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "rewrite",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `rewrite` cho hàm `_build_keywords`"
+        },
+        {
+          "ten_tham_so": "entities",
+          "kieu_du_lieu": "List[Dict[str, Any]]",
+          "mo_ta": "Tham số đầu vào `entities` cho hàm `_build_keywords`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "List[str]",
+        "mo_ta": "Kết quả trả về của hàm `_build_keywords`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "keywords.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str((entity or {}).get('value', '')).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "kw.strip().lower",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "seen.add",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "deduped.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "kw.strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "(entity or {}).get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/subgraph_retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (rewrite, entities).\n2. Kiểm tra điều kiện rẽ nhánh `rewrite`.\n3. Khởi tạo / gán biến `seen`.\n4. Trả về kết quả cho caller.\n5. Hoàn tất tính toán và trả về kết quả kiểu `List[str]`."
+    },
+    {
+      "ten_ham": "_fetch_seed_nodes",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_fetch_seed_nodes` của file `subgraph_retriever.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "keywords",
+          "kieu_du_lieu": "List[str]",
+          "mo_ta": "Tham số đầu vào `keywords` cho hàm `_fetch_seed_nodes`"
+        },
+        {
+          "ten_tham_so": "filters",
+          "kieu_du_lieu": "Dict[str, Any]",
+          "mo_ta": "Tham số đầu vào `filters` cho hàm `_fetch_seed_nodes`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "List[Dict[str, Any]]",
+        "mo_ta": "Kết quả trả về của hàm `_fetch_seed_nodes`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "get_driver",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "filters.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "driver.session",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "session.run(cypher, **params).data",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "session.run",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_is_embedding_key",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/subgraph_retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (keywords, filters).\n2. Khởi tạo / gán biến `cypher`.\n3. Khởi tạo / gán biến `params`.\n4. Khởi tạo / gán biến `driver`.\n5. Hoàn tất tính toán và trả về kết quả kiểu `List[Dict[str, Any]]`."
+    },
+    {
+      "ten_ham": "_prioritize_seed_ids",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_prioritize_seed_ids` của file `subgraph_retriever.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "seed_rows",
+          "kieu_du_lieu": "List[Dict[str, Any]]",
+          "mo_ta": "Tham số đầu vào `seed_rows` cho hàm `_prioritize_seed_ids`"
+        },
+        {
+          "ten_tham_so": "anchor_node_types",
+          "kieu_du_lieu": "List[str]",
+          "mo_ta": "Tham số đầu vào `anchor_node_types` cho hàm `_prioritize_seed_ids`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "List[int]",
+        "mo_ta": "Kết quả trả về của hàm `_prioritize_seed_ids`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "row.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "seen.add",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "any",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "anchored.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "ctdt.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "non_ctdt.append",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/subgraph_retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (seed_rows, anchor_node_types).\n2. Khởi tạo / gán biến `seen`.\n3. Khởi tạo / gán biến `ordered`.\n4. Trả về kết quả cho caller.\n5. Hoàn tất tính toán và trả về kết quả kiểu `List[int]`."
+    },
+    {
+      "ten_ham": "_expand_subgraph",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_expand_subgraph` của file `subgraph_retriever.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "seed_ids",
+          "kieu_du_lieu": "List[int]",
+          "mo_ta": "Tham số đầu vào `seed_ids` cho hàm `_expand_subgraph`"
+        },
+        {
+          "ten_tham_so": "filters",
+          "kieu_du_lieu": "Dict[str, Any]",
+          "mo_ta": "Tham số đầu vào `filters` cho hàm `_expand_subgraph`"
+        },
+        {
+          "ten_tham_so": "relation_hints",
+          "kieu_du_lieu": "List[str]",
+          "mo_ta": "Tham số đầu vào `relation_hints` cho hàm `_expand_subgraph`"
+        },
+        {
+          "ten_tham_so": "expansion_policy",
+          "kieu_du_lieu": "Dict[str, int]",
+          "mo_ta": "Tham số đầu vào `expansion_policy` cho hàm `_expand_subgraph`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Tuple[Dict[int, Dict[str, Any]], Dict[str, Dict[str, Any]]]",
+        "mo_ta": "Kết quả trả về của hàm `_expand_subgraph`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "self._collect_rows",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._run_expand_query",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/subgraph_retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (seed_ids, filters, relation_hints, expansion_policy).\n2. Kiểm tra điều kiện rẽ nhánh `relation_hints`.\n3. Kiểm tra điều kiện rẽ nhánh `not rows`.\n4. Trả về kết quả cho caller.\n5. Hoàn tất tính toán và trả về kết quả kiểu `Tuple[Dict[int, Dict[str, Any]], Dict[str, Dict[str, Any]]]`."
+    },
+    {
+      "ten_ham": "_run_expand_query",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_run_expand_query` của file `subgraph_retriever.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "seed_ids",
+          "kieu_du_lieu": "List[int]",
+          "mo_ta": "Tham số đầu vào `seed_ids` cho hàm `_run_expand_query`"
+        },
+        {
+          "ten_tham_so": "filters",
+          "kieu_du_lieu": "Dict[str, Any]",
+          "mo_ta": "Tham số đầu vào `filters` cho hàm `_run_expand_query`"
+        },
+        {
+          "ten_tham_so": "relation_hints",
+          "kieu_du_lieu": "List[str]",
+          "mo_ta": "Tham số đầu vào `relation_hints` cho hàm `_run_expand_query`"
+        },
+        {
+          "ten_tham_so": "expansion_policy",
+          "kieu_du_lieu": "Dict[str, int]",
+          "mo_ta": "Tham số đầu vào `expansion_policy` cho hàm `_run_expand_query`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "List[Dict[str, Any]]",
+        "mo_ta": "Kết quả trả về của hàm `_run_expand_query`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "get_driver",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "driver.session",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "session.run",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "filters.get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/subgraph_retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (seed_ids, filters, relation_hints, expansion_policy).\n2. Khởi tạo / gán biến `max_depth`.\n3. Khởi tạo / gán biến `relation_clause`.\n4. Kiểm tra điều kiện rẽ nhánh `relation_hints`.\n5. Khởi tạo / gán biến `cypher`.\n6. Khởi tạo / gán biến `driver`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `List[Dict[str, Any]]`."
+    },
+    {
+      "ten_ham": "_collect_rows",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_collect_rows` của file `subgraph_retriever.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "rows",
+          "kieu_du_lieu": "List[Dict[str, Any]]",
+          "mo_ta": "Tham số đầu vào `rows` cho hàm `_collect_rows`"
+        },
+        {
+          "ten_tham_so": "seed_ids",
+          "kieu_du_lieu": "List[int]",
+          "mo_ta": "Tham số đầu vào `seed_ids` cho hàm `_collect_rows`"
+        },
+        {
+          "ten_tham_so": "expansion_policy",
+          "kieu_du_lieu": "Dict[str, int]",
+          "mo_ta": "Tham số đầu vào `expansion_policy` cho hàm `_collect_rows`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Tuple[Dict[int, Dict[str, Any]], Dict[str, Dict[str, Any]]]",
+        "mo_ta": "Kết quả trả về của hàm `_collect_rows`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "get_driver",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "min",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "nodes_by_id.keys",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "row.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "driver.session",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "session.run(fill_cypher, seed_ids=missing).data",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "rels_by_id.items",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "node.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_sanitize_props",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "rel.get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/subgraph_retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (rows, seed_ids, expansion_policy).\n2. Khởi tạo / gán biến `driver`.\n3. Khởi tạo / gán biến `max_nodes`.\n4. Khởi tạo / gán biến `missing`.\n5. Kiểm tra điều kiện rẽ nhánh `missing`.\n6. Khởi tạo / gán biến `valid_ids`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `Tuple[Dict[int, Dict[str, Any]], Dict[str, Dict[str, Any]]]`."
+    },
+    {
+      "ten_ham": "serialize_subgraph",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `serialize_subgraph` của file `subgraph_retriever.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "nodes_by_id",
+          "kieu_du_lieu": "Dict[int, Dict[str, Any]]",
+          "mo_ta": "Tham số đầu vào `nodes_by_id` cho hàm `serialize_subgraph`"
+        },
+        {
+          "ten_tham_so": "rels_by_id",
+          "kieu_du_lieu": "Dict[str, Dict[str, Any]]",
+          "mo_ta": "Tham số đầu vào `rels_by_id` cho hàm `serialize_subgraph`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `serialize_subgraph`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "nodes_by_id.values",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "rels_by_id.values",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "'\\n'.join(chunks).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._pick_name",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._pick_props",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "nodes_by_id.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "relation_lines.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "node.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "node_lines.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "start.get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/subgraph_retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (nodes_by_id, rels_by_id).\n2. Kiểm tra điều kiện rẽ nhánh `not nodes_by_id`.\n3. Khởi tạo / gán biến `chunks`.\n4. Kiểm tra điều kiện rẽ nhánh `relation_lines`.\n5. Khởi tạo / gán biến `text`.\n6. Kiểm tra điều kiện rẽ nhánh `len(text) > self.max_text_chars`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "_pick_name",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_pick_name` của file `subgraph_retriever.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "props",
+          "kieu_du_lieu": "Dict[str, Any]",
+          "mo_ta": "Tham số đầu vào `props` cho hàm `_pick_name`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `_pick_name`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "props.items",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "props.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_is_embedding_key",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "str(value).strip",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/subgraph_retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (props).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "_pick_props",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_pick_props` của file `subgraph_retriever.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "props",
+          "kieu_du_lieu": "Dict[str, Any]",
+          "mo_ta": "Tham số đầu vào `props` cho hàm `_pick_props`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `_pick_props`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "props.items",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "', '.join",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "props.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(value).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "parts.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "seen.add",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_is_embedding_key",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/subgraph_retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (props).\n2. Khởi tạo / gán biến `seen`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "_is_graph_sufficient",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_is_graph_sufficient` của file `subgraph_retriever.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "nodes_by_id",
+          "kieu_du_lieu": "Dict[int, Dict[str, Any]]",
+          "mo_ta": "Tham số đầu vào `nodes_by_id` cho hàm `_is_graph_sufficient`"
+        },
+        {
+          "ten_tham_so": "rels_by_id",
+          "kieu_du_lieu": "Dict[str, Dict[str, Any]]",
+          "mo_ta": "Tham số đầu vào `rels_by_id` cho hàm `_is_graph_sufficient`"
+        },
+        {
+          "ten_tham_so": "graph_text",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `graph_text` cho hàm `_is_graph_sufficient`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "bool",
+        "mo_ta": "Kết quả trả về của hàm `_is_graph_sufficient`"
+      },
+      "cac_ham_con_ben_trong": [],
+      "nguon_goc_ham": "backend/app/services/ctdt/subgraph_retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (nodes_by_id, rels_by_id, graph_text).\n2. Kiểm tra điều kiện rẽ nhánh `not nodes_by_id`.\n3. Khởi tạo / gán biến `node_count`.\n4. Khởi tạo / gán biến `rel_count`.\n5. Khởi tạo / gán biến `text_len`.\n6. Kiểm tra điều kiện rẽ nhánh `rel_count >= 1 and node_count >= 2`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `bool`."
+    }
+  ]
+}

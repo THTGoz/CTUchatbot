@@ -1,0 +1,238 @@
+{
+  "ten_file": "DRL_HK3_2023_2024.pdf",
+  "ma_van_ban": "",
+  "ngay_ban_hanh": null,
+  "tieu_de": "",
+  "so_trang": 1,
+  "trang": [
+    {
+      "so_trang": 1,
+      "kich_thuoc": [
+        592.0,
+        839.0
+      ],
+      "items": [
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            287.04,
+            55.21,
+            556.41,
+            70.21
+          ],
+          "noi_dung": "CONG HOA xA HOI CHiT NGHiA VI~T NAM"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "heading",
+          "bbox": [
+            56.16,
+            57.06,
+            245.11,
+            83.93
+          ],
+          "noi_dung": "TRUONG D~"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            56.16,
+            57.06,
+            245.11,
+            83.93
+          ],
+          "noi_dung": "HOC CAN THO\nPHONG CONG TAc SINH VIEN"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            348.48,
+            72.9,
+            507.64,
+            84.9
+          ],
+          "noi_dung": "DQc l~p - TV do - H~nh phuc"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            308.4,
+            99.63,
+            535.44,
+            113.39
+          ],
+          "noi_dung": "Can ThO',ngay.,2P thdng\n9 ndm\n2023"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            101.52,
+            100.41,
+            197.47,
+            112.74
+          ],
+          "noi_dung": "s6-3b 3 ITB-CTSV"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            152.4,
+            130.9,
+            466.74,
+            162.25
+          ],
+          "noi_dung": "THONGBAo v~vi~c danh gia di~m rim luy~n HQc ky 1, 2023-2024"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            222.0,
+            176.73,
+            397.04,
+            190.73
+          ],
+          "noi_dung": "Kinh girl: Thii trmmg don vi"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            83.76,
+            209.7,
+            533.35,
+            242.04
+          ],
+          "noi_dung": "Thirc hien k~ hoach danh gia diem ren luyen hoc ky 1,2023-2024;\nPhong Cong tac Sinh vien xin thong bao d~n cac don vi quan Iy dao tao trien khai thirc hien:"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            96.48,
+            240.67,
+            513.6,
+            292.02
+          ],
+          "noi_dung": "1 C' : . th,..\nth hi A\n.\nac moc 01 gran lfC len:"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            96.48,
+            240.67,
+            517.17,
+            405.05
+          ],
+          "noi_dung": "TT\nNQi dung cong viec\nThai gian thirc hien\n1\nCac don vi nhap dfr lieu tham gia hoat dong\n28/9 -7 17/12/2023 2\nThai gian t6ng hop dfr li~u cua Khoa\n18/12-7 20/12/2023\n3\nSV tu danh gia\n21110-7 3111212023\n4\nCVHT danh gia\n25/12-7\n07/0112024\n5\nThai gian SV phan h6i\n08/01-7\n15/01/2024\n6\nCac don vi gtri file va danh sach k~t qua danh gia ren luyen co xac nhan cua thu tnrong don vi cho Phong 16/01/2024 Cong tac Sinh de Truong I~pQuyet dinh cong nhan."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "heading",
+          "bbox": [
+            119.28,
+            422.24,
+            533.56,
+            450.41
+          ],
+          "noi_dung": "2. Quy trinh tlnrc hi~n danh gia:"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            84.72,
+            422.24,
+            533.56,
+            469.62
+          ],
+          "noi_dung": "- Thirc hien quy trinh danh gia diem ren luyen tren website Phong Cong tac Sinh vien https: lldsa.ctu.edu.vnlimages/upload/vbanply/2018/DRUguytrinh DRL tructuyen.pdf."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            84.0,
+            477.06,
+            533.28,
+            509.16
+          ],
+          "noi_dung": "- Phong Cong tac Sinh vien se b6 sung 1\\f dien cac cUQcthi chuyen nganh, don vi qmin Iy th\\lc hi~n nh~p li~u (khi Gan vi co yeu cau)."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            84.48,
+            516.42,
+            533.04,
+            567.24
+          ],
+          "noi_dung": "- Trong qua trinh thl)'C hi~n, n~u co vuOng mic, d~ nghi thong tin v~ Phong Cong tac Sinh vien qua email pctsv@ctu.edu.vn.Phongset~phqp.th6ng nhAtcach xu Iy va phan h6i v~ cac don vi trong thai gian s6m nhfit."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            84.0,
+            589.01,
+            532.97,
+            616.26
+          ],
+          "noi_dung": "D~nghi Thu truOng don vi quan tam trien khai nh~m dam bao k~ ho~ch th\\lc hi~n dung thai gian d~ ra."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            119.28,
+            634.26,
+            236.15,
+            646.26
+          ],
+          "noi_dung": "Tran tr9ng kinh chao.! ."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            83.28,
+            691.39,
+            133.46,
+            703.69
+          ],
+          "noi_dung": "Noi nhOn:"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            84.0,
+            705.3,
+            156.96,
+            731.22
+          ],
+          "noi_dung": "- Nhutren;"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            84.0,
+            705.3,
+            156.96,
+            731.22
+          ],
+          "noi_dung": "- LUll: P.CTSV"
+        }
+      ]
+    }
+  ]
+}

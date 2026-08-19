@@ -1,0 +1,154 @@
+{
+  "ten_file": "QuocKhanh2024.pdf",
+  "trang": [
+    {
+      "so_trang": 1,
+      "kich_thuoc": [
+        595.3,
+        841.9
+      ],
+      "items": [
+        {
+          "loai": "van_ban",
+          "bbox": [
+            74.84,
+            57.25,
+            256.37,
+            86.59
+          ],
+          "noi_dung": "BỘ GIÁO DỤC VÀ ĐÀO TẠO\nTRƯỜNG ĐẠI HỌC CẦN THƠ"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            283.2,
+            57.25,
+            554.4,
+            71.64
+          ],
+          "noi_dung": "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            339.23,
+            72.2,
+            498.37,
+            86.59
+          ],
+          "noi_dung": "Độc lập - Tự do - Hạnh phúc"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            115.58,
+            102.1,
+            515.98,
+            116.49
+          ],
+          "noi_dung": "Số: /TB-ĐHCT\nCần Thơ, ngày tháng 8 năm 2024"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            148.5,
+            104.63,
+            412.98,
+            117.11
+          ],
+          "noi_dung": "2880\n08"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            162.0,
+            136.28,
+            497.65,
+            170.09
+          ],
+          "noi_dung": "THÔNG BÁO\nVề việc nghỉ Lễ Quốc khánh ngày 02 tháng 09 năm 2024"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            213.74,
+            538.6,
+            317.78
+          ],
+          "noi_dung": "Căn cứ Điều 111 và Điều 112 của Bộ Luật Lao động; Công văn số\n8662/VPCP-KGVX ngày 03/11/2023 của Văn phòng Chính phủ, hướng dẫn về\nviệc nghỉ Tết Nguyên đán và Quốc khánh năm 2024; Thông báo số 5015/TB-\nLĐTBXH ngày 22/11/2023 của Bộ Lao động - Thương binh và Xã hội về việc\nnghỉ tết Âm lịch và nghỉ Lễ Quốc khánh năm 2024 đối với cán bộ, công chức,\nviên chức và người lao động;"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            325.99,
+            538.6,
+            359.19
+          ],
+          "noi_dung": "Căn cứ tình hình thực tế, Trường Đại học Cần Thơ thông báo lịch nghỉ Lễ\nQuốc khánh năm 2024 như sau:"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            367.4,
+            538.6,
+            400.61
+          ],
+          "noi_dung": "- Viên chức, người lao động và người học của Trường được nghỉ Lễ Quốc\nkhánh từ ngày 02 tháng 9 năm 2024 đến hết ngày 03 tháng 9 năm 2024."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            408.82,
+            538.61,
+            459.73
+          ],
+          "noi_dung": "- Lịch dạy và học trong các ngày từ 02/9/2024 đến ngày 03/9/2024 sẽ được\nbù vào tuần lễ dự trữ của học kỳ với tiết học, phòng học không thay đổi hoặc vào\nthời gian thích hợp do giảng viên sắp xếp và thống nhất với người học."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            467.94,
+            538.59,
+            518.86
+          ],
+          "noi_dung": "Phòng Công tác Chính trị thực hiện treo cờ Tổ quốc tại các khu của Trường\ntrong dịp Lễ. Trong thời gian nghỉ Lễ, các đơn vị tổ chức chu đáo việc bảo vệ an\nninh, trật tự, an toàn và phòng cháy chữa cháy."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            527.07,
+            538.61,
+            577.98
+          ],
+          "noi_dung": "Đề nghị thủ trưởng các đơn vị thuộc và trực thuộc Trường phổ biến rộng rãi\nThông báo này cho toàn thể viên chức, người lao động và người học biết và thực\nhiện."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            586.19,
+            500.85,
+            669.54
+          ],
+          "noi_dung": "Trân trọng./.\nNơi nhận:\nHIỆU TRƯỞNG\n- Các đơn vị trong Trường;\n- BGH, TVĐU, HDT;\n- Lưu: VT,VPT."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            405.19,
+            744.84,
+            502.01,
+            759.23
+          ],
+          "noi_dung": "Trần Trung Tính"
+        }
+      ]
+    }
+  ]
+}

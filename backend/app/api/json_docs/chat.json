@@ -1,0 +1,123 @@
+{
+  "file_name": "chat.py",
+  "file_path": "backend/app/api/chat.py",
+  "bien_chung": [
+    {
+      "ten_bien": "router",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "APIRouter()"
+    }
+  ],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Fallback / Phản Hồi Mặc Định",
+      "noi_dung_rule": "Phản hồi dự phòng khi cơ sở dữ liệu không tìm thấy dữ liệu phù hợp",
+      "dieu_kien_va_hanh_dong": "Trả về thông báo hướng dẫn hoặc gọi LLM trả lời xã giao"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "_extract_request",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_extract_request` của file `chat.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "req",
+          "kieu_du_lieu": "ChatRequest",
+          "mo_ta": "Tham số đầu vào `req` cho hàm `_extract_request`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "tuple[str, List[dict]]",
+        "mo_ta": "Kết quả trả về của hàm `_extract_request`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "(req.message or '').strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "(user_messages[-1].parts[0].text or '').strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "(item.parts[0].text or '').strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "history.append",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/api/chat.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (req).\n2. Khởi tạo / gán biến `message`.\n3. Khởi tạo / gán biến `history`.\n4. Kiểm tra điều kiện rẽ nhánh `message or not req.messages`.\n5. Khởi tạo / gán biến `user_messages`.\n6. Kiểm tra điều kiện rẽ nhánh `user_messages`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `tuple[str, List[dict]]`."
+    },
+    {
+      "ten_ham": "chat",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `chat` của file `chat.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "req",
+          "kieu_du_lieu": "ChatRequest",
+          "mo_ta": "Tham số đầu vào `req` cho hàm `chat`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `chat`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "router.post",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_extract_request",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "str(result.get('answer', '')).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "StreamingResponse",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "chat_orchestrator.handle_query",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "stream_results",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "result.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "json.dumps",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/api/chat.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (req).\n2. Khởi tạo / gán biến `(message, history)`.\n3. Khởi tạo / gán biến `result`.\n4. Khởi tạo / gán biến `answer`.\n5. Kiểm tra điều kiện rẽ nhánh `not answer`.\n6. Trả về kết quả cho caller.\n7. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "stream_results",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `stream_results` của file `chat.py`",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `stream_results`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "json.dumps",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/api/chat.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Thực hiện các bước tính toán logic bên trong hàm.\n3. Trả về kết quả đầu ra."
+    }
+  ]
+}

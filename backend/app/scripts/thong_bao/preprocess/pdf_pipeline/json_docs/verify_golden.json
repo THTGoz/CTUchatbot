@@ -1,0 +1,234 @@
+{
+  "file_name": "verify_golden.py",
+  "file_path": "backend/app/scripts/thong_bao/preprocess/pdf_pipeline/verify_golden.py",
+  "bien_chung": [
+    {
+      "ten_bien": "GOLDEN_DIR",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "ROOT_DIR / 'tests' / 'golden'"
+    },
+    {
+      "ten_bien": "RAW_DIR",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "ROOT_DIR / 'output' / '01_raw_blocks'"
+    },
+    {
+      "ten_bien": "GOLDEN_FIXTURES",
+      "kieu_du_lieu": "tuple[GoldenFixture, ...]",
+      "gia_tri_hoac_mo_ta": "(GoldenFixture('dang_ky_hoc_phan', 'KHGDVDKHP_HK1_26_27_raw.json', 'dang_ky_hoc_phan.json'), GoldenFixture('diem_ren_luyen', 'DRL_HK1_2025_2026_raw.json', 'diem_ren_luyen.json'), GoldenFixture('lich_n"
+    }
+  ],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Chuẩn Hóa Cấu Trúc Module",
+      "noi_dung_rule": "Tuân thủ quy tắc xử lý và chuẩn hóa mã nguồn của module",
+      "dieu_kien_va_hanh_dong": "Đảm bảo tính toàn vẹn khi thực thi"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "load_json",
+      "chuc_nang": "Đọc JSON UTF-8 phục vụ so sánh theo dữ liệu, không theo khoảng trắng.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "path",
+          "kieu_du_lieu": "Path",
+          "mo_ta": "Tham số đầu vào `path` cho hàm `load_json`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `load_json`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "path.open",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "json.load",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/pdf_pipeline/verify_golden.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (path).\n2. Thực hiện các bước tính toán logic bên trong hàm.\n3. Trả về kết quả đầu ra."
+    },
+    {
+      "ten_ham": "sha256",
+      "chuc_nang": "Tính checksum để báo cả trường hợp nội dung byte giống tuyệt đối.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "path",
+          "kieu_du_lieu": "Path",
+          "mo_ta": "Tham số đầu vào `path` cho hàm `sha256`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `sha256`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "hashlib.sha256",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "digest.hexdigest",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "path.open",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "iter",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "digest.update",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "file.read",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/pdf_pipeline/verify_golden.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (path).\n2. Khởi tạo / gán biến `digest`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "first_difference",
+      "chuc_nang": "Trả về vị trí khác đầu tiên để lỗi golden master dễ điều tra.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "expected",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `expected` cho hàm `first_difference`"
+        },
+        {
+          "ten_tham_so": "actual",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `actual` cho hàm `first_difference`"
+        },
+        {
+          "ten_tham_so": "path",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `path` cho hàm `first_difference`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str | None",
+        "mo_ta": "Kết quả trả về của hàm `first_difference`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "enumerate",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "expected.keys",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "actual.keys",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "sorted",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "first_difference",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "zip",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/pdf_pipeline/verify_golden.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (expected, actual, path).\n2. Kiểm tra điều kiện rẽ nhánh `type(expected) is not type(actual)`.\n3. Kiểm tra điều kiện rẽ nhánh `isinstance(expected, dict)`.\n4. Kiểm tra điều kiện rẽ nhánh `isinstance(expected, list)`.\n5. Kiểm tra điều kiện rẽ nhánh `expected != actual`.\n6. Trả về kết quả cho caller.\n7. Hoàn tất tính toán và trả về kết quả kiểu `str | None`."
+    },
+    {
+      "ten_ham": "verify_fixture",
+      "chuc_nang": "Chạy bước 02–06 cho một mẫu và trả kết quả so sánh dễ đọc.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "fixture",
+          "kieu_du_lieu": "GoldenFixture",
+          "mo_ta": "Tham số đầu vào `fixture` cho hàm `verify_fixture`"
+        },
+        {
+          "ten_tham_so": "temporary_root",
+          "kieu_du_lieu": "Path",
+          "mo_ta": "Tham số đầu vào `temporary_root` cho hàm `verify_fixture`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "tuple[bool, str]",
+        "mo_ta": "Kết quả trả về của hàm `verify_fixture`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "run_single_input",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "load_json",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "first_difference",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "raw_path.is_file",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "golden_path.is_file",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "sha256",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/pdf_pipeline/verify_golden.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (fixture, temporary_root).\n2. Khởi tạo / gán biến `raw_path`.\n3. Khởi tạo / gán biến `golden_path`.\n4. Kiểm tra điều kiện rẽ nhánh `not raw_path.is_file() or not golden_path.is_file()`.\n5. Khởi tạo / gán biến `actual_path`.\n6. Khởi tạo / gán biến `expected_data`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `tuple[bool, str]`."
+    },
+    {
+      "ten_ham": "main",
+      "chuc_nang": "Xác minh cả năm loại và trả mã lỗi nếu có một loại bị thay đổi.",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "int",
+        "mo_ta": "Kết quả trả về của hàm `main`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "configure_utf8_console",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "tempfile.TemporaryDirectory",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "Path",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "verify_fixture",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "failures.append",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/pdf_pipeline/verify_golden.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Gọi thực thi hàm `configure_utf8_console`.\n3. Gọi thực thi hàm `print`.\n4. Trả về kết quả cho caller.\n5. Hoàn tất tính toán và trả về kết quả kiểu `int`."
+    }
+  ]
+}

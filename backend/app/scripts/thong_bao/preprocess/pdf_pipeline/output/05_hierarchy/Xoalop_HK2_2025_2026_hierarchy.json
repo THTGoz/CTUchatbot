@@ -1,0 +1,484 @@
+{
+  "metadata": {
+    "ma_van_ban": "",
+    "ten_file": "Xoalop_HK2_2025_2026.pdf",
+    "tieu_de": "Về việc xóa các lớp học phần có sĩ số không đủ mở lớp học kỳ 2, năm học 2025-2026 (đợt 2)",
+    "ngay_ban_hanh": "2026-01"
+  },
+  "tai_lieu": [
+    {
+      "id": "doc_1",
+      "thu_tu": 1,
+      "ten_tai_lieu": "Về việc xóa các lớp học phần có sĩ số không đủ mở lớp học kỳ 2, năm học 2025-2026 (đợt 2)",
+      "muc": [
+        {
+          "id": "doc_1_muc_0",
+          "ky_hieu": "",
+          "noi_dung": [
+            "Hiện nay, công tác đăng ký học phần đợt 2 (đợt cuối) học kỳ 2, năm học 2025-2026 đã kết thúc. Qua rà soát, một số lớp học phần có số lượng sinh viên đăng ký không đủ điều kiện mở lớp theo quy định của công tác học vụ, Trường thông báo như sau:",
+            "- Xóa các lớp học phần có sĩ số đăng ký không đủ điều kiện mở lớp (danh sách đính kèm).",
+            "- Sinh viên đăng ký vào các lớp học phần thông báo xóa, nếu có nhu cầu chuyển đổi sang các lớp học phần khác phải liên hệ Phòng Đào tạo (email: nhdnhan@ctu.edu.vn) để được hỗ trợ từ ngày ra thông báo đến hết ngày 08/01/2026. Sau thời gian này, Trường sẽ chính thức xóa kết quả đăng ký của sinh viên.",
+            "Đề nghị lãnh đạo các đơn vị phổ biến nội dung công văn này đến toàn thể giảng viên, cố vấn học tập và sinh viên biết để triển khai thực hiện đúng quy định."
+          ],
+          "bang": [],
+          "muc_con": []
+        }
+      ]
+    },
+    {
+      "id": "doc_2",
+      "thu_tu": 2,
+      "ten_tai_lieu": "DANH SÁCH LỚP HỌC PHẦN XÓA LỚP HỌC KỲ 2, NĂM HỌC 2025-2026 (ĐỢT 2) (Đính kèm CV số: /ĐHCT-ĐT, ngày /01/2026, V/v xóa các lớp học phần có sĩ số không đủ mở lớp)",
+      "muc": [
+        {
+          "id": "doc_2_muc_0",
+          "ky_hieu": "",
+          "noi_dung": [
+            "DANH SÁCH LỚP HỌC PHẦN XÓA LỚP HỌC KỲ 2, NĂM HỌC 2025-2026 (ĐỢT 2) (Đính kèm CV số: /ĐHCT-ĐT, ngày /01/2026, V/v xóa các lớp học phần có sĩ số không đủ mở lớp)",
+            "Danh sách có: 47 lớp học phần."
+          ],
+          "bang": [
+            {
+              "tieu_de_bang": "DANH SÁCH LỚP HỌC PHẦN XÓA LỚP\nHỌC KỲ 2, NĂM HỌC 2025-2026 (ĐỢT 2)",
+              "cot": [
+                "TT",
+                "Mã HP",
+                "Tên học phần",
+                "TC",
+                "Ký hiệu",
+                "Mã số CBGD",
+                "Họ và tên CBGD"
+              ],
+              "du_lieu": [
+                [
+                  "1",
+                  "CN127",
+                  "Nền móng cơ sở",
+                  "2",
+                  "01",
+                  "01926",
+                  "Trần Thị Phượng"
+                ],
+                [
+                  "2",
+                  "CN309",
+                  "Bê tông chuyên ngành - TC",
+                  "2",
+                  "01",
+                  "01626",
+                  "Trần Văn Tỷ"
+                ],
+                [
+                  "3",
+                  "CN315",
+                  "Thủy công",
+                  "3",
+                  "01",
+                  "01626",
+                  "Trần Văn Tỷ"
+                ],
+                [
+                  "4",
+                  "CN473",
+                  "Kỹ thuật nâng chuyển",
+                  "2",
+                  "01",
+                  "02696",
+                  "Nguyễn Hoài Tân"
+                ],
+                [
+                  "5",
+                  "CT107H",
+                  "Nhập môn công nghệ phần mềm",
+                  "3",
+                  "M01",
+                  "01232",
+                  "Phan Phương Lan"
+                ],
+                [
+                  "6",
+                  "CT112",
+                  "Mạng máy tính",
+                  "3",
+                  "05",
+                  "01943",
+                  "Lâm Nhựt Khang"
+                ],
+                [
+                  "7",
+                  "CT113",
+                  "Nhập môn công nghệ phần mềm",
+                  "2",
+                  "01",
+                  "01232",
+                  "Phan Phương Lan"
+                ],
+                [
+                  "8",
+                  "CT206H",
+                  "Nguyên lý hệ quản trị cơ sở dữ liệu",
+                  "3",
+                  "M01",
+                  "02267",
+                  "Nguyễn Thanh Hải"
+                ],
+                [
+                  "9",
+                  "CT226E",
+                  "Niên luận cơ sở mạng máy tính và TT",
+                  "3",
+                  "02",
+                  "02367",
+                  "Nguyễn Hữu Vân Long"
+                ],
+                [
+                  "10",
+                  "CT298",
+                  "Phát triển hệ thống thông tin địa lý",
+                  "3",
+                  "01",
+                  "02226",
+                  "Trần Nguyễn Minh Thái"
+                ],
+                [
+                  "11",
+                  "CT439",
+                  "Niên luận Mạng máy tính và truyền thông",
+                  "3",
+                  "05",
+                  "02367",
+                  "Nguyễn Hữu Vân Long"
+                ],
+                [
+                  "12",
+                  "CT466",
+                  "Niên luận - CNTT",
+                  "3",
+                  "04",
+                  "01943",
+                  "Lâm Nhựt Khang"
+                ],
+                [
+                  "13",
+                  "CT530",
+                  "Chuyên đề báo chí Văn hóa",
+                  "2",
+                  "01",
+                  "01882",
+                  "Tạ Đức Tú"
+                ],
+                [
+                  "14",
+                  "FL206",
+                  "Đọc - Viết B2.1",
+                  "3",
+                  "01",
+                  "00179",
+                  "Thái Công Dân"
+                ],
+                [
+                  "15",
+                  "KC152",
+                  "Công nghệ hóa hương liệu",
+                  "3",
+                  "01",
+                  "02153",
+                  "Huỳnh Liên Hương"
+                ],
+                [
+                  "16",
+                  "KC161H",
+                  "Trường điện từ",
+                  "2",
+                  "M02",
+                  "01705",
+                  "Nguyễn Cao Quí"
+                ],
+                [
+                  "17",
+                  "KC292",
+                  "Đồ án gia công - KTVL",
+                  "2",
+                  "01",
+                  "02228",
+                  "Cao Lưu Ngọc Hạnh"
+                ],
+                [
+                  "18",
+                  "KL051",
+                  "Quyền con người",
+                  "2",
+                  "01",
+                  "02682",
+                  "Võ Thị Phương Uyên"
+                ],
+                [
+                  "19",
+                  "KL123",
+                  "Luật lao động",
+                  "3",
+                  "02",
+                  "01715",
+                  "Võ Hoàng Yến"
+                ],
+                [
+                  "20",
+                  "KL333",
+                  "Luật thương mại quốc tế",
+                  "2",
+                  "01",
+                  "02561",
+                  "Nguyễn Huỳnh Anh"
+                ],
+                [
+                  "21",
+                  "KT105",
+                  "Toán kinh tế 1",
+                  "3",
+                  "02",
+                  "01989",
+                  "Huỳnh Thị Kim Uyên"
+                ],
+                [
+                  "22",
+                  "KT111HE",
+                  "Kinh tế quốc tế",
+                  "3",
+                  "M03",
+                  "01344",
+                  "Phan Anh Tú"
+                ],
+                [
+                  "23",
+                  "KT207",
+                  "Mô phỏng tình huống trong kinh doanh",
+                  "3",
+                  "05",
+                  "02597",
+                  "Nguyễn Minh Cảnh"
+                ],
+                [
+                  "24",
+                  "KT207",
+                  "Mô phỏng tình huống trong kinh doanh",
+                  "3",
+                  "H02",
+                  "02597",
+                  "Nguyễn Minh Cảnh"
+                ],
+                [
+                  "25",
+                  "KT230",
+                  "Quản trị chuỗi cung ứng",
+                  "2",
+                  "01",
+                  "01780",
+                  "Nguyễn Phạm Tuyết Anh"
+                ],
+                [
+                  "26",
+                  "KT265",
+                  "Kiến tập ngành ngân hàng",
+                  "2",
+                  "01",
+                  "02222",
+                  "Trần Thị Hạnh Phúc"
+                ],
+                [
+                  "27",
+                  "KT354",
+                  "Quản trị ngân hàng",
+                  "3",
+                  "01",
+                  "00565",
+                  "Thái Văn Đại"
+                ],
+                [
+                  "28",
+                  "KT425",
+                  "Anh văn thương mại 1",
+                  "3",
+                  "02",
+                  "02312",
+                  "Nguyễn Thị Đoan Trang"
+                ],
+                [
+                  "29",
+                  "KT479",
+                  "PP nghiên cứu trong kinh doanh",
+                  "3",
+                  "A01",
+                  "01984",
+                  "Hồ Lê Thu Trang"
+                ],
+                [
+                  "30",
+                  "KT480E",
+                  "Phân tích định tính trong kinh doanh",
+                  "2",
+                  "01",
+                  "02709",
+                  "Huỳnh Hữu Thọ"
+                ],
+                [
+                  "31",
+                  "ML142E",
+                  "Vấn đề tôn giáo và chính sách tôn giáo",
+                  "2",
+                  "01",
+                  "02935",
+                  "Trần Trương Gia Bảo"
+                ],
+                [
+                  "32",
+                  "MT501",
+                  "Luận văn tốt nghiệp - KHMT",
+                  "14",
+                  "01",
+                  "09791",
+                  "Huỳnh Văn Thảo"
+                ],
+                [
+                  "33",
+                  "NN157E",
+                  "Tin học ứng dụng - CNTP",
+                  "2",
+                  "02",
+                  "02957",
+                  "Châu Thanh Tuấn"
+                ],
+                [
+                  "34",
+                  "NN166",
+                  "An toàn và ô nhiễm trong sản xuất TP",
+                  "2",
+                  "02",
+                  "01619",
+                  "Tống Thị ánh Ngọc"
+                ],
+                [
+                  "35",
+                  "NN305",
+                  "Chăn nuôi gia cầm A",
+                  "3",
+                  "01",
+                  "01795",
+                  "Nguyễn Thị Thủy"
+                ],
+                [
+                  "36",
+                  "NN351",
+                  "Luận văn tốt nghiệp - Thú y",
+                  "10",
+                  "01",
+                  "00394",
+                  "Trần Ngọc Bích"
+                ],
+                [
+                  "37",
+                  "NS248",
+                  "Đánh giá cảm quan và thị hiếu người TD",
+                  "2",
+                  "01",
+                  "00342",
+                  "Dương Thị Phượng Liên"
+                ],
+                [
+                  "38",
+                  "NS256E",
+                  "Hóa dược Thú y",
+                  "2",
+                  "01",
+                  "02796",
+                  "Nguyễn Khánh Thuận"
+                ],
+                [
+                  "39",
+                  "NS264E",
+                  "Nông nghiệp công nghệ cao",
+                  "2",
+                  "01",
+                  "02849",
+                  "Đặng Duy Minh"
+                ],
+                [
+                  "40",
+                  "NS309H",
+                  "Công nghệ chế biến thịt và thủy sản",
+                  "3",
+                  "M01",
+                  "01190",
+                  "Huỳnh Thị Phương Loan"
+                ],
+                [
+                  "41",
+                  "NS503",
+                  "Luận văn tốt nghiệp - CNTP",
+                  "14",
+                  "01",
+                  "03083",
+                  "Trần Hồng Quân"
+                ],
+                [
+                  "42",
+                  "SP545E",
+                  "Sinh học phát triển động vật và thực vật",
+                  "2",
+                  "01",
+                  "01892",
+                  "Phùng Thị Hằng"
+                ],
+                [
+                  "43",
+                  "TC017",
+                  "Thể dục nhịp điệu 2 (*)",
+                  "1",
+                  "02",
+                  "02744",
+                  "Phạm Như Hiếu"
+                ],
+                [
+                  "44",
+                  "TN443",
+                  "Thống kê kinh tế - xã hội",
+                  "3",
+                  "01",
+                  "01846",
+                  "Lê Thị Mỹ Xuân"
+                ],
+                [
+                  "45",
+                  "TS291",
+                  "Chuyên đề chẩn đoán bệnh động vật TS",
+                  "2",
+                  "01",
+                  "01797",
+                  "Nguyễn Thị Thu Hằng"
+                ],
+                [
+                  "46",
+                  "XH025",
+                  "Anh văn căn bản 3 (*)",
+                  "3",
+                  "09",
+                  "01426",
+                  "Võ Kim Hương"
+                ],
+                [
+                  "47",
+                  "XH028",
+                  "Xã hội học đại cương",
+                  "2",
+                  "10",
+                  "02890",
+                  "Châu Mỹ Duyên"
+                ]
+              ]
+            }
+          ],
+          "muc_con": []
+        }
+      ]
+    }
+  ]
+}

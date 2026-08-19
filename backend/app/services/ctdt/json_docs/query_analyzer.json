@@ -1,0 +1,334 @@
+{
+  "file_name": "query_analyzer.py",
+  "file_path": "backend/app/services/ctdt/query_analyzer.py",
+  "bien_chung": [
+    {
+      "ten_bien": "_ALLOWED_VECTOR_TARGETS",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "{'HocPhan', 'DieuKienTotNghiep', 'ChuanDauRa', 'VanBanPhapLy'}"
+    },
+    {
+      "ten_bien": "_ALLOWED_GRAPH_RELATIONS",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "{'BAN_HANH_THEO', 'DAO_TAO', 'THUOC_VE', 'CAP', 'CO', 'THAM_KHAO', 'DAT_DUOC', 'YEU_CAU', 'GOM', 'DOI_VOI', 'YEU_CAU_TIEN_QUYET', 'CO_THE_SONG_HANH'}"
+    },
+    {
+      "ten_bien": "_ALLOWED_ANCHOR_NODE_TYPES",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "{'ChuongTrinhDaoTao', 'Nganh', 'KhoiKienThuc', 'HocPhan', 'ChuanDauRa', 'DieuKienTotNghiep', 'VanBanPhapLy', 'Khoa', 'BoMon'}"
+    },
+    {
+      "ten_bien": "_ALLOWED_ANSWER_SHAPES",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "{'single', 'list', 'path', 'summary'}"
+    }
+  ],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Fallback / Phản Hồi Mặc Định",
+      "noi_dung_rule": "Phản hồi dự phòng khi cơ sở dữ liệu không tìm thấy dữ liệu phù hợp",
+      "dieu_kien_va_hanh_dong": "Trả về thông báo hướng dẫn hoặc gọi LLM trả lời xã giao"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "normalize_history",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `normalize_history` của file `query_analyzer.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "history",
+          "kieu_du_lieu": "List[Dict[str, Any]]",
+          "mo_ta": "Tham số đầu vào `history` cho hàm `normalize_history`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "List[Dict[str, str]]",
+        "mo_ta": "Kết quả trả về của hàm `normalize_history`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "str(message.get('role', 'user')).strip().lower",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(message.get('content', '')).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "cleaned.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(message.get('role', 'user')).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "message.get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/query_analyzer.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (history).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `List[Dict[str, str]]`."
+    },
+    {
+      "ten_ham": "history_text",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `history_text` của file `query_analyzer.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "history",
+          "kieu_du_lieu": "List[Dict[str, str]]",
+          "mo_ta": "Tham số đầu vào `history` cho hàm `history_text`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `history_text`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "'\\n'.join",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/query_analyzer.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (history).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "_normalize_query_type",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_normalize_query_type` của file `query_analyzer.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "value",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `value` cho hàm `_normalize_query_type`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `_normalize_query_type`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "(value or '').strip().lower",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "(value or '').strip",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/query_analyzer.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (value).\n2. Khởi tạo / gán biến `query_type`.\n3. Kiểm tra điều kiện rẽ nhánh `query_type in {'attribute', 'relation', 'path', 'aggregation', 'description', 'list'}`.\n4. Trả về kết quả cho caller.\n5. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "_normalize_ctdt_filters",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_normalize_ctdt_filters` của file `query_analyzer.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "raw_filters",
+          "kieu_du_lieu": "Dict[str, Any]",
+          "mo_ta": "Tham số đầu vào `raw_filters` cho hàm `_normalize_ctdt_filters`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Dict[str, Any]",
+        "mo_ta": "Kết quả trả về của hàm `_normalize_ctdt_filters`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "filters.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "he_raw.strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "re.findall",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/query_analyzer.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (raw_filters).\n2. Khởi tạo / gán biến `filters`.\n3. Khởi tạo / gán biến `khoa_raw`.\n4. Kiểm tra điều kiện rẽ nhánh `isinstance(khoa_raw, int)`.\n5. Kiểm tra điều kiện rẽ nhánh `khoa_value is not None`.\n6. Khởi tạo / gán biến `he_raw`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `Dict[str, Any]`."
+    },
+    {
+      "ten_ham": "_normalize_graph_plan",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_normalize_graph_plan` của file `query_analyzer.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "raw_plan",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `raw_plan` cho hàm `_normalize_graph_plan`"
+        },
+        {
+          "ten_tham_so": "entities",
+          "kieu_du_lieu": "List[Dict[str, str]]",
+          "mo_ta": "Tham số đầu vào `entities` cho hàm `_normalize_graph_plan`"
+        },
+        {
+          "ten_tham_so": "relations",
+          "kieu_du_lieu": "List[str]",
+          "mo_ta": "Tham số đầu vào `relations` cho hàm `_normalize_graph_plan`"
+        },
+        {
+          "ten_tham_so": "query_type",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `query_type` cho hàm `_normalize_graph_plan`"
+        },
+        {
+          "ten_tham_so": "constraints",
+          "kieu_du_lieu": "Dict[str, Any]",
+          "mo_ta": "Tham số đầu vào `constraints` cho hàm `_normalize_graph_plan`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Dict[str, Any]",
+        "mo_ta": "Kết quả trả về của hàm `_normalize_graph_plan`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "raw_expansion.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(plan.get('answer_shape', '')).strip().lower",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "plan.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(item).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(item).strip().upper",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "constraints.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(entity.get('type', '')).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(plan.get('answer_shape', '')).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "max",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "anchor_node_types.append",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/query_analyzer.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (raw_plan, entities, relations, query_type, constraints).\n2. Khởi tạo / gán biến `plan`.\n3. Khởi tạo / gán biến `raw_anchor_types`.\n4. Khởi tạo / gán biến `anchor_node_types`.\n5. Kiểm tra điều kiện rẽ nhánh `not anchor_node_types`.\n6. Khởi tạo / gán biến `raw_focus_relations`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `Dict[str, Any]`."
+    },
+    {
+      "ten_ham": "_normalize_analysis_payload",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_normalize_analysis_payload` của file `query_analyzer.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "raw",
+          "kieu_du_lieu": "Dict[str, Any]",
+          "mo_ta": "Tham số đầu vào `raw` cho hàm `_normalize_analysis_payload`"
+        },
+        {
+          "ten_tham_so": "query",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `query` cho hàm `_normalize_analysis_payload`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Dict[str, Any]",
+        "mo_ta": "Kết quả trả về của hàm `_normalize_analysis_payload`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "_normalize_ctdt_filters",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "_normalize_query_type",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "_normalize_graph_plan",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "data.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(entity.get('type', '')).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(entity.get('value', '')).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(item).strip().upper",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(data.get('query_type', '')).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "cleaned_entities.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(item).strip",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/query_analyzer.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (raw, query).\n2. Khởi tạo / gán biến `data`.\n3. Khởi tạo / gán biến `rewrite`.\n4. Khởi tạo / gán biến `entities`.\n5. Khởi tạo / gán biến `relations`.\n6. Khởi tạo / gán biến `cleaned_relations`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `Dict[str, Any]`."
+    },
+    {
+      "ten_ham": "analyze_ctdt_query",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `analyze_ctdt_query` của file `query_analyzer.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "query",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `query` cho hàm `analyze_ctdt_query`"
+        },
+        {
+          "ten_tham_so": "history",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `history` cho hàm `analyze_ctdt_query`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Dict[str, Any]",
+        "mo_ta": "Kết quả trả về của hàm `analyze_ctdt_query`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "_normalize_analysis_payload",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "call_model_json",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "normalized.get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/query_analyzer.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (query, history).\n2. Khởi tạo / gán biến `prompt`.\n3. Khởi tạo / gán biến `raw`.\n4. Khởi tạo / gán biến `normalized`.\n5. Kiểm tra điều kiện rẽ nhánh `not normalized.get('vector_targets')`.\n6. Trả về kết quả cho caller.\n7. Hoàn tất tính toán và trả về kết quả kiểu `Dict[str, Any]`."
+    }
+  ]
+}

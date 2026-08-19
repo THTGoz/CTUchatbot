@@ -1,0 +1,382 @@
+{
+  "ten_file": "Tet2026.pdf",
+  "trang": [
+    {
+      "so_trang": 1,
+      "kich_thuoc": [
+        595.3,
+        841.9
+      ],
+      "items": [
+        {
+          "loai": "van_ban",
+          "bbox": [
+            99.95,
+            60.1,
+            267.85,
+            74.49
+          ],
+          "noi_dung": "BỘ GIÁO DỤC VÀ ĐÀO TẠO"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            298.6,
+            60.1,
+            569.8,
+            74.49
+          ],
+          "noi_dung": "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            118.9,
+            75.05,
+            239.16,
+            89.44
+          ],
+          "noi_dung": "ĐẠI HỌC CẦN THƠ"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            348.51,
+            75.1,
+            519.89,
+            90.59
+          ],
+          "noi_dung": "Độc lập - Tự do - Hạnh phúc"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            122.51,
+            103.8,
+            235.54,
+            118.19
+          ],
+          "noi_dung": "Số: /TB-ĐHCT"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            148.0,
+            104.69,
+            483.06,
+            121.69
+          ],
+          "noi_dung": "244\n20\n01"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            327.79,
+            104.99,
+            540.6,
+            120.49
+          ],
+          "noi_dung": "Cần Thơ, ngày tháng năm 2026"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            204.61,
+            154.99,
+            409.54,
+            186.59
+          ],
+          "noi_dung": "THÔNG BÁO\nVề việc đón Tết Âm lịch năm 2026"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            212.74,
+            538.62,
+            344.14
+          ],
+          "noi_dung": "Căn cứ Điều 112 Bộ luật Lao động; Công văn số 9441/TB-BNV ngày 16\ntháng 10 năm 2025 của Bộ Nội vụ về việc nghỉ Tết Âm lịch, nghỉ Lễ Quốc khánh\nnăm 2026 đối với cán bộ, công chức, viên chức và người lao động; Căn cứ Kế\nhoạch khung công tác năm 2026 của Đại học Cần Thơ (ĐHCT) ban hành kèm\ntheo Quyết định số 6311/QĐ-ĐHCT ngày 18 tháng 11 năm 2025, Hiệu trưởng\nthông báo đến các đơn vị, viên chức, người lao động (VC-NLĐ) và người học kế\nhoạch nghỉ tết Âm lịch năm 2026 như sau:"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            116.65,
+            353.96,
+            242.27,
+            369.46
+          ],
+          "noi_dung": "1. Thời gian nghỉ Tết"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            379.28,
+            538.61,
+            452.73
+          ],
+          "noi_dung": "Viên chức, người lao động và người học của ĐHCT được nghỉ dịp tết Âm\nlịch năm 2026 từ ngày 09/02/2026 dương lịch đến hết Chủ nhật ngày 22/02/2026\ndương lịch (từ ngày 22 tháng Chạp năm Ất Tỵ đến hết ngày mùng 6 tháng Giêng\nnăm Bính Ngọ)."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            121.05,
+            462.55,
+            232.47,
+            478.05
+          ],
+          "noi_dung": "2. Việc tổ chức Tết"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            487.87,
+            538.6,
+            522.69
+          ],
+          "noi_dung": "- Văn phòng Trường phối hợp với Phòng Công tác Sinh viên chuẩn bị kế\nhoạch đón Tết của Nhà trường trước ngày 30/01/2026."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            532.51,
+            538.61,
+            625.28
+          ],
+          "noi_dung": "- Phòng Công tác Sinh viên treo cờ, khẩu hiệu chào mừng ở cổng chính tại\ncác khu của Nhà trường từ ngày 14/02/2026 (27 Tết) đến hết ngày 22/02/2026\n(mùng 6 Tết); đồng thời chỉ đạo Tổ Bảo vệ bố trí người trực bảo vệ an ninh trật\ntự, an toàn chung và có kế hoạch tuần tra canh gác, bảo vệ an toàn trong các ngày\nnghỉ; kế hoạch bảo vệ trình cho Hiệu trưởng trước ngày 30/01/2026."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            635.1,
+            538.61,
+            689.23
+          ],
+          "noi_dung": "- Phòng Phát triển cơ sở vật chất và dự án bố trí người trực để giải quyết các\nvấn đề có liên quan đến chức năng và nhiệm vụ của đơn vị trong thời gian nghỉ\nTết."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            699.05,
+            538.62,
+            733.87
+          ],
+          "noi_dung": "- Phòng Kế hoạch và Tài chính chuẩn bị kinh phí để cấp phát tiền Tết và các\nkhoản phụ cấp trước ngày 07/02/2026."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            743.69,
+            538.61,
+            778.5
+          ],
+          "noi_dung": "- Công đoàn ĐHCT cùng với Đoàn Thanh niên, Hội Cựu Chiến binh và các\nphòng, ban tổ chức đoàn đến thăm và tặng quà cho VC-NLĐ Trường đã nghỉ hưu."
+        }
+      ]
+    },
+    {
+      "so_trang": 2,
+      "kich_thuoc": [
+        595.3,
+        841.9
+      ],
+      "items": [
+        {
+          "loai": "van_ban",
+          "bbox": [
+            308.83,
+            36.51,
+            314.83,
+            49.79
+          ],
+          "noi_dung": "2"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            64.19,
+            538.6,
+            118.33
+          ],
+          "noi_dung": "- Thủ trưởng các đơn vị có trách nhiệm phân công người trực để bảo vệ an\ntoàn tài sản đơn vị mình trong thời gian nghỉ Tết. Danh sách cán bộ trực bảo vệ\ncủa đơn vị gửi về Văn phòng Trường trước ngày 30/01/2026."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            128.15,
+            538.62,
+            201.6
+          ],
+          "noi_dung": "- Các cơ sở của Nhà trường thực hiện treo cờ, khẩu hiệu chào mừng ở cổng\nchính từ ngày 14/02/2026 (27 Tết) đến hết ngày 22/02/2026 (mùng 6 Tết); đồng\nthời bố trí người trực bảo vệ an ninh trật tự, an toàn chung và có kế hoạch tuần tra\ncanh gác, bảo vệ an toàn trong các ngày nghỉ."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            211.42,
+            538.59,
+            246.24
+          ],
+          "noi_dung": "- Các đơn vị tổ chức tổng vệ sinh sạch đẹp khu vực của mình phụ trách và\nquản lý trước khi nghỉ Tết."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            256.06,
+            538.61,
+            310.19
+          ],
+          "noi_dung": "- Các đơn vị phân công người chuẩn bị phòng học, phòng thí nghiệm, cơ sở\nvật chất và các điều kiện có liên quan để đảm bảo việc giảng dạy ngay sau kỳ nghỉ\nTết (bắt đầu từ thứ Hai 23/02/2026)."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            113.4,
+            320.01,
+            260.11,
+            335.51
+          ],
+          "noi_dung": "3. Những điểm cần lưu ý"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            345.33,
+            538.6,
+            418.78
+          ],
+          "noi_dung": "Trong suốt thời gian nghỉ Tết, các đơn vị cần tổ chức công tác bảo vệ và\nphòng cháy chữa cháy một cách chu đáo, phân công người trực để đảm bảo an\ntoàn cho tài sản của đơn vị. Những cá nhân được phân công trực phải có mặt và\nchịu trách nhiệm suốt thời gian trực."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            428.6,
+            538.6,
+            463.42
+          ],
+          "noi_dung": "Trong thời gian trực, nếu có sự việc xảy ra cần báo cáo ngay cho các đơn vị\ncó liên quan sau:"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            148.85,
+            473.24,
+            254.42,
+            488.73
+          ],
+          "noi_dung": "- Bộ phận bảo vệ:"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            148.85,
+            491.96,
+            486.72,
+            685.93
+          ],
+          "noi_dung": " Khu I\n(0292) 3838962\n Khu II\n(0292) 3781781\n Khu\n(0292) 3831300\n Nhà Điều hành\n(0292) 3872110\n- Ký túc xá (PCTSV):\n(0292) 3872275\n- Tổ Ô tô:\n(0292) 3872200\n- Cơ sở Hậu Giang:\n(0293) 3982857\n- Khu Sóc Trăng:\n(0299) 3838688\n- Khu Măng Đen (Ô.Bằng)\n0389.965.348\n- Một số điện thoại khẩn:"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            163.05,
+            689.16,
+            486.72,
+            767.28
+          ],
+          "noi_dung": " Cứu hỏa\n114\n Cảnh sát\n113\n Cấp cứu y tế\n115\n Công an Phường Ninh Kiểu\n(0292) 3897377"
+        }
+      ]
+    },
+    {
+      "so_trang": 3,
+      "kich_thuoc": [
+        595.3,
+        841.9
+      ],
+      "items": [
+        {
+          "loai": "van_ban",
+          "bbox": [
+            308.83,
+            36.51,
+            314.83,
+            49.79
+          ],
+          "noi_dung": "3"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            163.05,
+            63.6,
+            486.72,
+            141.72
+          ],
+          "noi_dung": " Công an Phường Tân An\n(0292) 3894939\n Công an Phường Hưng Phú\n(0292) 3913661\n Công an Xã Hòa An\n(0336)763113\n Công an Phường Phú Lợi\n(0299)3820751"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            151.48,
+            538.61,
+            186.3
+          ],
+          "noi_dung": "Thủ trưởng các đơn vị báo cáo tình hình nghỉ Tết của đơn vị mình trong buổi\nhọp giao ban vào thứ Hai, ngày 02/3/2026."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            196.12,
+            538.59,
+            230.94
+          ],
+          "noi_dung": "Đề nghị thủ trưởng các đơn vị phổ biến Thông báo này cho toàn thể VC-\nNLĐ và người học biết và thực hiện tốt các nội dung nêu trên./."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            90.45,
+            240.67,
+            216.31,
+            291.9
+          ],
+          "noi_dung": "Nơi nhận:\n- Các đơn vị trong Trường;\n- BGH, TVĐU (để báo cáo);\n- Lưu: VT, VPT."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            381.55,
+            246.76,
+            483.32,
+            262.25
+          ],
+          "noi_dung": "HIỆU TRƯỞNG"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            381.55,
+            348.03,
+            485.81,
+            363.52
+          ],
+          "noi_dung": "Trần Trung Tính"
+        }
+      ]
+    }
+  ]
+}

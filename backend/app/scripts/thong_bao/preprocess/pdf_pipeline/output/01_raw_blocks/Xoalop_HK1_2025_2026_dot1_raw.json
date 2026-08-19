@@ -1,0 +1,3163 @@
+{
+  "ten_file": "Xoalop_HK1_2025_2026_dot1.pdf",
+  "trang": [
+    {
+      "so_trang": 1,
+      "kich_thuoc": [
+        595.44,
+        841.92
+      ],
+      "items": [
+        {
+          "loai": "van_ban",
+          "bbox": [
+            65.3,
+            56.87,
+            534.05,
+            147.09
+          ],
+          "noi_dung": "BỘ GIÁO DỤC VÀ ĐÀO TẠO\nCỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM\nTRƯỜNG ĐẠI HỌC CẦN THƠ\nĐộc lập - Tự do - Hạnh phúc\nSố: /ĐHCT-ĐT\nCần Thơ, ngày tháng 08 năm 2025\nV/v xóa các lớp học phần có sĩ số\nkhông đủ mở lớp học kỳ 1, năm học 2025-2026"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            123.5,
+            103.73,
+            392.56,
+            117.73
+          ],
+          "noi_dung": "3008\n19"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            193.03,
+            162.85,
+            415.8,
+            242.6
+          ],
+          "noi_dung": "Kính gửi:\n- Lãnh đạo các đơn vị;\n- Giảng viên;\n- Cố vấn học tập các lớp;\n- Sinh viên trong toàn trường."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            65.3,
+            263.08,
+            544.27,
+            307.43
+          ],
+          "noi_dung": "Hiện nay, công tác đăng ký học phần đợt 1, học kỳ 1, năm học 2025-2026 đã kết\nthúc. Qua rà soát, một số lớp học phần có số lượng sinh viên đăng ký không đủ điều kiện\nmở lớp theo quy định của công tác học vụ, Trường thông báo như sau:"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            101.33,
+            313.99,
+            542.02,
+            328.34
+          ],
+          "noi_dung": "- Xóa các lớp học phần có sĩ số đăng ký không đủ điều kiện mở lớp (danh sách đính kèm)."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            65.3,
+            334.87,
+            544.21,
+            379.22
+          ],
+          "noi_dung": "- Sinh viên đã đăng ký vào các lớp học phần thông báo xóa cần chuyển kế hoạch học\ntập sang học kỳ tiếp theo hoặc đăng ký vào các lớp học phần còn lại hoặc đăng ký học phần\nkhác thay thế trong đợt 2 từ ngày 08/09/2025 đến 14/09/2025."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            65.3,
+            385.75,
+            544.53,
+            415.0
+          ],
+          "noi_dung": "Đề nghị lãnh đạo các đơn vị phổ biến nội dung công văn này đến toàn thể giảng\nviên, cố vấn học tập và sinh viên biết để triển khai thực hiện đúng quy định."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            65.3,
+            421.77,
+            482.99,
+            608.73
+          ],
+          "noi_dung": "Trân trọng./.\nNơi nhận:\nKT.HIỆU TRƯỞNG\n- Như trên;\nPHÓ HIỆU TRƯỞNG\n- BGH (để báo cáo);\n- Website: Trường, PĐT;\n- Lưu: VT, PĐT.\nNguyễn Hiếu Trung"
+        }
+      ]
+    },
+    {
+      "so_trang": 2,
+      "kich_thuoc": [
+        595.44,
+        841.92
+      ],
+      "items": [
+        {
+          "loai": "van_ban",
+          "bbox": [
+            174.07,
+            57.22,
+            435.18,
+            72.63
+          ],
+          "noi_dung": "DANH SÁCH LỚP HỌC PHẦN XÓA LỚP"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            65.3,
+            73.3,
+            535.72,
+            102.21
+          ],
+          "noi_dung": "HỌC KỲ 1, NĂM HỌC 2025-2026\n(Đính kèm CV số: /ĐHCT-ĐT, ngày /8/2025, V/v xóa các lớp học phần có sĩ số không đủ mở lớp)"
+        },
+        {
+          "loai": "bang",
+          "bbox": [
+            45.14,
+            116.63,
+            564.73,
+            764.65
+          ],
+          "du_lieu": [
+            [
+              "TT",
+              "Mã HP",
+              "Tên học phần",
+              "TC",
+              "Ký\nhiệu",
+              "Mã số\nCBGD",
+              "Họ và tên CBGD"
+            ],
+            [
+              "1",
+              "AN407C",
+              "Độc tố trong động vật và thực phẩm",
+              "3",
+              "M01",
+              "02796",
+              "Nguyễn Khánh Thuận"
+            ],
+            [
+              "2",
+              "BT225E",
+              "Chuyên đề công nghệ sinh học 1",
+              "2",
+              "M01",
+              "00749",
+              "Nguyễn Văn Thành"
+            ],
+            [
+              "3",
+              "CN111",
+              "TT. Trắc địa",
+              "1",
+              "02",
+              "00497",
+              "Trần Văn Hừng"
+            ],
+            [
+              "4",
+              "CN111",
+              "TT. Trắc địa",
+              "1",
+              "M01",
+              "00497",
+              "Trần Văn Hừng"
+            ],
+            [
+              "5",
+              "CN113",
+              "TT. Cơ học đất",
+              "1",
+              "01",
+              "03063",
+              "Phạm Minh Triết"
+            ],
+            [
+              "6",
+              "CN148",
+              "Thiết kế kỹ thuật",
+              "2",
+              "01",
+              "02377",
+              "Huỳnh Thanh Thưởng"
+            ],
+            [
+              "7",
+              "CN150",
+              "Phương pháp phần tử hữu hạn",
+              "2",
+              "01",
+              "01624",
+              "Huỳnh Thị Cẩm Hồng"
+            ],
+            [
+              "8",
+              "CN198",
+              "Điều khiển quá trình - CNHH",
+              "2",
+              "01",
+              "01234",
+              "Nguyễn Văn Mướt"
+            ],
+            [
+              "9",
+              "CN201",
+              "Quản lý dự án công nghiệp",
+              "2",
+              "02",
+              "02698",
+              "Võ Trần Thị Bích Châu"
+            ],
+            [
+              "10",
+              "CN255",
+              "Dụng cụ đo",
+              "2",
+              "01",
+              "01807",
+              "Đặng Huỳnh Giao"
+            ],
+            [
+              "11",
+              "CN273E",
+              "Kỹ thuật chiếu sáng",
+              "2",
+              "01",
+              "01678",
+              "Đinh Mạnh Tiến"
+            ],
+            [
+              "12",
+              "CN275",
+              "Nhà máy điện",
+              "2",
+              "01",
+              "02158",
+              "Đỗ Nguyễn Duy Phương"
+            ],
+            [
+              "13",
+              "CN311",
+              "Máy xây dựng và kỹ thuật thi công",
+              "3",
+              "02",
+              "03026",
+              "Võ Lê Ngọc Điền"
+            ],
+            [
+              "14",
+              "CN332",
+              "Tin học ứng dụng - Kỹ thuật 2",
+              "2",
+              "M01",
+              "03026",
+              "Võ Lê Ngọc Điền"
+            ],
+            [
+              "15",
+              "CN340",
+              "Quản lý sản xuất công nghiệp",
+              "3",
+              "02",
+              "02373",
+              "Nguyễn Văn Cần"
+            ],
+            [
+              "16",
+              "CN366",
+              "Thi công cầu",
+              "2",
+              "01",
+              "02379",
+              "Trần Nhật Lâm"
+            ],
+            [
+              "17",
+              "CN391",
+              "Công nghệ chế tạo khuôn mẫu",
+              "2",
+              "01",
+              "00466",
+              "Nguyễn Văn Cương"
+            ],
+            [
+              "18",
+              "CN408",
+              "Quản lý sản xuất công nghiệp",
+              "2",
+              "01",
+              "02373",
+              "Nguyễn Văn Cần"
+            ],
+            [
+              "19",
+              "CN419",
+              "Công nghệ sản xuất sạch",
+              "2",
+              "02",
+              "01246",
+              "Nguyễn Xuân Hoàng"
+            ],
+            [
+              "20",
+              "CN473",
+              "Kỹ thuật nâng chuyển",
+              "2",
+              "01",
+              "02696",
+              "Nguyễn Hoài Tân"
+            ],
+            [
+              "21",
+              "CN500",
+              "Cơ học ứng dụng",
+              "3",
+              "01",
+              "02377",
+              "Huỳnh Thanh Thưởng"
+            ],
+            [
+              "22",
+              "CN543",
+              "Quản trị nguồn nhân lực",
+              "3",
+              "01",
+              "02622",
+              "Phạm Công Hữu"
+            ],
+            [
+              "23",
+              "CS299E",
+              "An toàn sinh học và hệ thống quản lý",
+              "2",
+              "01",
+              "03069",
+              "Bùi Hoàng Đăng Long"
+            ],
+            [
+              "24",
+              "CS316",
+              "Nấm học",
+              "2",
+              "01",
+              "01768",
+              "Huỳnh Ngọc Thanh Tâm"
+            ],
+            [
+              "25",
+              "CS317",
+              "TT. Nấm học",
+              "1",
+              "01",
+              "01890",
+              "Nguyễn Thị Liên"
+            ],
+            [
+              "26",
+              "CS345",
+              "Vi sinh vật nông nghiệp",
+              "2",
+              "01",
+              "02700",
+              "Đỗ Thị Xuân"
+            ],
+            [
+              "27",
+              "CS347",
+              "Sinh thái Vi sinh vật",
+              "2",
+              "01",
+              "01768",
+              "Huỳnh Ngọc Thanh Tâm"
+            ],
+            [
+              "28",
+              "CS442C",
+              "TT. CNSH và chọn giống thực vật",
+              "1",
+              "M01",
+              "02869",
+              "Bùi Thanh Liêm"
+            ],
+            [
+              "29",
+              "CT056H",
+              "Kỹ năng thuyết trình",
+              "1",
+              "M01",
+              "700523",
+              "Trần Minh Hùng"
+            ],
+            [
+              "30",
+              "CT095",
+              "Dự án phim hoạt hình 3D",
+              "3",
+              "01",
+              "01170",
+              "Nguyễn Thị Thùy Linh"
+            ],
+            [
+              "31",
+              "CT099",
+              "Blockchain và ứng dụng",
+              "3",
+              "01",
+              "02267",
+              "Nguyễn Thanh Hải"
+            ],
+            [
+              "32",
+              "CT113H",
+              "Cơ sở dữ liệu NoSQL",
+              "3",
+              "M02",
+              "01451",
+              "Nguyễn Công Danh"
+            ],
+            [
+              "33",
+              "CT114H",
+              "Nhập môn công nghệ phần mềm",
+              "2",
+              "M01",
+              "01067",
+              "Huỳnh Xuân Hiệp"
+            ],
+            [
+              "34",
+              "CT136",
+              "Mạch số",
+              "3",
+              "01",
+              "01452",
+              "Trần Hữu Danh"
+            ],
+            [
+              "35",
+              "CT168",
+              "TT. Mạch số",
+              "1",
+              "01",
+              "02697",
+              "Trần Thanh Quang"
+            ],
+            [
+              "36",
+              "CT178",
+              "Nguyên lý hệ điều hành",
+              "3",
+              "05",
+              "01943",
+              "Lâm Nhựt Khang"
+            ],
+            [
+              "37",
+              "CT179",
+              "Quản trị hệ thống",
+              "3",
+              "04",
+              "02626",
+              "Bùi Võ Quốc Bảo"
+            ],
+            [
+              "38",
+              "CT180",
+              "Cơ sở dữ liệu",
+              "3",
+              "04",
+              "01353",
+              "Phạm Thị Ngọc Diễm"
+            ],
+            [
+              "39",
+              "CT180",
+              "Cơ sở dữ liệu",
+              "3",
+              "06",
+              "700556",
+              "Phạm Thị Xuân Lộc"
+            ]
+          ]
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            301.8,
+            778.64,
+            307.8,
+            791.93
+          ],
+          "noi_dung": "1"
+        }
+      ]
+    },
+    {
+      "so_trang": 3,
+      "kich_thuoc": [
+        595.44,
+        841.92
+      ],
+      "items": [
+        {
+          "loai": "bang",
+          "bbox": [
+            45.14,
+            56.87,
+            564.73,
+            767.05
+          ],
+          "du_lieu": [
+            [
+              "TT",
+              "Mã HP",
+              "Tên học phần",
+              "TC",
+              "Ký\nhiệu",
+              "Mã số\nCBGD",
+              "Họ và tên CBGD"
+            ],
+            [
+              "40",
+              "CT188",
+              "Nhập môn lập trình Web",
+              "3",
+              "04",
+              "01042",
+              "Vũ Duy Linh"
+            ],
+            [
+              "41",
+              "CT189",
+              "Nhập môn mô phỏng",
+              "3",
+              "01",
+              "02628",
+              "Huỳnh Quang Nghi"
+            ],
+            [
+              "42",
+              "CT199",
+              "Quy hoạch tuyến tính",
+              "3",
+              "01",
+              "02692",
+              "Trần Việt Châu"
+            ],
+            [
+              "43",
+              "CT199",
+              "Quy hoạch tuyến tính",
+              "3",
+              "02",
+              "02692",
+              "Trần Việt Châu"
+            ],
+            [
+              "44",
+              "CT200",
+              "Nền tảng công nghệ thông tin",
+              "4",
+              "01",
+              "01457",
+              "Lê Hoàng Thảo"
+            ],
+            [
+              "45",
+              "CT201H",
+              "An ninh máy tính",
+              "3",
+              "M01",
+              "01048",
+              "Nguyễn Hữu Hòa"
+            ],
+            [
+              "46",
+              "CT203",
+              "Đồ họa máy tính",
+              "3",
+              "01",
+              "02854",
+              "Huỳnh Ngọc Thái Anh"
+            ],
+            [
+              "47",
+              "CT205",
+              "Quản trị cơ sở dữ liệu",
+              "3",
+              "01",
+              "02625",
+              "Phạm Ngọc Quyền"
+            ],
+            [
+              "48",
+              "CT205",
+              "Quản trị cơ sở dữ liệu",
+              "3",
+              "03",
+              "02625",
+              "Phạm Ngọc Quyền"
+            ],
+            [
+              "49",
+              "CT207",
+              "Phát triển phần mềm mã nguồn mở",
+              "3",
+              "01",
+              "01124",
+              "Ngô Bá Hùng"
+            ],
+            [
+              "50",
+              "CT219",
+              "Xử lý ngôn ngữ tự nhiên",
+              "3",
+              "01",
+              "01943",
+              "Lâm Nhựt Khang"
+            ],
+            [
+              "51",
+              "CT233",
+              "Điện toán đám mây",
+              "3",
+              "01",
+              "01124",
+              "Ngô Bá Hùng"
+            ],
+            [
+              "52",
+              "CT241",
+              "Phân tích yêu cầu phần mềm",
+              "3",
+              "01",
+              "02815",
+              "Trương Xuân Việt"
+            ],
+            [
+              "53",
+              "CT243",
+              "Đảm bảo chất lượng và Kiểm thử PM",
+              "4",
+              "01",
+              "01451",
+              "Nguyễn Công Danh"
+            ],
+            [
+              "54",
+              "CT246",
+              "Lập trình .NET",
+              "3",
+              "01",
+              "02924",
+              "Ông Thị Mỹ Linh"
+            ],
+            [
+              "55",
+              "CT258",
+              "Phát triển hệ thống thương mại điện tử",
+              "3",
+              "01",
+              "02226",
+              "Trần Nguyễn Minh Thái"
+            ],
+            [
+              "56",
+              "CT258",
+              "Phát triển hệ thống thương mại điện tử",
+              "3",
+              "02",
+              "02226",
+              "Trần Nguyễn Minh Thái"
+            ],
+            [
+              "57",
+              "CT259",
+              "Tổng quan về hệ thống e-Learning",
+              "3",
+              "01",
+              "01324",
+              "Trần Thanh Điện"
+            ],
+            [
+              "58",
+              "CT276",
+              "Lập trình Java",
+              "3",
+              "01",
+              "02299",
+              "Hồ Quang Thái"
+            ],
+            [
+              "59",
+              "CT284",
+              "Hệ thống hỏi đáp",
+              "3",
+              "01",
+              "02937",
+              "Mã Trường Thành"
+            ],
+            [
+              "60",
+              "CT287",
+              "Kiểm chứng mô hình",
+              "3",
+              "01",
+              "01585",
+              "Lâm Hoài Bảo"
+            ],
+            [
+              "61",
+              "CT288",
+              "Kiến trúc PM theo mô hình Client-Server",
+              "3",
+              "01",
+              "01585",
+              "Lâm Hoài Bảo"
+            ],
+            [
+              "62",
+              "CT295",
+              "Nền tảng phần mềm nhúng và IoT",
+              "3",
+              "01",
+              "02815",
+              "Trương Xuân Việt"
+            ],
+            [
+              "63",
+              "CT316",
+              "Xử lý Ảnh",
+              "3",
+              "01",
+              "02692",
+              "Trần Việt Châu"
+            ],
+            [
+              "64",
+              "CT332",
+              "Trí tuệ nhân tạo",
+              "3",
+              "02",
+              "02484",
+              "Nguyễn Bá Diệp"
+            ],
+            [
+              "65",
+              "CT363",
+              "Kỹ thuật Anten và truyền sóng",
+              "3",
+              "01",
+              "01063",
+              "Lương Vinh Quốc Danh"
+            ],
+            [
+              "66",
+              "CT376",
+              "Điện tử công nghiệp",
+              "3",
+              "01",
+              "01425",
+              "Phan Hồng Toàn"
+            ],
+            [
+              "67",
+              "CT380",
+              "Kỹ thuật Robot",
+              "3",
+              "01",
+              "02175",
+              "Phạm Phú Cường"
+            ],
+            [
+              "68",
+              "CT395",
+              "Điện tử công suất và ứng dụng",
+              "2",
+              "02",
+              "03082",
+              "Trần Thái Nguyên"
+            ],
+            [
+              "69",
+              "CT446",
+              "Ngôn ngữ lập trình mô phỏng",
+              "3",
+              "01",
+              "02628",
+              "Huỳnh Quang Nghi"
+            ],
+            [
+              "70",
+              "CT479",
+              "Phương pháp tính",
+              "3",
+              "01",
+              "01707",
+              "Phạm Xuân Hiền"
+            ],
+            [
+              "71",
+              "CT483",
+              "Chuyên đề lập trình trên di động",
+              "3",
+              "01",
+              "01586",
+              "Phan Huy Cường"
+            ],
+            [
+              "72",
+              "CT499",
+              "Thiết kế UI,UX",
+              "3",
+              "02",
+              "02454",
+              "Phạm Trương Hồng Ngân"
+            ],
+            [
+              "73",
+              "CT523",
+              "Phát triển ứng dụng Web đa phương tiện",
+              "3",
+              "02",
+              "02455",
+              "Lê Văn Quan"
+            ],
+            [
+              "74",
+              "CT525",
+              "Thực tế tăng cường",
+              "3",
+              "03",
+              "02454",
+              "Phạm Trương Hồng Ngân"
+            ],
+            [
+              "75",
+              "CT526",
+              "Triển khai ứng dụng Thương mại điện tử",
+              "3",
+              "02",
+              "01044",
+              "Nguyễn Nhị Gia Vinh"
+            ],
+            [
+              "76",
+              "FL001",
+              "Pháp văn căn bản 1 (*)",
+              "4",
+              "01",
+              "02011",
+              "Lữ Quốc Vinh"
+            ],
+            [
+              "77",
+              "FL001",
+              "Pháp văn căn bản 1 (*)",
+              "4",
+              "02",
+              "01614",
+              "Nguyễn Thắng Cảnh"
+            ],
+            [
+              "78",
+              "FL003",
+              "Pháp văn căn bản 3 (*)",
+              "3",
+              "03",
+              "01793",
+              "Huỳnh Trung Vũ"
+            ],
+            [
+              "79",
+              "FL003",
+              "Pháp văn căn bản 3 (*)",
+              "3",
+              "04",
+              "02009",
+              "Nguyễn Ngọc Phương Thảo"
+            ],
+            [
+              "80",
+              "FL207",
+              "Đọc - Viết B2.2",
+              "3",
+              "07",
+              "02275",
+              "Hứa Phú Sĩ"
+            ],
+            [
+              "81",
+              "FL209",
+              "Đọc C1.2",
+              "2",
+              "02",
+              "02807",
+              "Nguyễn Duy Khang"
+            ],
+            [
+              "82",
+              "FL211",
+              "Đọc phát triển kỹ năng phản biện",
+              "2",
+              "02",
+              "00793",
+              "Nguyễn Bửu Huân"
+            ]
+          ]
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            301.8,
+            778.64,
+            307.8,
+            791.93
+          ],
+          "noi_dung": "2"
+        }
+      ]
+    },
+    {
+      "so_trang": 4,
+      "kich_thuoc": [
+        595.44,
+        841.92
+      ],
+      "items": [
+        {
+          "loai": "bang",
+          "bbox": [
+            45.14,
+            56.87,
+            564.73,
+            767.05
+          ],
+          "du_lieu": [
+            [
+              "TT",
+              "Mã HP",
+              "Tên học phần",
+              "TC",
+              "Ký\nhiệu",
+              "Mã số\nCBGD",
+              "Họ và tên CBGD"
+            ],
+            [
+              "83",
+              "FL219",
+              "Nghe - Nói B1",
+              "3",
+              "01",
+              "700778",
+              "Huỳnh Hồng Huyền"
+            ],
+            [
+              "84",
+              "FL227",
+              "Giảng dạy các yếu tố ngôn ngữ",
+              "3",
+              "01",
+              "00210",
+              "Chung Thị Thanh Hằng"
+            ],
+            [
+              "85",
+              "FL259",
+              "Tổng quan về giảng dạy tiếng Anh",
+              "3",
+              "01",
+              "02861",
+              "Nguyễn Thị Khánh Đoan"
+            ],
+            [
+              "86",
+              "HR486C",
+              "Công nghệ sinh học trong nông nghiệp",
+              "3",
+              "M01",
+              "02700",
+              "Đỗ Thị Xuân"
+            ],
+            [
+              "87",
+              "KC069",
+              "Thực hành vẽ kỹ thuật - CTGT",
+              "2",
+              "01",
+              "01917",
+              "Nguyễn Văn Sơn"
+            ],
+            [
+              "88",
+              "KC072",
+              "An toàn giao thông",
+              "3",
+              "01",
+              "03063",
+              "Phạm Minh Triết"
+            ],
+            [
+              "89",
+              "KC111E",
+              "Tin học ứng dụng cầu",
+              "2",
+              "01",
+              "01917",
+              "Nguyễn Văn Sơn"
+            ],
+            [
+              "90",
+              "KC118",
+              "Điện tử cơ bản",
+              "3",
+              "01",
+              "02156",
+              "Nguyễn Thái Sơn"
+            ],
+            [
+              "91",
+              "KC131H",
+              "Điều khiển quá trình",
+              "2",
+              "M01",
+              "01234",
+              "Nguyễn Văn Mướt"
+            ],
+            [
+              "92",
+              "KC136",
+              "Kiểm soát và quản lý chất lượng",
+              "3",
+              "01",
+              "02347",
+              "Nguyễn Hồng Phúc"
+            ],
+            [
+              "93",
+              "KC154",
+              "Công nghệ các chất hoạt động bề mặt",
+              "3",
+              "01",
+              "01674",
+              "Hồ Quốc Phong"
+            ],
+            [
+              "94",
+              "KC155H",
+              "Kỹ thuật số",
+              "2",
+              "M02",
+              "01705",
+              "Nguyễn Cao Quí"
+            ],
+            [
+              "95",
+              "KC156H",
+              "Toán kỹ thuật",
+              "2",
+              "M01",
+              "01942",
+              "Nguyễn Thanh Tùng"
+            ],
+            [
+              "96",
+              "KC161E",
+              "Kỹ thuật sản xuất vật liệu silicat",
+              "3",
+              "01",
+              "01918",
+              "Nguyễn Việt Bách"
+            ],
+            [
+              "97",
+              "KC162",
+              "Kỹ thuật sản xuất chất kết dính",
+              "3",
+              "01",
+              "01918",
+              "Nguyễn Việt Bách"
+            ],
+            [
+              "98",
+              "KC164",
+              "Công nghệ điện hóa",
+              "3",
+              "01",
+              "01496",
+              "Huỳnh Thu Hạnh"
+            ],
+            [
+              "99",
+              "KC165",
+              "Ăn mòn kim loại",
+              "3",
+              "01",
+              "01496",
+              "Huỳnh Thu Hạnh"
+            ],
+            [
+              "100",
+              "KC173H",
+              "Trắc địa",
+              "3",
+              "M01",
+              "01812",
+              "Trần Vũ An"
+            ],
+            [
+              "101",
+              "KC174E",
+              "Công nghệ vật liệu hữu cơ-kim loại",
+              "3",
+              "01",
+              "01807",
+              "Đặng Huỳnh Giao"
+            ],
+            [
+              "102",
+              "KC190",
+              "Nhiên liệu sinh khối và vật liệu sinh khối",
+              "3",
+              "01",
+              "01683",
+              "Nguyễn Thị Bích Thuyền"
+            ],
+            [
+              "103",
+              "KC208H",
+              "Kỹ thuật cao áp",
+              "2",
+              "M02",
+              "01476",
+              "Nguyễn Văn Dũng"
+            ],
+            [
+              "104",
+              "KC215",
+              "Thiết kế máy biến Áp điện lực",
+              "2",
+              "01",
+              "01911",
+              "Đào Minh Trung"
+            ],
+            [
+              "105",
+              "KC223",
+              "Lập trình truyền thông",
+              "3",
+              "01",
+              "01702",
+              "Trương Phong Tuyên"
+            ],
+            [
+              "106",
+              "KC232",
+              "Kỹ thuật xử lý Ảnh",
+              "3",
+              "01",
+              "01256",
+              "Trương Quốc Bảo"
+            ],
+            [
+              "107",
+              "KC247",
+              "Kỹ thuật thi công công trình đặc biệt",
+              "2",
+              "01",
+              "01623",
+              "Trần Hoàng Tuấn"
+            ],
+            [
+              "108",
+              "KC288",
+              "Thiết kế cầu bê tông",
+              "2",
+              "01",
+              "01917",
+              "Nguyễn Văn Sơn"
+            ],
+            [
+              "109",
+              "KC289",
+              "Khoa học và công nghệ vật liệu nano",
+              "3",
+              "01",
+              "02728",
+              "Trần Thị Bích Quyên"
+            ],
+            [
+              "110",
+              "KC329",
+              "XD dự án kỹ thuật phục vụ CĐ (EPICS)",
+              "2",
+              "01",
+              "01064",
+              "Trần Thanh Hùng"
+            ],
+            [
+              "111",
+              "KC345",
+              "Lý thuyết điều khiển hiện đại",
+              "2",
+              "01",
+              "01234",
+              "Nguyễn Văn Mướt"
+            ],
+            [
+              "112",
+              "KC349",
+              "Mạch xung số",
+              "3",
+              "01",
+              "02877",
+              "Đái Tiến Trung"
+            ],
+            [
+              "113",
+              "KC356",
+              "Nhiệt động lực học kỹ thuật",
+              "2",
+              "01",
+              "01767",
+              "Võ Mạnh Duy"
+            ],
+            [
+              "114",
+              "KC368",
+              "Tích hợp năng lượng tái tạo vào lưới điện",
+              "3",
+              "01",
+              "02979",
+              "Hồ Phạm Thành Tâm"
+            ],
+            [
+              "115",
+              "KC378",
+              "Ứng dụng năng lượng gió và mặt trời",
+              "3",
+              "01",
+              "02979",
+              "Hồ Phạm Thành Tâm"
+            ],
+            [
+              "116",
+              "KC389",
+              "Lý thuyết thí nghiệm nền móng",
+              "3",
+              "01",
+              "02674",
+              "Trần Văn Tuẩn"
+            ],
+            [
+              "117",
+              "KC413",
+              "Thiết kế và vận hành nhà kho",
+              "3",
+              "01",
+              "03017",
+              "Nguyễn Trọng Trí Đức"
+            ],
+            [
+              "118",
+              "KC426",
+              "Quản lý kỹ thuật và công nghệ",
+              "3",
+              "01",
+              "02698",
+              "Võ Trần Thị Bích Châu"
+            ],
+            [
+              "119",
+              "KL101",
+              "Lý luận nhà nước và pháp luật 1",
+              "2",
+              "01",
+              "01699",
+              "Huỳnh Thị Sinh Hiền"
+            ],
+            [
+              "120",
+              "KL105",
+              "Luật so sánh",
+              "2",
+              "01",
+              "02559",
+              "Nguyễn Tống Ngọc Như"
+            ],
+            [
+              "121",
+              "KL119",
+              "Luật hình sự phần riêng",
+              "2",
+              "02",
+              "01199",
+              "Phạm Văn Beo"
+            ],
+            [
+              "122",
+              "KL130",
+              "Luật dân sự: lý luận chung về luật dân sự",
+              "2",
+              "01",
+              "01713",
+              "Tăng Thanh Phương"
+            ],
+            [
+              "123",
+              "KL213",
+              "Luật môi trường",
+              "3",
+              "01",
+              "01202",
+              "Kim Oanh Na"
+            ],
+            [
+              "124",
+              "KL218",
+              "Luật lao động 2",
+              "2",
+              "01",
+              "01715",
+              "Võ Hoàng Yến"
+            ],
+            [
+              "125",
+              "KL233E",
+              "Học thuyết pháp lý",
+              "2",
+              "H01",
+              "01696",
+              "Nguyễn Lan Hương"
+            ]
+          ]
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            301.8,
+            778.64,
+            307.8,
+            791.93
+          ],
+          "noi_dung": "3"
+        }
+      ]
+    },
+    {
+      "so_trang": 5,
+      "kich_thuoc": [
+        595.44,
+        841.92
+      ],
+      "items": [
+        {
+          "loai": "bang",
+          "bbox": [
+            45.14,
+            56.87,
+            564.73,
+            767.05
+          ],
+          "du_lieu": [
+            [
+              "TT",
+              "Mã HP",
+              "Tên học phần",
+              "TC",
+              "Ký\nhiệu",
+              "Mã số\nCBGD",
+              "Họ và tên CBGD"
+            ],
+            [
+              "126",
+              "KL301",
+              "Luật hiến pháp 1",
+              "2",
+              "01",
+              "03075",
+              "Nguyễn Văn Trường"
+            ],
+            [
+              "127",
+              "KL374",
+              "Luật tố tụng dân sự",
+              "2",
+              "02",
+              "01716",
+              "Trương Thanh Hùng"
+            ],
+            [
+              "128",
+              "KL377",
+              "Pháp luật về xây dựng",
+              "2",
+              "H02",
+              "03081",
+              "Nguyễn Dương Anh Thắng"
+            ],
+            [
+              "129",
+              "KL396",
+              "Pháp luật về thương mại điện tử",
+              "2",
+              "01",
+              "02017",
+              "Phạm Mai Phương"
+            ],
+            [
+              "130",
+              "KL401",
+              "Tội phạm học",
+              "2",
+              "01",
+              "02750",
+              "Cao Thanh Thùy"
+            ],
+            [
+              "131",
+              "KN001E",
+              "Kỹ năng mềm",
+              "2",
+              "07",
+              "02459",
+              "Trần Duy Phát"
+            ],
+            [
+              "132",
+              "KN002E",
+              "Đổi mới sáng tạo và khởi nghiệp",
+              "2",
+              "05",
+              "02510",
+              "Trần Thị Thúy Hằng"
+            ],
+            [
+              "133",
+              "KN002E",
+              "Đổi mới sáng tạo và khởi nghiệp",
+              "2",
+              "10",
+              "02445",
+              "Trần Quốc Nhân"
+            ],
+            [
+              "134",
+              "KN002E",
+              "Đổi mới sáng tạo và khởi nghiệp",
+              "2",
+              "11",
+              "02510",
+              "Trần Thị Thúy Hằng"
+            ],
+            [
+              "135",
+              "KT103",
+              "Quản trị học",
+              "3",
+              "06",
+              "02999",
+              "Tất Duyên Thư"
+            ],
+            [
+              "136",
+              "KT118",
+              "Kinh tế học hành vi",
+              "3",
+              "01",
+              "02600",
+              "Cao Minh Tuấn"
+            ],
+            [
+              "137",
+              "KT141",
+              "Pháp luật ngân hàng thương mại",
+              "3",
+              "01",
+              "700690",
+              "Nguyễn Thị Hoàng Anh"
+            ],
+            [
+              "138",
+              "KT141E",
+              "Pháp luật ngân hàng thương mại",
+              "3",
+              "01",
+              "700690",
+              "Nguyễn Thị Hoàng Anh"
+            ],
+            [
+              "139",
+              "KT147H",
+              "Kinh tế lượng",
+              "2",
+              "M03",
+              "01278",
+              "Phạm Lê Thông"
+            ],
+            [
+              "140",
+              "KT151",
+              "Ứng dụng AI và IoT trong KT và KD",
+              "3",
+              "01",
+              "02383",
+              "Nguyễn Đinh Yến Oanh"
+            ],
+            [
+              "141",
+              "KT193",
+              "Seminar Kinh doanh quốc tế",
+              "1",
+              "01",
+              "01470",
+              "Võ Văn Dứt"
+            ],
+            [
+              "142",
+              "KT200",
+              "Digital Marketing",
+              "2",
+              "01",
+              "02283",
+              "Lê Thị Ngọc Vân"
+            ],
+            [
+              "143",
+              "KT205",
+              "Quy hoạch tuyến tính",
+              "3",
+              "M02",
+              "01989",
+              "Huỳnh Thị Kim Uyên"
+            ],
+            [
+              "144",
+              "KT207",
+              "Mô phỏng tình huống trong kinh doanh",
+              "3",
+              "01",
+              "02709",
+              "Huỳnh Hữu Thọ"
+            ],
+            [
+              "145",
+              "KT207",
+              "Mô phỏng tình huống trong kinh doanh",
+              "3",
+              "02",
+              "02709",
+              "Huỳnh Hữu Thọ"
+            ],
+            [
+              "146",
+              "KT208E",
+              "Quản trị hệ thống thông tin doanh nghiệp",
+              "2",
+              "01",
+              "02596",
+              "Thạch Keo Sa Ráte"
+            ],
+            [
+              "147",
+              "KT213",
+              "Quản trị kinh doanh nhà hàng",
+              "3",
+              "02",
+              "02282",
+              "Nguyễn Tri Nam Khang"
+            ],
+            [
+              "148",
+              "KT215",
+              "Marketing địa phương",
+              "2",
+              "02",
+              "00554",
+              "Nguyễn Phú Son"
+            ],
+            [
+              "149",
+              "KT226",
+              "Quản trị tài chính các công ty đa quốc gia",
+              "3",
+              "01",
+              "02748",
+              "Trần Thu Hương"
+            ],
+            [
+              "150",
+              "KT254",
+              "Khởi sự doanh nghiệp",
+              "3",
+              "02",
+              "03003",
+              "Nguyễn Thế Hiển"
+            ],
+            [
+              "151",
+              "KT302",
+              "Kinh tế vĩ mô 2",
+              "3",
+              "01",
+              "00563",
+              "Võ Thành Danh"
+            ],
+            [
+              "152",
+              "KT310",
+              "Phân tích chính sách kinh tế",
+              "3",
+              "01",
+              "01870",
+              "Bùi Thị Kim Thanh"
+            ],
+            [
+              "153",
+              "KT314E",
+              "Hệ thống thông tin kinh tế",
+              "2",
+              "01",
+              "01537",
+              "Huỳnh Việt Khải"
+            ],
+            [
+              "154",
+              "KT332H",
+              "Hành vi tổ chức",
+              "3",
+              "M03",
+              "11020",
+              "Kinh Tế Mgiảng"
+            ],
+            [
+              "155",
+              "KT342",
+              "Kế toán tài chính 2",
+              "3",
+              "02",
+              "01046",
+              "Đàm Thị Phong Ba"
+            ],
+            [
+              "156",
+              "KT343",
+              "Kế toán quốc tế",
+              "3",
+              "01",
+              "00557",
+              "Nguyễn Thị Diệu"
+            ],
+            [
+              "157",
+              "KT349",
+              "Quản trị bán hàng",
+              "2",
+              "01",
+              "00553",
+              "Lưu Tiến Thuận"
+            ],
+            [
+              "158",
+              "KT352",
+              "Quản trị du lịch và dịch vụ",
+              "3",
+              "02",
+              "02114",
+              "Phạm Lê Hồng Nhung"
+            ],
+            [
+              "159",
+              "KT380E",
+              "Kinh tế du lịch và môi trường",
+              "2",
+              "01",
+              "03003",
+              "Nguyễn Thế Hiển"
+            ],
+            [
+              "160",
+              "KT461",
+              "Nghiệp vụ thanh toán",
+              "3",
+              "01",
+              "02222",
+              "Trần Thị Hạnh Phúc"
+            ],
+            [
+              "161",
+              "KT479",
+              "PP nghiên cứu trong kinh doanh",
+              "3",
+              "01",
+              "01471",
+              "Huỳnh Trường Huy"
+            ],
+            [
+              "162",
+              "KT480",
+              "Phân tích định tính trong kinh doanh",
+              "2",
+              "01",
+              "02709",
+              "Huỳnh Hữu Thọ"
+            ],
+            [
+              "163",
+              "KT483",
+              "Tổ chức sự kiện và lễ hội",
+              "3",
+              "01",
+              "02114",
+              "Phạm Lê Hồng Nhung"
+            ],
+            [
+              "164",
+              "KT485",
+              "Đầu tư tài chính",
+              "3",
+              "01",
+              "01536",
+              "Đoàn Thị Cẩm Vân"
+            ],
+            [
+              "165",
+              "KT489",
+              "Kỹ năng đàm phán",
+              "2",
+              "01",
+              "02383",
+              "Nguyễn Đinh Yến Oanh"
+            ],
+            [
+              "166",
+              "ML112E",
+              "LS phong trào CS và công nhân quốc tế",
+              "2",
+              "01",
+              "02125",
+              "Lê Thị Thúy Hương"
+            ],
+            [
+              "167",
+              "MT082",
+              "Tài nguyên đất đại cương",
+              "3",
+              "01",
+              "00281",
+              "Võ Quang Minh"
+            ],
+            [
+              "168",
+              "MT096E",
+              "Xã hội học đô thị",
+              "2",
+              "01",
+              "02168",
+              "Nguyễn ánh Minh"
+            ]
+          ]
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            301.8,
+            778.64,
+            307.8,
+            791.93
+          ],
+          "noi_dung": "4"
+        }
+      ]
+    },
+    {
+      "so_trang": 6,
+      "kich_thuoc": [
+        595.44,
+        841.92
+      ],
+      "items": [
+        {
+          "loai": "bang",
+          "bbox": [
+            45.14,
+            56.87,
+            564.73,
+            767.05
+          ],
+          "du_lieu": [
+            [
+              "TT",
+              "Mã HP",
+              "Tên học phần",
+              "TC",
+              "Ký\nhiệu",
+              "Mã số\nCBGD",
+              "Họ và tên CBGD"
+            ],
+            [
+              "169",
+              "MT114",
+              "Hệ sinh thái rừng",
+              "2",
+              "01",
+              "01500",
+              "Lê Văn Dũ"
+            ],
+            [
+              "170",
+              "MT196",
+              "GP phi công trình cho CT nước bền vững",
+              "2",
+              "01",
+              "00501",
+              "Lê Anh Tuấn"
+            ],
+            [
+              "171",
+              "MT209",
+              "Biến đổi khí hậu và ứng phó",
+              "2",
+              "01",
+              "02359",
+              "Ngô Thụy Diễm Trang"
+            ],
+            [
+              "172",
+              "MT225",
+              "Kỹ năng chuyên ngành",
+              "2",
+              "01",
+              "00281",
+              "Võ Quang Minh"
+            ],
+            [
+              "173",
+              "MT248",
+              "Công nghệ sinh học trong môi trường",
+              "2",
+              "01",
+              "02256",
+              "Nguyễn Thị Như Ngọc"
+            ],
+            [
+              "174",
+              "MT251",
+              "Công nghệ sinh thái",
+              "2",
+              "01",
+              "02256",
+              "Nguyễn Thị Như Ngọc"
+            ],
+            [
+              "175",
+              "MT300",
+              "Hóa học môi trường không khí",
+              "2",
+              "01",
+              "02440",
+              "Nguyễn Công Thuận"
+            ],
+            [
+              "176",
+              "MT330",
+              "Ô nhiễm đất và kỹ thuật phục hồi",
+              "2",
+              "01",
+              "02051",
+              "Đỗ Thị Mỹ Phượng"
+            ],
+            [
+              "177",
+              "MT334",
+              "QLTN trên cơ sở phát triển cộng đồng",
+              "2",
+              "01",
+              "01500",
+              "Lê Văn Dũ"
+            ],
+            [
+              "178",
+              "MT361",
+              "Quản lý và tái sử dụng chất thải hữu cơ",
+              "2",
+              "01",
+              "00799",
+              "Lê Hoàng Việt"
+            ],
+            [
+              "179",
+              "MT366",
+              "Quản lý môi trường nông nghiệp",
+              "2",
+              "01",
+              "01500",
+              "Lê Văn Dũ"
+            ],
+            [
+              "180",
+              "MT372",
+              "TN và môi trường lưu vực sông Mekong",
+              "2",
+              "01",
+              "01500",
+              "Lê Văn Dũ"
+            ],
+            [
+              "181",
+              "MT420",
+              "Vật liệu môi trường",
+              "2",
+              "01",
+              "02051",
+              "Đỗ Thị Mỹ Phượng"
+            ],
+            [
+              "182",
+              "MT445",
+              "TT. Xử lý chất thải rắn và khí thải",
+              "2",
+              "01",
+              "01299",
+              "Phạm Văn Toàn"
+            ],
+            [
+              "183",
+              "MT491",
+              "Trắc địa ảnh số",
+              "2",
+              "01",
+              "01273",
+              "Huỳnh Thị Thu Hương"
+            ],
+            [
+              "184",
+              "NN100",
+              "Kỹ năng mềm",
+              "2",
+              "02",
+              "02510",
+              "Trần Thị Thúy Hằng"
+            ],
+            [
+              "185",
+              "NN114",
+              "Tin học ứng dụng - CNTY",
+              "2",
+              "01",
+              "02138",
+              "Nguyễn Trọng Ngữ"
+            ],
+            [
+              "186",
+              "NN114",
+              "Tin học ứng dụng - CNTY",
+              "2",
+              "02",
+              "02821",
+              "Trương Thanh Trung"
+            ],
+            [
+              "187",
+              "NN125",
+              "Nhiệt kỹ thuật",
+              "2",
+              "01",
+              "02879",
+              "Trần Bạch Long"
+            ],
+            [
+              "188",
+              "NN152",
+              "Vật lý học thực phẩm",
+              "2",
+              "M01",
+              "02362",
+              "Phan Nguyễn Trang"
+            ],
+            [
+              "189",
+              "NN208E",
+              "Máy chế biến thực phẩm",
+              "2",
+              "01",
+              "02957",
+              "Châu Thanh Tuấn"
+            ],
+            [
+              "190",
+              "NN225",
+              "Công nghệ thực phẩm truyền thống",
+              "2",
+              "01",
+              "01559",
+              "Nguyễn Bảo Lộc"
+            ],
+            [
+              "191",
+              "NN262",
+              "Kiểm kê và chỉnh lý biến động đất đai",
+              "2",
+              "01",
+              "02918",
+              "Phan Chí Nguyện"
+            ],
+            [
+              "192",
+              "NN309",
+              "Quản lý sản xuất chăn nuôi",
+              "2",
+              "01",
+              "00370",
+              "Hồ Quảng Đồ"
+            ],
+            [
+              "193",
+              "NN333",
+              "Bệnh ký sinh gia súc và gia cầm",
+              "3",
+              "01",
+              "02429",
+              "Nguyễn Hồ Bảo Trân"
+            ],
+            [
+              "194",
+              "NN337",
+              "Chăn nuôi gia cầm B",
+              "2",
+              "01",
+              "02162",
+              "Phạm Tấn Nhã"
+            ],
+            [
+              "195",
+              "NN378",
+              "IPM trong bảo vệ thực vật",
+              "2",
+              "01",
+              "00300",
+              "Trần Vũ Phến"
+            ],
+            [
+              "196",
+              "NN420",
+              "Thực tập giáo trình - BVTV",
+              "2",
+              "01",
+              "01948",
+              "Phạm Kim Sơn"
+            ],
+            [
+              "197",
+              "NN536",
+              "Công nghệ sinh học Thú y",
+              "2",
+              "01",
+              "02911",
+              "Trương Quỳnh Như"
+            ],
+            [
+              "198",
+              "NN549E",
+              "PP NCKH nông nghiệp - CNTY",
+              "2",
+              "01",
+              "00370",
+              "Hồ Quảng Đồ"
+            ],
+            [
+              "199",
+              "NS102",
+              "Cây hoa kiểng",
+              "2",
+              "01",
+              "02029",
+              "Lê Bảo Long"
+            ],
+            [
+              "200",
+              "NS120",
+              "Kiểm nghiệm sản phẩm động vật",
+              "3",
+              "01",
+              "02796",
+              "Nguyễn Khánh Thuận"
+            ],
+            [
+              "201",
+              "NS120",
+              "Kiểm nghiệm sản phẩm động vật",
+              "3",
+              "02",
+              "02796",
+              "Nguyễn Khánh Thuận"
+            ],
+            [
+              "202",
+              "NS130H",
+              "KT các quá trình sinh học trong CB TP",
+              "2",
+              "M01",
+              "01120",
+              "Nguyễn Công Hà"
+            ],
+            [
+              "203",
+              "NS194",
+              "Thực tập cơ sở - KHCT",
+              "5",
+              "01",
+              "02412",
+              "Bùi Thị Cẩm Hường"
+            ],
+            [
+              "204",
+              "NS210",
+              "Anh văn chuyên môn-SHƯD",
+              "2",
+              "01",
+              "02187",
+              "Phạm Phước Nhẫn"
+            ],
+            [
+              "205",
+              "NS229",
+              "Bệnh chó, mèo",
+              "3",
+              "01",
+              "02803",
+              "Trần Thị Thảo"
+            ],
+            [
+              "206",
+              "NS230",
+              "Bệnh truyền lây giữa động vật và người",
+              "2",
+              "01",
+              "02294",
+              "Châu Thị Huyền Trang"
+            ],
+            [
+              "207",
+              "NS239",
+              "Công nghệ chế biến rau củ quả",
+              "2",
+              "02",
+              "01421",
+              "Bùi Thị Quỳnh Hoa"
+            ],
+            [
+              "208",
+              "NS250",
+              "Điện kỹ thuật",
+              "2",
+              "M01",
+              "02230",
+              "Hoàng Đăng Khoa"
+            ],
+            [
+              "209",
+              "NS260E",
+              "Luật chăn nuôi - Thú y",
+              "2",
+              "01",
+              "00394",
+              "Trần Ngọc Bích"
+            ],
+            [
+              "210",
+              "NS341",
+              "Truy xuất nguồn gốc",
+              "2",
+              "01",
+              "01421",
+              "Bùi Thị Quỳnh Hoa"
+            ],
+            [
+              "211",
+              "NS369",
+              "Kỹ thuật trồng hoa lan",
+              "2",
+              "01",
+              "02420",
+              "Lê Hồng Giang"
+            ]
+          ]
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            301.8,
+            778.64,
+            307.8,
+            791.93
+          ],
+          "noi_dung": "5"
+        }
+      ]
+    },
+    {
+      "so_trang": 7,
+      "kich_thuoc": [
+        595.44,
+        841.92
+      ],
+      "items": [
+        {
+          "loai": "bang",
+          "bbox": [
+            45.14,
+            56.87,
+            564.73,
+            767.05
+          ],
+          "du_lieu": [
+            [
+              "TT",
+              "Mã HP",
+              "Tên học phần",
+              "TC",
+              "Ký\nhiệu",
+              "Mã số\nCBGD",
+              "Họ và tên CBGD"
+            ],
+            [
+              "212",
+              "NS374E",
+              "Ứng dụng các hoạt chất thiên nhiên",
+              "2",
+              "01",
+              "01399",
+              "Lưu Thái Danh"
+            ],
+            [
+              "213",
+              "NS375",
+              "TT. Ứng dụng các hoạt chất thiên nhiên",
+              "1",
+              "01",
+              "02187",
+              "Phạm Phước Nhẫn"
+            ],
+            [
+              "214",
+              "NS389",
+              "QL sản xuất trong công nghiệp thực phẩm",
+              "2",
+              "M01",
+              "02347",
+              "Nguyễn Hồng Phúc"
+            ],
+            [
+              "215",
+              "NS450",
+              "Thực tập rèn nghề - KHD",
+              "4",
+              "01",
+              "01405",
+              "Trần Văn Dũng"
+            ],
+            [
+              "216",
+              "SG165",
+              "Đánh giá kết quả học tập Vật lý",
+              "2",
+              "01",
+              "01858",
+              "Đỗ Thị Phương Thảo"
+            ],
+            [
+              "217",
+              "SG282",
+              "Ngữ âm thực hành cơ bản",
+              "2",
+              "01",
+              "03071",
+              "Đỗ Thị Bích Thuyền"
+            ],
+            [
+              "218",
+              "SG421",
+              "Kỹ năng xử lý tình huống sư phạm",
+              "2",
+              "01",
+              "00791",
+              "Ngô Thị Trang Thảo"
+            ],
+            [
+              "219",
+              "SG435",
+              "Hình học vi phân",
+              "2",
+              "01",
+              "01056",
+              "Lâm Quốc Anh"
+            ],
+            [
+              "220",
+              "SG439",
+              "PP nghiên cứu khoa học Giáo dục",
+              "2",
+              "04",
+              "02315",
+              "Võ Huy Bình"
+            ],
+            [
+              "221",
+              "SP017",
+              "Địa lý chính trị",
+              "2",
+              "01",
+              "02317",
+              "Nguyễn Minh Quang"
+            ],
+            [
+              "222",
+              "SP023",
+              "Lịch sử Việt Nam đại cương",
+              "3",
+              "01",
+              "00154",
+              "Lê Thị Minh Thu"
+            ],
+            [
+              "223",
+              "SP366",
+              "Vật lý Nano và ứng dụng",
+              "2",
+              "01",
+              "01999",
+              "Phan Thị Kim Loan"
+            ],
+            [
+              "224",
+              "SP417",
+              "Sinh lý người và động vật",
+              "3",
+              "01",
+              "01333",
+              "Trần Thị Anh Thư"
+            ],
+            [
+              "225",
+              "SP533",
+              "Phong cách học tiếng Việt",
+              "2",
+              "01",
+              "00136",
+              "Nguyễn Văn Nở"
+            ],
+            [
+              "226",
+              "TC001",
+              "Điền kinh 1 (*)",
+              "1",
+              "04",
+              "02864",
+              "Đặng Minh Thành"
+            ],
+            [
+              "227",
+              "TC001",
+              "Điền kinh 1 (*)",
+              "1",
+              "05",
+              "02028",
+              "Lê Phương Hùng"
+            ],
+            [
+              "228",
+              "TC001",
+              "Điền kinh 1 (*)",
+              "1",
+              "07",
+              "01620",
+              "Tống Lê Minh"
+            ],
+            [
+              "229",
+              "TC004",
+              "Taekwondo 2 (*)",
+              "1",
+              "H02",
+              "01620",
+              "Tống Lê Minh"
+            ],
+            [
+              "230",
+              "TC009",
+              "Bóng bàn 1 (*)",
+              "1",
+              "01",
+              "00727",
+              "Nguyễn Văn Thái"
+            ],
+            [
+              "231",
+              "TC009",
+              "Bóng bàn 1 (*)",
+              "1",
+              "02",
+              "00727",
+              "Nguyễn Văn Thái"
+            ],
+            [
+              "232",
+              "TC009",
+              "Bóng bàn 1 (*)",
+              "1",
+              "03",
+              "00727",
+              "Nguyễn Văn Thái"
+            ],
+            [
+              "233",
+              "TC010",
+              "Bóng bàn 2 (*)",
+              "1",
+              "02",
+              "00727",
+              "Nguyễn Văn Thái"
+            ],
+            [
+              "234",
+              "TC018",
+              "Thể dục nhịp điệu 3 (*)",
+              "1",
+              "05",
+              "02744",
+              "Phạm Như Hiếu"
+            ],
+            [
+              "235",
+              "TC020",
+              "Bóng chuyền 3 (*)",
+              "1",
+              "01",
+              "01380",
+              "Đặng Thị Kim Quyên"
+            ],
+            [
+              "236",
+              "TC022",
+              "Bóng bàn 3 (*)",
+              "1",
+              "02",
+              "00727",
+              "Nguyễn Văn Thái"
+            ],
+            [
+              "237",
+              "TC023",
+              "Cầu lông 3 (*)",
+              "1",
+              "08",
+              "02862",
+              "Nguyễn Minh Khoa"
+            ],
+            [
+              "238",
+              "TC024",
+              "Điền kinh 3 (*)",
+              "1",
+              "03",
+              "02028",
+              "Lê Phương Hùng"
+            ],
+            [
+              "239",
+              "TC024",
+              "Điền kinh 3 (*)",
+              "1",
+              "08",
+              "01620",
+              "Tống Lê Minh"
+            ],
+            [
+              "240",
+              "TC025",
+              "Cờ vua 1 (*)",
+              "1",
+              "H01",
+              "02688",
+              "Lê Nguyễn Ngọc Yến"
+            ],
+            [
+              "241",
+              "TC027",
+              "Cờ vua 3 (*)",
+              "1",
+              "08",
+              "02136",
+              "Nguyễn Thanh Liêm"
+            ],
+            [
+              "242",
+              "TC027",
+              "Cờ vua 3 (*)",
+              "1",
+              "10",
+              "02136",
+              "Nguyễn Thanh Liêm"
+            ],
+            [
+              "243",
+              "TC027",
+              "Cờ vua 3 (*)",
+              "1",
+              "12",
+              "02136",
+              "Nguyễn Thanh Liêm"
+            ],
+            [
+              "244",
+              "TC028",
+              "Bóng rổ 1 (*)",
+              "1",
+              "01",
+              "02732",
+              "Nguyễn Lê Trường Sơn"
+            ],
+            [
+              "245",
+              "TC224",
+              "Võ Cổ truyền",
+              "3",
+              "01",
+              "02732",
+              "Nguyễn Lê Trường Sơn"
+            ],
+            [
+              "246",
+              "TC381",
+              "Công tác Đoàn - Đội và Trò chơi vận động",
+              "2",
+              "03",
+              "01159",
+              "Phan Việt Thái"
+            ],
+            [
+              "247",
+              "TN015",
+              "TT. Cơ nhiệt đại cương",
+              "1",
+              "01",
+              "01109",
+              "Nguyễn Văn Hợp"
+            ],
+            [
+              "248",
+              "TN020",
+              "TT. Hóa học đại cương",
+              "1",
+              "01",
+              "",
+              ""
+            ],
+            [
+              "249",
+              "TN025",
+              "Sinh học đại cương A1",
+              "2",
+              "01",
+              "02453",
+              "Võ Thị Tú Anh"
+            ],
+            [
+              "250",
+              "TN033H",
+              "Tin học căn bản (*)",
+              "1",
+              "01",
+              "01048",
+              "Nguyễn Hữu Hòa"
+            ],
+            [
+              "251",
+              "TN034",
+              "Thực hành Tin học căn bản (*)",
+              "2",
+              "05",
+              "",
+              ""
+            ],
+            [
+              "252",
+              "TN034H",
+              "Thực hành Tin học căn bản (*)",
+              "2",
+              "01",
+              "01048",
+              "Nguyễn Hữu Hòa"
+            ],
+            [
+              "253",
+              "TN059",
+              "Toán cao cấp B",
+              "3",
+              "01",
+              "02303",
+              "Nguyễn Tử Thịnh"
+            ],
+            [
+              "254",
+              "TN101",
+              "Hóa học đại cương 1",
+              "2",
+              "01",
+              "02099",
+              "Nguyễn Thị Tuyết Nhung"
+            ]
+          ]
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            301.8,
+            778.64,
+            307.8,
+            791.93
+          ],
+          "noi_dung": "6"
+        }
+      ]
+    },
+    {
+      "so_trang": 8,
+      "kich_thuoc": [
+        595.44,
+        841.92
+      ],
+      "items": [
+        {
+          "loai": "bang",
+          "bbox": [
+            45.14,
+            56.87,
+            564.73,
+            767.05
+          ],
+          "du_lieu": [
+            [
+              "TT",
+              "Mã HP",
+              "Tên học phần",
+              "TC",
+              "Ký\nhiệu",
+              "Mã số\nCBGD",
+              "Họ và tên CBGD"
+            ],
+            [
+              "255",
+              "TN107",
+              "TT. Hóa Vô cơ 2",
+              "1",
+              "01",
+              "",
+              ""
+            ],
+            [
+              "256",
+              "TN129",
+              "TT. Thống kê sinh học",
+              "1",
+              "01",
+              "02609",
+              "Trương Thị Phương Thảo"
+            ],
+            [
+              "257",
+              "TN173",
+              "TT. Hóa Vô cơ 1",
+              "1",
+              "01",
+              "",
+              ""
+            ],
+            [
+              "258",
+              "TN173",
+              "TT. Hóa Vô cơ 1",
+              "1",
+              "05",
+              "",
+              ""
+            ],
+            [
+              "259",
+              "TN195",
+              "Lập trình căn bản với ngôn ngữ C",
+              "3",
+              "02",
+              "01322",
+              "Lê Thị Diễm"
+            ],
+            [
+              "260",
+              "TN247",
+              "Hóa vô cơ 2",
+              "3",
+              "01",
+              "01506",
+              "Phạm Vũ Nhật"
+            ],
+            [
+              "261",
+              "TN265",
+              "Kỹ thuật điện",
+              "2",
+              "01",
+              "01059",
+              "Trần Thanh Hải"
+            ],
+            [
+              "262",
+              "TN300",
+              "Hóa học ứng dụng",
+              "2",
+              "01",
+              "700910",
+              "Lê Thanh Phước"
+            ],
+            [
+              "263",
+              "TN312",
+              "TT. Hóa môi trường",
+              "1",
+              "02",
+              "",
+              ""
+            ],
+            [
+              "264",
+              "TN322",
+              "TT. Phân tích kỹ thuật",
+              "1",
+              "01",
+              "",
+              ""
+            ],
+            [
+              "265",
+              "TN456",
+              "Dược lý học",
+              "3",
+              "01",
+              "02846",
+              "Quách Thị Hồng Dung"
+            ],
+            [
+              "266",
+              "TN471",
+              "Thiết kế, khám phá và TH thuốc hợp lý",
+              "2",
+              "01",
+              "02782",
+              "Nguyễn Quốc Châu Thanh"
+            ],
+            [
+              "267",
+              "TN505",
+              "Hóa lý dược",
+              "3",
+              "01",
+              "01135",
+              "Lê Thị Bạch"
+            ],
+            [
+              "268",
+              "TN515",
+              "Anh văn chuyên môn - Hóa Dược",
+              "2",
+              "01",
+              "02848",
+              "Phạm Duy Toàn"
+            ],
+            [
+              "269",
+              "TN521",
+              "TT. Hóa dược",
+              "1",
+              "02",
+              "",
+              ""
+            ],
+            [
+              "270",
+              "TN529",
+              "Thực phẩm hỗ trợ sức khỏe",
+              "2",
+              "01",
+              "03085",
+              "Trì Kim Ngọc"
+            ],
+            [
+              "271",
+              "TN539",
+              "Phương trình đạo hàm riêng - TUD",
+              "3",
+              "01",
+              "01945",
+              "Nguyễn Thành Quí"
+            ],
+            [
+              "272",
+              "TS204E",
+              "Phân tích hoạt động kinh doanh",
+              "2",
+              "01",
+              "02331",
+              "Nguyễn Thị Kim Quyên"
+            ],
+            [
+              "273",
+              "TS224",
+              "Phát triển sản phẩm thủy sản mới",
+              "2",
+              "01",
+              "02639",
+              "Nguyễn Lê Anh Đào"
+            ],
+            [
+              "274",
+              "TS225E",
+              "Marketing thực phẩm thủy sản",
+              "2",
+              "01",
+              "02414",
+              "Huỳnh Văn Hiền"
+            ],
+            [
+              "275",
+              "TS235E",
+              "Chuyên đề chẩn đoán bệnh trên cá",
+              "2",
+              "01",
+              "01802",
+              "Bùi Thị Bích Hằng"
+            ],
+            [
+              "276",
+              "TS260",
+              "PP nghiên cứu khoa học truyền thông",
+              "2",
+              "01",
+              "00267",
+              "Nguyễn Thanh Phương"
+            ],
+            [
+              "277",
+              "TS264",
+              "Công nghệ chế biến dầu, bột cá",
+              "2",
+              "01",
+              "01183",
+              "Vương Thanh Tùng"
+            ],
+            [
+              "278",
+              "TS282",
+              "Bệnh vi khuẩn và virus ở động vật TS",
+              "3",
+              "01",
+              "01796",
+              "Trần Thị Tuyết Hoa"
+            ],
+            [
+              "279",
+              "TS285",
+              "Chuyên đề xét nghiệm giống thủy sản",
+              "2",
+              "01",
+              "01796",
+              "Trần Thị Tuyết Hoa"
+            ],
+            [
+              "280",
+              "TS291",
+              "Chuyên đề chẩn đoán bệnh động vật TS",
+              "2",
+              "01",
+              "01797",
+              "Nguyễn Thị Thu Hằng"
+            ],
+            [
+              "281",
+              "TS333",
+              "Độc chất học thủy vực",
+              "2",
+              "01",
+              "00407",
+              "Nguyễn Văn Công"
+            ],
+            [
+              "282",
+              "TS356",
+              "Kinh tế sản xuất thủy sản",
+              "3",
+              "01",
+              "02111",
+              "Đặng Thị Phượng"
+            ],
+            [
+              "283",
+              "TV241",
+              "Kỹ năng DELF B2",
+              "3",
+              "02",
+              "01614",
+              "Nguyễn Thắng Cảnh"
+            ],
+            [
+              "284",
+              "TV331",
+              "Công tác phục vụ bạn đọc",
+              "2",
+              "01",
+              "01838",
+              "Nguyễn Thị Bích Ngọc"
+            ],
+            [
+              "285",
+              "XH007",
+              "Tâm lý học đại cương",
+              "2",
+              "01",
+              "03091",
+              "Bùi Văn Trạng Em"
+            ],
+            [
+              "286",
+              "XH014",
+              "Văn bản và lưu trữ học đại cương",
+              "2",
+              "07",
+              "01328",
+              "Bùi Thị Thúy Minh"
+            ],
+            [
+              "287",
+              "XH014",
+              "Văn bản và lưu trữ học đại cương",
+              "2",
+              "08",
+              "01328",
+              "Bùi Thị Thúy Minh"
+            ],
+            [
+              "288",
+              "XH014",
+              "Văn bản và lưu trữ học đại cương",
+              "2",
+              "09",
+              "01328",
+              "Bùi Thị Thúy Minh"
+            ],
+            [
+              "289",
+              "XH023",
+              "Anh văn căn bản 1 (*)",
+              "4",
+              "H01",
+              "700444",
+              "Lê Huỳnh Thảo Trúc"
+            ],
+            [
+              "290",
+              "XH024",
+              "Anh văn căn bản 2 (*)",
+              "3",
+              "H01",
+              "700444",
+              "Lê Huỳnh Thảo Trúc"
+            ],
+            [
+              "291",
+              "XH025",
+              "Anh văn căn bản 3 (*)",
+              "3",
+              "19",
+              "700444",
+              "Lê Huỳnh Thảo Trúc"
+            ],
+            [
+              "292",
+              "XH025",
+              "Anh văn căn bản 3 (*)",
+              "3",
+              "20",
+              "700444",
+              "Lê Huỳnh Thảo Trúc"
+            ],
+            [
+              "293",
+              "XH028",
+              "Xã hội học đại cương",
+              "2",
+              "04",
+              "02889",
+              "Nguyễn Lê Mẫn"
+            ],
+            [
+              "294",
+              "XH028",
+              "Xã hội học đại cương",
+              "2",
+              "06",
+              "02890",
+              "Châu Mỹ Duyên"
+            ],
+            [
+              "295",
+              "XH175",
+              "PP nghiên cứu khoa học - Anh văn",
+              "2",
+              "02",
+              "00200",
+              "Nguyễn Văn Lợi"
+            ],
+            [
+              "296",
+              "XH187",
+              "Tiếng Anh chuyên ngành-Du lịch 1",
+              "4",
+              "01",
+              "02140",
+              "Tăng Thị Lệ Huyền"
+            ],
+            [
+              "297",
+              "XH313",
+              "Văn học Việt Nam đại cương",
+              "2",
+              "01",
+              "02953",
+              "Đỗ Thúy Vy"
+            ]
+          ]
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            301.8,
+            778.64,
+            307.8,
+            791.93
+          ],
+          "noi_dung": "7"
+        }
+      ]
+    },
+    {
+      "so_trang": 9,
+      "kich_thuoc": [
+        595.44,
+        841.92
+      ],
+      "items": [
+        {
+          "loai": "bang",
+          "bbox": [
+            45.14,
+            56.9,
+            564.72,
+            193.25
+          ],
+          "du_lieu": [
+            [
+              "TT",
+              "Mã HP",
+              "Tên học phần",
+              "TC",
+              "Ký\nhiệu",
+              "Mã số\nCBGD",
+              "Họ và tên CBGD"
+            ],
+            [
+              "298",
+              "XH415",
+              "Du lịch sinh thái",
+              "2",
+              "01",
+              "02006",
+              "Nguyễn Trọng Nhân"
+            ],
+            [
+              "299",
+              "XN122",
+              "Tổ chức teambuilding và hoạt náo",
+              "2",
+              "01",
+              "02324",
+              "Nguyễn Mai Quốc Việt"
+            ],
+            [
+              "300",
+              "XN207",
+              "KNăng hoạt náo và tổ chức teambuilding",
+              "2",
+              "01",
+              "02324",
+              "Nguyễn Mai Quốc Việt"
+            ],
+            [
+              "301",
+              "XN310E",
+              "Luật du lịch",
+              "2",
+              "01",
+              "02168",
+              "Nguyễn ánh Minh"
+            ],
+            [
+              "302",
+              "XN364",
+              "Xã hội học tội phạm",
+              "2",
+              "01",
+              "02168",
+              "Nguyễn ánh Minh"
+            ],
+            [
+              "303",
+              "XN373",
+              "Xã hội học du lịch",
+              "2",
+              "01",
+              "02889",
+              "Nguyễn Lê Mẫn"
+            ]
+          ]
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            65.3,
+            207.52,
+            222.38,
+            220.8
+          ],
+          "noi_dung": "Danh sách có: 303 lớp học phần."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            301.8,
+            778.64,
+            307.8,
+            791.93
+          ],
+          "noi_dung": "8"
+        }
+      ]
+    }
+  ]
+}

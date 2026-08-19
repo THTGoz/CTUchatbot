@@ -1,0 +1,696 @@
+{
+  "ten_file": "KHGDVDKHP_HK1_25_26.pdf",
+  "trang": [
+    {
+      "so_trang": 1,
+      "kich_thuoc": [
+        595.32,
+        842.04
+      ],
+      "items": [
+        {
+          "loai": "van_ban",
+          "dang": "metadata",
+          "bbox": [
+            66.62,
+            51.21,
+            533.73,
+            112.85
+          ],
+          "noi_dung": "Số: /ĐHCT-ĐT\nCần Thơ, ngày tháng năm 2025"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "tieu_de",
+          "bbox": [
+            65.18,
+            118.19,
+            416.23,
+            221.21
+          ],
+          "noi_dung": "V/v kế hoạch giảng dạy và đăng ký học phần học kỳ 1, năm học 2025-2026"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            65.18,
+            235.58,
+            544.27,
+            309.69
+          ],
+          "noi_dung": "Căn cứ Quyết định số 5171/QĐ-ĐHCT ngày 01/11/2024 của Hiệu trưởng Trường Đại học Cần Thơ về việc ban hành kế hoạch khung công tác năm 2025. Học kỳ 1, năm học 2025-2026 sẽ diễn ra từ ngày 08/09/2025 đến 21/12/2025. Trường thông báo đến các đơn vị, cố vấn học tập và sinh viên (SV) trong toàn trường các nội dung liên quan đến công tác đăng ký học phần như sau:"
+        },
+        {
+          "loai": "bang",
+          "bbox": [
+            52.8,
+            316.31,
+            556.7,
+            515.29
+          ],
+          "tieu_de_bang": "",
+          "du_lieu": [
+            [
+              "TT",
+              "NỘI DUNG CÔNG VIỆC",
+              "THỜI GIAN THỰC HIỆN"
+            ],
+            [
+              "1",
+              "Công bố thời khóa biểu các lớp học phần (HP) mở trong học kỳ. (SV có thể đề nghị đổi thời khóa biểu trong thời gian này)",
+              "21/07/2025 - 27/07/2025"
+            ],
+            [
+              "2",
+              "SV lập thời khóa biểu cá nhân và đăng ký học phần (đợt 1).",
+              "28/07/2025 - 10/08/2025"
+            ],
+            [
+              "3",
+              "Mở lại website nhập kế hoạch học tập cho SV điều chỉnh. (Thời gian được phân chi tiết theo khóa và nhóm đơn vị)",
+              "02/08/2025 - 10/08/2025"
+            ],
+            [
+              "4",
+              "PĐT phối hợp với đơn vị mở lớp HP mới theo yêu cầu SV.",
+              "Hạn cuối 08/08/2025"
+            ],
+            [
+              "5",
+              "PĐT xử lý số liệu và công bố lớp HP không mở trong học kỳ.",
+              "18/08/2025 - 24/08/2025"
+            ],
+            [
+              "6",
+              "Bắt đầu giảng dạy học kỳ.",
+              "08/09/2025"
+            ],
+            [
+              "7",
+              "SV điều chỉnh kết quả đăng ký học phần (tuần đầu học kỳ, đợt 2). (Thời gian được phân chi tiết theo khóa và nhóm đơn vị)",
+              "08/09/2025 - 14/09/2025"
+            ],
+            [
+              "8",
+              "Mở lại website nhập kế hoạch học tập cho SV điều chỉnh.",
+              "11/09/2025 - 14/09/2025"
+            ]
+          ]
+        },
+        {
+          "loai": "van_ban",
+          "dang": "ghi_chu",
+          "bbox": [
+            65.18,
+            521.68,
+            544.36,
+            598.82
+          ],
+          "noi_dung": "Lưu ý:"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            65.18,
+            521.68,
+            544.36,
+            598.82
+          ],
+          "noi_dung": "1. Từ 02/08/2025 đến 10/08/2025: SV chưa nhập kế hoạch học tập học kỳ 1, năm học 2025-2026 phải truy cập website nhập kế hoạch học tập để điều chỉnh và tiến hành đăng ký.\nTuy nhiên, trong thời gian này, nếu sĩ số lớp học phần đã hết chỗ, SV sẽ không được xem xét bổ sung."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            93.5,
+            602.47,
+            488.84,
+            616.82
+          ],
+          "noi_dung": "2. Các vấn đề khác áp dụng theo quy định về công tác học vụ đã ban hành."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            93.5,
+            623.35,
+            532.36,
+            637.7
+          ],
+          "noi_dung": "Đề nghị các đơn vị, cố vấn học tập và sinh viên phối hợp thực hiện đúng theo kế hoạch."
+        }
+      ]
+    },
+    {
+      "so_trang": 2,
+      "kich_thuoc": [
+        595.32,
+        842.04
+      ],
+      "items": [
+        {
+          "loai": "van_ban",
+          "dang": "tieu_de",
+          "bbox": [
+            77.3,
+            109.28,
+            532.56,
+            141.9
+          ],
+          "noi_dung": "THÔNG BÁO\nVề việc phân chia kế hoạch đăng ký học phần trực tuyến học kỳ 1, năm học 2025- 2026"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "ghi_chu",
+          "bbox": [
+            128.18,
+            142.07,
+            481.42,
+            156.42
+          ],
+          "noi_dung": "(Đính kèm Công văn số: /ĐHCT-ĐT, ngày / /2025)"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "heading",
+          "bbox": [
+            65.18,
+            171.47,
+            544.25,
+            233.34
+          ],
+          "noi_dung": "1. Phân chia nhóm đơn vị đối với những đợt đăng ký như sau:"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            65.18,
+            171.47,
+            544.25,
+            233.34
+          ],
+          "noi_dung": "- Nhóm 1: các chuyên ngành thuộc Trường Kinh tế và Khoa Phát triển Nông thôn."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            65.18,
+            171.47,
+            544.25,
+            233.34
+          ],
+          "noi_dung": "- Nhóm 2: các chuyên ngành thuộc Trường Bách khoa và Khoa Khoa học Chính trị."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            65.18,
+            171.47,
+            544.31,
+            263.25
+          ],
+          "noi_dung": "- Nhóm 3: các chuyên ngành thuộc Trường Nông nghiệp, Khoa Luật và Khoa Khoa học Xã hội & Nhân văn."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            72.26,
+            233.87,
+            544.31,
+            293.13
+          ],
+          "noi_dung": "- Nhóm 4: các chuyên ngành thuộc Trường Sư phạm, Khoa Giáo dục thể chất và Viện Công nghệ Sinh học & Thực phẩm."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            72.26,
+            263.9,
+            544.42,
+            323.01
+          ],
+          "noi_dung": "- Nhóm 5: các chuyên ngành thuộc Khoa Ngoại ngữ, Khoa Khoa học Tự nhiên và Khoa Môi trường & Tài nguyên thiên nhiên."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            65.18,
+            293.78,
+            544.42,
+            373.89
+          ],
+          "noi_dung": "- Nhóm 6: các chuyên ngành thuộc Trường Công nghệ Thông tin & Truyền thông và Trường Thủy sản."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "heading",
+          "bbox": [
+            65.18,
+            323.66,
+            472.78,
+            373.89
+          ],
+          "noi_dung": "2. Thời gian cụ thể cho từng đợt đăng ký học phần:"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            65.18,
+            323.66,
+            472.78,
+            373.89
+          ],
+          "noi_dung": "- Đợt 1: từ 28/07/2025 – 10/08/2025: Phân chia theo khóa và nhóm đơn vị"
+        },
+        {
+          "loai": "bang",
+          "bbox": [
+            59.77,
+            377.52,
+            549.85,
+            747.5
+          ],
+          "tieu_de_bang": "- Đợt 1: từ 28/07/2025 – 10/08/2025: Phân chia theo khóa và nhóm đơn vị",
+          "du_lieu": [
+            [
+              "TT",
+              "Khóa",
+              "Giờ/ngày bắt đầu",
+              "Nhóm đơn vị"
+            ],
+            [
+              "1",
+              "Khóa 47 trở về trước",
+              "07:30 ngày 28/07/2025",
+              "6"
+            ],
+            [
+              "",
+              "",
+              "08:30 ngày 28/07/2025",
+              "3"
+            ],
+            [
+              "",
+              "",
+              "09:30 ngày 28/07/2025",
+              "1"
+            ],
+            [
+              "",
+              "",
+              "13:30 ngày 28/07/2025",
+              "4"
+            ],
+            [
+              "",
+              "",
+              "14:30 ngày 28/07/2025",
+              "5"
+            ],
+            [
+              "",
+              "",
+              "15:30 ngày 28/07/2025",
+              "2"
+            ],
+            [
+              "2",
+              "Khóa 48",
+              "07:30 ngày 29/07/2025",
+              "6"
+            ],
+            [
+              "",
+              "",
+              "08:30 ngày 29/07/2025",
+              "3"
+            ],
+            [
+              "",
+              "",
+              "09:30 ngày 29/07/2025",
+              "1"
+            ],
+            [
+              "",
+              "",
+              "13:30 ngày 29/07/2025",
+              "4"
+            ],
+            [
+              "",
+              "",
+              "14:30 ngày 29/07/2025",
+              "5"
+            ],
+            [
+              "",
+              "",
+              "15:30 ngày 29/07/2025",
+              "2"
+            ],
+            [
+              "3",
+              "Khóa 49",
+              "07:30 ngày 30/07/2025",
+              "6"
+            ],
+            [
+              "",
+              "",
+              "08:30 ngày 30/07/2025",
+              "3"
+            ],
+            [
+              "",
+              "",
+              "09:30 ngày 30/07/2025",
+              "1"
+            ],
+            [
+              "",
+              "",
+              "13:30 ngày 30/07/2025",
+              "4"
+            ],
+            [
+              "",
+              "",
+              "14:30 ngày 30/07/2025",
+              "5"
+            ],
+            [
+              "",
+              "",
+              "15:30 ngày 30/07/2025",
+              "2"
+            ],
+            [
+              "4",
+              "Khóa 50",
+              "07:30 ngày 31/07/2025",
+              "6"
+            ],
+            [
+              "",
+              "",
+              "08:30 ngày 31/07/2025",
+              "3"
+            ],
+            [
+              "",
+              "",
+              "09:30 ngày 31/07/2025",
+              "1"
+            ],
+            [
+              "",
+              "",
+              "13:30 ngày 31/07/2025",
+              "4"
+            ],
+            [
+              "",
+              "",
+              "14:30 ngày 31/07/2025",
+              "5"
+            ],
+            [
+              "",
+              "",
+              "15:30 ngày 31/07/2025",
+              "2"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "so_trang": 3,
+      "kich_thuoc": [
+        595.32,
+        842.04
+      ],
+      "items": [
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            79.34,
+            51.21,
+            470.62,
+            65.56
+          ],
+          "noi_dung": "- Đợt 2: từ 08/09/2025 - 14/09/2025: Phân chia theo khóa và nhóm đơn vị."
+        },
+        {
+          "loai": "bang",
+          "bbox": [
+            59.77,
+            69.19,
+            551.3,
+            261.46
+          ],
+          "tieu_de_bang": "- Đợt 2: từ 08/09/2025 - 14/09/2025: Phân chia theo khóa và nhóm đơn vị.",
+          "du_lieu": [
+            [
+              "TT",
+              "Khóa",
+              "Giờ/ngày bắt đầu",
+              "Nhóm đơn vị"
+            ],
+            [
+              "1",
+              "Khóa 47 trở về trước",
+              "07:30 ngày 08/09/2025",
+              "3, 6"
+            ],
+            [
+              "",
+              "",
+              "09:30 ngày 08/09/2025",
+              "1, 4"
+            ],
+            [
+              "",
+              "",
+              "13:30 ngày 08/09/2025",
+              "2, 5"
+            ],
+            [
+              "2",
+              "Khóa 48",
+              "15:30 ngày 08/09/2025",
+              "3, 6"
+            ],
+            [
+              "",
+              "",
+              "07:30 ngày 09/09/2025",
+              "1, 4"
+            ],
+            [
+              "",
+              "",
+              "09:30 ngày 09/09/2025",
+              "2, 5"
+            ],
+            [
+              "3",
+              "Khóa 49",
+              "13:30 ngày 09/09/2025",
+              "3, 6"
+            ],
+            [
+              "",
+              "",
+              "15:30 ngày 09/09/2025",
+              "1, 4"
+            ],
+            [
+              "",
+              "",
+              "07:30 ngày 10/09/2025",
+              "2, 5"
+            ],
+            [
+              "4",
+              "Khóa 50",
+              "09:30 ngày 10/09/2025",
+              "3, 6"
+            ],
+            [
+              "",
+              "",
+              "13:30 ngày 10/09/2025",
+              "1, 4"
+            ],
+            [
+              "",
+              "",
+              "15:30 ngày 10/09/2025",
+              "2, 5"
+            ]
+          ]
+        },
+        {
+          "loai": "van_ban",
+          "dang": "heading",
+          "bbox": [
+            65.18,
+            265.22,
+            534.84,
+            279.57
+          ],
+          "noi_dung": "3. Thời gian cụ thể cho đợt điều chỉnh kế hoạch học tập (từ 02/08/2025 – 10/08/2025):"
+        },
+        {
+          "loai": "bang",
+          "bbox": [
+            59.77,
+            282.84,
+            551.3,
+            504.36
+          ],
+          "tieu_de_bang": "3. Thời gian cụ thể cho đợt điều chỉnh kế hoạch học tập (từ 02/08/2025 – 10/08/2025):",
+          "du_lieu": [
+            [
+              "TT",
+              "Khóa",
+              "Giờ/ngày bắt đầu",
+              "Nhóm đơn vị"
+            ],
+            [
+              "1",
+              "Khóa 47 trở về trước",
+              "07:30 ngày 02/08/2025",
+              "Tất cả các Đơn vị"
+            ],
+            [
+              "2",
+              "Khóa 48",
+              "13:30 ngày 02/08/2025",
+              "Tất cả các Đơn vị"
+            ],
+            [
+              "3",
+              "Khóa 49",
+              "07:30 ngày 04/08/2025",
+              "3"
+            ],
+            [
+              "",
+              "",
+              "08:30 ngày 04/08/2025",
+              "6"
+            ],
+            [
+              "",
+              "",
+              "09:30 ngày 04/08/2025",
+              "5"
+            ],
+            [
+              "",
+              "",
+              "13:30 ngày 04/08/2025",
+              "2"
+            ],
+            [
+              "",
+              "",
+              "14:30 ngày 04/08/2025",
+              "1"
+            ],
+            [
+              "",
+              "",
+              "15:30 ngày 04/08/2025",
+              "4"
+            ],
+            [
+              "4",
+              "Khóa 50",
+              "07:30 ngày 05/08/2025",
+              "3"
+            ],
+            [
+              "",
+              "",
+              "08:30 ngày 05/08/2025",
+              "6"
+            ],
+            [
+              "",
+              "",
+              "09:30 ngày 05/08/2025",
+              "5"
+            ],
+            [
+              "",
+              "",
+              "13:30 ngày 05/08/2025",
+              "2"
+            ],
+            [
+              "",
+              "",
+              "14:30 ngày 05/08/2025",
+              "1"
+            ],
+            [
+              "",
+              "",
+              "15:30 ngày 05/08/2025",
+              "4"
+            ]
+          ]
+        },
+        {
+          "loai": "van_ban",
+          "dang": "heading",
+          "bbox": [
+            65.18,
+            508.12,
+            544.25,
+            614.78
+          ],
+          "noi_dung": "4. Thời gian và địa điểm đăng ký:\nSinh viên có thể thực hiện đăng ký học phần từ điện thoại thông minh cá nhân qua ứng dụng MyCTUS hoặc máy tính cá nhân, các máy tính tại Trung tâm học liệu Trường theo thời gian như trên."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "heading",
+          "bbox": [
+            65.18,
+            508.12,
+            544.25,
+            614.78
+          ],
+          "noi_dung": "5. Đơn vị phối hợp thực hiện:\nTrung tâm học liệu cử cán bộ trực mở cửa phòng máy phục vụ sinh viên đăng ký theo thời gian trên."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            79.34,
+            618.43,
+            540.48,
+            632.78
+          ],
+          "noi_dung": "Đề nghị các đơn vị, sinh viên có nhu cầu thực hiện nghiêm túc tinh thần thông báo này./."
+        }
+      ]
+    }
+  ]
+}

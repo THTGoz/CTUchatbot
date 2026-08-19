@@ -1,0 +1,226 @@
+{
+  "file_name": "main.py",
+  "file_path": "backend/app/scripts/thong_bao/preprocess/kg_importer/main.py",
+  "bien_chung": [],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Chuẩn Hóa Cấu Trúc Module",
+      "noi_dung_rule": "Tuân thủ quy tắc xử lý và chuẩn hóa mã nguồn của module",
+      "dieu_kien_va_hanh_dong": "Đảm bảo tính toàn vẹn khi thực thi"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "now_iso",
+      "chuc_nang": "Trả thời điểm hiện tại theo ISO để dùng thống nhất trong báo cáo.",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `now_iso`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "datetime.now().astimezone().isoformat",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "datetime.now().astimezone",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "datetime.now",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/kg_importer/main.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "find_input_files",
+      "chuc_nang": "Liệt kê các file chunks đầu vào theo thứ tự ổn định.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "input_dir",
+          "kieu_du_lieu": "Path",
+          "mo_ta": "Tham số đầu vào `input_dir` cho hàm `find_input_files`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "list[Path]",
+        "mo_ta": "Kết quả trả về của hàm `find_input_files`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "sorted",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "input_dir.is_dir",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "FileNotFoundError",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "input_dir.glob",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "path.is_file",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/kg_importer/main.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (input_dir).\n2. Kiểm tra điều kiện rẽ nhánh `not input_dir.is_dir()`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `list[Path]`."
+    },
+    {
+      "ten_ham": "load_json",
+      "chuc_nang": "Đọc một chunks JSON và kiểm tra object cấp gốc.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "path",
+          "kieu_du_lieu": "Path",
+          "mo_ta": "Tham số đầu vào `path` cho hàm `load_json`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "dict[str, Any]",
+        "mo_ta": "Kết quả trả về của hàm `load_json`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "path.open",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "json.load",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "TypeError",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/kg_importer/main.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (path).\n2. Kiểm tra điều kiện rẽ nhánh `not isinstance(data, dict)`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `dict[str, Any]`."
+    },
+    {
+      "ten_ham": "write_report",
+      "chuc_nang": "Ghi báo cáo import dưới dạng JSON UTF-8.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "report",
+          "kieu_du_lieu": "dict[str, Any]",
+          "mo_ta": "Tham số đầu vào `report` cho hàm `write_report`"
+        },
+        {
+          "ten_tham_so": "path",
+          "kieu_du_lieu": "Path",
+          "mo_ta": "Tham số đầu vào `path` cho hàm `write_report`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "None",
+        "mo_ta": "Kết quả trả về của hàm `write_report`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "path.parent.mkdir",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "path.open",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "json.dump",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/kg_importer/main.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (report, path).\n2. Gọi thực thi hàm `path.parent.mkdir`.\n3. Hoàn tất tính toán và trả về kết quả kiểu `None`."
+    },
+    {
+      "ten_ham": "build_initial_report",
+      "chuc_nang": "Khởi tạo cấu trúc báo cáo trước khi mở kết nối Neo4j.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "settings",
+          "kieu_du_lieu": "Settings",
+          "mo_ta": "Tham số đầu vào `settings` cho hàm `build_initial_report`"
+        },
+        {
+          "ten_tham_so": "total_files",
+          "kieu_du_lieu": "int",
+          "mo_ta": "Tham số đầu vào `total_files` cho hàm `build_initial_report`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "dict[str, Any]",
+        "mo_ta": "Kết quả trả về của hàm `build_initial_report`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "now_iso",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/kg_importer/main.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (settings, total_files).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `dict[str, Any]`."
+    },
+    {
+      "ten_ham": "main",
+      "chuc_nang": "Chạy full import; thao tác này xóa nhánh Thông báo cũ trước khi nhập lại.",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "int",
+        "mo_ta": "Kết quả trả về của hàm `main`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "load_settings",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "find_input_files",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "build_initial_report",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "Neo4jConnection",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "connection.verify",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "connection.create_constraints",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "connection.delete_thongbao_branch",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "Counter",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "now_iso",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "write_report",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/kg_importer/main.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Thực hiện các bước tính toán logic bên trong hàm.\n3. Trả về kết quả đầu ra."
+    }
+  ]
+}

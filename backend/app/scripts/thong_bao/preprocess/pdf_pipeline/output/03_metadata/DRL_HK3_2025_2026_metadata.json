@@ -1,0 +1,153 @@
+{
+  "ten_file": "DRL_HK3_2025_2026.pdf",
+  "ma_van_ban": "164/TB-CTSV",
+  "ngay_ban_hanh": "2026-05-14",
+  "tieu_de": "Về việc đánh giá điểm rèn luyện Học kỳ 3, 2025-2026",
+  "so_trang": 1,
+  "trang": [
+    {
+      "so_trang": 1,
+      "kich_thuoc": [
+        595.32,
+        841.92
+      ],
+      "items": [
+        {
+          "loai": "van_ban",
+          "dang": "tieu_de",
+          "bbox": [
+            154.22,
+            131.87,
+            469.72,
+            163.61
+          ],
+          "noi_dung": "THÔNG BÁO\nVề việc đánh giá điểm rèn luyện Học kỳ 3, 2025-2026"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            85.1,
+            209.99,
+            538.63,
+            243.78
+          ],
+          "noi_dung": "Thực hiện kế hoạch đánh giá điểm rèn luyện học kỳ 3, 2025-2026; Phòng Công tác Sinh viên xin thông báo đến các đơn vị quản lý đào tạo triển khai thực hiện:"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "heading",
+          "bbox": [
+            121.1,
+            248.75,
+            529.3,
+            263.1
+          ],
+          "noi_dung": "1. Các mốc thời gian thực hiện (đã công bố trên Hệ thống quản lý đào tạo):"
+        },
+        {
+          "loai": "bang",
+          "bbox": [
+            92.15,
+            263.6,
+            531.73,
+            422.03
+          ],
+          "tieu_de_bang": "1. Các mốc thời gian thực hiện (đã công bố trên Hệ thống quản lý đào tạo):",
+          "du_lieu": [
+            [
+              "TT",
+              "Nội dung công việc",
+              "Thời gian thực hiện"
+            ],
+            [
+              "1",
+              "Các đơn vị nhập dữ liệu sinh viên tham gia hoạt động",
+              "18/05  27/07/2026"
+            ],
+            [
+              "2",
+              "Thời gian tổng hợp dữ liệu của Khoa",
+              "28/07 30/07/2026"
+            ],
+            [
+              "3",
+              "SV tự đánh giá",
+              "31/07 10/08/2026"
+            ],
+            [
+              "4",
+              "CVHT đánh giá",
+              "06/08 17/08/2026"
+            ],
+            [
+              "5",
+              "Thời gian SV phản hồi",
+              "18/08 31/08/2026"
+            ],
+            [
+              "6",
+              "Các đơn vị gửi file và danh sách kết quả đánh giá rèn luyện có xác nhận của thủ trưởng đơn vị cho Phòng Công tác Sinh để P.CTSV lập Quyết định trình cấp thẩm quyền công nhận.",
+              "07/09/2026"
+            ]
+          ]
+        },
+        {
+          "loai": "van_ban",
+          "dang": "heading",
+          "bbox": [
+            120.5,
+            437.78,
+            538.55,
+            466.77
+          ],
+          "noi_dung": "2. Quy trình thực hiện đánh giá:"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            85.1,
+            437.78,
+            538.55,
+            486.23
+          ],
+          "noi_dung": "- Thực hiện quy trình đánh giá điểm rèn luyện trên website Phòng Công tác Sinh viên https://dsa.ctu.edu.vn/images/upload/vbanply/2018/DRL/quytrinh_DRL_tructuyen.pdf."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            85.1,
+            491.32,
+            538.65,
+            525.11
+          ],
+          "noi_dung": "- Phòng Công tác Sinh viên sẽ bổ sung tự điển các cuộc thi chuyên ngành, đơn vị quản lý thực hiện nhập liệu (khi đơn vị có yêu cầu)."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            85.1,
+            530.2,
+            538.67,
+            583.43
+          ],
+          "noi_dung": "- Trong quá trình thực hiện, nếu có vướng mắc, đề nghị thông tin về Phòng Công tác Sinh viên qua email pctsv@ctu.edu.vn. Phòng sẽ tập hợp, thống nhất cách xử lý và phản hồi về các đơn vị trong thời gian sớm nhất."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            85.1,
+            588.52,
+            538.65,
+            647.63
+          ],
+          "noi_dung": "Đề nghị Thủ trưởng đơn vị quan tâm triển khai nhằm đảm bảo kế hoạch thực hiện đúng thời gian đề ra."
+        }
+      ]
+    }
+  ]
+}

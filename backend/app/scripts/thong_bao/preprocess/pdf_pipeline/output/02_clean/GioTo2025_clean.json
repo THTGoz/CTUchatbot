@@ -1,0 +1,80 @@
+{
+  "ten_file": "GioTo2025.pdf",
+  "trang": [
+    {
+      "so_trang": 1,
+      "kich_thuoc": [
+        612.0,
+        792.0
+      ],
+      "items": [
+        {
+          "loai": "van_ban",
+          "dang": "metadata",
+          "bbox": [
+            70.9,
+            57.25,
+            551.35,
+            112.81
+          ],
+          "noi_dung": "Số: /TB-ĐHCT\nCần Thơ, ngày tháng năm 2025"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "tieu_de",
+          "bbox": [
+            70.9,
+            138.94,
+            555.3,
+            280.24
+          ],
+          "noi_dung": "THÔNG BÁO\nVề việc nghỉ Lễ Giỗ tổ Hùng Vương, Lễ Kỷ niệm Ngày chiến thắng 30/4 và Ngày Quốc tế Lao động 01/5 năm 2025\nCăn cứ Điều 112 của Bộ Luật Lao động năm 2019, Thông báo số 6150/TB- BLĐTBXH ngày 03/12/2024 của Bộ Lao động – Thương binh và Xã hội, Căn cứ tình hình thực tế, Trường Đại học Cần Thơ thông báo lịch nghỉ Lễ Giỗ tổ Hùng Vương, Lễ Kỷ niệm ngày Chiến thắng 30/4 và ngày Quốc tế Lao động 01/5 như sau:"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            70.9,
+            290.06,
+            555.3,
+            402.15
+          ],
+          "noi_dung": "- Ngày Lễ Giỗ tổ Hùng Vương (ngày 10 tháng 3 âm lịch), tất cả viên chức – người lao động (VC-NLĐ) và người học được nghỉ vào thứ Hai ngày 07/4/2025. Lịch thi các học phần riêng và bảo vệ Luận văn trong ngày 07/4/2025 sẽ được bù vào Chủ nhật, ngày 13/4/2025 hoặc vào thời gian thích hợp do giảng viên sắp xếp và thông báo cho người học. Phòng Quản trị - Thiết bị và các đơn vị quản lý phòng học bố trí cán bộ quản lý mở cửa phục vụ vào ngày 13/4/2025."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            70.9,
+            411.97,
+            555.3,
+            485.42
+          ],
+          "noi_dung": "- Lễ Kỷ niệm ngày Chiến thắng 30/4 và ngày Quốc tế Lao động 01/5, VC-NLĐ và người học được nghỉ 03 ngày, từ thứ Tư ngày 30/4/2025 đến hết Thứ Sáu 02/5/2025. Lịch làm việc ngày thứ Sáu 02/5/2025 được hoán đổi làm bù vào thứ Bảy ngày 26/4/2025."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            70.9,
+            495.24,
+            555.3,
+            530.05
+          ],
+          "noi_dung": "Trong thời gian nghỉ Lễ, các đơn vị phải tổ chức chu đáo việc bảo vệ an ninh trật tự - an toàn và phòng cháy chữa cháy."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            70.9,
+            539.87,
+            555.3,
+            574.69
+          ],
+          "noi_dung": "Đề nghị thủ trưởng các đơn vị phổ biến Thông báo này cho toàn thể viên chức, người lao động và người học biết để thực hiện."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "file_name": "audit_neo4j.py",
+  "file_path": "backend/app/scripts/thong_bao/preprocess/kg_importer/audit_neo4j.py",
+  "bien_chung": [
+    {
+      "ten_bien": "NEW_LABELS",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "['ThongBao', 'TaiLieu', 'Muc', 'Bang', 'DongBang']"
+    },
+    {
+      "ten_bien": "ALLOWED_PROPERTIES",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "{'ThongBao': ['id', 'ten_file', 'tieu_de', 'ma_van_ban', 'ngay_ban_hanh', 'loai_thong_bao', 'nam_ban_hanh', 'hoc_ky', 'nam_hoc', 'nam_hoc_bat_dau', 'nam_hoc_ket_thuc'], 'TaiLieu': ['id', 'thu_tu', 'te"
+    }
+  ],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Chuẩn Hóa Cấu Trúc Module",
+      "noi_dung_rule": "Tuân thủ quy tắc xử lý và chuẩn hóa mã nguồn của module",
+      "dieu_kien_va_hanh_dong": "Đảm bảo tính toàn vẹn khi thực thi"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "keyed",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `keyed` của file `audit_neo4j.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "records",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `records` cho hàm `keyed`"
+        },
+        {
+          "ten_tham_so": "key",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `key` cho hàm `keyed`"
+        },
+        {
+          "ten_tham_so": "value",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `value` cho hàm `keyed`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "dict[str, int]",
+        "mo_ta": "Kết quả trả về của hàm `keyed`"
+      },
+      "cac_ham_con_ben_trong": [],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/kg_importer/audit_neo4j.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (records, key, value).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `dict[str, int]`."
+    },
+    {
+      "ten_ham": "count_one",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `count_one` của file `audit_neo4j.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "session",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `session` cho hàm `count_one`"
+        },
+        {
+          "ten_tham_so": "query",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `query` cho hàm `count_one`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "int",
+        "mo_ta": "Kết quả trả về của hàm `count_one`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "session.run(query, **parameters).single",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "session.run",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/kg_importer/audit_neo4j.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (session, query).\n2. Khởi tạo / gán biến `record`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `int`."
+    },
+    {
+      "ten_ham": "main",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `main` của file `audit_neo4j.py`",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "int",
+        "mo_ta": "Kết quả trả về của hàm `main`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "load_settings",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "GraphDatabase.driver",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "driver.close",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "json.dumps",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "driver.session",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "keyed",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "session.run",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "count_one",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "ALLOWED_PROPERTIES.items",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "system_session.run",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/kg_importer/audit_neo4j.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Khởi tạo / gán biến `settings`.\n3. Khởi tạo / gán biến `driver`.\n4. Gọi thực thi hàm `print`.\n5. Trả về kết quả cho caller.\n6. Hoàn tất tính toán và trả về kết quả kiểu `int`."
+    }
+  ]
+}

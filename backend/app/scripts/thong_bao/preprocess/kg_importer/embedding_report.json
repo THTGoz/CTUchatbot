@@ -1,0 +1,31 @@
+{
+  "started_at": "2026-08-19T13:04:30.492625+07:00",
+  "database": "d157a20b",
+  "model": "BAAI/bge-m3",
+  "dimension": 1024,
+  "device": "cpu",
+  "force": false,
+  "nodes": {
+    "Muc": 110,
+    "DongBang": 1529
+  },
+  "verification": [
+    {
+      "label": "DongBang",
+      "total": 1529,
+      "embedded": 1529,
+      "dimensions": [
+        1024
+      ]
+    },
+    {
+      "label": "Muc",
+      "total": 110,
+      "embedded": 110,
+      "dimensions": [
+        1024
+      ]
+    }
+  ],
+  "finished_at": "2026-08-19T13:07:31.415124+07:00"
+}

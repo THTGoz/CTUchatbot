@@ -1,0 +1,635 @@
+{
+  "file_name": "llm_service.py",
+  "file_path": "backend/app/services/common/llm_service.py",
+  "bien_chung": [
+    {
+      "ten_bien": "OLLAMA_BASE_URL",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "_get_env('OLLAMA_BASE_URL', 'OLLAMA_HOST', default='http://localhost:11434').rstrip('/')"
+    },
+    {
+      "ten_bien": "OLLAMA_GENERATE_URL",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "os.getenv('OLLAMA_GENERATE_URL', f'{OLLAMA_BASE_URL}/api/generate')"
+    },
+    {
+      "ten_bien": "OLLAMA_CHAT_URL",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "os.getenv('OLLAMA_CHAT_URL', f'{OLLAMA_BASE_URL}/api/chat')"
+    },
+    {
+      "ten_bien": "DEFAULT_TIMEOUT_SECONDS",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "int(os.getenv('OLLAMA_TIMEOUT_SECONDS', '180'))"
+    },
+    {
+      "ten_bien": "MODEL_PRIMARY_9B",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "_get_env('QWEN3_5_MODEL_9B', 'OLLAMA_MODEL_9B', default='qwen3.5:9b')"
+    },
+    {
+      "ten_bien": "ROUTER_MODEL",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "os.getenv('ROUTER_MODEL', MODEL_PRIMARY_9B)"
+    },
+    {
+      "ten_bien": "NOTIFICATION_NORMALIZER_MODEL",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "os.getenv('NOTIFICATION_NORMALIZER_MODEL', MODEL_PRIMARY_9B)"
+    },
+    {
+      "ten_bien": "ROUTER_DOMAINS",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "{'CTDT', 'QCHV', 'THONG_BAO', 'SOCIAL'}"
+    },
+    {
+      "ten_bien": "logger",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "logging.getLogger('app.llm')"
+    }
+  ],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Xử Lý Chuỗi & Regular Expression",
+      "noi_dung_rule": "Sử dụng các quy tắc regex để loại bỏ ký tự đặc biệt, lọc khoảng trắng và tìm kiếm pattern",
+      "dieu_kien_va_hanh_dong": "Khớp điều kiện chuỗi đầu vào để thực hiện tiền xử lý văn bản"
+    },
+    {
+      "ten_luat": "Rule Phân Loại Tên Domain (Router Classification Rule)",
+      "noi_dung_rule": "Điều hướng câu hỏi người dùng dựa trên miền tri thức: SOCIAL (Xã giao), QCHV (Quy chế học vụ), CTDT (Chương trình đào tạo), THONG_BAO (Thông báo & Sự kiện)",
+      "dieu_kien_va_hanh_dong": "Nếu domain được LLM phân loại -> Kích hoạt Pipeline dịch vụ tương ứng"
+    },
+    {
+      "ten_luat": "Rule Fallback / Phản Hồi Mặc Định",
+      "noi_dung_rule": "Phản hồi dự phòng khi cơ sở dữ liệu không tìm thấy dữ liệu phù hợp",
+      "dieu_kien_va_hanh_dong": "Trả về thông báo hướng dẫn hoặc gọi LLM trả lời xã giao"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "_load_env_files",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_load_env_files` của file `llm_service.py`",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "None",
+        "mo_ta": "Kết quả trả về của hàm `_load_env_files`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "load_dotenv",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "Path(__file__).resolve",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "Path",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/llm_service.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Khởi tạo / gán biến `backend_root`.\n3. Khởi tạo / gán biến `repo_root`.\n4. Gọi thực thi hàm `load_dotenv`.\n5. Gọi thực thi hàm `load_dotenv`.\n6. Hoàn tất tính toán và trả về kết quả kiểu `None`."
+    },
+    {
+      "ten_ham": "_get_env",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_get_env` của file `llm_service.py`",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `_get_env`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "os.getenv",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/llm_service.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "_extract_json_object",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_extract_json_object` của file `llm_service.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "text",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `text` cho hàm `_extract_json_object`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Dict[str, Any]",
+        "mo_ta": "Kết quả trả về của hàm `_extract_json_object`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "(text or '').strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "re.search",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "json.loads",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "match.group",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/llm_service.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (text).\n2. Khởi tạo / gán biến `raw`.\n3. Kiểm tra điều kiện rẽ nhánh `not raw`.\n4. Khởi tạo / gán biến `match`.\n5. Kiểm tra điều kiện rẽ nhánh `not match`.\n6. Hoàn tất tính toán và trả về kết quả kiểu `Dict[str, Any]`."
+    },
+    {
+      "ten_ham": "_normalize_router_domain",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_normalize_router_domain` của file `llm_service.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "value",
+          "kieu_du_lieu": "object",
+          "mo_ta": "Tham số đầu vào `value` cho hàm `_normalize_router_domain`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str | None",
+        "mo_ta": "Kết quả trả về của hàm `_normalize_router_domain`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "aliases.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(value or '').strip().upper().replace",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(value or '').strip().upper",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(value or '').strip",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/llm_service.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (value).\n2. Khởi tạo / gán biến `normalized`.\n3. Khởi tạo / gán biến `aliases`.\n4. Khởi tạo / gán biến `domain`.\n5. Trả về kết quả cho caller.\n6. Hoàn tất tính toán và trả về kết quả kiểu `str | None`."
+    },
+    {
+      "ten_ham": "_fold_text",
+      "chuc_nang": "Chuẩn hóa nhẹ chỉ để match rule router; không thay đổi câu hỏi gốc.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "text",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `text` cho hàm `_fold_text`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `_fold_text`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "unicodedata.normalize",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "''.join",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "(text or '').lower",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "re.sub",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "without_marks.replace",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "unicodedata.category",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/llm_service.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (text).\n2. Khởi tạo / gán biến `normalized`.\n3. Khởi tạo / gán biến `without_marks`.\n4. Trả về kết quả cho caller.\n5. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "_high_confidence_domain",
+      "chuc_nang": "Rule bảo thủ: chỉ trả domain khi tín hiệu đủ rõ, còn lại giao LLM.\n\nKhông dùng keyword đơn lẻ kiểu ``hoc phan -> CTDT`` hay ``ke hoach -> THONG_BAO``.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "query",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `query` cho hàm `_high_confidence_domain`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "tuple[str | None, str | None]",
+        "mo_ta": "Kết quả trả về của hàm `_high_confidence_domain`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "_fold_text",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "any",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "re.search",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "bool",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "text.startswith",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "re.fullmatch",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/llm_service.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (query).\n2. Khởi tạo / gán biến `text`.\n3. Kiểm tra điều kiện rẽ nhánh `not text`.\n4. Khởi tạo / gán biến `social_patterns`.\n5. Kiểm tra điều kiện rẽ nhánh `any((re.fullmatch(pattern, text) for pattern in social_patterns))`.\n6. Kiểm tra điều kiện rẽ nhánh `re.search('\\\\b(chuong|dieu|khoan|diem)\\\\s+([ivxlcdm]+|\\\\d+|[a-z])\\\\b', text)`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `tuple[str | None, str | None]`."
+    },
+    {
+      "ten_ham": "_query_numbers",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_query_numbers` của file `llm_service.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "text",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `text` cho hàm `_query_numbers`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "list[str]",
+        "mo_ta": "Kết quả trả về của hàm `_query_numbers`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "re.findall",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/llm_service.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (text).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `list[str]`."
+    },
+    {
+      "ten_ham": "_protected_notification_identifiers",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_protected_notification_identifiers` của file `llm_service.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "text",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `text` cho hàm `_protected_notification_identifiers`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "set[str]",
+        "mo_ta": "Kết quả trả về của hàm `_protected_notification_identifiers`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "re.sub('\\\\s+', '', match.group(0)).upper",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "re.finditer",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "re.sub",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "match.group",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/llm_service.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (text).\n2. Khởi tạo / gán biến `patterns`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `set[str]`."
+    },
+    {
+      "ten_ham": "_valid_notification_normalization",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_valid_notification_normalization` của file `llm_service.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "original",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `original` cho hàm `_valid_notification_normalization`"
+        },
+        {
+          "ten_tham_so": "normalized",
+          "kieu_du_lieu": "object",
+          "mo_ta": "Tham số đầu vào `normalized` cho hàm `_valid_notification_normalization`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str | None",
+        "mo_ta": "Kết quả trả về của hàm `_valid_notification_normalization`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "re.sub('\\\\s+', ' ', str(normalized or '')).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_query_numbers",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "_protected_notification_identifiers",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "re.sub",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/llm_service.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (original, normalized).\n2. Khởi tạo / gán biến `candidate`.\n3. Kiểm tra điều kiện rẽ nhánh `not candidate or len(candidate) > 500`.\n4. Kiểm tra điều kiện rẽ nhánh `_query_numbers(original) != _query_numbers(candidate)`.\n5. Kiểm tra điều kiện rẽ nhánh `_protected_notification_identifiers(original) != _protected_notification_identifiers(candidate)`.\n6. Trả về kết quả cho caller.\n7. Hoàn tất tính toán và trả về kết quả kiểu `str | None`."
+    },
+    {
+      "ten_ham": "call_model",
+      "chuc_nang": "Gọi Ollama bằng /api/generate; fallback /api/chat nếu endpoint generate không có.\n\nVới pipeline retrieval, mặc định tắt thinking để tránh model suy luận dài không cần thiết.\n``num_predict`` cho phép từng tác vụ giới hạn số token đầu ra riêng.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "model",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `model` cho hàm `call_model`"
+        },
+        {
+          "ten_tham_so": "prompt",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `prompt` cho hàm `call_model`"
+        },
+        {
+          "ten_tham_so": "temperature",
+          "kieu_du_lieu": "float",
+          "mo_ta": "Tham số đầu vào `temperature` cho hàm `call_model`"
+        },
+        {
+          "ten_tham_so": "keep_alive",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `keep_alive` cho hàm `call_model`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `call_model`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "httpx.AsyncClient",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "response.raise_for_status",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "response.json",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "(payload.get('message') or {}).get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "payload.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "client.post",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "RuntimeError",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "httpx.HTTPStatusError",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/llm_service.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (model, prompt, temperature, keep_alive).\n2. Kiểm tra điều kiện rẽ nhánh `num_predict is not None`.\n3. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "call_model_json",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `call_model_json` của file `llm_service.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "model",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `model` cho hàm `call_model_json`"
+        },
+        {
+          "ten_tham_so": "prompt",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `prompt` cho hàm `call_model_json`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Dict[str, Any]",
+        "mo_ta": "Kết quả trả về của hàm `call_model_json`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "_extract_json_object",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "call_model",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/llm_service.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (model, prompt).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `Dict[str, Any]`."
+    },
+    {
+      "ten_ham": "call_model_9b",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `call_model_9b` của file `llm_service.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "prompt",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `prompt` cho hàm `call_model_9b`"
+        },
+        {
+          "ten_tham_so": "temperature",
+          "kieu_du_lieu": "float",
+          "mo_ta": "Tham số đầu vào `temperature` cho hàm `call_model_9b`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `call_model_9b`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "call_model",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/llm_service.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (prompt, temperature).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "classify_domain",
+      "chuc_nang": "Router lai: rule độ tin cậy cao trước, LLM fallback cho câu còn mơ hồ.\n\n``history`` được giữ trong chữ ký để tương thích nhưng không đưa vào prompt router,\ntránh lượt hội thoại trước kéo sai domain của câu hiện tại.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "query",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `query` cho hàm `classify_domain`"
+        },
+        {
+          "ten_tham_so": "history",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `history` cho hàm `classify_domain`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `classify_domain`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "_high_confidence_domain",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "_normalize_router_domain",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "logger.info",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "call_model_json",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "logger.warning",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "data.get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/llm_service.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (query, history).\n2. Khởi tạo / gán biến `(rule_domain, rule_reason)`.\n3. Kiểm tra điều kiện rẽ nhánh `rule_domain is not None`.\n4. Khởi tạo / gán biến `prompt`.\n5. Khởi tạo / gán biến `data`.\n6. Khởi tạo / gán biến `domain`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "generate_without_query",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `generate_without_query` của file `llm_service.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "query",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `query` cho hàm `generate_without_query`"
+        },
+        {
+          "ten_tham_so": "history",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `history` cho hàm `generate_without_query`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `generate_without_query`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "call_model_9b",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/llm_service.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (query, history).\n2. Khởi tạo / gán biến `prompt`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "normalize_notification_query",
+      "chuc_nang": "Chuẩn hóa câu THONG_BAO nhưng bảo vệ mọi số và định danh exact.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "query",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `query` cho hàm `normalize_notification_query`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `normalize_notification_query`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "(query or '').strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_valid_notification_normalization",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "data.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "logger.warning",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "call_model_json",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/llm_service.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (query).\n2. Khởi tạo / gán biến `original`.\n3. Kiểm tra điều kiện rẽ nhánh `not original`.\n4. Khởi tạo / gán biến `prompt`.\n5. Khởi tạo / gán biến `normalized`.\n6. Kiểm tra điều kiện rẽ nhánh `normalized is None`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "generate",
+      "chuc_nang": "Sinh câu trả lời cho THONG_BAO từ context retrieval đã hoàn tất.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "query",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `query` cho hàm `generate`"
+        },
+        {
+          "ten_tham_so": "context",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `context` cho hàm `generate`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `generate`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "call_model_9b",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/llm_service.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (query, context).\n2. Khởi tạo / gán biến `prompt`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    }
+  ]
+}

@@ -1,0 +1,282 @@
+{
+  "file_name": "build_graph.py",
+  "file_path": "backend/app/scripts/build_graph.py",
+  "bien_chung": [],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Biểu Thức Chính Quy (Regex Pattern #1)",
+      "noi_dung_rule": "Biểu thức khớp văn bản: `Xem\\s+Điều\\s+(\\d+)(?:\\s+Khoản\\s+(\\d+))?(?:\\s+Điểm\\s+([a-z]))?`",
+      "dieu_kien_va_hanh_dong": "Khớp mẫu chuỗi để chuẩn hóa, tách từ khóa hoặc phân tích cú pháp"
+    },
+    {
+      "ten_luat": "Rule Biểu Thức Chính Quy (Regex Pattern #2)",
+      "noi_dung_rule": "Biểu thức khớp văn bản: `Xem\\s+Điểm\\s+([a-z])\\s+Khoản\\s+(\\d+)\\s+Điều\\s+(\\d+)`",
+      "dieu_kien_va_hanh_dong": "Khớp mẫu chuỗi để chuẩn hóa, tách từ khóa hoặc phân tích cú pháp"
+    },
+    {
+      "ten_luat": "Rule Biểu Thức Chính Quy (Regex Pattern #3)",
+      "noi_dung_rule": "Biểu thức khớp văn bản: `điểm\\s+([a-z])\\s+khoản\\s+(\\d+)\\s+Điều\\s+(\\d+)`",
+      "dieu_kien_va_hanh_dong": "Khớp mẫu chuỗi để chuẩn hóa, tách từ khóa hoặc phân tích cú pháp"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "__init__",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `__init__` của file `build_graph.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "json_path",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `json_path` cho hàm `__init__`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `__init__`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "self.data.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "open",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "json.load",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/build_graph.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (json_path).\n2. Khởi tạo / gán biến `self.metadata`.\n3. Khởi tạo / gán biến `self.raw`.\n4. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "get_vanban_id",
+      "chuc_nang": "quychehocvu.pdf -> quychehocvu",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `get_vanban_id`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "self.metadata.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "os.path.splitext",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/build_graph.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Khởi tạo / gán biến `fname`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "get_vanban_name",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `get_vanban_name` của file `build_graph.py`",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `get_vanban_name`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "re.search",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "m.group",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/build_graph.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Thực hiện các bước tính toán logic bên trong hàm.\n3. Trả về kết quả đầu ra."
+    },
+    {
+      "ten_ham": "extract",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `extract` của file `build_graph.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "text",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `text` cho hàm `extract`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `extract`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "p.finditer",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "m.groups",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "out.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "text[m.start():].lower().startswith",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "text[m.start():].lower",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "m.start",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/build_graph.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (text).\n2. Kiểm tra điều kiện rẽ nhánh `not text`.\n3. Khởi tạo / gán biến `out`.\n4. Trả về kết quả cho caller.\n5. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "__init__",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `__init__` của file `build_graph.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "db_connector",
+          "kieu_du_lieu": "'Neo4jConnector'",
+          "mo_ta": "Tham số đầu vào `db_connector` cho hàm `__init__`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `__init__`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "ReferenceExtractor",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/build_graph.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (db_connector).\n2. Khởi tạo / gán biến `self.driver`.\n3. Khởi tạo / gán biến `self.ref`.\n4. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "build",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `build` của file `build_graph.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "document",
+          "kieu_du_lieu": "QuyCheDocument",
+          "mo_ta": "Tham số đầu vào `document` cho hàm `build`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `build`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "self.driver.session",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "s.execute_write",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/build_graph.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (document).\n2. Thực hiện các bước tính toán logic bên trong hàm.\n3. Trả về kết quả đầu ra."
+    },
+    {
+      "ten_ham": "_delete_graph",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_delete_graph` của file `build_graph.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "tx",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `tx` cho hàm `_delete_graph`"
+        },
+        {
+          "ten_tham_so": "vb_id",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `vb_id` cho hàm `_delete_graph`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `_delete_graph`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "tx.run",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/build_graph.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (tx, vb_id).\n2. Thực hiện các bước tính toán logic bên trong hàm.\n3. Trả về kết quả đầu ra."
+    },
+    {
+      "ten_ham": "_build_tx",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_build_tx` của file `build_graph.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "tx",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `tx` cho hàm `_build_tx`"
+        },
+        {
+          "ten_tham_so": "doc",
+          "kieu_du_lieu": "QuyCheDocument",
+          "mo_ta": "Tham số đầu vào `doc` cho hàm `_build_tx`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `_build_tx`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "doc.get_vanban_id",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "doc.get_vanban_name",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "doc.metadata.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._delete_graph",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "tx.run",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "dieu['id'].replace('Điều', '').strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "dieu.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "chuong['chuong'].replace",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "k.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self.ref.extract",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/build_graph.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (tx, doc).\n2. Khởi tạo / gán biến `vb_id`.\n3. Khởi tạo / gán biến `vb_name`.\n4. Khởi tạo / gán biến `src`.\n5. Khởi tạo / gán biến `dieu_index`.\n6. Khởi tạo / gán biến `khoan_index`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "ten_luong_mien": "Luồng Xử Lý Tra Cứu Quy Chế Học Vụ (QCHV Domain Flow)",
+  "thu_muc_chinh": "backend/app/services/qchv",
+  "bien_dau_vao": {
+    "query": "Câu hỏi nguyên bản của người dùng (str)",
+    "history": "Lịch sử trò chuyện (List[Dict[str, Any]])"
+  },
+  "cac_buoc_thuc_thi_trong_luong": [
+    {
+      "bước": 1,
+      "ten_thao_tac": "Tiền xử lý câu hỏi Quy chế",
+      "thu_muc_truy_cap": "backend/app/services/qchv",
+      "file_thuc_thi": "quyche_llm_service.py",
+      "ham_kich_hoat": "self.llm_service.preprocess_question(query)",
+      "dau_vao": "query (str)",
+      "dau_ra": "question (str đã được chuẩn hóa)"
+    },
+    {
+      "bước": 2,
+      "ten_thao_tac": "Nhận diện Văn Bản Quy Chế & Trích Xuất Tham Chiếu (Regex Rules)",
+      "thu_muc_truy_cap": "backend/app/services/qchv",
+      "file_thuc_thi": "quyche_service.py & quyche_llm_service.py",
+      "ham_kich_hoat": "detect_vanban(question) & _extract_references(question)",
+      "dau_vao": "question (str)",
+      "dau_ra": "vb_id (str - ví dụ 'QC2021'), refs (List[Dict] chứa thông tin Chương/Điều/Khoản/Điểm)"
+    },
+    {
+      "bước": 3,
+      "ten_thao_tac": "Thu thập Context từ Neo4j (Exact Search hoặc Vector Search)",
+      "thu_muc_truy_cap": "backend/app/db & backend/app/services/qchv",
+      "file_thuc_thi": "neo4j.py & quyche_service.py",
+      "ham_kich_hoat": "self._collect_context(vb_id, question, refs)",
+      "xu_ly_re_nhanh": {
+        "Neu_co_refs": "Gọi exact Cypher queries: get_chuong(), get_dieu(), get_khoan(), get_diem()",
+        "Neu_khong_co_refs": "Tạo embedding câu hỏi bằng `_embed_text()` và gọi Neo4j vector search `vector_search()` lấy Top-K"
+      },
+      "dau_ra": "context (str chứa toàn bộ điều khoản liên quan)"
+    },
+    {
+      "bước": 4,
+      "ten_thao_tac": "Sinh câu trả lời trích dẫn quy chế bằng LLM",
+      "thu_muc_truy_cap": "backend/app/services/qchv",
+      "file_thuc_thi": "quyche_llm_service.py",
+      "ham_kich_hoat": "self.llm_service.generate_answer(question, context, history, vb_display)",
+      "dau_vao": "question, context, history, vb_display",
+      "dau_ra": "answer (str)"
+    }
+  ],
+  "ket_qua_tra_ve_cuoi_cung": {
+    "kieu_du_lieu": "Dict[str, Any]",
+    "cac_truong": {
+      "answer": "Câu trả lời giải thích chi tiết quy chế học vụ (str)",
+      "vb_id": "Mã văn bản quy chế áp dụng (str)",
+      "vb_display": "Tên hiển thị văn bản quy chế (str)",
+      "refs": "Danh sách tham chiếu điều khoản (list)",
+      "context": "Nội dung trích dẫn từ CSDL (str)"
+    }
+  }
+}

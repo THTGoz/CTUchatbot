@@ -1,0 +1,696 @@
+{
+  "ten_file": "KHGDVDKHP_HK3_25_26.pdf",
+  "trang": [
+    {
+      "so_trang": 1,
+      "kich_thuoc": [
+        595.32,
+        842.04
+      ],
+      "items": [
+        {
+          "loai": "van_ban",
+          "dang": "metadata",
+          "bbox": [
+            65.18,
+            51.21,
+            533.73,
+            218.21
+          ],
+          "noi_dung": "Số: /ĐHCT-ĐT\nCần Thơ, ngày tháng 3 năm 2026"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "tieu_de",
+          "bbox": [
+            65.18,
+            51.21,
+            533.73,
+            218.21
+          ],
+          "noi_dung": "V/v kế hoạch giảng dạy và đăng ký học phần học kỳ 3, năm học 2025-2026"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            65.18,
+            230.75,
+            544.52,
+            304.89
+          ],
+          "noi_dung": "Căn cứ Quyết định số 6311/QĐ-ĐHCT ngày 18/11/2025 của Hiệu trưởng Đại học Cần Thơ về việc ban hành kế hoạch khung công tác năm 2026; Căn cứ kế hoạch đào tạo học kỳ 3, năm học 2025-2026, diễn ra từ ngày 11/5/2026 đến 23/8/2026, Trường thông báo đến các đơn vị, cố vấn học tập và sinh viên (SV) trong toàn trường các nội dung liên quan đến công tác đăng ký học phần như sau:"
+        },
+        {
+          "loai": "bang",
+          "bbox": [
+            52.8,
+            311.51,
+            556.7,
+            525.37
+          ],
+          "tieu_de_bang": "",
+          "du_lieu": [
+            [
+              "TT",
+              "NỘI DUNG CÔNG VIỆC",
+              "THỜI GIAN THỰC HIỆN"
+            ],
+            [
+              "1",
+              "Công bố thời khóa biểu các lớp học phần (HP) mở trong học kỳ. (SV có thể đề nghị đổi thời khóa biểu trong thời gian này)",
+              "30/3/2026 - 05/4/2026"
+            ],
+            [
+              "2",
+              "SV lập thời khóa biểu cá nhân và đăng ký học phần (đợt 1).",
+              "06/4/2026 - 19/4/2026"
+            ],
+            [
+              "3",
+              "Mở lại website nhập kế hoạch học tập cho SV điều chỉnh. (Thời gian được phân chi tiết theo khóa và nhóm đơn vị)",
+              "11/4/2026 - 19/4/2026"
+            ],
+            [
+              "4",
+              "PĐT phối hợp với đơn vị mở lớp HP mới theo yêu cầu SV.",
+              "Hạn cuối 17/4/2026"
+            ],
+            [
+              "5",
+              "Đóng website nhập kế hoạch học tập, PĐT xử lý số liệu, công bố lớp HP không mở trong học kỳ.",
+              "20/4/2026 - 13/5/2026"
+            ],
+            [
+              "6",
+              "Bắt đầu giảng dạy học kỳ.",
+              "11/5/2026"
+            ],
+            [
+              "7",
+              "SV điều chỉnh kết quả đăng ký học phần (tuần đầu học kỳ, đợt 2). (Thời gian được phân chi tiết theo khóa và nhóm đơn vị)",
+              "11/5/2026 - 17/5/2026"
+            ],
+            [
+              "8",
+              "Mở lại website nhập kế hoạch học tập cho SV điều chỉnh.",
+              "14/5/2026"
+            ]
+          ]
+        },
+        {
+          "loai": "van_ban",
+          "dang": "ghi_chu",
+          "bbox": [
+            65.18,
+            528.76,
+            544.43,
+            606.02
+          ],
+          "noi_dung": "Lưu ý:"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            65.18,
+            528.76,
+            544.43,
+            606.02
+          ],
+          "noi_dung": "1. Từ ngày 11/4/2026 đến 19/4/2026: SV chưa nhập kế hoạch học tập học kỳ 3, năm học 2025-2026 phải truy cập website nhập kế hoạch học tập để điều chỉnh và tiến hành đăng ký. Tuy nhiên, trong thời gian này, nếu sĩ số lớp học phần đã hết chỗ, SV sẽ không được xem xét bổ sung."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            93.5,
+            609.55,
+            488.84,
+            623.9
+          ],
+          "noi_dung": "2. Các vấn đề khác áp dụng theo quy định về công tác học vụ đã ban hành."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            93.5,
+            630.55,
+            532.36,
+            644.9
+          ],
+          "noi_dung": "Đề nghị các đơn vị, cố vấn học tập và sinh viên phối hợp thực hiện đúng theo kế hoạch."
+        }
+      ]
+    },
+    {
+      "so_trang": 2,
+      "kich_thuoc": [
+        595.32,
+        842.04
+      ],
+      "items": [
+        {
+          "loai": "van_ban",
+          "dang": "tieu_de",
+          "bbox": [
+            65.18,
+            109.28,
+            520.44,
+            141.9
+          ],
+          "noi_dung": "THÔNG BÁO\nVề việc phân chia kế hoạch đăng ký học phần trực tuyến học kỳ 3, năm học 2025- 2026"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "ghi_chu",
+          "bbox": [
+            132.98,
+            142.07,
+            476.38,
+            156.42
+          ],
+          "noi_dung": "(Đính kèm Công văn số: /ĐHCT-ĐT, ngày / 3 /2026)"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "heading",
+          "bbox": [
+            65.18,
+            171.47,
+            544.31,
+            233.34
+          ],
+          "noi_dung": "1. Phân chia nhóm đơn vị đối với những đợt đăng ký như sau:"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            65.18,
+            171.47,
+            544.31,
+            233.34
+          ],
+          "noi_dung": "- Nhóm 1: các chuyên ngành thuộc Trường Kinh tế và Cơ sở Hậu Giang."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            65.18,
+            171.47,
+            544.31,
+            233.34
+          ],
+          "noi_dung": "- Nhóm 2: các chuyên ngành thuộc Trường Bách khoa và Khoa Luật."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            65.18,
+            171.47,
+            544.32,
+            263.25
+          ],
+          "noi_dung": "- Nhóm 3: các chuyên ngành thuộc Trường Nông nghiệp và Khoa Khoa học Chính trị, Xã hội & Nhân văn."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            72.26,
+            233.87,
+            544.32,
+            293.13
+          ],
+          "noi_dung": "- Nhóm 4: các chuyên ngành thuộc Trường Sư phạm và Viện Công nghệ Sinh học & Thực phẩm."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            72.26,
+            263.9,
+            544.42,
+            323.01
+          ],
+          "noi_dung": "- Nhóm 5: các chuyên ngành thuộc Khoa Ngoại ngữ, Trường Khoa học Tự nhiên và Khoa Môi trường & Tài nguyên thiên nhiên."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            65.18,
+            293.78,
+            544.42,
+            373.89
+          ],
+          "noi_dung": "- Nhóm 6: các chuyên ngành thuộc Trường Công nghệ Thông tin & Truyền thông và Trường Thủy sản."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "heading",
+          "bbox": [
+            65.18,
+            323.66,
+            459.8,
+            373.89
+          ],
+          "noi_dung": "2. Thời gian cụ thể cho từng đợt đăng ký học phần:"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            65.18,
+            323.66,
+            459.8,
+            373.89
+          ],
+          "noi_dung": "- Đợt 1: từ 06/4/2026 – 19/4/2026: Phân chia theo khóa và nhóm đơn vị"
+        },
+        {
+          "loai": "bang",
+          "bbox": [
+            59.77,
+            377.52,
+            549.85,
+            747.5
+          ],
+          "tieu_de_bang": "- Đợt 1: từ 06/4/2026 – 19/4/2026: Phân chia theo khóa và nhóm đơn vị",
+          "du_lieu": [
+            [
+              "TT",
+              "Khóa",
+              "Giờ/ngày bắt đầu",
+              "Nhóm đơn vị"
+            ],
+            [
+              "1",
+              "Khóa 48 trở về trước",
+              "07:30 ngày 06/4/2026",
+              "3"
+            ],
+            [
+              "",
+              "",
+              "08:30 ngày 06/4/2026",
+              "2"
+            ],
+            [
+              "",
+              "",
+              "09:30 ngày 06/4/2026",
+              "6"
+            ],
+            [
+              "",
+              "",
+              "13:30 ngày 06/4/2026",
+              "4"
+            ],
+            [
+              "",
+              "",
+              "14:30 ngày 06/4/2026",
+              "1"
+            ],
+            [
+              "",
+              "",
+              "15:30 ngày 06/4/2026",
+              "5"
+            ],
+            [
+              "2",
+              "Khóa 49",
+              "07:30 ngày 07/4/2026",
+              "3"
+            ],
+            [
+              "",
+              "",
+              "08:30 ngày 07/4/2026",
+              "2"
+            ],
+            [
+              "",
+              "",
+              "09:30 ngày 07/4/2026",
+              "6"
+            ],
+            [
+              "",
+              "",
+              "13:30 ngày 07/4/2026",
+              "4"
+            ],
+            [
+              "",
+              "",
+              "14:30 ngày 07/4/2026",
+              "1"
+            ],
+            [
+              "",
+              "",
+              "15:30 ngày 07/4/2026",
+              "5"
+            ],
+            [
+              "3",
+              "Khóa 50",
+              "07:30 ngày 08/4/2026",
+              "3"
+            ],
+            [
+              "",
+              "",
+              "08:30 ngày 08/4/2026",
+              "2"
+            ],
+            [
+              "",
+              "",
+              "09:30 ngày 08/4/2026",
+              "6"
+            ],
+            [
+              "",
+              "",
+              "13:30 ngày 08/4/2026",
+              "4"
+            ],
+            [
+              "",
+              "",
+              "14:30 ngày 08/4/2026",
+              "1"
+            ],
+            [
+              "",
+              "",
+              "15:30 ngày 08/4/2026",
+              "5"
+            ],
+            [
+              "4",
+              "Khóa 51",
+              "07:30 ngày 09/4/2026",
+              "3"
+            ],
+            [
+              "",
+              "",
+              "08:30 ngày 09/4/2026",
+              "2"
+            ],
+            [
+              "",
+              "",
+              "09:30 ngày 09/4/2026",
+              "6"
+            ],
+            [
+              "",
+              "",
+              "13:30 ngày 09/4/2026",
+              "4"
+            ],
+            [
+              "",
+              "",
+              "14:30 ngày 09/4/2026",
+              "1"
+            ],
+            [
+              "",
+              "",
+              "15:30 ngày 09/4/2026",
+              "5"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "so_trang": 3,
+      "kich_thuoc": [
+        595.32,
+        842.04
+      ],
+      "items": [
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            79.34,
+            51.21,
+            457.66,
+            65.56
+          ],
+          "noi_dung": "- Đợt 2: từ 11/5/2026 - 17/5/2026: Phân chia theo khóa và nhóm đơn vị."
+        },
+        {
+          "loai": "bang",
+          "bbox": [
+            59.77,
+            69.19,
+            551.3,
+            261.46
+          ],
+          "tieu_de_bang": "- Đợt 2: từ 11/5/2026 - 17/5/2026: Phân chia theo khóa và nhóm đơn vị.",
+          "du_lieu": [
+            [
+              "TT",
+              "Khóa",
+              "Giờ/ngày bắt đầu",
+              "Nhóm đơn vị"
+            ],
+            [
+              "1",
+              "Khóa 48 trở về trước",
+              "07:30 ngày 11/5/2026",
+              "3, 6"
+            ],
+            [
+              "",
+              "",
+              "09:30 ngày 11/5/2026",
+              "1, 4"
+            ],
+            [
+              "",
+              "",
+              "13:30 ngày 11/5/2026",
+              "2, 5"
+            ],
+            [
+              "2",
+              "Khóa 49",
+              "15:30 ngày 11/5/2026",
+              "3, 6"
+            ],
+            [
+              "",
+              "",
+              "07:30 ngày 12/5/2026",
+              "1, 4"
+            ],
+            [
+              "",
+              "",
+              "09:30 ngày 12/5/2026",
+              "2, 5"
+            ],
+            [
+              "3",
+              "Khóa 50",
+              "13:30 ngày 12/5/2026",
+              "3, 6"
+            ],
+            [
+              "",
+              "",
+              "15:30 ngày 12/5/2026",
+              "1, 4"
+            ],
+            [
+              "",
+              "",
+              "07:30 ngày 13/5/2026",
+              "2, 5"
+            ],
+            [
+              "4",
+              "Khóa 51",
+              "09:30 ngày 13/5/2026",
+              "3, 6"
+            ],
+            [
+              "",
+              "",
+              "13:30 ngày 13/5/2026",
+              "1, 4"
+            ],
+            [
+              "",
+              "",
+              "15:30 ngày 13/5/2026",
+              "2, 5"
+            ]
+          ]
+        },
+        {
+          "loai": "van_ban",
+          "dang": "heading",
+          "bbox": [
+            65.18,
+            265.22,
+            521.88,
+            279.57
+          ],
+          "noi_dung": "3. Thời gian cụ thể cho đợt điều chỉnh kế hoạch học tập (từ 11/4/2026 – 19/4/2026):"
+        },
+        {
+          "loai": "bang",
+          "bbox": [
+            59.77,
+            282.84,
+            551.3,
+            504.36
+          ],
+          "tieu_de_bang": "3. Thời gian cụ thể cho đợt điều chỉnh kế hoạch học tập (từ 11/4/2026 – 19/4/2026):",
+          "du_lieu": [
+            [
+              "TT",
+              "Khóa",
+              "Giờ/ngày bắt đầu",
+              "Nhóm đơn vị"
+            ],
+            [
+              "1",
+              "Khóa 48 trở về trước",
+              "07:30 ngày 11/4/2026",
+              "Tất cả các Đơn vị"
+            ],
+            [
+              "2",
+              "Khóa 49",
+              "13:30 ngày 11/4/2026",
+              "Tất cả các Đơn vị"
+            ],
+            [
+              "3",
+              "Khóa 50",
+              "07:30 ngày 13/4/2026",
+              "4"
+            ],
+            [
+              "",
+              "",
+              "08:30 ngày 13/4/2026",
+              "5"
+            ],
+            [
+              "",
+              "",
+              "09:30 ngày 13/4/2026",
+              "6"
+            ],
+            [
+              "",
+              "",
+              "13:30 ngày 13/4/2026",
+              "1"
+            ],
+            [
+              "",
+              "",
+              "14:30 ngày 13/4/2026",
+              "2"
+            ],
+            [
+              "",
+              "",
+              "15:30 ngày 13/4/2026",
+              "3"
+            ],
+            [
+              "4",
+              "Khóa 51",
+              "07:30 ngày 14/4/2026",
+              "4"
+            ],
+            [
+              "",
+              "",
+              "08:30 ngày 14/4/2026",
+              "5"
+            ],
+            [
+              "",
+              "",
+              "09:30 ngày 14/4/2026",
+              "6"
+            ],
+            [
+              "",
+              "",
+              "13:30 ngày 14/4/2026",
+              "1"
+            ],
+            [
+              "",
+              "",
+              "14:30 ngày 14/4/2026",
+              "2"
+            ],
+            [
+              "",
+              "",
+              "15:30 ngày 14/4/2026",
+              "3"
+            ]
+          ]
+        },
+        {
+          "loai": "van_ban",
+          "dang": "heading",
+          "bbox": [
+            65.18,
+            508.12,
+            544.31,
+            614.78
+          ],
+          "noi_dung": "4. Thời gian và địa điểm đăng ký:\nSinh viên có thể thực hiện đăng ký học phần từ điện thoại thông minh cá nhân qua ứng dụng MyCTUS hoặc máy tính cá nhân, các máy tính tại Thư viện Đại học Cần Thơ theo thời gian như trên."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "heading",
+          "bbox": [
+            65.18,
+            508.12,
+            544.31,
+            614.78
+          ],
+          "noi_dung": "5. Đơn vị phối hợp thực hiện:\nThư viện Đại học Cần Thơ cử cán bộ trực mở cửa phòng máy phục vụ sinh viên đăng ký theo thời gian trên."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            79.34,
+            618.43,
+            540.48,
+            632.78
+          ],
+          "noi_dung": "Đề nghị các đơn vị, sinh viên có nhu cầu thực hiện nghiêm túc tinh thần thông báo này./."
+        }
+      ]
+    }
+  ]
+}

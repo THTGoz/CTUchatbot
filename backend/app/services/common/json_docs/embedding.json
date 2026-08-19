@@ -1,0 +1,228 @@
+{
+  "file_name": "embedding.py",
+  "file_path": "backend/app/services/common/embedding.py",
+  "bien_chung": [
+    {
+      "ten_bien": "_embedding_model",
+      "kieu_du_lieu": "Optional['EmbeddingModel']",
+      "gia_tri_hoac_mo_ta": "None"
+    }
+  ],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Chuẩn Hóa Cấu Trúc Module",
+      "noi_dung_rule": "Tuân thủ quy tắc xử lý và chuẩn hóa mã nguồn của module",
+      "dieu_kien_va_hanh_dong": "Đảm bảo tính toàn vẹn khi thực thi"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "_find_model_path",
+      "chuc_nang": "Trả về (model_path_or_name, local_files_only).\n\nƯu tiên EMBEDDING_MODEL_PATH, sau đó cache local của project. Nếu không có,\ndùng tên model Hugging Face để SentenceTransformer tải/cache ở lần chạy đầu.",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "tuple[str, bool]",
+        "mo_ta": "Kết quả trả về của hàm `_find_model_path`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "os.getenv('EMBEDDING_MODEL_PATH', '').strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "refs_main.exists",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "snapshots_dir.exists",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "Path(configured_path).expanduser().resolve",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "Path(__file__).resolve",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "refs_main.read_text(encoding='utf-8').strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_is_valid_snapshot",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "os.getenv",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "candidate.exists",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "RuntimeError",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/embedding.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Khởi tạo / gán biến `configured_path`.\n3. Kiểm tra điều kiện rẽ nhánh `configured_path`.\n4. Khởi tạo / gán biến `script_dir`.\n5. Khởi tạo / gán biến `project_root`.\n6. Khởi tạo / gán biến `model_root`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `tuple[str, bool]`."
+    },
+    {
+      "ten_ham": "_is_valid_snapshot",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_is_valid_snapshot` của file `embedding.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "snapshot_dir",
+          "kieu_du_lieu": "Path",
+          "mo_ta": "Tham số đầu vào `snapshot_dir` cho hàm `_is_valid_snapshot`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "bool",
+        "mo_ta": "Kết quả trả về của hàm `_is_valid_snapshot`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "bool",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "config_path.exists",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "modules_path.exists",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "weights_path.exists",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "open",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "json.load",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "cfg.get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/embedding.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (snapshot_dir).\n2. Khởi tạo / gán biến `config_path`.\n3. Khởi tạo / gán biến `modules_path`.\n4. Khởi tạo / gán biến `weights_path`.\n5. Kiểm tra điều kiện rẽ nhánh `not (config_path.exists() and modules_path.exists() and weights_path.exists())`.\n6. Hoàn tất tính toán và trả về kết quả kiểu `bool`."
+    },
+    {
+      "ten_ham": "get_embedding_model",
+      "chuc_nang": "Lấy global embedding model instance (tạo 1 lần duy nhất)",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "'EmbeddingModel'",
+        "mo_ta": "Kết quả trả về của hàm `get_embedding_model`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "EmbeddingModel",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/embedding.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Kiểm tra điều kiện rẽ nhánh `_embedding_model is None`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `'EmbeddingModel'`."
+    },
+    {
+      "ten_ham": "__init__",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `__init__` của file `embedding.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "device",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `device` cho hàm `__init__`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `__init__`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "_find_model_path",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "SentenceTransformer",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "os.getenv",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._detect_best_device",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/embedding.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (device).\n2. Khởi tạo / gán biến `(model_path, local_files_only)`.\n3. Khởi tạo / gán biến `resolved_device`.\n4. Khởi tạo / gán biến `self.device`.\n5. Khởi tạo / gán biến `self.model_name`.\n6. Khởi tạo / gán biến `self.model_path`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "_detect_best_device",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_detect_best_device` của file `embedding.py`",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `_detect_best_device`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "torch.cuda.is_available",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "hasattr",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "torch.backends.mps.is_available",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/embedding.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Kiểm tra điều kiện rẽ nhánh `torch.cuda.is_available()`.\n3. Kiểm tra điều kiện rẽ nhánh `hasattr(torch.backends, 'mps') and torch.backends.mps.is_available()`.\n4. Trả về kết quả cho caller.\n5. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "get_embedding_batch",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `get_embedding_batch` của file `embedding.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "texts",
+          "kieu_du_lieu": "Union[str, List[str]]",
+          "mo_ta": "Tham số đầu vào `texts` cho hàm `get_embedding_batch`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `get_embedding_batch`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "self.model.encode",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "t.strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "hasattr",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/embedding.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (texts).\n2. Kiểm tra điều kiện rẽ nhánh `isinstance(texts, str)`.\n3. Khởi tạo / gán biến `cleaned_texts`.\n4. Kiểm tra điều kiện rẽ nhánh `not cleaned_texts`.\n5. Khởi tạo / gán biến `embeddings`.\n6. Trả về kết quả cho caller.\n7. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    }
+  ]
+}

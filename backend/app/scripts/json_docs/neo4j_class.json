@@ -1,0 +1,295 @@
+{
+  "file_name": "neo4j_class.py",
+  "file_path": "backend/app/scripts/neo4j_class.py",
+  "bien_chung": [
+    {
+      "ten_bien": "logger",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "logging.getLogger(__name__)"
+    }
+  ],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Chuẩn Hóa Cấu Trúc Module",
+      "noi_dung_rule": "Tuân thủ quy tắc xử lý và chuẩn hóa mã nguồn của module",
+      "dieu_kien_va_hanh_dong": "Đảm bảo tính toàn vẹn khi thực thi"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "__init__",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `__init__` của file `neo4j_class.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "uri",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `uri` cho hàm `__init__`"
+        },
+        {
+          "ten_tham_so": "user",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `user` cho hàm `__init__`"
+        },
+        {
+          "ten_tham_so": "password",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `password` cho hàm `__init__`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `__init__`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "AsyncGraphDatabase.driver",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "logger.info",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "logger.error",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/neo4j_class.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (uri, user, password).\n2. Thực hiện các bước tính toán logic bên trong hàm.\n3. Trả về kết quả đầu ra."
+    },
+    {
+      "ten_ham": "close",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `close` của file `neo4j_class.py`",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `close`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "logger.info",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self.driver.close",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/neo4j_class.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Kiểm tra điều kiện rẽ nhánh `self.driver`.\n3. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "create_constraints",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `create_constraints` của file `neo4j_class.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "labels",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `labels` cho hàm `create_constraints`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `create_constraints`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "self.driver.session",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "logger.info",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "session.run",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "label.lower",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/neo4j_class.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (labels).\n2. Thực hiện các bước tính toán logic bên trong hàm.\n3. Trả về kết quả đầu ra."
+    },
+    {
+      "ten_ham": "add_nodes",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `add_nodes` của file `neo4j_class.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "nodes_data",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `nodes_data` cho hàm `add_nodes`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `add_nodes`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "self.driver.session",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "logger.info",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "hasattr",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "node.metadata.copy",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "props.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "node.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "query_template.format",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "session.run",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "logger.error",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/neo4j_class.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (nodes_data).\n2. Khởi tạo / gán biến `query_template`.\n3. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "add_edges",
+      "chuc_nang": "Thêm cạnh (Edges)",
+      "dau_vao": [
+        {
+          "ten_tham_so": "edges_data",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `edges_data` cho hàm `add_edges`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `add_edges`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "self.driver.session",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "logger.info",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "edge.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "query_template.format",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "session.run",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "logger.error",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/neo4j_class.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (edges_data).\n2. Khởi tạo / gán biến `query_template`.\n3. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "clear_database",
+      "chuc_nang": "Hàm nguy hiểm: Xóa sạch dữ liệu (Dùng để test lại từ đầu)",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `clear_database`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "self.driver.session",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "logger.warning",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "session.run",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/neo4j_class.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Thực hiện các bước tính toán logic bên trong hàm.\n3. Trả về kết quả đầu ra."
+    },
+    {
+      "ten_ham": "create_vector_index",
+      "chuc_nang": "Tạo Vector Index để hỗ trợ tìm kiếm ngữ nghĩa (Tầng 1 Chatbot)",
+      "dau_vao": [
+        {
+          "ten_tham_so": "index_name",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `index_name` cho hàm `create_vector_index`"
+        },
+        {
+          "ten_tham_so": "label",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `label` cho hàm `create_vector_index`"
+        },
+        {
+          "ten_tham_so": "property",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `property` cho hàm `create_vector_index`"
+        },
+        {
+          "ten_tham_so": "dimensions",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `dimensions` cho hàm `create_vector_index`"
+        },
+        {
+          "ten_tham_so": "similarity",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `similarity` cho hàm `create_vector_index`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `create_vector_index`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "self.driver.session",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "logger.info",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "session.run",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "logger.error",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/neo4j_class.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (index_name, label, property, dimensions, similarity).\n2. Khởi tạo / gán biến `query`.\n3. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    }
+  ]
+}

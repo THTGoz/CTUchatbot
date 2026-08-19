@@ -1,0 +1,182 @@
+{
+  "file_name": "orchestrator.py",
+  "file_path": "backend/app/services/orchestrator.py",
+  "bien_chung": [
+    {
+      "ten_bien": "logger",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "logging.getLogger('app.orchestrator')"
+    },
+    {
+      "ten_bien": "chat_orchestrator",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "ChatOrchestrator()"
+    }
+  ],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Phân Loại Tên Domain (Router Classification Rule)",
+      "noi_dung_rule": "Điều hướng câu hỏi người dùng dựa trên miền tri thức: SOCIAL (Xã giao), QCHV (Quy chế học vụ), CTDT (Chương trình đào tạo), THONG_BAO (Thông báo & Sự kiện)",
+      "dieu_kien_va_hanh_dong": "Nếu domain được LLM phân loại -> Kích hoạt Pipeline dịch vụ tương ứng"
+    },
+    {
+      "ten_luat": "Rule Giới Hạn Cấu Hình Context & Top-K Retrieval",
+      "noi_dung_rule": "CHAT_GLOBAL_TOP_K (Mặc định 6) & MAX_CONTEXT_CHARS (Mặc định 12000 kí tự)",
+      "dieu_kien_va_hanh_dong": "Cắt bớt tài liệu context tối đa theo cấu hình trước khi gửi cho LLM"
+    },
+    {
+      "ten_luat": "Rule Fallback / Phản Hồi Mặc Định",
+      "noi_dung_rule": "Phản hồi dự phòng khi cơ sở dữ liệu không tìm thấy dữ liệu phù hợp",
+      "dieu_kien_va_hanh_dong": "Trả về thông báo hướng dẫn hoặc gọi LLM trả lời xã giao"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "_normalize_history",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_normalize_history` của file `orchestrator.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "history",
+          "kieu_du_lieu": "List[Dict[str, Any]]",
+          "mo_ta": "Tham số đầu vào `history` cho hàm `_normalize_history`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "List[Dict[str, str]]",
+        "mo_ta": "Kết quả trả về của hàm `_normalize_history`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "str(message.get('role', 'user')).strip().lower",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(message.get('content', '')).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "cleaned.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(message.get('role', 'user')).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "message.get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/orchestrator.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (history).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `List[Dict[str, str]]`."
+    },
+    {
+      "ten_ham": "_history_text",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_history_text` của file `orchestrator.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "history",
+          "kieu_du_lieu": "List[Dict[str, str]]",
+          "mo_ta": "Tham số đầu vào `history` cho hàm `_history_text`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `_history_text`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "'\\n'.join",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/orchestrator.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (history).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "__init__",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `__init__` của file `orchestrator.py`",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "None",
+        "mo_ta": "Kết quả trả về của hàm `__init__`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "LLMService",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "ThongBaoPipeline",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/orchestrator.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Khởi tạo / gán biến `self.llm`.\n3. Khởi tạo / gán biến `self.thong_bao`.\n4. Hoàn tất tính toán và trả về kết quả kiểu `None`."
+    },
+    {
+      "ten_ham": "handle_query",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `handle_query` của file `orchestrator.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "query",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `query` cho hàm `handle_query`"
+        },
+        {
+          "ten_tham_so": "history",
+          "kieu_du_lieu": "List[Dict[str, Any]]",
+          "mo_ta": "Tham số đầu vào `history` cho hàm `handle_query`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Dict[str, Any]",
+        "mo_ta": "Kết quả trả về của hàm `handle_query`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "now",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "(query or '').strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_normalize_history",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "_history_text",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "log_event",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "elapsed_ms",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "logger.info",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "RuntimeError",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "log_answer",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "self.llm.classify_domain",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/orchestrator.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (query, history).\n2. Khởi tạo / gán biến `total_started`.\n3. Khởi tạo / gán biến `question`.\n4. Khởi tạo / gán biến `cleaned_history`.\n5. Khởi tạo / gán biến `history_string`.\n6. Gọi thực thi hàm `log_event`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `Dict[str, Any]`."
+    }
+  ]
+}

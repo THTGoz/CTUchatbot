@@ -1,0 +1,150 @@
+{
+  "file_name": "query_normalizer.py",
+  "file_path": "backend/app/services/ctdt/query_normalizer.py",
+  "bien_chung": [
+    {
+      "ten_bien": "ABBREVIATIONS",
+      "kieu_du_lieu": "dict[str, str]",
+      "gia_tri_hoac_mo_ta": "{'khmt': 'khoa học máy tính', 'cntt': 'công nghệ thông tin', 'ctđt': 'chương trình đào tạo', 'ctdt': 'chương trình đào tạo', 'lvtn': 'luận văn tốt nghiệp', 'hk1': 'học kỳ 1', 'hk2': 'học kỳ 2', 'hk3':"
+    },
+    {
+      "ten_bien": "SYNONYMS",
+      "kieu_du_lieu": "dict[str, str]",
+      "gia_tri_hoac_mo_ta": "{'chương trình học': 'chương trình đào tạo', 'môn học': 'học phần', 'đăng kí': 'đăng ký', 'học kì': 'học kỳ'}"
+    },
+    {
+      "ten_bien": "KNOWN_TYPOS",
+      "kieu_du_lieu": "dict[str, str]",
+      "gia_tri_hoac_mo_ta": "{'đăn ký': 'đăng ký', 'chươn trình': 'chương trình', 'tín chị': 'tín chỉ'}"
+    }
+  ],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Xử Lý Chuỗi & Regular Expression",
+      "noi_dung_rule": "Sử dụng các quy tắc regex để loại bỏ ký tự đặc biệt, lọc khoảng trắng và tìm kiếm pattern",
+      "dieu_kien_va_hanh_dong": "Khớp điều kiện chuỗi đầu vào để thực hiện tiền xử lý văn bản"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "_replace_dictionary",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_replace_dictionary` của file `query_normalizer.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "text",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `text` cho hàm `_replace_dictionary`"
+        },
+        {
+          "ten_tham_so": "mapping",
+          "kieu_du_lieu": "dict[str, str]",
+          "mo_ta": "Tham số đầu vào `mapping` cho hàm `_replace_dictionary`"
+        },
+        {
+          "ten_tham_so": "rule_type",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `rule_type` cho hàm `_replace_dictionary`"
+        },
+        {
+          "ten_tham_so": "applied_rules",
+          "kieu_du_lieu": "list[dict[str, str]]",
+          "mo_ta": "Tham số đầu vào `applied_rules` cho hàm `_replace_dictionary`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `_replace_dictionary`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "sorted",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "re.compile",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "pattern.sub",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "match.group",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "applied_rules.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "re.escape",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/query_normalizer.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (text, mapping, rule_type, applied_rules).\n2. Khởi tạo / gán biến `current`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "repl",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `repl` của file `query_normalizer.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "match",
+          "kieu_du_lieu": "re.Match[str]",
+          "mo_ta": "Tham số đầu vào `match` cho hàm `repl`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `repl`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "match.group",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "applied_rules.append",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/query_normalizer.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (match).\n2. Khởi tạo / gán biến `matched`.\n3. Gọi thực thi hàm `applied_rules.append`.\n4. Trả về kết quả cho caller.\n5. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "normalize_ctdt_query",
+      "chuc_nang": "Chuẩn hóa viết tắt/từ đồng nghĩa nhưng không thay đổi mã học phần.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "query",
+          "kieu_du_lieu": "str | None",
+          "mo_ta": "Tham số đầu vào `query` cho hàm `normalize_ctdt_query`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "dict[str, Any]",
+        "mo_ta": "Kết quả trả về của hàm `normalize_ctdt_query`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "re.sub('\\\\s+', ' ', original).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_replace_dictionary",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "re.sub('\\\\s+', ' ', text).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "re.sub",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/query_normalizer.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (query).\n2. Khởi tạo / gán biến `original`.\n3. Khởi tạo / gán biến `text`.\n4. Kiểm tra điều kiện rẽ nhánh `not text`.\n5. Khởi tạo / gán biến `text`.\n6. Khởi tạo / gán biến `text`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `dict[str, Any]`."
+    }
+  ]
+}

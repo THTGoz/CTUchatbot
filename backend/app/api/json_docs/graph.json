@@ -1,0 +1,501 @@
+{
+  "file_name": "graph.py",
+  "file_path": "backend/app/api/graph.py",
+  "bien_chung": [
+    {
+      "ten_bien": "router",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "APIRouter()"
+    },
+    {
+      "ten_bien": "MAX_FILE_SIZE",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "50 * 1024 * 1024"
+    },
+    {
+      "ten_bien": "UPLOAD_DIR",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "Path(__file__).resolve().parents[3] / 'uploads'"
+    },
+    {
+      "ten_bien": "BACKEND_ROOT",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "Path(__file__).resolve().parents[2]"
+    },
+    {
+      "ten_bien": "LABELS_TO_INDEX",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "['ChuongTrinhDaoTao', 'HocPhan', 'HinhThucDaoTao', 'LoaiVanBang', 'PhuongThucDaoTao', 'TrinhDo', 'Khoa', 'BoMon', 'Nganh', 'VanBanPhapLy', 'ViTriViecLam', 'MucTieuDaoTao', 'ChuanDauRa', 'KhaNangHocTap"
+    },
+    {
+      "ten_bien": "ALLOWED_CATEGORIES",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "{'chuyen_nganh_dao_tao': 'ChuyenNganh_DaoTao', 'quy_che_hoc_vu': 'QuyChe_HocVu', 'huong_dan_thu_tuc': 'HuongDan_ThuTuc', 'thong_bao_ke_hoach': 'ThongBao_KeHoach'}"
+    },
+    {
+      "ten_bien": "ingestion_queue",
+      "kieu_du_lieu": "asyncio.Queue",
+      "gia_tri_hoac_mo_ta": "asyncio.Queue()"
+    },
+    {
+      "ten_bien": "ingestion_jobs",
+      "kieu_du_lieu": "Dict[str, dict]",
+      "gia_tri_hoac_mo_ta": "{}"
+    },
+    {
+      "ten_bien": "ingestion_worker_task",
+      "kieu_du_lieu": "asyncio.Task | None",
+      "gia_tri_hoac_mo_ta": "None"
+    },
+    {
+      "ten_bien": "PROCESSOR_CLASS_MAP",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "{'chuyen_nganh_dao_tao': ChuyenNganhDaoTaoProcessor, 'quy_che_hoc_vu': QuyCheHocVuProcessor, 'huong_dan_thu_tuc': HuongDanThuTucProcessor, 'thong_bao_ke_hoach': ThongBaoKeHoachProcessor}"
+    }
+  ],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Chuẩn Hóa Cấu Trúc Module",
+      "noi_dung_rule": "Tuân thủ quy tắc xử lý và chuẩn hóa mã nguồn của module",
+      "dieu_kien_va_hanh_dong": "Đảm bảo tính toàn vẹn khi thực thi"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "process",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `process` của file `graph.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "file_path",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `file_path` cho hàm `process`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "dict",
+        "mo_ta": "Kết quả trả về của hàm `process`"
+      },
+      "cac_ham_con_ben_trong": [],
+      "nguon_goc_ham": "backend/app/api/graph.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (file_path).\n2. Thực hiện các bước tính toán logic bên trong hàm.\n3. Trả về kết quả đầu ra."
+    },
+    {
+      "ten_ham": "process",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `process` của file `graph.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "file_path",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `file_path` cho hàm `process`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "dict",
+        "mo_ta": "Kết quả trả về của hàm `process`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "os.getenv",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "CurriculumETL",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "RuntimeError",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "asyncio.to_thread",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "Neo4jConnector",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "db.create_constraints",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "db.add_nodes",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "db.add_edges",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "db.create_vector_index",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "db.close",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/api/graph.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (file_path).\n2. Khởi tạo / gán biến `neo4j_uri`.\n3. Khởi tạo / gán biến `neo4j_user`.\n4. Khởi tạo / gán biến `neo4j_password`.\n5. Kiểm tra điều kiện rẽ nhánh `not neo4j_password`.\n6. Khởi tạo / gán biến `etl`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `dict`."
+    },
+    {
+      "ten_ham": "process",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `process` của file `graph.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "file_path",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `file_path` cho hàm `process`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "dict",
+        "mo_ta": "Kết quả trả về của hàm `process`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "os.getenv",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "RuntimeError",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "Neo4jConnector",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "process_quy_che_hoc_vu",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "db.close",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/api/graph.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (file_path).\n2. Khởi tạo / gán biến `neo4j_uri`.\n3. Khởi tạo / gán biến `neo4j_user`.\n4. Khởi tạo / gán biến `neo4j_password`.\n5. Kiểm tra điều kiện rẽ nhánh `not neo4j_password`.\n6. Khởi tạo / gán biến `db`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `dict`."
+    },
+    {
+      "ten_ham": "process",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `process` của file `graph.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "file_path",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `file_path` cho hàm `process`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "dict",
+        "mo_ta": "Kết quả trả về của hàm `process`"
+      },
+      "cac_ham_con_ben_trong": [],
+      "nguon_goc_ham": "backend/app/api/graph.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (file_path).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `dict`."
+    },
+    {
+      "ten_ham": "process",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `process` của file `graph.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "file_path",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `file_path` cho hàm `process`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "dict",
+        "mo_ta": "Kết quả trả về của hàm `process`"
+      },
+      "cac_ham_con_ben_trong": [],
+      "nguon_goc_ham": "backend/app/api/graph.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (file_path).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `dict`."
+    },
+    {
+      "ten_ham": "_utc_now_iso",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_utc_now_iso` của file `graph.py`",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `_utc_now_iso`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "datetime.now(timezone.utc).isoformat",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "datetime.now",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/api/graph.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "_build_unique_filename",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_build_unique_filename` của file `graph.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "original_name",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `original_name` cho hàm `_build_unique_filename`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `_build_unique_filename`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "Path(base).suffix.lower",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "datetime.now(timezone.utc).strftime",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "Path",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "datetime.now",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "uuid4",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/api/graph.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (original_name).\n2. Khởi tạo / gán biến `base`.\n3. Khởi tạo / gán biến `suffix`.\n4. Khởi tạo / gán biến `stem`.\n5. Khởi tạo / gán biến `timestamp`.\n6. Khởi tạo / gán biến `short_id`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "_run_ingestion_pipeline",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_run_ingestion_pipeline` của file `graph.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "file_path",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `file_path` cho hàm `_run_ingestion_pipeline`"
+        },
+        {
+          "ten_tham_so": "category",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `category` cho hàm `_run_ingestion_pipeline`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "dict",
+        "mo_ta": "Kết quả trả về của hàm `_run_ingestion_pipeline`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "PROCESSOR_CLASS_MAP.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "processor_cls",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "RuntimeError",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "processor.process",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/api/graph.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (file_path, category).\n2. Khởi tạo / gán biến `processor_cls`.\n3. Kiểm tra điều kiện rẽ nhánh `not processor_cls`.\n4. Khởi tạo / gán biến `processor`.\n5. Trả về kết quả cho caller.\n6. Hoàn tất tính toán và trả về kết quả kiểu `dict`."
+    },
+    {
+      "ten_ham": "_ingestion_worker",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_ingestion_worker` của file `graph.py`",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "None",
+        "mo_ta": "Kết quả trả về của hàm `_ingestion_worker`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "ingestion_queue.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_utc_now_iso",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "ingestion_queue.task_done",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_run_ingestion_pipeline",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/api/graph.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Thực hiện các bước tính toán logic bên trong hàm.\n3. Trả về kết quả đầu ra."
+    },
+    {
+      "ten_ham": "start_ingestion_worker",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `start_ingestion_worker` của file `graph.py`",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "None",
+        "mo_ta": "Kết quả trả về của hàm `start_ingestion_worker`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "ingestion_worker_task.done",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "asyncio.create_task",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_ingestion_worker",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/api/graph.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Kiểm tra điều kiện rẽ nhánh `ingestion_worker_task is None or ingestion_worker_task.done()`.\n3. Hoàn tất tính toán và trả về kết quả kiểu `None`."
+    },
+    {
+      "ten_ham": "stop_ingestion_worker",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `stop_ingestion_worker` của file `graph.py`",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "None",
+        "mo_ta": "Kết quả trả về của hàm `stop_ingestion_worker`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "ingestion_worker_task.cancel",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "ingestion_worker_task.done",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/api/graph.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Kiểm tra điều kiện rẽ nhánh `ingestion_worker_task and (not ingestion_worker_task.done())`.\n3. Khởi tạo / gán biến `ingestion_worker_task`.\n4. Hoàn tất tính toán và trả về kết quả kiểu `None`."
+    },
+    {
+      "ten_ham": "upload",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `upload` của file `graph.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "file",
+          "kieu_du_lieu": "UploadFile",
+          "mo_ta": "Tham số đầu vào `file` cho hàm `upload`"
+        },
+        {
+          "ten_tham_so": "category",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `category` cho hàm `upload`"
+        },
+        {
+          "ten_tham_so": "user",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `user` cho hàm `upload`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `upload`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "router.post",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "File",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "Form",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "Depends",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "category_dir.mkdir",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_build_unique_filename",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "save_path.write_bytes",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "HTTPException",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "file.filename.lower().endswith",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "file.read",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/api/graph.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (file, category, user).\n2. Kiểm tra điều kiện rẽ nhánh `not file.filename`.\n3. Kiểm tra điều kiện rẽ nhánh `category not in ALLOWED_CATEGORIES`.\n4. Kiểm tra điều kiện rẽ nhánh `not file.filename.lower().endswith('.pdf')`.\n5. Khởi tạo / gán biến `content`.\n6. Kiểm tra điều kiện rẽ nhánh `len(content) > MAX_FILE_SIZE`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "upload_status",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `upload_status` của file `graph.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "job_id",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `job_id` cho hàm `upload_status`"
+        },
+        {
+          "ten_tham_so": "user",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `user` cho hàm `upload_status`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `upload_status`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "router.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "Depends",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "ingestion_jobs.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "HTTPException",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/api/graph.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (job_id, user).\n2. Khởi tạo / gán biến `job`.\n3. Kiểm tra điều kiện rẽ nhánh `not job`.\n4. Trả về kết quả cho caller.\n5. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    }
+  ]
+}

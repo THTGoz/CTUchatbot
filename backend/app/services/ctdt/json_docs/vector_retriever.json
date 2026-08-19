@@ -1,0 +1,317 @@
+{
+  "file_name": "vector_retriever.py",
+  "file_path": "backend/app/services/ctdt/vector_retriever.py",
+  "bien_chung": [
+    {
+      "ten_bien": "logger",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "logging.getLogger('app.ctdt.vector')"
+    },
+    {
+      "ten_bien": "ALLOWED_VECTOR_TARGETS",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "{'HocPhan', 'DieuKienTotNghiep', 'ChuanDauRa', 'VanBanPhapLy'}"
+    },
+    {
+      "ten_bien": "_VECTOR_INDEX_CANDIDATES",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "{'HocPhan': ['vector_hocphan_embedding'], 'DieuKienTotNghiep': ['vector_dieukientotnghiep_embedding'], 'ChuanDauRa': ['vector_chuandaura_embedding'], 'VanBanPhapLy': ['vector_vanbanphaply_embedding']}"
+    }
+  ],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Ngưỡng Độ Tương Đồng Vector (Similarity Score Threshold)",
+      "noi_dung_rule": "Lọc danh sách kết quả truy vấn theo ngưỡng điểm tương đồng vector",
+      "dieu_kien_va_hanh_dong": "Chỉ giữ lại các candidate đạt điểm độ tương đồng đạt yêu cầu"
+    },
+    {
+      "ten_luat": "Rule Fallback / Phản Hồi Mặc Định",
+      "noi_dung_rule": "Phản hồi dự phòng khi cơ sở dữ liệu không tìm thấy dữ liệu phù hợp",
+      "dieu_kien_va_hanh_dong": "Trả về thông báo hướng dẫn hoặc gọi LLM trả lời xã giao"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "_stringify",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_stringify` của file `vector_retriever.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "value",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `value` cho hàm `_stringify`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `_stringify`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "json.dumps",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/vector_retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (value).\n2. Kiểm tra điều kiện rẽ nhánh `isinstance(value, (dict, list, tuple))`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "_strip_embedding",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_strip_embedding` của file `vector_retriever.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "value",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `value` cho hàm `_strip_embedding`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `_strip_embedding`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "tuple",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "_strip_embedding",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "value.items",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(key).lower",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/vector_retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (value).\n2. Kiểm tra điều kiện rẽ nhánh `isinstance(value, dict)`.\n3. Kiểm tra điều kiện rẽ nhánh `isinstance(value, list)`.\n4. Kiểm tra điều kiện rẽ nhánh `isinstance(value, tuple)`.\n5. Trả về kết quả cho caller.\n6. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "_execute_vector_query",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_execute_vector_query` của file `vector_retriever.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "index_name",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `index_name` cho hàm `_execute_vector_query`"
+        },
+        {
+          "ten_tham_so": "embedding",
+          "kieu_du_lieu": "List[float]",
+          "mo_ta": "Tham số đầu vào `embedding` cho hàm `_execute_vector_query`"
+        },
+        {
+          "ten_tham_so": "top_k",
+          "kieu_du_lieu": "int",
+          "mo_ta": "Tham số đầu vào `top_k` cho hàm `_execute_vector_query`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "List[Dict[str, Any]]",
+        "mo_ta": "Kết quả trả về của hàm `_execute_vector_query`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "get_driver().session",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "get_driver",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "session.run",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/vector_retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (index_name, embedding, top_k).\n2. Khởi tạo / gán biến `cypher`.\n3. Hoàn tất tính toán và trả về kết quả kiểu `List[Dict[str, Any]]`."
+    },
+    {
+      "ten_ham": "_row_to_candidate",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_row_to_candidate` của file `vector_retriever.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "target",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `target` cho hàm `_row_to_candidate`"
+        },
+        {
+          "ten_tham_so": "row",
+          "kieu_du_lieu": "Dict[str, Any]",
+          "mo_ta": "Tham số đầu vào `row` cho hàm `_row_to_candidate`"
+        },
+        {
+          "ten_tham_so": "index_name",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `index_name` cho hàm `_row_to_candidate`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Dict[str, Any]",
+        "mo_ta": "Kết quả trả về của hàm `_row_to_candidate`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "_strip_embedding",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "sanitized.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "float",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "props.get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/vector_retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (target, row, index_name).\n2. Khởi tạo / gán biến `sanitized`.\n3. Khởi tạo / gán biến `props`.\n4. Khởi tạo / gán biến `labels`.\n5. Khởi tạo / gán biến `label`.\n6. Khởi tạo / gán biến `node_id`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `Dict[str, Any]`."
+    },
+    {
+      "ten_ham": "format_vector_candidates",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `format_vector_candidates` của file `vector_retriever.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "target",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `target` cho hàm `format_vector_candidates`"
+        },
+        {
+          "ten_tham_so": "candidates",
+          "kieu_du_lieu": "List[Dict[str, Any]]",
+          "mo_ta": "Tham số đầu vào `candidates` cho hàm `format_vector_candidates`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `format_vector_candidates`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "enumerate",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "'\\n'.join",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "lines.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "candidates[0].get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "candidate.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_stringify",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/vector_retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (target, candidates).\n2. Kiểm tra điều kiện rẽ nhánh `not candidates`.\n3. Khởi tạo / gán biến `index_name`.\n4. Khởi tạo / gán biến `lines`.\n5. Trả về kết quả cho caller.\n6. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "search_vector_candidates",
+      "chuc_nang": "Vector search và trả candidate để pipeline có thể expand tiếp trên graph.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "query",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `query` cho hàm `search_vector_candidates`"
+        },
+        {
+          "ten_tham_so": "target",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `target` cho hàm `search_vector_candidates`"
+        },
+        {
+          "ten_tham_so": "top_k",
+          "kieu_du_lieu": "int",
+          "mo_ta": "Tham số đầu vào `top_k` cho hàm `search_vector_candidates`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "List[Dict[str, Any]]",
+        "mo_ta": "Kết quả trả về của hàm `search_vector_candidates`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "_VECTOR_INDEX_CANDIDATES.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "asyncio.to_thread",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "logger.warning",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "logger.info",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_row_to_candidate",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "get_embedding_model",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/vector_retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (query, target, top_k).\n2. Kiểm tra điều kiện rẽ nhánh `target not in ALLOWED_VECTOR_TARGETS`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `List[Dict[str, Any]]`."
+    },
+    {
+      "ten_ham": "search_vector_target",
+      "chuc_nang": "API cũ: vẫn trả text context để không làm hỏng call-site khác.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "query",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `query` cho hàm `search_vector_target`"
+        },
+        {
+          "ten_tham_so": "target",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `target` cho hàm `search_vector_target`"
+        },
+        {
+          "ten_tham_so": "top_k",
+          "kieu_du_lieu": "int",
+          "mo_ta": "Tham số đầu vào `top_k` cho hàm `search_vector_target`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `search_vector_target`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "format_vector_candidates",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "search_vector_candidates",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/ctdt/vector_retriever.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (query, target, top_k).\n2. Khởi tạo / gán biến `candidates`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    }
+  ]
+}

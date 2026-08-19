@@ -1,0 +1,325 @@
+{
+  "started_at": "2026-08-18T06:53:22+07:00",
+  "finished_at": "2026-08-18T06:53:28+07:00",
+  "database": "neo4j",
+  "input_dir": "D:\\Project\\CITChatBot\\backend\\app\\scripts\\thong_bao\\preprocess\\pdf_pipeline\\output\\06_chunks",
+  "total_files": 30,
+  "successful_files": 30,
+  "failed_files": 0,
+  "deleted_nodes": 1750,
+  "node_counts": {
+    "ThongBao": 30,
+    "TaiLieu": 44,
+    "Muc": 110,
+    "Bang": 37,
+    "DongBang": 1529
+  },
+  "files": [
+    {
+      "file": "ChuyenNganh10_2025.signed.signed_chunks.json",
+      "status": "success",
+      "node_counts": {
+        "ThongBao": 1,
+        "TaiLieu": 2,
+        "Muc": 5,
+        "Bang": 1,
+        "DongBang": 69
+      }
+    },
+    {
+      "file": "DRL_HK1_2024_2025_chunks.json",
+      "status": "success",
+      "node_counts": {
+        "ThongBao": 1,
+        "TaiLieu": 1,
+        "Muc": 3
+      }
+    },
+    {
+      "file": "DRL_HK1_2025_2026_chunks.json",
+      "status": "success",
+      "node_counts": {
+        "ThongBao": 1,
+        "TaiLieu": 1,
+        "Muc": 3,
+        "Bang": 1,
+        "DongBang": 6
+      }
+    },
+    {
+      "file": "DRL_HK2_2024_2025_chunks.json",
+      "status": "success",
+      "node_counts": {
+        "ThongBao": 1,
+        "TaiLieu": 1,
+        "Muc": 3
+      }
+    },
+    {
+      "file": "DRL_HK2_2025_2026_chunks.json",
+      "status": "success",
+      "node_counts": {
+        "ThongBao": 1,
+        "TaiLieu": 1,
+        "Muc": 3,
+        "Bang": 1,
+        "DongBang": 6
+      }
+    },
+    {
+      "file": "DRL_HK3_2023_2024_chunks.json",
+      "status": "success",
+      "node_counts": {
+        "ThongBao": 1,
+        "TaiLieu": 1,
+        "Muc": 2
+      }
+    },
+    {
+      "file": "DRL_HK3_2024_2025_chunks.json",
+      "status": "success",
+      "node_counts": {
+        "ThongBao": 1,
+        "TaiLieu": 1,
+        "Muc": 3,
+        "Bang": 1,
+        "DongBang": 6
+      }
+    },
+    {
+      "file": "DRL_HK3_2025_2026_chunks.json",
+      "status": "success",
+      "node_counts": {
+        "ThongBao": 1,
+        "TaiLieu": 1,
+        "Muc": 3,
+        "Bang": 1,
+        "DongBang": 6
+      }
+    },
+    {
+      "file": "GioTo2024_chunks.json",
+      "status": "success",
+      "node_counts": {
+        "ThongBao": 1
+      }
+    },
+    {
+      "file": "GioTo2025_chunks.json",
+      "status": "success",
+      "node_counts": {
+        "ThongBao": 1,
+        "TaiLieu": 1,
+        "Muc": 1
+      }
+    },
+    {
+      "file": "GioTo2026_chunks.json",
+      "status": "success",
+      "node_counts": {
+        "ThongBao": 1,
+        "TaiLieu": 1,
+        "Muc": 3
+      }
+    },
+    {
+      "file": "KHGDVDKHP_HK1_25_26_chunks.json",
+      "status": "success",
+      "node_counts": {
+        "ThongBao": 1,
+        "TaiLieu": 2,
+        "Muc": 9,
+        "Bang": 4,
+        "DongBang": 58
+      }
+    },
+    {
+      "file": "KHGDVDKHP_HK1_26_27_chunks.json",
+      "status": "success",
+      "node_counts": {
+        "ThongBao": 1,
+        "TaiLieu": 2,
+        "Muc": 9,
+        "Bang": 4,
+        "DongBang": 58
+      }
+    },
+    {
+      "file": "KHGDVDKHP_HK2_24_25_chunks.json",
+      "status": "success",
+      "node_counts": {
+        "ThongBao": 1,
+        "TaiLieu": 2,
+        "Muc": 9,
+        "Bang": 4,
+        "DongBang": 94
+      }
+    },
+    {
+      "file": "KHGDVDKHP_HK2_25_26_chunks.json",
+      "status": "success",
+      "node_counts": {
+        "ThongBao": 1,
+        "TaiLieu": 2,
+        "Muc": 9,
+        "Bang": 4,
+        "DongBang": 58
+      }
+    },
+    {
+      "file": "KHGDVDKHP_HK3_24_25_chunks.json",
+      "status": "success",
+      "node_counts": {
+        "ThongBao": 1,
+        "TaiLieu": 2,
+        "Muc": 9,
+        "Bang": 4,
+        "DongBang": 58
+      }
+    },
+    {
+      "file": "KHGDVDKHP_HK3_25_26_chunks.json",
+      "status": "success",
+      "node_counts": {
+        "ThongBao": 1,
+        "TaiLieu": 2,
+        "Muc": 9,
+        "Bang": 4,
+        "DongBang": 58
+      }
+    },
+    {
+      "file": "QuocKhanh2024_chunks.json",
+      "status": "success",
+      "node_counts": {
+        "ThongBao": 1,
+        "TaiLieu": 1,
+        "Muc": 1
+      }
+    },
+    {
+      "file": "QuocKhanh2025_chunks.json",
+      "status": "success",
+      "node_counts": {
+        "ThongBao": 1,
+        "TaiLieu": 1,
+        "Muc": 1
+      }
+    },
+    {
+      "file": "QuocKhanh2026_chunks.json",
+      "status": "success",
+      "node_counts": {
+        "ThongBao": 1,
+        "TaiLieu": 1,
+        "Muc": 1
+      }
+    },
+    {
+      "file": "Tet2025_chunks.json",
+      "status": "success",
+      "node_counts": {
+        "ThongBao": 1,
+        "TaiLieu": 1,
+        "Muc": 4
+      }
+    },
+    {
+      "file": "Tet2026_chunks.json",
+      "status": "success",
+      "node_counts": {
+        "ThongBao": 1,
+        "TaiLieu": 1,
+        "Muc": 4
+      }
+    },
+    {
+      "file": "Xoalop_HK1_2025_2026_dot1_chunks.json",
+      "status": "success",
+      "node_counts": {
+        "ThongBao": 1,
+        "TaiLieu": 2,
+        "Muc": 2,
+        "Bang": 1,
+        "DongBang": 303
+      }
+    },
+    {
+      "file": "Xoalop_HK1_2025_2026_dot2_chunks.json",
+      "status": "success",
+      "node_counts": {
+        "ThongBao": 1,
+        "TaiLieu": 2,
+        "Muc": 2,
+        "Bang": 1,
+        "DongBang": 69
+      }
+    },
+    {
+      "file": "Xoalop_HK2_2024_2025_dot1_chunks.json",
+      "status": "success",
+      "node_counts": {
+        "ThongBao": 1,
+        "TaiLieu": 2,
+        "Muc": 2,
+        "Bang": 1,
+        "DongBang": 286
+      }
+    },
+    {
+      "file": "Xoalop_HK2_2024_2025_dot2_chunks.json",
+      "status": "success",
+      "node_counts": {
+        "ThongBao": 1,
+        "TaiLieu": 2,
+        "Muc": 2,
+        "Bang": 1,
+        "DongBang": 37
+      }
+    },
+    {
+      "file": "Xoalop_HK2_2025_2026_chunks.json",
+      "status": "success",
+      "node_counts": {
+        "ThongBao": 1,
+        "TaiLieu": 2,
+        "Muc": 2,
+        "Bang": 1,
+        "DongBang": 47
+      }
+    },
+    {
+      "file": "Xoalop_HK3_2024_2025_dot1_chunks.json",
+      "status": "success",
+      "node_counts": {
+        "ThongBao": 1,
+        "TaiLieu": 2,
+        "Muc": 2,
+        "Bang": 1,
+        "DongBang": 192
+      }
+    },
+    {
+      "file": "Xoalop_HK3_2024_2025_dotcuoi_chunks.json",
+      "status": "success",
+      "node_counts": {
+        "ThongBao": 1,
+        "TaiLieu": 2,
+        "Muc": 2,
+        "Bang": 1,
+        "DongBang": 59
+      }
+    },
+    {
+      "file": "Xoalop_HK3_2025_2026_chunks.json",
+      "status": "success",
+      "node_counts": {
+        "ThongBao": 1,
+        "TaiLieu": 2,
+        "Muc": 2,
+        "Bang": 1,
+        "DongBang": 59
+      }
+    }
+  ]
+}

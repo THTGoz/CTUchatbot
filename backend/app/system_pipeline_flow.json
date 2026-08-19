@@ -1,0 +1,91 @@
+{
+  "ten_luong": "Luồng Điều Phối Tổng Thể Xử Lý Câu Hỏi Dự Án CITChatBot",
+  "mo_ta": "Sơ đồ luồng di chuyển của câu hỏi người dùng từ khi vào API endpoint, qua bộ điều phối trung tâm (Orchestrator), phân loại miền tri thức (Domain Router) đến từng Pipeline chuyên biệt và trả về kết quả stream cho người dùng.",
+  "dau_vao_tong": {
+    "kieu_du_lieu": "ChatRequest",
+    "cac_truong_chinh": {
+      "message": "Nội dung câu hỏi người dùng (str)",
+      "history": "Lịch sử trò chuyện trước đó (List[dict])",
+      "messages": "Mảng các message dạng Vercel AI SDK (List[MessageItem])"
+    }
+  },
+  "cac_buoc_dieu_phoi": [
+    {
+      "buoc": 1,
+      "ten_buoc": "Tiếp nhận Request tại API Layer",
+      "thu_muc_truy_cap": "backend/app/api",
+      "file_kich_hoat": "backend/app/api/chat.py",
+      "ham_kich_hoat": "chat(req: ChatRequest)",
+      "bien_dau_vao": "req (ChatRequest)",
+      "xu_ly": "Gọi hàm `_extract_request(req)` để trích xuất câu hỏi hiện tại `message` và danh sách lịch sử hội thoại `history`.",
+      "bien_dau_ra": "tuple[message: str, history: List[dict]]"
+    },
+    {
+      "buoc": 2,
+      "ten_buoc": "Chuyển tiếp đến Bộ Điều Phối Trung Tâm (Chat Orchestrator)",
+      "thu_muc_truy_cap": "backend/app/services",
+      "file_kich_hoat": "backend/app/services/orchestrator.py",
+      "ham_kich_hoat": "chat_orchestrator.handle_query(query, history)",
+      "bien_dau_vao": "query (str), history (List[dict])",
+      "xu_ly": "Chuẩn hóa 8 câu thoại gần nhất bằng `_normalize_history(history)`, chuyển thành văn bản ngữ cảnh bằng `_history_text()` và ghi log yêu cầu `log_event('CHAT', 'request')`.",
+      "bien_dau_ra": "cleaned_history (List[dict]), history_string (str)"
+    },
+    {
+      "buoc": 3,
+      "ten_buoc": "Phân Loại Miền Tri Thức (Domain Router Classification)",
+      "thu_muc_truy_cap": "backend/app/services/common",
+      "file_kich_hoat": "backend/app/services/common/llm_service.py",
+      "ham_kich_hoat": "self.llm.classify_domain(question, history_string)",
+      "bien_dau_vao": "question (str), history_string (str)",
+      "xu_ly": "Sử dụng LLM phân loại câu hỏi vào 1 trong 4 miền tri thức chuyên biệt.",
+      "quy_tac_re_nhanh": {
+        "SOCIAL": {
+          "mo_ta": "Hỏi đáp xã giao, chào hỏi, câu hỏi ngoài phạm vi học vụ",
+          "chuyen_huong_den": {
+            "thu_muc": "backend/app/services/common",
+            "file": "backend/app/services/common/llm_service.py",
+            "ham": "self.llm.generate_without_query(question, history_string)",
+            "file_luong_chi_tiet": "backend/app/services/json_docs/social_flow.json"
+          }
+        },
+        "QCHV": {
+          "mo_ta": "Hỏi đáp Quy chế học vụ (Điều kiện cảnh báo, học lại, hoãn thi, điểm số...)",
+          "chuyen_huong_den": {
+            "thu_muc": "backend/app/services/qchv",
+            "file": "backend/app/services/qchv/quyche_service.py",
+            "ham": "quyche_service.handle_query(question, cleaned_history)",
+            "file_luong_chi_tiet": "backend/app/services/qchv/domain_flow.json"
+          }
+        },
+        "CTDT": {
+          "mo_ta": "Hỏi đáp Chương trình đào tạo (Môn học tiên quyết, số tín chỉ, đồ thị môn học...)",
+          "chuyen_huong_den": {
+            "thu_muc": "backend/app/services/ctdt",
+            "file": "backend/app/services/ctdt/pipeline.py",
+            "ham": "ctdt_pipeline.handle_query(question, cleaned_history)",
+            "file_luong_chi_tiet": "backend/app/services/ctdt/domain_flow.json"
+          }
+        },
+        "THONG_BAO": {
+          "mo_ta": "Hỏi đáp Thông báo & Lịch trình (Lịch đăng ký HP, thời hạn nộp tiền, học bổng...)",
+          "chuyen_huong_den": {
+            "thu_muc": "backend/app/services/thong_bao",
+            "file": "backend/app/services/thong_bao/pipeline.py",
+            "ham": "self.thong_bao.run(question, top_k=6, max_context_chars=12000)",
+            "file_luong_chi_tiet": "backend/app/services/thong_bao/domain_flow.json"
+          }
+        }
+      }
+    },
+    {
+      "buoc": 4,
+      "ten_buoc": "Stream Kết Quả Trả Về Phản Hồi",
+      "thu_muc_truy_cap": "backend/app/api",
+      "file_kich_hoat": "backend/app/api/chat.py",
+      "ham_kich_hoat": "StreamingResponse(stream_results(), media_type='text/plain')",
+      "bien_dau_vao": "result dict chứa key 'answer'",
+      "xu_ly": "Format câu trả lời thành chuỗi JSON chunk `0:\"<answer>\"\\n` chuẩn Vercel AI Stream Protocol và gửi về cho Client UI.",
+      "bien_dau_ra": "Streaming HTTP Response (Plain text data stream)"
+    }
+  ]
+}

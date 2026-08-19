@@ -1,0 +1,240 @@
+{
+  "ten_file": "DRL_HK2_2025_2026.pdf",
+  "trang": [
+    {
+      "so_trang": 1,
+      "kich_thuoc": [
+        595.32,
+        841.92
+      ],
+      "items": [
+        {
+          "loai": "van_ban",
+          "bbox": [
+            57.12,
+            56.97,
+            248.34,
+            86.68
+          ],
+          "noi_dung": "TRƯỜNG ĐẠI HỌC CẦN THƠ\nPHÒNG CÔNG TÁC SINH VIÊN"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            289.13,
+            57.33,
+            560.24,
+            71.68
+          ],
+          "noi_dung": "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            351.07,
+            72.33,
+            514.53,
+            86.68
+          ],
+          "noi_dung": "Độc lập – Tự do – Hạnh phúc"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            103.82,
+            100.67,
+            543.7,
+            115.02
+          ],
+          "noi_dung": "Số: 14 /TB-CTSV\nCần Thơ, ngày 13 tháng 01 năm 2026"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            154.22,
+            131.87,
+            469.72,
+            163.61
+          ],
+          "noi_dung": "THÔNG BÁO\nVề việc đánh giá điểm rèn luyện Học kỳ 2, 2025-2026"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            231.77,
+            177.71,
+            392.05,
+            193.25
+          ],
+          "noi_dung": "Kính gửi: Thủ trưởng đơn vị"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            120.5,
+            209.99,
+            538.63,
+            224.34
+          ],
+          "noi_dung": "Thực hiện kế hoạch đánh giá điểm rèn luyện học kỳ 2, 2025-2026; Phòng Công"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.1,
+            229.43,
+            497.98,
+            243.78
+          ],
+          "noi_dung": "tác Sinh viên xin thông báo đến các đơn vị quản lý đào tạo triển khai thực hiện:"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            121.1,
+            248.75,
+            529.3,
+            263.1
+          ],
+          "noi_dung": "1. Các mốc thời gian thực hiện (đã công bố trên Hệ thống quản lý đào tạo):"
+        },
+        {
+          "loai": "bang",
+          "bbox": [
+            92.15,
+            263.6,
+            531.73,
+            407.15
+          ],
+          "du_lieu": [
+            [
+              "TT",
+              "Nội dung công việc",
+              "Thời gian thực hiện"
+            ],
+            [
+              "1",
+              "Các đơn vị nhập dữ liệu tham gia hoạt động",
+              "15/01  30/03/2026"
+            ],
+            [
+              "2",
+              "Thời gian tổng hợp dữ liệu của Khoa",
+              "31/03 02/04/2026"
+            ],
+            [
+              "3",
+              "SV tự đánh giá",
+              "03/04 13/04/2026"
+            ],
+            [
+              "4",
+              "CVHT đánh giá",
+              "10/04 20/04/2026"
+            ],
+            [
+              "5",
+              "Thời gian SV phản hồi",
+              "21/04 08/05/2026"
+            ],
+            [
+              "6",
+              "Các đơn vị gửi file và danh sách kết quả đánh giá rèn\nluyện có xác nhận của thủ trưởng đơn vị cho Phòng\nCông tác Sinh để Trường lập Quyết định công nhận.",
+              "15/05/2026"
+            ]
+          ]
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            120.5,
+            422.9,
+            538.52,
+            451.89
+          ],
+          "noi_dung": "2. Quy trình thực hiện đánh giá:\n- Thực hiện quy trình đánh giá điểm rèn luyện trên website Phòng Công tác"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.1,
+            457.0,
+            503.24,
+            471.35
+          ],
+          "noi_dung": "Sinh viên https://dsa.ctu.edu.vn/images/upload/vbanply/2018/D RL/quytrinh_DRL_tructuyen.pdf."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            120.5,
+            476.44,
+            538.65,
+            490.79
+          ],
+          "noi_dung": "- Phòng Công tác Sinh viên sẽ bổ sung tự điển các cuộc thi chuyên ngành, đơn"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.1,
+            495.88,
+            365.83,
+            510.23
+          ],
+          "noi_dung": "vị quản lý thực hiện nhập liệu (khi đơn vị có yêu cầu)."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            120.5,
+            515.32,
+            538.67,
+            529.67
+          ],
+          "noi_dung": "- Trong quá trình thực hiện, nếu có vướng mắc, đề nghị thông tin về Phòng"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.1,
+            534.76,
+            538.6,
+            568.43
+          ],
+          "noi_dung": "Công tác Sinh viên qua email pctsv@ctu.edu.vn. Phòng sẽ tập hợp, thống nhất cách xử\nlý và phản hồi về các đơn vị trong thời gian sớm nhất."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.1,
+            588.52,
+            538.65,
+            647.63
+          ],
+          "noi_dung": "Đề nghị Thủ trưởng đơn vị quan tâm triển khai nhằm đảm bảo kế hoạch thực\nhiện đúng thời gian đề ra.\nTrân trọng kính chào./."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.1,
+            663.55,
+            480.4,
+            730.52
+          ],
+          "noi_dung": "TRƯỞNG PHÒNG\nNơi nhận:\n- Như trên;\n- Lưu: P.CTSV"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            368.35,
+            761.35,
+            491.74,
+            775.7
+          ],
+          "noi_dung": "Nguyễn Thanh Tường"
+        }
+      ]
+    }
+  ]
+}

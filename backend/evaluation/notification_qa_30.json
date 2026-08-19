@@ -1,0 +1,543 @@
+[
+  {
+    "id": "T01",
+    "group": "Temporal",
+    "question": "HK1 năm học 2026-2027 học từ ngày nào đến ngày nào?",
+    "gold_answer": "Từ ngày 07/09/2026 đến ngày 20/12/2026.",
+    "required_facts": [
+      "training_period_start=2026-09-07",
+      "training_period_end=2026-12-20"
+    ],
+    "gold_evidence_any_of": [
+      "KHGDVDKHP_HK1_26_27_doc_1_muc_0"
+    ]
+  },
+  {
+    "id": "T02",
+    "group": "Temporal",
+    "question": "Nếu lịch thi học phần riêng hoặc bảo vệ luận văn trùng ngày nghỉ Giỗ Tổ 07/04/2025 thì được bố trí bù khi nào?",
+    "gold_answer": "Được bù vào Chủ nhật 13/04/2025, hoặc vào thời gian thích hợp khác do giảng viên sắp xếp và thông báo cho người học.",
+    "required_facts": [
+      "scheduled_makeup_date=2025-04-13",
+      "alternative=thời gian thích hợp do giảng viên sắp xếp và thông báo cho người học"
+    ],
+    "gold_evidence_any_of": [
+      "GioTo2025_doc_1_muc_0"
+    ]
+  },
+  {
+    "id": "T03",
+    "group": "Temporal",
+    "question": "Sinh viên tự đánh giá DRL HK1 2025-2026 từ ngày nào đến ngày nào?",
+    "gold_answer": "Từ ngày 27/11/2025 đến ngày 07/12/2025.",
+    "required_facts": [
+      "self_assessment_start=2025-11-27",
+      "self_assessment_end=2025-12-07"
+    ],
+    "gold_evidence_any_of": [
+      "DRL_HK1_2025_2026_doc_1_muc_1_bang_1_dong_3"
+    ]
+  },
+  {
+    "id": "T04",
+    "group": "Temporal",
+    "question": "HK3 năm học 2025-2026 học từ ngày nào đến ngày nào?",
+    "gold_answer": "Từ ngày 11/05/2026 đến ngày 23/08/2026.",
+    "required_facts": [
+      "training_period_start=2026-05-11",
+      "training_period_end=2026-08-23"
+    ],
+    "gold_evidence_any_of": [
+      "KHGDVDKHP_HK3_25_26_doc_1_muc_0"
+    ]
+  },
+  {
+    "id": "T05",
+    "group": "Temporal",
+    "question": "Sinh viên tự đánh giá điểm rèn luyện học kỳ 2 năm học 2025-2026 trong khoảng thời gian nào?",
+    "gold_answer": "Từ ngày 03/04/2026 đến ngày 13/04/2026.",
+    "required_facts": [
+      "self_assessment_start=2026-04-03",
+      "self_assessment_end=2026-04-13"
+    ],
+    "gold_evidence_any_of": [
+      "DRL_HK2_2025_2026_doc_1_muc_1_bang_1_dong_3"
+    ]
+  },
+  {
+    "id": "T06",
+    "group": "Temporal",
+    "question": "Sinh viên phản hồi kết quả đánh giá DRL HK3 2025-2026 từ ngày nào đến ngày nào?",
+    "gold_answer": "Từ ngày 18/08/2026 đến ngày 31/08/2026.",
+    "required_facts": [
+      "student_feedback_start=2026-08-18",
+      "student_feedback_end=2026-08-31"
+    ],
+    "gold_evidence_any_of": [
+      "DRL_HK3_2025_2026_doc_1_muc_1_bang_1_dong_5"
+    ]
+  },
+  {
+    "id": "T07",
+    "group": "Temporal",
+    "question": "Đại học Cần Thơ nghỉ Tết Âm lịch 2026 từ ngày nào đến ngày nào?",
+    "gold_answer": "Nghỉ từ ngày 09/02/2026 đến hết Chủ nhật 22/02/2026.",
+    "required_facts": [
+      "holiday_start=2026-02-09",
+      "holiday_end=2026-02-22"
+    ],
+    "gold_evidence_any_of": [
+      "Tet2026_doc_1_muc_1"
+    ]
+  },
+  {
+    "id": "T08",
+    "group": "Temporal",
+    "question": "Đợt 2 điều chỉnh kết quả ĐKHP HK2 năm học 2025-2026 diễn ra từ ngày nào đến ngày nào?",
+    "gold_answer": "Từ ngày 29/12/2025 đến ngày 04/01/2026.",
+    "required_facts": [
+      "registration_adjustment_start=2025-12-29",
+      "registration_adjustment_end=2026-01-04"
+    ],
+    "gold_evidence_any_of": [
+      "KHGDVDKHP_HK2_25_26_doc_1_muc_0_bang_1_dong_7"
+    ]
+  },
+  {
+    "id": "T09",
+    "group": "Temporal",
+    "question": "Đợt 1 ĐKHP HK1 năm học 2026-2027 diễn ra từ ngày nào đến ngày nào?",
+    "gold_answer": "Từ ngày 03/08/2026 đến ngày 16/08/2026.",
+    "required_facts": [
+      "round_1_start=2026-08-03",
+      "round_1_end=2026-08-16"
+    ],
+    "gold_evidence_any_of": [
+      "KHGDVDKHP_HK1_26_27_doc_2_muc_2",
+      "KHGDVDKHP_HK1_26_27_doc_1_muc_0_bang_1_dong_2"
+    ]
+  },
+  {
+    "id": "T10",
+    "group": "Temporal",
+    "question": "Đại học Cần Thơ nghỉ Quốc khánh 2026 những ngày nào, và ngày làm việc 31/08/2026 được bố trí làm bù khi nào?",
+    "gold_answer": "Nghỉ ngày 01/09/2026 và 02/09/2026; ngày làm việc thứ Hai 31/08/2026 được chuyển sang làm bù vào thứ Bảy 22/08/2026, nên ngày 31/08/2026 cũng được nghỉ.",
+    "required_facts": [
+      "national_day_holidays={2026-09-01,2026-09-02}",
+      "swapped_day_off=2026-08-31",
+      "makeup_workday=2026-08-22"
+    ],
+    "gold_evidence_any_of": [
+      "QuocKhanh2026_doc_1_muc_0"
+    ]
+  },
+  {
+    "id": "E01",
+    "group": "Exact/Table",
+    "question": "Lớp CT219-01 bị xóa ở đợt 1 HK1 2025-2026 là học phần gì?",
+    "gold_answer": "Xử lý ngôn ngữ tự nhiên.",
+    "required_facts": [
+      "course_name=Xử lý ngôn ngữ tự nhiên"
+    ],
+    "gold_evidence_any_of": [
+      "Xoalop_HK1_2025_2026_dot1_doc_2_muc_0_bang_1_dong_50"
+    ]
+  },
+  {
+    "id": "E02",
+    "group": "Exact/Table",
+    "question": "Lớp CT182-06 bị xóa ở đợt 2 HK1 năm học 2025-2026 do giảng viên nào phụ trách?",
+    "gold_answer": "Phạm Thị Xuân Lộc (mã số CBGD 700556).",
+    "required_facts": [
+      "lecturer_name=Phạm Thị Xuân Lộc",
+      "lecturer_id=700556"
+    ],
+    "gold_evidence_any_of": [
+      "Xoalop_HK1_2025_2026_dot2_doc_2_muc_0_bang_1_dong_3"
+    ]
+  },
+  {
+    "id": "E03",
+    "group": "Exact/Table",
+    "question": "Lớp CT298-01 bị xóa trong HK2 2025-2026 có bao nhiêu tín chỉ và do ai giảng dạy?",
+    "gold_answer": "3 tín chỉ; giảng viên Trần Nguyễn Minh Thái (mã số CBGD 02226).",
+    "required_facts": [
+      "credits=3",
+      "lecturer_name=Trần Nguyễn Minh Thái",
+      "lecturer_id=02226"
+    ],
+    "gold_evidence_any_of": [
+      "Xoalop_HK2_2025_2026_doc_2_muc_0_bang_1_dong_10"
+    ]
+  },
+  {
+    "id": "E04",
+    "group": "Exact/Table",
+    "question": "Lớp CT112H-M01 bị xóa trong HK3 năm học 2025-2026 là học phần nào?",
+    "gold_answer": "Phân tích và thiết kế hệ thống.",
+    "required_facts": [
+      "course_name=Phân tích và thiết kế hệ thống"
+    ],
+    "gold_evidence_any_of": [
+      "Xoalop_HK3_2025_2026_doc_2_muc_0_bang_1_dong_3"
+    ]
+  },
+  {
+    "id": "E05",
+    "group": "Exact/Table",
+    "question": "Trong danh sách xóa lớp đợt 2 HK2 2024-2025, CT384-01 là học phần gì và có bao nhiêu tín chỉ?",
+    "gold_answer": "Mạng nơ-ron nhân tạo, 3 tín chỉ.",
+    "required_facts": [
+      "course_name=Mạng nơ-ron nhân tạo",
+      "credits=3"
+    ],
+    "gold_evidence_any_of": [
+      "Xoalop_HK2_2024_2025_dot2_doc_2_muc_0_bang_1_dong_2"
+    ]
+  },
+  {
+    "id": "E06",
+    "group": "Exact/Table",
+    "question": "MSSV B2400695 được chuyển từ lớp nào sang lớp nào, sang ngành gì và thuộc đơn vị nào?",
+    "gold_answer": "Sinh viên Phan Thị Kim Hận, MSSV B2400695, chuyển từ lớp TS2413A2 sang lớp TS2482A1, ngành Công nghệ Chế biến thủy sản, thuộc Trường Thuỷ sản.",
+    "required_facts": [
+      "student_name=Phan Thị Kim Hận",
+      "student_id=B2400695",
+      "old_class=TS2413A2",
+      "new_class=TS2482A1",
+      "new_major=Công nghệ Chế biến thủy sản",
+      "new_unit=Trường Thuỷ sản"
+    ],
+    "gold_evidence_any_of": [
+      "ChuyenNganh10_2025.signed.signed_doc_2_muc_0_bang_1_dong_61"
+    ]
+  },
+  {
+    "id": "E07",
+    "group": "Exact/Table",
+    "question": "MSSV B2405750 được chuyển từ lớp nào sang lớp nào, sang ngành gì và thuộc đơn vị nào?",
+    "gold_answer": "Chuyển từ lớp TN24D5A1 sang lớp TN2484A1, ngành Kỹ thuật cơ khí (Chuyên ngành Cơ khí chế tạo máy), thuộc Trường Bách khoa.",
+    "required_facts": [
+      "old_class=TN24D5A1",
+      "new_class=TN2484A1",
+      "new_major=Kỹ thuật cơ khí (Chuyên ngành Cơ khí chế tạo máy)",
+      "new_unit=Trường Bách khoa"
+    ],
+    "gold_evidence_any_of": [
+      "ChuyenNganh10_2025.signed.signed_doc_2_muc_0_bang_1_dong_20"
+    ]
+  },
+  {
+    "id": "E08",
+    "group": "Exact/Table",
+    "question": "MSSV B2404384 được chuyển đến lớp nào, ngành gì và thuộc đơn vị nào?",
+    "gold_answer": "Chuyển đến lớp DA2408A3, ngành Công nghệ Thực phẩm, thuộc Viện Công Nghệ Sinh học và Thực phẩm.",
+    "required_facts": [
+      "new_class=DA2408A3",
+      "new_major=Công nghệ Thực phẩm",
+      "new_unit=Viện Công Nghệ Sinh học và Thực phẩm"
+    ],
+    "gold_evidence_any_of": [
+      "ChuyenNganh10_2025.signed.signed_doc_2_muc_0_bang_1_dong_69"
+    ]
+  },
+  {
+    "id": "E09",
+    "group": "Exact/Table",
+    "question": "K50 thuộc Nhóm đơn vị 6 bắt đầu ĐKHP đợt 1 lúc mấy giờ, ngày nào?",
+    "gold_answer": "Lúc 13:30 ngày 05/08/2026.",
+    "required_facts": [
+      "registration_time=13:30",
+      "registration_date=2026-08-05"
+    ],
+    "gold_evidence_any_of": [
+      "KHGDVDKHP_HK1_26_27_doc_2_muc_2_bang_1_dong_16"
+    ]
+  },
+  {
+    "id": "E10",
+    "group": "Exact/Table",
+    "question": "Ở đợt 2 đăng ký học phần học kỳ 1 năm học 2026-2027, Khóa 51 thuộc Nhóm đơn vị 2 hoặc 4 bắt đầu đăng ký lúc nào?",
+    "gold_answer": "Lúc 13:30 ngày 09/09/2026.",
+    "required_facts": [
+      "registration_time=13:30",
+      "registration_date=2026-09-09"
+    ],
+    "gold_evidence_any_of": [
+      "KHGDVDKHP_HK1_26_27_doc_2_muc_2_bang_2_dong_11"
+    ]
+  },
+  {
+    "id": "S01",
+    "group": "Semantic",
+    "question": "Nếu lớp đã đăng ký bị xóa sau đợt 1 của học kỳ 1 năm học 2025-2026, sinh viên có những phương án xử lý nào?",
+    "gold_answer": "Sinh viên có thể chuyển kế hoạch học tập sang học kỳ tiếp theo, đăng ký vào lớp học phần còn lại, hoặc đăng ký học phần khác thay thế trong đợt 2 từ 08/09/2025 đến 14/09/2025.",
+    "required_facts": [
+      "option_1=chuyển kế hoạch học tập sang học kỳ tiếp theo",
+      "option_2=đăng ký lớp học phần còn lại",
+      "option_3=đăng ký học phần khác thay thế",
+      "round_2_period=2025-09-08..2025-09-14"
+    ],
+    "gold_evidence_any_of": [
+      "Xoalop_HK1_2025_2026_dot1_doc_1_muc_0"
+    ]
+  },
+  {
+    "id": "S02",
+    "group": "Semantic",
+    "question": "Sau khi lớp bị xóa ở đợt đăng ký cuối của học kỳ 2 năm học 2025-2026, sinh viên muốn đổi sang lớp khác thì phải làm gì?",
+    "gold_answer": "Sinh viên phải liên hệ Phòng Đào tạo qua email `nhdnhan@ctu.edu.vn` để được hỗ trợ, chậm nhất đến hết ngày 08/01/2026. Sau thời hạn này, Trường sẽ chính thức xóa kết quả đăng ký.",
+    "required_facts": [
+      "contact_unit=Phòng Đào tạo",
+      "contact_email=nhdnhan@ctu.edu.vn",
+      "deadline=2026-01-08",
+      "after_deadline=Trường xóa kết quả đăng ký"
+    ],
+    "gold_evidence_any_of": [
+      "Xoalop_HK2_2025_2026_doc_1_muc_0"
+    ]
+  },
+  {
+    "id": "S03",
+    "group": "Semantic",
+    "question": "Sinh viên chưa nhập kế hoạch học tập học kỳ 1 năm học 2026-2027 có được bổ sung vào một lớp đã đủ sĩ số không?",
+    "gold_answer": "Không. Sinh viên được điều chỉnh kế hoạch và đăng ký trong thời gian quy định, nhưng nếu lớp học phần đã hết chỗ thì sẽ không được xem xét bổ sung.",
+    "required_facts": [
+      "supplement_when_class_full=false",
+      "reason=lớp học phần đã hết chỗ"
+    ],
+    "gold_evidence_any_of": [
+      "KHGDVDKHP_HK1_26_27_doc_1_muc_1"
+    ]
+  },
+  {
+    "id": "S04",
+    "group": "Semantic",
+    "question": "Trong HK1 2025-2026, sinh viên có thể đăng ký học phần bằng điện thoại hay phải dùng máy tính?",
+    "gold_answer": "Sinh viên có thể đăng ký bằng điện thoại thông minh cá nhân qua ứng dụng MyCTUS, bằng máy tính cá nhân hoặc máy tính tại Trung tâm học liệu Trường.",
+    "required_facts": [
+      "registration_device_1=điện thoại thông minh cá nhân qua ứng dụng MyCTUS",
+      "registration_device_2=máy tính cá nhân",
+      "registration_device_3=máy tính tại Trung tâm học liệu Trường"
+    ],
+    "gold_evidence_any_of": [
+      "KHGDVDKHP_HK1_25_26_doc_2_muc_4"
+    ]
+  },
+  {
+    "id": "S05",
+    "group": "Semantic",
+    "question": "Thư viện Đại học Cần Thơ hỗ trợ sinh viên đăng ký học phần trực tuyến như thế nào?",
+    "gold_answer": "Thư viện Đại học Cần Thơ cử cán bộ trực và mở cửa phòng máy phục vụ sinh viên đăng ký theo thời gian đã công bố.",
+    "required_facts": [
+      "staffing=cử cán bộ trực",
+      "facility=mở cửa phòng máy phục vụ sinh viên đăng ký",
+      "availability=theo thời gian đăng ký đã công bố"
+    ],
+    "gold_evidence_any_of": [
+      "KHGDVDKHP_HK1_26_27_doc_2_muc_5"
+    ]
+  },
+  {
+    "id": "S06",
+    "group": "Semantic",
+    "question": "Hướng dẫn quy trình đánh giá DRL HK3 2024-2025 trực tuyến được đăng ở đâu?",
+    "gold_answer": "Xem trên website Phòng Công tác Sinh viên tại https://dsa.ctu.edu.vn/images/upload/vbanply/2018/DRL/quytrinh_DRL_tructuyen.pdf.",
+    "required_facts": [
+      "online_guide_url=https://dsa.ctu.edu.vn/images/upload/vbanply/2018/DRL/quytrinh_DRL_tructuyen.pdf"
+    ],
+    "gold_evidence_any_of": [
+      "DRL_HK3_2024_2025_doc_1_muc_2"
+    ]
+  },
+  {
+    "id": "S07",
+    "group": "Semantic",
+    "question": "Nếu học phần sinh viên cần chưa được mở trong HK3 2025-2026, Nhà trường có mở lớp theo yêu cầu sinh viên không và hạn cuối là khi nào?",
+    "gold_answer": "Có. Phòng Đào tạo phối hợp với đơn vị mở lớp học phần mới theo yêu cầu sinh viên, hạn cuối là ngày 17/04/2026.",
+    "required_facts": [
+      "new_class_support=PĐT phối hợp với đơn vị mở lớp HP mới theo yêu cầu SV",
+      "deadline=2026-04-17"
+    ],
+    "gold_evidence_any_of": [
+      "KHGDVDKHP_HK3_25_26_doc_1_muc_0_bang_1_dong_4"
+    ]
+  },
+  {
+    "id": "S08",
+    "group": "Semantic",
+    "question": "Trong kỳ nghỉ Tết 2025, nếu gặp vấn đề ở ký túc xá thì sinh viên liên hệ số nào?",
+    "gold_answer": "Liên hệ Ký túc xá (Phòng Công tác Sinh viên) qua số (0292) 3872275.",
+    "required_facts": [
+      "contact_unit=Ký túc xá (PCTSV)",
+      "contact_phone=(0292) 3872275"
+    ],
+    "gold_evidence_any_of": [
+      "Tet2025_doc_1_muc_3"
+    ]
+  },
+  {
+    "id": "S09",
+    "group": "Semantic",
+    "question": "Quyền lợi và chế độ của sinh viên thay đổi thế nào sau khi được chấp thuận chuyển ngành tháng 10/2025?",
+    "gold_answer": "Mọi chế độ và quyền lợi của sinh viên tiếp tục được thực hiện khi chuyển sang lớp học mới.",
+    "required_facts": [
+      "student_benefits=tiếp tục được thực hiện khi chuyển sang lớp học mới"
+    ],
+    "gold_evidence_any_of": [
+      "ChuyenNganh10_2025.signed.signed_doc_1_muc_điều_2"
+    ]
+  },
+  {
+    "id": "S10",
+    "group": "Semantic",
+    "question": "Các buổi dạy và học trùng kỳ nghỉ Quốc khánh 2025 được bố trí bù như thế nào?",
+    "gold_answer": "Được bố trí bù vào tuần dự trữ của học kỳ với tiết học và phòng học không thay đổi, hoặc vào thời gian phù hợp do giảng viên sắp xếp và thống nhất với người học.",
+    "required_facts": [
+      "option_1=tuần dự trữ với tiết học và phòng học không thay đổi",
+      "option_2=thời gian phù hợp do giảng viên sắp xếp và thống nhất với người học"
+    ],
+    "gold_evidence_any_of": [
+      "QuocKhanh2025_doc_1_muc_0"
+    ]
+  },
+  {
+    "id": "MN01",
+    "group": "Multi-node",
+    "question": "Đại học Cần Thơ nghỉ Tết Âm lịch 2026 từ ngày nào đến ngày nào và sinh viên bắt đầu học lại khi nào?",
+    "gold_answer": "Đại học Cần Thơ nghỉ từ ngày 09/02/2026 đến hết Chủ nhật 22/02/2026. Sinh viên bắt đầu học lại từ thứ Hai 23/02/2026.",
+    "required_facts": [
+      "holiday_start=2026-02-09",
+      "holiday_end=2026-02-22",
+      "teaching_resume=2026-02-23"
+    ],
+    "evidence_groups": [
+      {
+        "name": "holiday_period",
+        "any_of": [
+          "Tet2026_doc_1_muc_1"
+        ]
+      },
+      {
+        "name": "teaching_resume",
+        "any_of": [
+          "Tet2026_doc_1_muc_2"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "MN02",
+    "group": "Multi-node",
+    "question": "Nếu không có thiết bị cá nhân để ĐKHP trực tuyến HK1 năm học 2026-2027, sinh viên có thể đăng ký ở đâu và được Thư viện hỗ trợ như thế nào?",
+    "gold_answer": "Sinh viên có thể dùng máy tính tại Thư viện Đại học Cần Thơ. Thư viện cử cán bộ trực và mở cửa phòng máy phục vụ sinh viên đăng ký theo thời gian đã công bố.",
+    "required_facts": [
+      "available_equipment=máy tính tại Thư viện Đại học Cần Thơ",
+      "staffing=cử cán bộ trực",
+      "facility=mở cửa phòng máy phục vụ sinh viên đăng ký",
+      "availability=theo thời gian đăng ký đã công bố"
+    ],
+    "evidence_groups": [
+      {
+        "name": "available_equipment",
+        "any_of": [
+          "KHGDVDKHP_HK1_26_27_doc_2_muc_4"
+        ]
+      },
+      {
+        "name": "library_support",
+        "any_of": [
+          "KHGDVDKHP_HK1_26_27_doc_2_muc_5"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "MN03",
+    "group": "Multi-node",
+    "question": "Sinh viên K50 của Trường Công nghệ Thông tin và Truyền thông hoặc Trường Thủy sản bắt đầu ĐKHP đợt 1 HK1 năm học 2026-2027 lúc nào?",
+    "gold_answer": "Hai trường thuộc Nhóm đơn vị 6, nên sinh viên K50 bắt đầu đăng ký lúc 13:30 ngày 05/08/2026.",
+    "required_facts": [
+      "unit_group=6",
+      "group_members={Trường Công nghệ Thông tin và Truyền thông,Trường Thủy sản}",
+      "registration_time=13:30",
+      "registration_date=2026-08-05"
+    ],
+    "evidence_groups": [
+      {
+        "name": "unit_group_mapping",
+        "any_of": [
+          "KHGDVDKHP_HK1_26_27_doc_2_muc_1"
+        ]
+      },
+      {
+        "name": "registration_schedule",
+        "any_of": [
+          "KHGDVDKHP_HK1_26_27_doc_2_muc_2_bang_1_dong_16"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "MN04",
+    "group": "Multi-node",
+    "question": "Lớp CT219-01 bị xóa sau đợt 1 HK1 năm học 2025-2026 là học phần nào và sinh viên đã đăng ký lớp này có những phương án xử lý nào?",
+    "gold_answer": "CT219-01 là học phần Xử lý ngôn ngữ tự nhiên. Sinh viên có thể chuyển kế hoạch học tập sang học kỳ tiếp theo, đăng ký lớp học phần còn lại hoặc đăng ký học phần khác thay thế trong đợt 2 từ 08/09/2025 đến 14/09/2025.",
+    "required_facts": [
+      "course_name=Xử lý ngôn ngữ tự nhiên",
+      "option_1=chuyển kế hoạch học tập sang học kỳ tiếp theo",
+      "option_2=đăng ký lớp học phần còn lại",
+      "option_3=đăng ký học phần khác thay thế",
+      "round_2_period=2025-09-08..2025-09-14"
+    ],
+    "evidence_groups": [
+      {
+        "name": "deleted_course_row",
+        "any_of": [
+          "Xoalop_HK1_2025_2026_dot1_doc_2_muc_0_bang_1_dong_50"
+        ]
+      },
+      {
+        "name": "student_handling_policy",
+        "any_of": [
+          "Xoalop_HK1_2025_2026_dot1_doc_1_muc_0"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "MN05",
+    "group": "Multi-node",
+    "question": "MSSV B2405750 được chuyển sang lớp và ngành nào, việc chuyển ngành áp dụng từ học kỳ nào và quyền lợi sau khi chuyển được giải quyết ra sao?",
+    "gold_answer": "Sinh viên Trương Khải Văn, MSSV B2405750, được chuyển sang lớp TN2484A1, ngành Kỹ thuật cơ khí (Chuyên ngành Cơ khí chế tạo máy), thuộc Trường Bách khoa. Việc chuyển ngành áp dụng từ HK2 năm học 2025-2026; mọi chế độ và quyền lợi tiếp tục được thực hiện khi chuyển sang lớp học mới.",
+    "required_facts": [
+      "student_name=Trương Khải Văn",
+      "student_id=B2405750",
+      "new_class=TN2484A1",
+      "new_major=Kỹ thuật cơ khí (Chuyên ngành Cơ khí chế tạo máy)",
+      "new_unit=Trường Bách khoa",
+      "effective_semester=HK2 2025-2026",
+      "student_benefits=tiếp tục được thực hiện khi chuyển sang lớp học mới"
+    ],
+    "evidence_groups": [
+      {
+        "name": "student_transfer_row",
+        "any_of": [
+          "ChuyenNganh10_2025.signed.signed_doc_2_muc_0_bang_1_dong_20"
+        ]
+      },
+      {
+        "name": "effective_semester",
+        "any_of": [
+          "ChuyenNganh10_2025.signed.signed_doc_1_muc_điều_1"
+        ]
+      },
+      {
+        "name": "benefits_policy",
+        "any_of": [
+          "ChuyenNganh10_2025.signed.signed_doc_1_muc_điều_2"
+        ]
+      }
+    ]
+  }
+]

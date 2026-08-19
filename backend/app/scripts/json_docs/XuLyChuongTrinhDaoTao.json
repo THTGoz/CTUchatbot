@@ -1,0 +1,1297 @@
+{
+  "file_name": "XuLyChuongTrinhDaoTao.py",
+  "file_path": "backend/app/scripts/XuLyChuongTrinhDaoTao.py",
+  "bien_chung": [],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Biểu Thức Chính Quy (Regex Pattern #1)",
+      "noi_dung_rule": "Biểu thức khớp văn bản: `^\\s*(?:[\\*_]+)?(?:Phần|Chương|Mục)?\\s*([IVX]+|\\d+(?:\\.\\d+)*)(?:[.:)]+)?(?:[\\*_]+)?\\s+(.*)`",
+      "dieu_kien_va_hanh_dong": "Khớp mẫu chuỗi để chuẩn hóa, tách từ khóa hoặc phân tích cú pháp"
+    },
+    {
+      "ten_luat": "Rule Biểu Thức Chính Quy (Regex Pattern #2)",
+      "noi_dung_rule": "Biểu thức khớp văn bản: `^\\s*\\|.+\\|\\s*$`",
+      "dieu_kien_va_hanh_dong": "Khớp mẫu chuỗi để chuẩn hóa, tách từ khóa hoặc phân tích cú pháp"
+    },
+    {
+      "ten_luat": "Rule Biểu Thức Chính Quy (Regex Pattern #3)",
+      "noi_dung_rule": "Biểu thức khớp văn bản: `[A-Z]{2,3}\\d{3}[A-Z]*`",
+      "dieu_kien_va_hanh_dong": "Khớp mẫu chuỗi để chuẩn hóa, tách từ khóa hoặc phân tích cú pháp"
+    },
+    {
+      "ten_luat": "Rule Biểu Thức Chính Quy (Regex Pattern #4)",
+      "noi_dung_rule": "Biểu thức khớp văn bản: `Cộng.*?(\\d+)\\s*TC`",
+      "dieu_kien_va_hanh_dong": "Khớp mẫu chuỗi để chuẩn hóa, tách từ khóa hoặc phân tích cú pháp"
+    },
+    {
+      "ten_luat": "Rule Biểu Thức Chính Quy (Regex Pattern #5)",
+      "noi_dung_rule": "Biểu thức khớp văn bản: `Bắt buộc.*?(\\d+)\\s*TC`",
+      "dieu_kien_va_hanh_dong": "Khớp mẫu chuỗi để chuẩn hóa, tách từ khóa hoặc phân tích cú pháp"
+    },
+    {
+      "ten_luat": "Rule Biểu Thức Chính Quy (Regex Pattern #6)",
+      "noi_dung_rule": "Biểu thức khớp văn bản: `Tự chọn.*?(\\d+)\\s*TC`",
+      "dieu_kien_va_hanh_dong": "Khớp mẫu chuỗi để chuẩn hóa, tách từ khóa hoặc phân tích cú pháp"
+    },
+    {
+      "ten_luat": "Rule Biểu Thức Chính Quy (Regex Pattern #7)",
+      "noi_dung_rule": "Biểu thức khớp văn bản: `^(?:###\\s+)?(?:\\d+\\.\\d+\\s+)(.*)`",
+      "dieu_kien_va_hanh_dong": "Khớp mẫu chuỗi để chuẩn hóa, tách từ khóa hoặc phân tích cú pháp"
+    },
+    {
+      "ten_luat": "Rule Biểu Thức Chính Quy (Regex Pattern #8)",
+      "noi_dung_rule": "Biểu thức khớp văn bản: `^(?:####\\s+)?(?:\\d+\\.\\d+\\.\\d+\\.?\\s+)(.*)`",
+      "dieu_kien_va_hanh_dong": "Khớp mẫu chuỗi để chuẩn hóa, tách từ khóa hoặc phân tích cú pháp"
+    },
+    {
+      "ten_luat": "Rule Biểu Thức Chính Quy (Regex Pattern #9)",
+      "noi_dung_rule": "Biểu thức khớp văn bản: `^(\\s*[a-z]\\.|-|\\+|\\*)\\s+(.*)`",
+      "dieu_kien_va_hanh_dong": "Khớp mẫu chuỗi để chuẩn hóa, tách từ khóa hoặc phân tích cú pháp"
+    },
+    {
+      "ten_luat": "Rule Biểu Thức Chính Quy (Regex Pattern #10)",
+      "noi_dung_rule": "Biểu thức khớp văn bản: `\\(((?:PLO|CDR|PO)\\d+)\\)`",
+      "dieu_kien_va_hanh_dong": "Khớp mẫu chuỗi để chuẩn hóa, tách từ khóa hoặc phân tích cú pháp"
+    },
+    {
+      "ten_luat": "Rule Fallback / Phản Hồi Mặc Định",
+      "noi_dung_rule": "Phản hồi dự phòng khi cơ sở dữ liệu không tìm thấy dữ liệu phù hợp",
+      "dieu_kien_va_hanh_dong": "Trả về thông báo hướng dẫn hoặc gọi LLM trả lời xã giao"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "__init__",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `__init__` của file `XuLyChuongTrinhDaoTao.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "pdf_path",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `pdf_path` cho hàm `__init__`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `__init__`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "EmbeddingModel",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "self._normalize_text_for_match",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self.SECTION_CONCEPTS.items",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/XuLyChuongTrinhDaoTao.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (pdf_path).\n2. Khởi tạo / gán biến `self.embedder`.\n3. Khởi tạo / gán biến `self.pdf_path`.\n4. Khởi tạo / gán biến `self.nodes`.\n5. Khởi tạo / gán biến `self.edges`.\n6. Khởi tạo / gán biến `self.program_id`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "_normalize_text_for_match",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_normalize_text_for_match` của file `XuLyChuongTrinhDaoTao.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "text",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `text` cho hàm `_normalize_text_for_match`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `_normalize_text_for_match`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "text.lower",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "unicodedata.normalize",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "''.join",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "text.replace",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "re.sub('\\\\s+', ' ', text).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "re.sub",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "unicodedata.category",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/XuLyChuongTrinhDaoTao.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (text).\n2. Khởi tạo / gán biến `text`.\n3. Khởi tạo / gán biến `text`.\n4. Khởi tạo / gán biến `text`.\n5. Khởi tạo / gán biến `text`.\n6. Khởi tạo / gán biến `text`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "_safe_int",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_safe_int` của file `XuLyChuongTrinhDaoTao.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "value",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `value` cho hàm `_safe_int`"
+        },
+        {
+          "ten_tham_so": "default",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `default` cho hàm `_safe_int`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `_safe_int`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "str(value).strip",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/XuLyChuongTrinhDaoTao.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (value, default).\n2. Thực hiện các bước tính toán logic bên trong hàm.\n3. Trả về kết quả đầu ra."
+    },
+    {
+      "ten_ham": "_safe_float",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_safe_float` của file `XuLyChuongTrinhDaoTao.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "value",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `value` cho hàm `_safe_float`"
+        },
+        {
+          "ten_tham_so": "default",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `default` cho hàm `_safe_float`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `_safe_float`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "float",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "str(value).replace(',', '.').strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(value).replace",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/XuLyChuongTrinhDaoTao.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (value, default).\n2. Thực hiện các bước tính toán logic bên trong hàm.\n3. Trả về kết quả đầu ra."
+    },
+    {
+      "ten_ham": "_extract_text_with_pymupdf",
+      "chuc_nang": "Fallback khi pymupdf4llm không trích được markdown.",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `_extract_text_with_pymupdf`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "'\\n\\n'.join",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "fitz.open",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "doc.close",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "page.get_text",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "page_text.strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "texts.append",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/XuLyChuongTrinhDaoTao.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Khởi tạo / gán biến `texts`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "_extract_text_with_pypdf",
+      "chuc_nang": "Fallback bổ sung cho một số PDF có text layer đặc thù (ký số/chèn object).",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `_extract_text_with_pypdf`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "'\\n\\n'.join",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "PdfReader",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "page_text.strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "reader.decrypt",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "page.extract_text",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "texts.append",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/XuLyChuongTrinhDaoTao.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Khởi tạo / gán biến `texts`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "_extract_text_with_ocr",
+      "chuc_nang": "Fallback OCR cho PDF scan/image-only bằng Tesseract.",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `_extract_text_with_ocr`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "'\\n\\n'.join",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "importlib.import_module",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "getattr",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "fitz.open",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "doc.close",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "RuntimeError",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "page.get_pixmap",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "pix.tobytes",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "Image.open",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "io.BytesIO",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/XuLyChuongTrinhDaoTao.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Khởi tạo / gán biến `texts`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "_classify_header",
+      "chuc_nang": "Phân loại tiêu đề dựa trên Concept Dictionary",
+      "dau_vao": [
+        {
+          "ten_tham_so": "header_text",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `header_text` cho hàm `_classify_header`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `_classify_header`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "self._normalize_text_for_match",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self.SECTION_CONCEPTS_NORMALIZED.items",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "any",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/XuLyChuongTrinhDaoTao.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (header_text).\n2. Khởi tạo / gán biến `header_normalized`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "_upgrade_markdown_headers",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_upgrade_markdown_headers` của file `XuLyChuongTrinhDaoTao.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "md_text",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `md_text` cho hàm `_upgrade_markdown_headers`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `_upgrade_markdown_headers`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "md_text.split",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "re.compile",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "'\\n'.join",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "line.strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "pattern.match",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "new_lines.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "match.group",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "min",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "re.match",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "numbering.split",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/XuLyChuongTrinhDaoTao.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (md_text).\n2. Khởi tạo / gán biến `lines`.\n3. Khởi tạo / gán biến `new_lines`.\n4. Khởi tạo / gán biến `pattern`.\n5. Trả về kết quả cho caller.\n6. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "_remove_italic_bold",
+      "chuc_nang": "Xóa định dạng in đậm, in nghiêng trong Markdown",
+      "dau_vao": [
+        {
+          "ten_tham_so": "text",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `text` cho hàm `_remove_italic_bold`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `_remove_italic_bold`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "re.sub",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/XuLyChuongTrinhDaoTao.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (text).\n2. Khởi tạo / gán biến `text`.\n3. Khởi tạo / gán biến `text`.\n4. Khởi tạo / gán biến `text`.\n5. Trả về kết quả cho caller.\n6. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "_create_relationship",
+      "chuc_nang": "Hàm helper để tạo cấu trúc dữ liệu cho cạnh",
+      "dau_vao": [
+        {
+          "ten_tham_so": "source_id",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `source_id` cho hàm `_create_relationship`"
+        },
+        {
+          "ten_tham_so": "target_id",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `target_id` cho hàm `_create_relationship`"
+        },
+        {
+          "ten_tham_so": "rel_type",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `rel_type` cho hàm `_create_relationship`"
+        },
+        {
+          "ten_tham_so": "props",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `props` cho hàm `_create_relationship`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `_create_relationship`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "self.edges.append",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/XuLyChuongTrinhDaoTao.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (source_id, target_id, rel_type, props).\n2. Kiểm tra điều kiện rẽ nhánh `not source_id or not target_id`.\n3. Khởi tạo / gán biến `edge`.\n4. Gọi thực thi hàm `self.edges.append`.\n5. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "_normalize_id",
+      "chuc_nang": "Chuẩn hóa chuỗi (ví dụ số quyết định) thành ASCII-only ID\nVD: '3922/QĐ-ĐHCT' -> '3922_QD_DHCT'",
+      "dau_vao": [
+        {
+          "ten_tham_so": "text",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `text` cho hàm `_normalize_id`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `_normalize_id`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "unicodedata.normalize",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "''.join",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "text.replace('Đ', 'D').replace",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "re.sub",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "text.strip('_').upper",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "text.replace",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "text.strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "unicodedata.category",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/XuLyChuongTrinhDaoTao.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (text).\n2. Khởi tạo / gán biến `text`.\n3. Khởi tạo / gán biến `text`.\n4. Khởi tạo / gán biến `text`.\n5. Khởi tạo / gán biến `text`.\n6. Trả về kết quả cho caller.\n7. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "contains_markdown_table",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `contains_markdown_table` của file `XuLyChuongTrinhDaoTao.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "text",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `text` cho hàm `contains_markdown_table`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "bool",
+        "mo_ta": "Kết quả trả về của hàm `contains_markdown_table`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "bool",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "re.compile",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/XuLyChuongTrinhDaoTao.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (text).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `bool`."
+    },
+    {
+      "ten_ham": "_process_course_table",
+      "chuc_nang": "Xử lý bảng Khung chương trình đào tạo với cấu trúc phân cấp 3 tầng:\nKhối kiến thức -> Node Yêu cầu (Parent) -> Node Nhóm (Sub) -> Học phần.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "df",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `df` cho hàm `_process_course_table`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `_process_course_table`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "re.compile",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "df.iterrows",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(row.iloc[0]).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(row.iloc[1]).strip().replace",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(row.iloc[2]).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(row.iloc[3]).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(row.iloc[4]).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(row.iloc[5]).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(row.iloc[6]).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(row.iloc[7]).strip",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/XuLyChuongTrinhDaoTao.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (df).\n2. Kiểm tra điều kiện rẽ nhánh `df is None or df.empty`.\n3. Khởi tạo / gán biến `current_block_id`.\n4. Khởi tạo / gán biến `current_parent_group_id`.\n5. Khởi tạo / gán biến `current_sub_group_id`.\n6. Khởi tạo / gán biến `pat_course_code`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "_group_nodes",
+      "chuc_nang": "Gom nhóm các node con (###, ####) vào node cha (##) gần nhất.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "nodes",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `nodes` cho hàm `_group_nodes`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `_group_nodes`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "node.text.strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "re.match",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "grouped_nodes.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "TextNode",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "node.metadata.copy",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/XuLyChuongTrinhDaoTao.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (nodes).\n2. Khởi tạo / gán biến `grouped_nodes`.\n3. Khởi tạo / gán biến `current_section_node`.\n4. Kiểm tra điều kiện rẽ nhánh `current_section_node`.\n5. Trả về kết quả cho caller.\n6. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "_parse_quyet_dinh_ban_hanh",
+      "chuc_nang": "Phân tích trích xuất Văn bản pháp lý và Trình độ",
+      "dau_vao": [
+        {
+          "ten_tham_so": "text",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `text` cho hàm `_parse_quyet_dinh_ban_hanh`"
+        },
+        {
+          "ten_tham_so": "full_text",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `full_text` cho hàm `_parse_quyet_dinh_ban_hanh`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `_parse_quyet_dinh_ban_hanh`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "re.sub('^#+\\\\s+', '', text).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "re.search",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "TextNode",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "self.nodes.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._create_relationship",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._normalize_id",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "agency_match.group(1).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "text[agency_match.start(2):].strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "m.group(1).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "re.sub",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/XuLyChuongTrinhDaoTao.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (text, full_text).\n2. Khởi tạo / gán biến `text`.\n3. Khởi tạo / gán biến `loai_match`.\n4. Khởi tạo / gán biến `so_match`.\n5. Khởi tạo / gán biến `agency_pattern`.\n6. Khởi tạo / gán biến `agency_match`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "_parse_major",
+      "chuc_nang": "Trích xuất ngành",
+      "dau_vao": [
+        {
+          "ten_tham_so": "content",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `content` cho hàm `_parse_major`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `_parse_major`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "self._remove_italic_bold",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "re.search",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "re.match",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "TextNode",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "self.nodes.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "ma_nganh_match.group(1).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "ten_nganh_match.group(2).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "ten_nganh_pair.group(1).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "ten_nganh_pair.group(2).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "ma_nganh_match.group",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/XuLyChuongTrinhDaoTao.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (content).\n2. Khởi tạo / gán biến `cleaned_content`.\n3. Khởi tạo / gán biến `ma_nganh_match`.\n4. Khởi tạo / gán biến `ma_nganh`.\n5. Khởi tạo / gán biến `self.ma_nganh`.\n6. Khởi tạo / gán biến `ten_nganh_match`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "_parse_unit",
+      "chuc_nang": "Trích xuất Đơn vị quản lý",
+      "dau_vao": [
+        {
+          "ten_tham_so": "content",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `content` cho hàm `_parse_unit`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `_parse_unit`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "re.search",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self.nodes.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._create_relationship",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "unit_match.group(1).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "bo_mon.group(1).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._normalize_id",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "TextNode",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "khoa.group(1).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "unit_match.group",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "bo_mon.group",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/XuLyChuongTrinhDaoTao.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (content).\n2. Khởi tạo / gán biến `unit_match`.\n3. Khởi tạo / gán biến `ten_don_vi`.\n4. Khởi tạo / gán biến `bo_mon`.\n5. Kiểm tra điều kiện rẽ nhánh `bo_mon`.\n6. Gọi thực thi hàm `self.nodes.append`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "_parse_curriculum",
+      "chuc_nang": "Trích xuất chương trình đào tạo",
+      "dau_vao": [
+        {
+          "ten_tham_so": "content",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `content` cho hàm `_parse_curriculum`"
+        },
+        {
+          "ten_tham_so": "full_text",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `full_text` cho hàm `_parse_curriculum`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `_parse_curriculum`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "re.search",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "thoi_gian_dao_tao.replace",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "TextNode",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "self.nodes.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._create_relationship",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "nam_match.group",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._safe_int",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "full_text.lower",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "so_tin_chi_match.group(2).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "thoi_gian_dao_tao_match.group(1).strip",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/XuLyChuongTrinhDaoTao.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (content, full_text).\n2. Khởi tạo / gán biến `nam_match`.\n3. Khởi tạo / gán biến `nam`.\n4. Khởi tạo / gán biến `k`.\n5. Kiểm tra điều kiện rẽ nhánh `'chất lượng cao' in full_text.lower()`.\n6. Khởi tạo / gán biến `self.program_id`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "_parse_general_information",
+      "chuc_nang": "Trích xuất node ngành, Khoa/bộ môn (đơn vị quản lý), CTĐT trong mục Thông tin chung",
+      "dau_vao": [
+        {
+          "ten_tham_so": "content",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `content` cho hàm `_parse_general_information`"
+        },
+        {
+          "ten_tham_so": "full_text",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `full_text` cho hàm `_parse_general_information`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `_parse_general_information`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "self._parse_major",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._parse_unit",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._parse_curriculum",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/XuLyChuongTrinhDaoTao.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (content, full_text).\n2. Gọi thực thi hàm `self._parse_major`.\n3. Gọi thực thi hàm `self._parse_unit`.\n4. Gọi thực thi hàm `self._parse_curriculum`.\n5. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "_parse_program_objectives",
+      "chuc_nang": "Trích xuất mục tiêu đào tạo",
+      "dau_vao": [
+        {
+          "ten_tham_so": "text",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `text` cho hàm `_parse_program_objectives`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `_parse_program_objectives`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "re.split",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "text.strip().replace",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "TextNode",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "self.nodes.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._create_relationship",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "parts[i].lower",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "text.strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "header.lower",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "section_content.strip().replace",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "re.sub('\\\\s+', ' ', clean_text).strip",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/XuLyChuongTrinhDaoTao.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (text).\n2. Khởi tạo / gán biến `parts`.\n3. Khởi tạo / gán biến `parts`.\n4. Kiểm tra điều kiện rẽ nhánh `len(parts) < 2`.\n5. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "_parse_job_positions",
+      "chuc_nang": "Tách các dòng gạch đầu dòng (-) thành Node ViTriViecLam",
+      "dau_vao": [
+        {
+          "ten_tham_so": "text",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `text` cho hàm `_parse_job_positions`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `_parse_job_positions`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "re.split",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "enumerate",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "re.sub",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "TextNode",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "self.nodes.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._create_relationship",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "re.sub('^[+-]\\\\s*', '', job, count=1).strip",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/XuLyChuongTrinhDaoTao.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (text).\n2. Khởi tạo / gán biến `jobs`.\n3. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "_parse_references",
+      "chuc_nang": "Trích Tài liệu tham khảo vs Văn bản pháp lý",
+      "dau_vao": [
+        {
+          "ten_tham_so": "text",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `text` cho hàm `_parse_references`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `_parse_references`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "re.split",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "re.sub",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "any",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "re.search",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._normalize_id",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "re.match",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "TextNode",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "self.nodes.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._create_relationship",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "rest_content.strip",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/XuLyChuongTrinhDaoTao.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (text).\n2. Khởi tạo / gán biến `refs`.\n3. Khởi tạo / gán biến `std_idx`.\n4. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "_parse_study_opportunities",
+      "chuc_nang": "Tạo Node KhaNangHocTap",
+      "dau_vao": [
+        {
+          "ten_tham_so": "text",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `text` cho hàm `_parse_study_opportunities`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `_parse_study_opportunities`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "re.split",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "enumerate",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "re.sub",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "TextNode",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "self.nodes.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._create_relationship",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "re.sub('^[+-]\\\\s*', '', opp, count=1).strip",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/XuLyChuongTrinhDaoTao.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (text).\n2. Khởi tạo / gán biến `opps`.\n3. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "_process_learning_outcomes",
+      "chuc_nang": "Xử lý Chuẩn đầu ra (PLOs) tổng quát dựa trên cấu trúc phân cấp.\nHỗ trợ cả format có PLO và không có PLO (gạch đầu dòng).",
+      "dau_vao": [
+        {
+          "ten_tham_so": "content",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `content` cho hàm `_process_learning_outcomes`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `_process_learning_outcomes`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "content.split",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "re.compile",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "line.strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "pat_header_L2.match",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "pat_header_L1.match",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "pat_list_item.match",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "match_l2.group(1).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "match_l1.group(1).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "match_item.group(2).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "pat_plo_code.search",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/XuLyChuongTrinhDaoTao.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (content).\n2. Khởi tạo / gán biến `lines`.\n3. Khởi tạo / gán biến `current_category`.\n4. Khởi tạo / gán biến `current_subcategory`.\n5. Khởi tạo / gán biến `auto_id_counter`.\n6. Khởi tạo / gán biến `pat_header_L1`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "generate_embeddings",
+      "chuc_nang": "Gom tất cả các Node và thực hiện embedding theo batch",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `generate_embeddings`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "self.embedder.get_embedding_batch",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "enumerate",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "texts_to_embed.append",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/XuLyChuongTrinhDaoTao.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Kiểm tra điều kiện rẽ nhánh `not self.nodes`.\n3. Gọi thực thi hàm `print`.\n4. Khởi tạo / gán biến `texts_to_embed`.\n5. Gọi thực thi hàm `print`.\n6. Khởi tạo / gán biến `embeddings`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "process",
+      "chuc_nang": "Hàm xử lý chính",
+      "dau_vao": [
+        {
+          "ten_tham_so": "save_md_path",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `save_md_path` cho hàm `process`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `process`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "pymupdf4llm.to_markdown",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "raw_md[:12000].replace('\\n', ' ').strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._upgrade_markdown_headers",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._remove_italic_bold",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "MarkdownNodeParser",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "Document",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "parser.get_nodes_from_documents",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._group_nodes",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self.generate_embeddings",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._extract_text_with_pymupdf",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/XuLyChuongTrinhDaoTao.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (save_md_path).\n2. Gọi thực thi hàm `print`.\n3. Khởi tạo / gán biến `raw_md`.\n4. Khởi tạo / gán biến `self.extraction_source`.\n5. Kiểm tra điều kiện rẽ nhánh `not raw_md or not raw_md.strip()`.\n6. Kiểm tra điều kiện rẽ nhánh `not raw_md or not raw_md.strip()`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    }
+  ]
+}

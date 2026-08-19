@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 34, "column": 0}, "map": {"version":3,"sources":["file:///D:/Project/CITChatBot/frontend/app/api/chat/route.ts"],"sourcesContent":["export async function POST(req: Request) {\n  const body = await req.json()\n\n  const response = await fetch(\"http://127.0.0.1:8000/chat\", {\n    method: \"POST\",\n    headers: {\n      \"Content-Type\": \"application/json\"\n    },\n    body: JSON.stringify(body)\n  })\n\n  return new Response(response.body, {\n    headers: {\n      \"Content-Type\": \"text/plain; charset=utf-8\",\n      \"X-Vercel-AI-Data-Stream\": \"v1\"\n    }\n  })\n}"],"names":[],"mappings":";;;;AAAO,eAAe,KAAK,GAAY;IACrC,MAAM,OAAO,MAAM,IAAI,IAAI;IAE3B,MAAM,WAAW,MAAM,MAAM,8BAA8B;QACzD,QAAQ;QACR,SAAS;YACP,gBAAgB;QAClB;QACA,MAAM,KAAK,SAAS,CAAC;IACvB;IAEA,OAAO,IAAI,SAAS,SAAS,IAAI,EAAE;QACjC,SAAS;YACP,gBAAgB;YAChB,2BAA2B;QAC7B;IACF;AACF"}}]
+}

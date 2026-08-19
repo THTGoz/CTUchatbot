@@ -1,0 +1,66 @@
+{
+  "ten_luong_mien": "Luồng Xử Lý Tra Cứu Chương Trình Đào Tạo (CTDT Domain Flow)",
+  "thu_muc_chinh": "backend/app/services/ctdt",
+  "bien_dau_vao": {
+    "query": "Câu hỏi nguyên bản của người dùng (str)",
+    "history": "Lịch sử cuộc trò chuyện (List[Dict[str, Any]])"
+  },
+  "cac_buoc_thuc_thi_trong_luong": [
+    {
+      "bước": 1,
+      "ten_thao_tac": "Chuẩn hóa câu hỏi CTĐT",
+      "thu_muc_truy_cap": "backend/app/services/ctdt",
+      "file_thuc_thi": "query_normalizer.py",
+      "ham_kich_hoat": "normalize_ctdt_query(query)",
+      "dau_vao": "query (str)",
+      "dau_ra": "dict{'normalized_query': str, 'applied_rules': list}"
+    },
+    {
+      "bước": 2,
+      "ten_thao_tac": "Phân tích ý định & Thực thể đồ thị (LLM Query Analysis)",
+      "thu_muc_truy_cap": "backend/app/services/ctdt",
+      "file_thuc_thi": "query_analyzer.py",
+      "ham_kich_hoat": "analyze_ctdt_query(normalized_query, history_string)",
+      "dau_vao": "normalized_query (str), history_string (str)",
+      "dau_ra": "analysis dict {'rewrite': str, 'vector_targets': list, 'relations': list, 'entities': dict}"
+    },
+    {
+      "bước": 3,
+      "ten_thao_tac": "Truy vấn đồ thị tri thức Neo4j (GraphRAG Subgraph Retrieval)",
+      "thu_muc_truy_cap": "backend/app/services/ctdt",
+      "file_thuc_thi": "subgraph_retriever.py",
+      "ham_kich_hoat": "self.subgraph_retriever.retrieve(retrieval_analysis)",
+      "dau_vao": "retrieval_analysis (dict)",
+      "dau_ra": "GraphBuildResult(graph_text, is_graph_sufficient, used_default_ctdt, metadata)"
+    },
+    {
+      "bước": 4,
+      "ten_thao_tac": "Truy vấn Vector Seed & Mở rộng 1-hop Graph Expansion (Hybrid Retrieval)",
+      "thu_muc_truy_cap": "backend/app/services/ctdt",
+      "file_thuc_thi": "vector_retriever.py & vector_expander.py",
+      "ham_kich_hoat": "search_vector_candidates() & expand_vector_candidates()",
+      "dau_vao": "query (str), vector_targets (List[str]), relations (List[str])",
+      "dieu_kien_kich_hoat": "Chạy khi `not graph_result.is_graph_sufficient`",
+      "dau_ra": "tuple[graph_context: str, vector_context: str]"
+    },
+    {
+      "bước": 5,
+      "ten_thao_tac": "Tổng hợp Context & Sinh câu trả lời qua LLM 9B",
+      "thu_muc_truy_cap": "backend/app/services/common",
+      "file_thuc_thi": "llm_service.py",
+      "ham_kich_hoat": "call_model_9b(prompt, temperature=0.2, num_predict=256)",
+      "dau_vao": "prompt kết hợp hybrid context, original_query, rewritten_query",
+      "dau_ra": "answer (str)"
+    }
+  ],
+  "ket_qua_tra_ve_cuoi_cung": {
+    "kieu_du_lieu": "CTDTPipelineResult",
+    "cac_truong": {
+      "answer": "Nội dung câu trả lời tư vấn CTĐT (str)",
+      "rewritten_query": "Câu hỏi đã được viết lại đủ ngữ cảnh (str)",
+      "analysis": "Kết quả phân tích ý định và thực thể (dict)",
+      "metadata": "Metadata thông tin đồ thị (dict)",
+      "used_default_ctdt": "Cờ đánh dấu có dùng CTĐT mặc định hay không (bool)"
+    }
+  }
+}

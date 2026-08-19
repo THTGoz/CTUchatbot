@@ -1,0 +1,798 @@
+{
+  "file_name": "candidate.py",
+  "file_path": "backend/app/services/common/candidate.py",
+  "bien_chung": [
+    {
+      "ten_bien": "DOMAIN_QCHV",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "'qchv'"
+    },
+    {
+      "ten_bien": "DOMAIN_CTDT",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "'ctdt'"
+    },
+    {
+      "ten_bien": "DOMAIN_THONG_BAO",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "'thong_bao'"
+    },
+    {
+      "ten_bien": "EXPANSION_SOURCES",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "{'document_muc_expansion', 'document_table_expansion', 'document_table_row_expansion'}"
+    },
+    {
+      "ten_bien": "logger",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "logging.getLogger('app.thong_bao.context')"
+    },
+    {
+      "ten_bien": "_PREFERRED_PROPERTY_KEYS",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "('ma_hoc_phan', 'ten_hoc_phan', 'so_tin_chi', 'ma_nganh', 'ten_nganh_vi', 'ten_khoa', 'khoa', 'he', 'tong_tin_chi', 'ten_khoi', 'tieu_de', 'ten', 'so', 'ky_hieu', 'path', 'noi_dung', 'text_embed', 'no"
+    }
+  ],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Ngưỡng Độ Tương Đồng Vector (Similarity Score Threshold)",
+      "noi_dung_rule": "Lọc danh sách kết quả truy vấn theo ngưỡng điểm tương đồng vector",
+      "dieu_kien_va_hanh_dong": "Chỉ giữ lại các candidate đạt điểm độ tương đồng đạt yêu cầu"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "make_candidate",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `make_candidate` của file `candidate.py`",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "Candidate",
+        "mo_ta": "Kết quả trả về của hàm `make_candidate`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "tuple",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "str(key).casefold",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "float",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "lowered.endswith",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "cleaned_properties.pop",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/candidate.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Khởi tạo / gán biến `cleaned_properties`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `Candidate`."
+    },
+    {
+      "ten_ham": "merge_candidates",
+      "chuc_nang": "Deduplicate by domain/node while protecting an exact match.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "groups",
+          "kieu_du_lieu": "Iterable[Iterable[Candidate]]",
+          "mo_ta": "Tham số đầu vào `groups` cho hàm `merge_candidates`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "list[Candidate]",
+        "mo_ta": "Kết quả trả về của hàm `merge_candidates`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "sorted",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "merged.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "merged.values",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/candidate.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (groups).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `list[Candidate]`."
+    },
+    {
+      "ten_ham": "select_top_k",
+      "chuc_nang": "Apply global cosine ranking, with the legacy exact-anchor protection.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "candidates",
+          "kieu_du_lieu": "Iterable[Candidate]",
+          "mo_ta": "Tham số đầu vào `candidates` cho hàm `select_top_k`"
+        },
+        {
+          "ten_tham_so": "top_k",
+          "kieu_du_lieu": "int",
+          "mo_ta": "Tham số đầu vào `top_k` cho hàm `select_top_k`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "list[Candidate]",
+        "mo_ta": "Kết quả trả về của hàm `select_top_k`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "merge_candidates",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "exact.sort",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "ranked.sort",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "ValueError",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/candidate.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (candidates, top_k).\n2. Kiểm tra điều kiện rẽ nhánh `top_k <= 0`.\n3. Khởi tạo / gán biến `unique`.\n4. Khởi tạo / gán biến `exact`.\n5. Khởi tạo / gán biến `ranked`.\n6. Gọi thực thi hàm `exact.sort`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `list[Candidate]`."
+    },
+    {
+      "ten_ham": "_display_value",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_display_value` của file `candidate.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "value",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `value` cho hàm `_display_value`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `_display_value`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "value.strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "json.dumps",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/candidate.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (value).\n2. Kiểm tra điều kiện rẽ nhánh `isinstance(value, str)`.\n3. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "_useful_properties",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_useful_properties` của file `candidate.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "candidate",
+          "kieu_du_lieu": "Candidate",
+          "mo_ta": "Tham số đầu vào `candidate` cho hàm `_useful_properties`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "list[str]",
+        "mo_ta": "Kết quả trả về của hàm `_useful_properties`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "keys.extend",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "properties.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "lines.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_display_value",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/candidate.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (candidate).\n2. Khởi tạo / gán biến `properties`.\n3. Khởi tạo / gán biến `keys`.\n4. Gọi thực thi hàm `keys.extend`.\n5. Trả về kết quả cho caller.\n6. Hoàn tất tính toán và trả về kết quả kiểu `list[str]`."
+    },
+    {
+      "ten_ham": "_useful_metadata",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_useful_metadata` của file `candidate.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "candidate",
+          "kieu_du_lieu": "Candidate",
+          "mo_ta": "Tham số đầu vào `candidate` cho hàm `_useful_metadata`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "list[str]",
+        "mo_ta": "Kết quả trả về của hàm `_useful_metadata`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "metadata.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "lines.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_display_value",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/candidate.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (candidate).\n2. Khởi tạo / gán biến `metadata`.\n3. Khởi tạo / gán biến `lines`.\n4. Khởi tạo / gán biến `relations`.\n5. Kiểm tra điều kiện rẽ nhánh `relations`.\n6. Trả về kết quả cho caller.\n7. Hoàn tất tính toán và trả về kết quả kiểu `list[str]`."
+    },
+    {
+      "ten_ham": "_render_root",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_render_root` của file `candidate.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "position",
+          "kieu_du_lieu": "int",
+          "mo_ta": "Tham số đầu vào `position` cho hàm `_render_root`"
+        },
+        {
+          "ten_tham_so": "candidate",
+          "kieu_du_lieu": "Candidate",
+          "mo_ta": "Tham số đầu vào `candidate` cho hàm `_render_root`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `_render_root`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "'\\n'.join",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_useful_metadata",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "_useful_properties",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/candidate.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (position, candidate).\n2. Khởi tạo / gán biến `lines`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "_render_expansion",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_render_expansion` của file `candidate.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "candidate",
+          "kieu_du_lieu": "Candidate",
+          "mo_ta": "Tham số đầu vào `candidate` cho hàm `_render_expansion`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `_render_expansion`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "_useful_properties",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "candidate['metadata'].get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "'\\n'.join",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "details.insert",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/candidate.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (candidate).\n2. Khởi tạo / gán biến `prefix`.\n3. Khởi tạo / gán biến `details`.\n4. Khởi tạo / gán biến `relationship`.\n5. Kiểm tra điều kiện rẽ nhánh `relationship`.\n6. Kiểm tra điều kiện rẽ nhánh `not details`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "_short_text",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_short_text` của file `candidate.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "value",
+          "kieu_du_lieu": "Any",
+          "mo_ta": "Tham số đầu vào `value` cho hàm `_short_text`"
+        },
+        {
+          "ten_tham_so": "limit",
+          "kieu_du_lieu": "int",
+          "mo_ta": "Tham số đầu vào `limit` cho hàm `_short_text`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `_short_text`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "' '.join",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_display_value(value).split",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_display_value",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "text[:limit].rstrip",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/candidate.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (value, limit).\n2. Khởi tạo / gán biến `text`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "_row_text",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_row_text` của file `candidate.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "candidate",
+          "kieu_du_lieu": "Candidate",
+          "mo_ta": "Tham số đầu vào `candidate` cho hàm `_row_text`"
+        },
+        {
+          "ten_tham_so": "headers",
+          "kieu_du_lieu": "list[Any] | None",
+          "mo_ta": "Tham số đầu vào `headers` cho hàm `_row_text`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `_row_text`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "candidate['properties'].get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_short_text",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "' | '.join",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "rendered.strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "candidate['metadata'].get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "enumerate",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "str(value).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(header).strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(values[index]).strip",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/candidate.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (candidate, headers).\n2. Khởi tạo / gán biến `values`.\n3. Kiểm tra điều kiện rẽ nhánh `isinstance(values, list)`.\n4. Trả về kết quả cho caller.\n5. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "_muc_text",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_muc_text` của file `candidate.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "candidate",
+          "kieu_du_lieu": "Candidate",
+          "mo_ta": "Tham số đầu vào `candidate` cho hàm `_muc_text`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `_muc_text`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "_short_text",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "properties.get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/candidate.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (candidate).\n2. Khởi tạo / gán biến `properties`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "_muc_label",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_muc_label` của file `candidate.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "properties",
+          "kieu_du_lieu": "dict[str, Any]",
+          "mo_ta": "Tham số đầu vào `properties` cho hàm `_muc_label`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `_muc_label`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "str(properties.get('ky_hieu') or '').strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "properties.get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/candidate.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (properties).\n2. Khởi tạo / gán biến `symbol`.\n3. Trả về kết quả cho caller.\n4. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "_render_notification_header",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_render_notification_header` của file `candidate.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "seed",
+          "kieu_du_lieu": "Candidate",
+          "mo_ta": "Tham số đầu vào `seed` cho hàm `_render_notification_header`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "list[str]",
+        "mo_ta": "Kết quả trả về của hàm `_render_notification_header`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "document.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "metadata.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "provenance.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "notice.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "lines.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_short_text",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "_display_value",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/candidate.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (seed).\n2. Khởi tạo / gán biến `metadata`.\n3. Khởi tạo / gán biến `provenance`.\n4. Khởi tạo / gán biến `notice`.\n5. Khởi tạo / gán biến `document`.\n6. Khởi tạo / gán biến `notice_title`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `list[str]`."
+    },
+    {
+      "ten_ham": "_render_document_mucs",
+      "chuc_nang": "Render mỗi Muc cùng TaiLieu đúng một lần trong bundle của seed.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "seed",
+          "kieu_du_lieu": "Candidate",
+          "mo_ta": "Tham số đầu vào `seed` cho hàm `_render_document_mucs`"
+        },
+        {
+          "ten_tham_so": "expansions",
+          "kieu_du_lieu": "list[Candidate]",
+          "mo_ta": "Tham số đầu vào `expansions` cho hàm `_render_document_mucs`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "list[str]",
+        "mo_ta": "Kết quả trả về của hàm `_render_document_mucs`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "seed['metadata'].get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "provenance.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "seen.add",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_muc_text",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "_muc_label",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "lines.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "make_candidate",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "properties.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "owner_section.get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/candidate.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (seed, expansions).\n2. Khởi tạo / gán biến `sections`.\n3. Khởi tạo / gán biến `provenance`.\n4. Khởi tạo / gán biến `owner_section`.\n5. Kiểm tra điều kiện rẽ nhánh `not sections and seed['label'] == 'DongBang' and owner_section`.\n6. Kiểm tra điều kiện rẽ nhánh `not sections`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `list[str]`."
+    },
+    {
+      "ten_ham": "_render_muc_tables",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_render_muc_tables` của file `candidate.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "expansions",
+          "kieu_du_lieu": "list[Candidate]",
+          "mo_ta": "Tham số đầu vào `expansions` cho hàm `_render_muc_tables`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "list[str]",
+        "mo_ta": "Kết quả trả về của hàm `_render_muc_tables`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "enumerate",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "str(properties.get('tieu_de') or '').strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "lines.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "properties.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_short_text",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "_row_text",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "' | '.join",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "row['metadata'].get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/candidate.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (expansions).\n2. Khởi tạo / gán biến `tables`.\n3. Khởi tạo / gán biến `rows`.\n4. Trả về kết quả cho caller.\n5. Hoàn tất tính toán và trả về kết quả kiểu `list[str]`."
+    },
+    {
+      "ten_ham": "_render_notification_bundle",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_render_notification_bundle` của file `candidate.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "position",
+          "kieu_du_lieu": "int",
+          "mo_ta": "Tham số đầu vào `position` cho hàm `_render_notification_bundle`"
+        },
+        {
+          "ten_tham_so": "seed",
+          "kieu_du_lieu": "Candidate",
+          "mo_ta": "Tham số đầu vào `seed` cho hàm `_render_notification_bundle`"
+        },
+        {
+          "ten_tham_so": "expansions",
+          "kieu_du_lieu": "list[Candidate]",
+          "mo_ta": "Tham số đầu vào `expansions` cho hàm `_render_notification_bundle`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `_render_notification_bundle`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "seed['metadata'].get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "lines.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "lines.extend",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "'\\n'.join",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "str(table.get('tieu_de') or '').strip",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_render_notification_header",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "_render_document_mucs",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "provenance.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "table.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_muc_text",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/candidate.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (position, seed, expansions).\n2. Khởi tạo / gán biến `lines`.\n3. Khởi tạo / gán biến `provenance`.\n4. Kiểm tra điều kiện rẽ nhánh `seed['label'] == 'Muc'`.\n5. Kiểm tra điều kiện rẽ nhánh `seed['label'] == 'DongBang'`.\n6. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "_fit_notification_block",
+      "chuc_nang": "Giới hạn context tại ranh giới dòng, không cắt giữa một field bảng.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "block",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `block` cho hàm `_fit_notification_block`"
+        },
+        {
+          "ten_tham_so": "max_chars",
+          "kieu_du_lieu": "int",
+          "mo_ta": "Tham số đầu vào `max_chars` cho hàm `_fit_notification_block`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `_fit_notification_block`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "block.splitlines",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "'\\n'.join",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "logger.warning",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "kept_lines.append",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/candidate.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (block, max_chars).\n2. Kiểm tra điều kiện rẽ nhánh `len(block) <= max_chars`.\n3. Khởi tạo / gán biến `marker`.\n4. Khởi tạo / gán biến `trial`.\n5. Kiểm tra điều kiện rẽ nhánh `len(trial) <= max_chars`.\n6. Gọi thực thi hàm `logger.warning`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "build_context",
+      "chuc_nang": "Render ranked roots and their notification expansions into one LLM context.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "candidates",
+          "kieu_du_lieu": "Iterable[Candidate]",
+          "mo_ta": "Tham số đầu vào `candidates` cho hàm `build_context`"
+        },
+        {
+          "ten_tham_so": "max_chars",
+          "kieu_du_lieu": "int",
+          "mo_ta": "Tham số đầu vào `max_chars` cho hàm `build_context`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `build_context`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "enumerate",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "'\\n\\n'.join",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "ValueError",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "blocks.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "children[key].append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_render_notification_bundle",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "_fit_notification_block",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "'\\n'.join",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "item['metadata'].get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "_render_root",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/common/candidate.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (candidates, max_chars).\n2. Kiểm tra điều kiện rẽ nhánh `max_chars <= 0`.\n3. Khởi tạo / gán biến `materialized`.\n4. Khởi tạo / gán biến `roots`.\n5. Kiểm tra điều kiện rẽ nhánh `not roots`.\n6. Trả về kết quả cho caller.\n7. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "name": "notification_multi_node_5",
+  "version": 1,
+  "purpose": "Đánh giá câu trả lời cần tổng hợp đầy đủ evidence từ ít nhất hai node độc lập.",
+  "snapshot_date": "2026-08-16",
+  "evidence_rule": "ALL_GROUPS; mỗi group là ANY_OF các node tương đương.",
+  "cases": [
+    {
+      "id": "MN01",
+      "category": "Cross-section temporal",
+      "question": "Đại học Cần Thơ nghỉ Tết Âm lịch 2026 từ ngày nào đến ngày nào và sinh viên bắt đầu học lại khi nào?",
+      "gold_answer": "Đại học Cần Thơ nghỉ từ ngày 09/02/2026 đến hết Chủ nhật 22/02/2026. Sinh viên bắt đầu học lại từ thứ Hai 23/02/2026.",
+      "required_facts": [
+        "holiday_start=2026-02-09",
+        "holiday_end=2026-02-22",
+        "teaching_resume=2026-02-23"
+      ],
+      "source_files": [
+        "Tet2026.pdf"
+      ],
+      "evidence_groups": [
+        {
+          "name": "holiday_period",
+          "any_of": [
+            "Tet2026_doc_1_muc_1"
+          ]
+        },
+        {
+          "name": "teaching_resume",
+          "any_of": [
+            "Tet2026_doc_1_muc_2"
+          ]
+        }
+      ],
+      "why_multi_node": "Mục 1 chỉ chứa khoảng nghỉ; Mục 2 mới chứa ngày bắt đầu học lại."
+    },
+    {
+      "id": "MN02",
+      "category": "Cross-section support",
+      "question": "Nếu không có thiết bị cá nhân để ĐKHP trực tuyến HK1 năm học 2026-2027, sinh viên có thể đăng ký ở đâu và được Thư viện hỗ trợ như thế nào?",
+      "gold_answer": "Sinh viên có thể dùng máy tính tại Thư viện Đại học Cần Thơ. Thư viện cử cán bộ trực và mở cửa phòng máy phục vụ sinh viên đăng ký theo thời gian đã công bố.",
+      "required_facts": [
+        "available_equipment=máy tính tại Thư viện Đại học Cần Thơ",
+        "staffing=cử cán bộ trực",
+        "facility=mở cửa phòng máy phục vụ sinh viên đăng ký",
+        "availability=theo thời gian đăng ký đã công bố"
+      ],
+      "source_files": [
+        "KHGDVDKHP_HK1_26_27.pdf"
+      ],
+      "evidence_groups": [
+        {
+          "name": "available_equipment",
+          "any_of": [
+            "KHGDVDKHP_HK1_26_27_doc_2_muc_4"
+          ]
+        },
+        {
+          "name": "library_support",
+          "any_of": [
+            "KHGDVDKHP_HK1_26_27_doc_2_muc_5"
+          ]
+        }
+      ],
+      "why_multi_node": "Mục 4 nêu thiết bị có thể dùng; Mục 5 nêu cách Thư viện bố trí nhân sự và phòng máy."
+    },
+    {
+      "id": "MN03",
+      "category": "Section-to-table join",
+      "question": "Sinh viên K50 của Trường Công nghệ Thông tin và Truyền thông hoặc Trường Thủy sản bắt đầu ĐKHP đợt 1 HK1 năm học 2026-2027 lúc nào?",
+      "gold_answer": "Hai trường thuộc Nhóm đơn vị 6, nên sinh viên K50 bắt đầu đăng ký lúc 13:30 ngày 05/08/2026.",
+      "required_facts": [
+        "unit_group=6",
+        "group_members={Trường Công nghệ Thông tin và Truyền thông,Trường Thủy sản}",
+        "registration_time=13:30",
+        "registration_date=2026-08-05"
+      ],
+      "source_files": [
+        "KHGDVDKHP_HK1_26_27.pdf"
+      ],
+      "evidence_groups": [
+        {
+          "name": "unit_group_mapping",
+          "any_of": [
+            "KHGDVDKHP_HK1_26_27_doc_2_muc_1"
+          ]
+        },
+        {
+          "name": "registration_schedule",
+          "any_of": [
+            "KHGDVDKHP_HK1_26_27_doc_2_muc_2_bang_1_dong_16"
+          ]
+        }
+      ],
+      "why_multi_node": "Mục 1 ánh xạ trường sang Nhóm 6; dòng bảng 16 cung cấp lịch riêng của Khóa 50, Nhóm 6."
+    },
+    {
+      "id": "MN04",
+      "category": "Table-to-policy join",
+      "question": "Lớp CT219-01 bị xóa sau đợt 1 HK1 năm học 2025-2026 là học phần nào và sinh viên đã đăng ký lớp này có những phương án xử lý nào?",
+      "gold_answer": "CT219-01 là học phần Xử lý ngôn ngữ tự nhiên. Sinh viên có thể chuyển kế hoạch học tập sang học kỳ tiếp theo, đăng ký lớp học phần còn lại hoặc đăng ký học phần khác thay thế trong đợt 2 từ 08/09/2025 đến 14/09/2025.",
+      "required_facts": [
+        "course_name=Xử lý ngôn ngữ tự nhiên",
+        "option_1=chuyển kế hoạch học tập sang học kỳ tiếp theo",
+        "option_2=đăng ký lớp học phần còn lại",
+        "option_3=đăng ký học phần khác thay thế",
+        "round_2_period=2025-09-08..2025-09-14"
+      ],
+      "source_files": [
+        "Xoalop_HK1_2025_2026_dot1.pdf"
+      ],
+      "evidence_groups": [
+        {
+          "name": "deleted_course_row",
+          "any_of": [
+            "Xoalop_HK1_2025_2026_dot1_doc_2_muc_0_bang_1_dong_50"
+          ]
+        },
+        {
+          "name": "student_handling_policy",
+          "any_of": [
+            "Xoalop_HK1_2025_2026_dot1_doc_1_muc_0"
+          ]
+        }
+      ],
+      "why_multi_node": "Dòng bảng xác định lớp và giảng viên; mục thông báo riêng mới quy định các phương án xử lý."
+    },
+    {
+      "id": "MN05",
+      "category": "Table-to-decision join",
+      "question": "MSSV B2405750 được chuyển sang lớp và ngành nào, việc chuyển ngành áp dụng từ học kỳ nào và quyền lợi sau khi chuyển được giải quyết ra sao?",
+      "gold_answer": "Sinh viên Trương Khải Văn, MSSV B2405750, được chuyển sang lớp TN2484A1, ngành Kỹ thuật cơ khí (Chuyên ngành Cơ khí chế tạo máy), thuộc Trường Bách khoa. Việc chuyển ngành áp dụng từ HK2 năm học 2025-2026; mọi chế độ và quyền lợi tiếp tục được thực hiện khi chuyển sang lớp học mới.",
+      "required_facts": [
+        "student_name=Trương Khải Văn",
+        "student_id=B2405750",
+        "new_class=TN2484A1",
+        "new_major=Kỹ thuật cơ khí (Chuyên ngành Cơ khí chế tạo máy)",
+        "new_unit=Trường Bách khoa",
+        "effective_semester=HK2 2025-2026",
+        "student_benefits=tiếp tục được thực hiện khi chuyển sang lớp học mới"
+      ],
+      "source_files": [
+        "ChuyenNganh10_2025.signed.signed.pdf"
+      ],
+      "evidence_groups": [
+        {
+          "name": "student_transfer_row",
+          "any_of": [
+            "ChuyenNganh10_2025.signed.signed_doc_2_muc_0_bang_1_dong_20"
+          ]
+        },
+        {
+          "name": "effective_semester",
+          "any_of": [
+            "ChuyenNganh10_2025.signed.signed_doc_1_muc_điều_1"
+          ]
+        },
+        {
+          "name": "benefits_policy",
+          "any_of": [
+            "ChuyenNganh10_2025.signed.signed_doc_1_muc_điều_2"
+          ]
+        }
+      ],
+      "why_multi_node": "Dòng bảng chứa dữ liệu sinh viên; Điều 1 nêu học kỳ áp dụng; Điều 2 quy định quyền lợi."
+    }
+  ]
+}

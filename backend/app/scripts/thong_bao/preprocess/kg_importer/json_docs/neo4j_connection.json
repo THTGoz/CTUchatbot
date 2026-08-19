@@ -1,0 +1,162 @@
+{
+  "file_name": "neo4j_connection.py",
+  "file_path": "backend/app/scripts/thong_bao/preprocess/kg_importer/neo4j_connection.py",
+  "bien_chung": [
+    {
+      "ten_bien": "CONSTRAINTS",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "(('thongbao_id_unique', 'ThongBao'), ('tailieu_id_unique', 'TaiLieu'), ('muc_id_unique', 'Muc'), ('bang_id_unique', 'Bang'), ('dongbang_id_unique', 'DongBang'))"
+    }
+  ],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Chuẩn Hóa Cấu Trúc Module",
+      "noi_dung_rule": "Tuân thủ quy tắc xử lý và chuẩn hóa mã nguồn của module",
+      "dieu_kien_va_hanh_dong": "Đảm bảo tính toàn vẹn khi thực thi"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "__init__",
+      "chuc_nang": "Mở driver theo Settings nhưng chưa thực hiện truy vấn ghi.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "settings",
+          "kieu_du_lieu": "Settings",
+          "mo_ta": "Tham số đầu vào `settings` cho hàm `__init__`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "None",
+        "mo_ta": "Kết quả trả về của hàm `__init__`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "GraphDatabase.driver",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/kg_importer/neo4j_connection.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (settings).\n2. Khởi tạo / gán biến `self.database`.\n3. Khởi tạo / gán biến `self.driver`.\n4. Hoàn tất tính toán và trả về kết quả kiểu `None`."
+    },
+    {
+      "ten_ham": "close",
+      "chuc_nang": "Đóng driver Neo4j sau khi import hoặc khi có lỗi.",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "None",
+        "mo_ta": "Kết quả trả về của hàm `close`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "self.driver.close",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/kg_importer/neo4j_connection.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Gọi thực thi hàm `self.driver.close`.\n3. Hoàn tất tính toán và trả về kết quả kiểu `None`."
+    },
+    {
+      "ten_ham": "verify",
+      "chuc_nang": "Kiểm tra kết nối và quyền truy cập database đích.",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "None",
+        "mo_ta": "Kết quả trả về của hàm `verify`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "self.driver.verify_connectivity",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self.driver.session",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "session.run('RETURN 1 AS ok').consume",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "session.run",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/kg_importer/neo4j_connection.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Gọi thực thi hàm `self.driver.verify_connectivity`.\n3. Hoàn tất tính toán và trả về kết quả kiểu `None`."
+    },
+    {
+      "ten_ham": "execute_write",
+      "chuc_nang": "Chạy callback trong managed write transaction của Neo4j.",
+      "dau_vao": [
+        {
+          "ten_tham_so": "callback",
+          "kieu_du_lieu": "Callable[[ManagedTransaction], Any]",
+          "mo_ta": "Tham số đầu vào `callback` cho hàm `execute_write`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `execute_write`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "self.driver.session",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "session.execute_write",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/kg_importer/neo4j_connection.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (callback).\n2. Thực hiện các bước tính toán logic bên trong hàm.\n3. Trả về kết quả đầu ra."
+    },
+    {
+      "ten_ham": "create_constraints",
+      "chuc_nang": "Tạo unique constraint cho năm loại node của nhánh Thông báo.",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "None",
+        "mo_ta": "Kết quả trả về của hàm `create_constraints`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "self.driver.session",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "session.run",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/kg_importer/neo4j_connection.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Thực hiện các bước tính toán logic bên trong hàm.\n3. Trả về kết quả đầu ra."
+    },
+    {
+      "ten_ham": "delete_thongbao_branch",
+      "chuc_nang": "Xóa toàn bộ nhánh Thông báo; chỉ được dùng trong full import.",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "int",
+        "mo_ta": "Kết quả trả về của hàm `delete_thongbao_branch`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "self.driver.session",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "session.run(query).single",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "session.run",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/scripts/thong_bao/preprocess/kg_importer/neo4j_connection.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Khởi tạo / gán biến `query`.\n3. Hoàn tất tính toán và trả về kết quả kiểu `int`."
+    }
+  ]
+}

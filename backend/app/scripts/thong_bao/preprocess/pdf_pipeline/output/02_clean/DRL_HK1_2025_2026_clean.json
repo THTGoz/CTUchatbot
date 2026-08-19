@@ -1,0 +1,171 @@
+{
+  "ten_file": "DRL_HK1_2025_2026.pdf",
+  "trang": [
+    {
+      "so_trang": 1,
+      "kich_thuoc": [
+        595.32,
+        841.92
+      ],
+      "items": [
+        {
+          "loai": "van_ban",
+          "dang": "metadata",
+          "bbox": [
+            102.14,
+            94.43,
+            533.86,
+            108.78
+          ],
+          "noi_dung": "Số: 355 /TB-CTSV\nCần Thơ, ngày 24 tháng 9 năm 2025"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "tieu_de",
+          "bbox": [
+            153.98,
+            125.63,
+            469.48,
+            157.25
+          ],
+          "noi_dung": "THÔNG BÁO\nVề việc đánh giá điểm rèn luyện Học kỳ 1, 2025-2026"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            84.98,
+            203.63,
+            538.41,
+            232.98
+          ],
+          "noi_dung": "Thực hiện kế hoạch đánh giá điểm rèn luyện học kỳ 1, 2025-2026; Phòng Công tác Sinh viên xin thông báo đến các đơn vị quản lý đào tạo triển khai thực hiện:"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "heading",
+          "bbox": [
+            120.98,
+            247.31,
+            529.18,
+            261.66
+          ],
+          "noi_dung": "1. Các mốc thời gian thực hiện (đã công bố trên Hệ thống quản lý đào tạo):"
+        },
+        {
+          "loai": "bang",
+          "bbox": [
+            92.03,
+            262.16,
+            531.61,
+            405.59
+          ],
+          "tieu_de_bang": "1. Các mốc thời gian thực hiện (đã công bố trên Hệ thống quản lý đào tạo):",
+          "du_lieu": [
+            [
+              "TT",
+              "Nội dung công việc",
+              "Thời gian thực hiện"
+            ],
+            [
+              "1",
+              "Các đơn vị nhập dữ liệu tham gia hoạt động",
+              "24/09  23/11/2025"
+            ],
+            [
+              "2",
+              "Thời gian tổng hợp dữ liệu của Khoa",
+              "24/11 26/11/2025"
+            ],
+            [
+              "3",
+              "SV tự đánh giá",
+              "27/11 07/12/2025"
+            ],
+            [
+              "4",
+              "CVHT đánh giá",
+              "04/12 14/12/2025"
+            ],
+            [
+              "5",
+              "Thời gian SV phản hồi",
+              "15/12 26/12/2025"
+            ],
+            [
+              "6",
+              "Các đơn vị gửi file và danh sách kết quả đánh giá rèn luyện có xác nhận của thủ trưởng đơn vị cho Phòng Công tác Sinh để Trường lập Quyết định công nhận.",
+              "30/12/2025"
+            ]
+          ]
+        },
+        {
+          "loai": "van_ban",
+          "dang": "heading",
+          "bbox": [
+            84.98,
+            421.46,
+            538.3,
+            465.33
+          ],
+          "noi_dung": "2. Quy trình thực hiện đánh giá:"
+        },
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            84.98,
+            421.46,
+            538.3,
+            465.33
+          ],
+          "noi_dung": "- Thực hiện quy trình đánh giá điểm rèn luyện trên website Phòng Công tác Sinh viên https://dsa.ctu.edu.vn/images/upload/vbanply/2018/DRL/quytrinh_DRL_tructuyen.pdf."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            84.98,
+            465.88,
+            538.31,
+            495.23
+          ],
+          "noi_dung": "- Phòng Công tác Sinh viên sẽ bổ sung tự điển các cuộc thi chuyên ngành, đơn vị quản lý thực hiện nhập liệu (khi đơn vị có yêu cầu)."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            84.98,
+            495.76,
+            538.48,
+            584.87
+          ],
+          "noi_dung": "- Đối với hoạt động rèn luyện có liên quan của Đoàn tại cơ sở Hậu Giang, BCH Đoàn TNCS HCM cơ sở Hậu Giang tổ chức hoạt động, ghi nhận thành tích và gửi dữ liệu đánh giá rèn luyện của SV về Ban thường vụ Đoàn TNCS HCM Đại học Cần Thơ để báo cáo và nhập dữ liệu vào Hệ thống quản lý đào tạo của Đại học Cần Thơ; Đối với hoạt động rèn luyện có liên quan của Đoàn TNCS HCM tại khu Sóc Trăng do Đoàn TNCS HCM Đại học Cần Thơ chỉ đạo."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "bullet",
+          "bbox": [
+            84.98,
+            585.52,
+            538.48,
+            629.75
+          ],
+          "noi_dung": "- Trong quá trình thực hiện, nếu có vướng mắc, đề nghị thông tin về Phòng Công tác Sinh viên qua email pctsv@ctu.edu.vn. Phòng sẽ tập hợp, thống nhất cách xử lý và phản hồi về các đơn vị trong thời gian sớm nhất."
+        },
+        {
+          "loai": "van_ban",
+          "dang": "doan_van",
+          "bbox": [
+            84.98,
+            630.4,
+            538.42,
+            729.8
+          ],
+          "noi_dung": "Kính đề nghị Thủ trưởng đơn vị quan tâm triển khai thực hiện theo khung thời gian đề ra."
+        }
+      ]
+    }
+  ]
+}

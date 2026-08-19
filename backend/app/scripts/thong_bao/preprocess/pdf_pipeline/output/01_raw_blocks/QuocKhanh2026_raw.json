@@ -1,0 +1,194 @@
+{
+  "ten_file": "QuocKhanh2026.pdf",
+  "trang": [
+    {
+      "so_trang": 1,
+      "kich_thuoc": [
+        595.3,
+        841.9
+      ],
+      "items": [
+        {
+          "loai": "van_ban",
+          "bbox": [
+            106.75,
+            57.21,
+            261.74,
+            70.5
+          ],
+          "noi_dung": "BỘ GIÁO DỤC VÀ ĐÀO TẠO"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            283.95,
+            57.21,
+            534.29,
+            70.5
+          ],
+          "noi_dung": "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            128.75,
+            71.01,
+            239.76,
+            84.29
+          ],
+          "noi_dung": "ĐẠI HỌC CẦN THƠ"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            342.8,
+            71.05,
+            501.94,
+            85.44
+          ],
+          "noi_dung": "Độc lập - Tự do - Hạnh phúc"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            132.61,
+            96.35,
+            235.89,
+            110.74
+          ],
+          "noi_dung": "Số: /TB-ĐHCT"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            331.7,
+            97.5,
+            513.05,
+            111.89
+          ],
+          "noi_dung": "Cần Thơ, ngày tháng 8 năm 2026"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            148.0,
+            97.69,
+            422.06,
+            113.69
+          ],
+          "noi_dung": "2456\n03"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            196.51,
+            144.34,
+            427.14,
+            175.94
+          ],
+          "noi_dung": "THÔNG BÁO\nVề việc nghỉ Lễ Quốc khánh năm 2026"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            113.4,
+            191.54,
+            317.35,
+            207.04
+          ],
+          "noi_dung": "Căn cứ Bộ luật Lao động năm 2019;"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            215.25,
+            538.6,
+            266.16
+          ],
+          "noi_dung": "Căn cứ Thông báo số 9441/TB-BNV ngày 16 tháng 10 năm 2025 của Bộ Nội\nvụ về việc nghỉ Tết Âm lịch và nghỉ Lễ Quốc khánh năm 2026 đối với cán bộ,\ncông chức, viên chức và người lao động;"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            113.4,
+            274.37,
+            320.03,
+            289.87
+          ],
+          "noi_dung": "Căn cứ kế hoạch công tác năm 2026."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            298.08,
+            538.61,
+            402.12
+          ],
+          "noi_dung": "Đại học Cần Thơ thông báo lịch nghỉ Lễ Quốc khánh năm 2026 như sau:\nViên chức, người lao động và người học của Đại học Cần Thơ được nghỉ Lễ Quốc\nkhánh 02 (hai) ngày theo quy định, gồm ngày 01 tháng 9 năm 2026 và ngày 02\ntháng 9 năm 2026; đồng thời thực hiện hoán đổi ngày làm việc từ thứ Hai, ngày\n31 tháng 8 năm 2026 sang thứ Bảy, ngày 22 tháng 8 năm 2026 (nghỉ ngày 31\ntháng 8 năm 2026 và làm bù vào ngày 22 tháng 8 năm 2026)."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            410.33,
+            538.61,
+            478.95
+          ],
+          "noi_dung": "Để bảo đảm hoạt động của Đại học Cần Thơ trong thời gian nghỉ Lễ, thủ\ntrưởng các đơn vị thuộc và trực thuộc chủ động sắp xếp công việc; bố trí lực lượng\ntrực bảo vệ tài sản, bảo đảm an ninh, trật tự và an toàn phòng cháy, chữa cháy\ntheo quy định."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            487.16,
+            538.59,
+            520.36
+          ],
+          "noi_dung": "Phòng Công tác Sinh viên chủ trì thực hiện việc treo cờ Tổ quốc tại các khu\ncủa Đại học Cần Thơ."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.05,
+            528.58,
+            538.62,
+            579.49
+          ],
+          "noi_dung": "Đề nghị thủ trưởng các đơn vị thuộc và trực thuộc Đại học Cần Thơ phổ biến\nThông báo này đến toàn thể viên chức, người lao động và người học để biết và\nthực hiện./."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            85.55,
+            587.61,
+            230.82,
+            638.84
+          ],
+          "noi_dung": "Nơi nhận:\n- Các đơn vị thuộc và trực thuộc;\n- BGĐ, TVĐU;\n- Lưu: VT, VP."
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            365.39,
+            587.7,
+            439.66,
+            603.2
+          ],
+          "noi_dung": "GIÁM ĐỐC"
+        },
+        {
+          "loai": "van_ban",
+          "bbox": [
+            350.39,
+            696.0,
+            454.65,
+            711.49
+          ],
+          "noi_dung": "Trần Trung Tính"
+        }
+      ]
+    }
+  ]
+}

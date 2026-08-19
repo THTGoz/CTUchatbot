@@ -1,0 +1,564 @@
+{
+  "file_name": "quyche_service.py",
+  "file_path": "backend/app/services/qchv/quyche_service.py",
+  "bien_chung": [
+    {
+      "ten_bien": "logger",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "logging.getLogger('app.qchv')"
+    },
+    {
+      "ten_bien": "ARABIC_TO_ROMAN",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "{1: 'I', 2: 'II', 3: 'III', 4: 'IV', 5: 'V', 6: 'VI', 7: 'VII', 8: 'VIII', 9: 'IX', 10: 'X', 11: 'XI', 12: 'XII', 13: 'XIII', 14: 'XIV', 15: 'XV'}"
+    },
+    {
+      "ten_bien": "quyche_service",
+      "kieu_du_lieu": "auto",
+      "gia_tri_hoac_mo_ta": "QuyCheService()"
+    }
+  ],
+  "danh_sach_rule_based": [
+    {
+      "ten_luat": "Rule Xử Lý Chuỗi & Regular Expression",
+      "noi_dung_rule": "Sử dụng các quy tắc regex để loại bỏ ký tự đặc biệt, lọc khoảng trắng và tìm kiếm pattern",
+      "dieu_kien_va_hanh_dong": "Khớp điều kiện chuỗi đầu vào để thực hiện tiền xử lý văn bản"
+    },
+    {
+      "ten_luat": "Rule Ngưỡng Độ Tương Đồng Vector (Similarity Score Threshold)",
+      "noi_dung_rule": "Lọc danh sách kết quả truy vấn theo ngưỡng điểm tương đồng vector",
+      "dieu_kien_va_hanh_dong": "Chỉ giữ lại các candidate đạt điểm độ tương đồng đạt yêu cầu"
+    }
+  ],
+  "danh_sach_ham": [
+    {
+      "ten_ham": "run",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `run` của file `quyche_service.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "cypher",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `cypher` cho hàm `run`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Any",
+        "mo_ta": "Kết quả trả về của hàm `run`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "read_query",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/qchv/quyche_service.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (cypher).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `Any`."
+    },
+    {
+      "ten_ham": "get_chuong",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `get_chuong` của file `quyche_service.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "vb_id",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `vb_id` cho hàm `get_chuong`"
+        },
+        {
+          "ten_tham_so": "roman",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `roman` cho hàm `get_chuong`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "List[str]",
+        "mo_ta": "Kết quả trả về của hàm `get_chuong`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "self.run",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._slugify",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "r.get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/qchv/quyche_service.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (vb_id, roman).\n2. Khởi tạo / gán biến `cid`.\n3. Khởi tạo / gán biến `rows`.\n4. Trả về kết quả cho caller.\n5. Hoàn tất tính toán và trả về kết quả kiểu `List[str]`."
+    },
+    {
+      "ten_ham": "get_dieu",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `get_dieu` của file `quyche_service.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "vb_id",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `vb_id` cho hàm `get_dieu`"
+        },
+        {
+          "ten_tham_so": "dso",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `dso` cho hàm `get_dieu`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "List[str]",
+        "mo_ta": "Kết quả trả về của hàm `get_dieu`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "self.run",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "row.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "texts.append",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/qchv/quyche_service.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (vb_id, dso).\n2. Khởi tạo / gán biến `did`.\n3. Khởi tạo / gán biến `rows`.\n4. Trả về kết quả cho caller.\n5. Hoàn tất tính toán và trả về kết quả kiểu `List[str]`."
+    },
+    {
+      "ten_ham": "get_khoan",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `get_khoan` của file `quyche_service.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "vb_id",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `vb_id` cho hàm `get_khoan`"
+        },
+        {
+          "ten_tham_so": "dso",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `dso` cho hàm `get_khoan`"
+        },
+        {
+          "ten_tham_so": "kso",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `kso` cho hàm `get_khoan`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "List[str]",
+        "mo_ta": "Kết quả trả về của hàm `get_khoan`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "self.run",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "row.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "texts.append",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/qchv/quyche_service.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (vb_id, dso, kso).\n2. Khởi tạo / gán biến `did`.\n3. Khởi tạo / gán biến `kid`.\n4. Khởi tạo / gán biến `rows`.\n5. Trả về kết quả cho caller.\n6. Hoàn tất tính toán và trả về kết quả kiểu `List[str]`."
+    },
+    {
+      "ten_ham": "get_diem",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `get_diem` của file `quyche_service.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "vb_id",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `vb_id` cho hàm `get_diem`"
+        },
+        {
+          "ten_tham_so": "dso",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `dso` cho hàm `get_diem`"
+        },
+        {
+          "ten_tham_so": "kso",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `kso` cho hàm `get_diem`"
+        },
+        {
+          "ten_tham_so": "dky",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `dky` cho hàm `get_diem`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "List[str]",
+        "mo_ta": "Kết quả trả về của hàm `get_diem`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "self.run",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._slugify",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "r.get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/qchv/quyche_service.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (vb_id, dso, kso, dky).\n2. Khởi tạo / gán biến `did`.\n3. Khởi tạo / gán biến `kid`.\n4. Khởi tạo / gán biến `mid`.\n5. Khởi tạo / gán biến `rows`.\n6. Trả về kết quả cho caller.\n7. Hoàn tất tính toán và trả về kết quả kiểu `List[str]`."
+    },
+    {
+      "ten_ham": "vector_search",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `vector_search` của file `quyche_service.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "vb_id",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `vb_id` cho hàm `vector_search`"
+        },
+        {
+          "ten_tham_so": "query_vec",
+          "kieu_du_lieu": "List[float]",
+          "mo_ta": "Tham số đầu vào `query_vec` cho hàm `vector_search`"
+        },
+        {
+          "ten_tham_so": "top_k",
+          "kieu_du_lieu": "int",
+          "mo_ta": "Tham số đầu vào `top_k` cho hàm `vector_search`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "List[str]",
+        "mo_ta": "Kết quả trả về của hàm `vector_search`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "self.run",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "sorted",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "row.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "seen.values",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "results.append",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/qchv/quyche_service.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (vb_id, query_vec, top_k).\n2. Khởi tạo / gán biến `results`.\n3. Khởi tạo / gán biến `sorted_results`.\n4. Trả về kết quả cho caller.\n5. Hoàn tất tính toán và trả về kết quả kiểu `List[str]`."
+    },
+    {
+      "ten_ham": "_slugify",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_slugify` của file `quyche_service.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "text",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `text` cho hàm `_slugify`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `_slugify`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "text.replace('Đ', 'D').replace",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "unicodedata.normalize",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "''.join",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "re.sub",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "text.replace",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "unicodedata.combining",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/qchv/quyche_service.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (text).\n2. Kiểm tra điều kiện rẽ nhánh `not text`.\n3. Khởi tạo / gán biến `text`.\n4. Khởi tạo / gán biến `nfkd`.\n5. Khởi tạo / gán biến `text`.\n6. Trả về kết quả cho caller.\n7. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "__init__",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `__init__` của file `quyche_service.py`",
+      "dau_vao": [],
+      "dau_ra": {
+        "kieu_du_lieu": "None",
+        "mo_ta": "Kết quả trả về của hàm `__init__`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "Neo4jQuerier",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "QuyCheLLMService",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/qchv/quyche_service.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (không tham số).\n2. Khởi tạo / gán biến `self.querier`.\n3. Khởi tạo / gán biến `self.llm_service`.\n4. Hoàn tất tính toán và trả về kết quả kiểu `None`."
+    },
+    {
+      "ten_ham": "_embed_text",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_embed_text` của file `quyche_service.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "text",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `text` cho hàm `_embed_text`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "List[float]",
+        "mo_ta": "Kết quả trả về của hàm `_embed_text`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "get_embedding_model().get_embedding_batch",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "logger.warning",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "get_embedding_model",
+          "nguon_goc": "cùng module/built-in"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/qchv/quyche_service.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (text).\n2. Thực hiện các bước tính toán logic bên trong hàm.\n3. Trả về kết quả đầu ra."
+    },
+    {
+      "ten_ham": "_extract_references",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_extract_references` của file `quyche_service.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "question",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `question` cho hàm `_extract_references`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "List[Dict[str, str]]",
+        "mo_ta": "Kết quả trả về của hàm `_extract_references`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "re.finditer",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "match.group",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "value.isdigit",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "refs.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._arabic_to_roman",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "any",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "ref.get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/qchv/quyche_service.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (question).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `List[Dict[str, str]]`."
+    },
+    {
+      "ten_ham": "_arabic_to_roman",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_arabic_to_roman` của file `quyche_service.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "number",
+          "kieu_du_lieu": "int",
+          "mo_ta": "Tham số đầu vào `number` cho hàm `_arabic_to_roman`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `_arabic_to_roman`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "ARABIC_TO_ROMAN.get",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/qchv/quyche_service.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (number).\n2. Trả về kết quả cho caller.\n3. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "_collect_context",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `_collect_context` của file `quyche_service.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "vb_id",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `vb_id` cho hàm `_collect_context`"
+        },
+        {
+          "ten_tham_so": "question",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `question` cho hàm `_collect_context`"
+        },
+        {
+          "ten_tham_so": "refs",
+          "kieu_du_lieu": "List[Dict[str, str]]",
+          "mo_ta": "Tham số đầu vào `refs` cho hàm `_collect_context`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "str",
+        "mo_ta": "Kết quả trả về của hàm `_collect_context`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "now",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "'\\n\\n---\\n\\n'.join",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "log_event",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "self._embed_text",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self.querier.vector_search",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "logger.warning",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "seen.add",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "unique.append",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "elapsed_ms",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "self.querier.get_chuong",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/qchv/quyche_service.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (vb_id, question, refs).\n2. Khởi tạo / gán biến `started`.\n3. Khởi tạo / gán biến `retrieval_mode`.\n4. Kiểm tra điều kiện rẽ nhánh `refs`.\n5. Khởi tạo / gán biến `seen`.\n6. Khởi tạo / gán biến `context`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `str`."
+    },
+    {
+      "ten_ham": "handle_query",
+      "chuc_nang": "Thực hiện xử lý logic trong hàm `handle_query` của file `quyche_service.py`",
+      "dau_vao": [
+        {
+          "ten_tham_so": "query",
+          "kieu_du_lieu": "str",
+          "mo_ta": "Tham số đầu vào `query` cho hàm `handle_query`"
+        },
+        {
+          "ten_tham_so": "history",
+          "kieu_du_lieu": "List[Dict[str, Any]]",
+          "mo_ta": "Tham số đầu vào `history` cho hàm `handle_query`"
+        }
+      ],
+      "dau_ra": {
+        "kieu_du_lieu": "Dict[str, Any]",
+        "mo_ta": "Kết quả trả về của hàm `handle_query`"
+      },
+      "cac_ham_con_ben_trong": [
+        {
+          "ten_ham_con": "now",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "self.llm_service.preprocess_question",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "log_event",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "self.llm_service.detect_vanban",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "VANBAN_DISPLAY.get",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._extract_references",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "self._collect_context",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "log_context",
+          "nguon_goc": "cùng module/built-in"
+        },
+        {
+          "ten_ham_con": "self.llm_service.generate_answer",
+          "nguon_goc": "external module / object method"
+        },
+        {
+          "ten_ham_con": "logger.info",
+          "nguon_goc": "external module / object method"
+        }
+      ],
+      "nguon_goc_ham": "backend/app/services/qchv/quyche_service.py",
+      "mo_ta_luong_xu_ly": "1. Tiếp nhận và kiểm tra tính hợp lệ của các tham số đầu vào (query, history).\n2. Khởi tạo / gán biến `total_started`.\n3. Khởi tạo / gán biến `question`.\n4. Gọi thực thi hàm `log_event`.\n5. Kiểm tra điều kiện rẽ nhánh `question != query`.\n6. Khởi tạo / gán biến `detect_started`.\n7. Hoàn tất tính toán và trả về kết quả kiểu `Dict[str, Any]`."
+    }
+  ]
+}
