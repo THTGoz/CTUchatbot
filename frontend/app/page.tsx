@@ -1,28 +1,94 @@
 'use client'
 
-import { useState, useRef, useEffect } from "react"
+import React, { useState, useRef, useEffect, useCallback } from "react"
 import { 
   Send, Loader2, MessageSquare, Plus, User, Bot, 
-  Trash2, Github, Copy, ThumbsUp, RefreshCw, Share2 
+  Github, ThumbsUp, RefreshCw, Share2 
 } from "lucide-react"
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
-type Message = {
-  id: string
-  role: "user" | "assistant"
-  parts: { type: "text"; text: string }[]
+export type MessagePart = {
+  type: "text"
+  text: string
 }
 
+export type Message = {
+  id: string
+  role: "user" | "assistant"
+  parts: MessagePart[]
+}
+
+export type Conversation = {
+  id: string
+  title: string
+  createdAt: number
+  updatedAt: number
+  messages: Message[]
+}
+
+const STORAGE_KEY = "ctu_chatbot_conversations_v1"
+const ACTIVE_CONV_KEY = "ctu_chatbot_active_id_v1"
+
 export default function Chat() {
+  const [conversations, setConversations] = useState<Conversation[]>([])
+  const [activeConvId, setActiveConvId] = useState<string | null>(null)
   const [messages, setMessages] = useState<Message[]>([])
   const [input, setInput] = useState("")
   const [status, setStatus] = useState<"idle" | "streaming">("idle")
+  const [isInitialized, setIsInitialized] = useState(false)
 
   const scrollRef = useRef<HTMLDivElement>(null)
   const bufferRef = useRef("")
   const flushTimer = useRef<NodeJS.Timeout | null>(null)
+  const activeConvIdRef = useRef<string | null>(null)
 
+  // Keep activeConvId ref in sync for streaming closures
+  useEffect(() => {
+    activeConvIdRef.current = activeConvId
+  }, [activeConvId])
+
+  // Load conversations from localStorage on initial render
+  useEffect(() => {
+    try {
+      const savedData = localStorage.getItem(STORAGE_KEY)
+      const savedActiveId = localStorage.getItem(ACTIVE_CONV_KEY)
+      if (savedData) {
+        const parsed: Conversation[] = JSON.parse(savedData)
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          parsed.sort((a, b) => (b.updatedAt || 0) - (a.updatedAt || 0))
+          setConversations(parsed)
+
+          const target = parsed.find(c => c.id === savedActiveId) || parsed[0]
+          if (target) {
+            setActiveConvId(target.id)
+            setMessages(target.messages || [])
+          }
+        }
+      }
+    } catch (e) {
+      console.error("Failed to load conversation history from localStorage:", e)
+    } finally {
+      setIsInitialized(true)
+    }
+  }, [])
+
+  // Save conversations to localStorage whenever they change
+  useEffect(() => {
+    if (!isInitialized) return
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(conversations))
+      if (activeConvId) {
+        localStorage.setItem(ACTIVE_CONV_KEY, activeConvId)
+      } else {
+        localStorage.removeItem(ACTIVE_CONV_KEY)
+      }
+    } catch (e) {
+      console.error("Failed to save conversation history to localStorage:", e)
+    }
+  }, [conversations, activeConvId, isInitialized])
+
+  // Auto-scroll when messages update
   useEffect(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollTo({
@@ -30,53 +96,127 @@ export default function Chat() {
         behavior: "smooth"
       })
     }
-  }, [messages])
+  }, [messages, status])
 
-  const flushBuffer = (assistantId: string) => {
+  // Flush text buffer during streaming
+  const flushBuffer = useCallback((assistantId: string) => {
     const text = bufferRef.current
     bufferRef.current = ""
     if (!text) return
 
-    setMessages(prev =>
-      prev.map(m =>
+    setMessages(prev => {
+      const updated: Message[] = prev.map(m =>
         m.id === assistantId
-          ? { ...m, parts: [{ type: "text", text: m.parts[0].text + text }] }
+          ? { ...m, parts: [{ type: "text" as const, text: (m.parts[0]?.text || "") + text }] }
           : m
       )
-    )
+
+      // Sync into current conversation in state
+      const currentId = activeConvIdRef.current
+      if (currentId) {
+        setConversations(convs =>
+          convs.map(c =>
+            c.id === currentId
+              ? { ...c, messages: updated, updatedAt: Date.now() }
+              : c
+          )
+        )
+      }
+      return updated
+    })
+  }, [])
+
+  // Start a new conversation
+  const handleNewChat = () => {
+    if (status === "streaming") return
+
+    setActiveConvId(null)
+    setMessages([])
+    setInput("")
   }
 
-  const handleSend = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!input.trim() || status === "streaming") return
+  // Switch to an existing conversation
+  const handleSelectConversation = (conv: Conversation) => {
+    if (status === "streaming" || conv.id === activeConvId) return
 
+    setActiveConvId(conv.id)
+    setMessages(conv.messages || [])
+    setInput("")
+  }
+
+  // Send message
+  const handleSend = async (e?: React.FormEvent, customPrompt?: string) => {
+    if (e) e.preventDefault()
+    const messageText = (customPrompt || input).trim()
+    if (!messageText || status === "streaming") return
+
+    const nowTimestamp = Date.now()
     const userMsg: Message = {
-      id: Date.now().toString(),
+      id: nowTimestamp.toString(),
       role: "user",
-      parts: [{ type: "text", text: input }]
+      parts: [{ type: "text" as const, text: messageText }]
     }
 
-    const newMessages = [...messages, userMsg]
-    setMessages(newMessages)
+    let currentConvId = activeConvId
+    let newConversations = [...conversations]
+
+    // If starting a fresh chat session without an active conversation
+    if (!currentConvId) {
+      currentConvId = "conv_" + nowTimestamp
+      const shortTitle = messageText.length > 38 
+        ? messageText.substring(0, 38) + "..." 
+        : messageText
+
+      const newConv: Conversation = {
+        id: currentConvId,
+        title: shortTitle,
+        createdAt: nowTimestamp,
+        updatedAt: nowTimestamp,
+        messages: [userMsg]
+      }
+      newConversations = [newConv, ...newConversations]
+      setActiveConvId(currentConvId)
+      setConversations(newConversations)
+      setMessages([userMsg])
+    } else {
+      // Append to existing conversation
+      const nextMessages = [...messages, userMsg]
+      setMessages(nextMessages)
+      newConversations = newConversations.map(c =>
+        c.id === currentConvId
+          ? { ...c, messages: nextMessages, updatedAt: nowTimestamp }
+          : c
+      ).sort((a, b) => b.updatedAt - a.updatedAt)
+      setConversations(newConversations)
+    }
+
     setInput("")
     setStatus("streaming")
 
     try {
+      const payloadMessages = (currentConvId 
+        ? newConversations.find(c => c.id === currentConvId)?.messages || [...messages, userMsg]
+        : [...messages, userMsg]
+      ).map(m => ({ role: m.role, parts: m.parts }))
+
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          messages: newMessages.map(m => ({ role: m.role, parts: m.parts }))
+          messages: payloadMessages
         })
       })
 
-      if (!response.body) throw new Error("No body")
+      if (!response.body) throw new Error("No response body received")
 
       const assistantId = (Date.now() + 1).toString()
-      setMessages(prev => [
-        ...prev,
-        { id: assistantId, role: "assistant", parts: [{ type: "text", text: "" }] }
-      ])
+      const assistantMsg: Message = { 
+        id: assistantId, 
+        role: "assistant", 
+        parts: [{ type: "text" as const, text: "" }] 
+      }
+
+      setMessages(prev => [...prev, assistantMsg])
 
       const reader = response.body.getReader()
       const decoder = new TextDecoder()
@@ -85,7 +225,7 @@ export default function Chat() {
         const { done, value } = await reader.read()
         if (done) break
 
-        const chunk = decoder.decode(value)
+        const chunk = decoder.decode(value, { stream: true })
         const lines = chunk.split("\n")
 
         for (const line of lines) {
@@ -97,16 +237,37 @@ export default function Chat() {
               flushTimer.current = setTimeout(() => {
                 flushBuffer(assistantId)
                 flushTimer.current = null
-              }, 40)
+              }, 30)
             }
-          } catch (err) { console.error(err) }
+          } catch (err) { 
+            console.error("Stream parse error:", err) 
+          }
         }
       }
       flushBuffer(assistantId)
     } catch (err) {
       console.error("Chat error:", err)
+      const errorMsg: Message = {
+        id: (Date.now() + 2).toString(),
+        role: "assistant",
+        parts: [{ type: "text" as const, text: "Xin lỗi, đã xảy ra lỗi kết nối với máy chủ học vụ. Vui lòng thử lại sau giây lát." }]
+      }
+      setMessages(prev => {
+        const updated = [...prev, errorMsg]
+        if (currentConvId) {
+          setConversations(convs =>
+            convs.map(c =>
+              c.id === currentConvId
+                ? { ...c, messages: updated, updatedAt: Date.now() }
+                : c
+            )
+          )
+        }
+        return updated
+      })
+    } finally {
+      setStatus("idle")
     }
-    setStatus("idle")
   }
 
   return (
@@ -125,8 +286,8 @@ export default function Chat() {
 
         <div className="p-4">
           <button 
-            onClick={() => setMessages([])}
-            className="w-full flex items-center justify-center gap-2 p-3 bg-white text-slate-700 rounded-xl hover:bg-slate-50 transition-all font-semibold border border-slate-200 shadow-sm active:scale-[0.98]"
+            onClick={handleNewChat}
+            className="w-full flex items-center justify-center gap-2 p-3 bg-white text-slate-700 rounded-xl hover:bg-slate-50 transition-all font-semibold border border-slate-200 shadow-sm active:scale-[0.98] cursor-pointer"
           >
             <Plus size={18}/> Cuộc hội thoại mới
           </button>
@@ -134,10 +295,30 @@ export default function Chat() {
 
         <div className="flex-1 overflow-y-auto px-4 py-2 space-y-1">
           <div className="text-[11px] font-bold text-slate-400 uppercase tracking-wider px-3 mt-4 mb-2">Lịch sử tư vấn</div>
-          <div className="group flex items-center gap-3 p-3 rounded-xl bg-blue-50/50 border border-blue-100/50 cursor-pointer transition-all text-sm text-blue-700 font-medium">
-            <MessageSquare size={16} className="text-blue-500"/>
-            <span className="truncate flex-1">Tìm hiểu học phần An ninh mạng</span>
-          </div>
+          
+          {conversations.length === 0 ? (
+            <div className="px-3 py-6 text-center text-xs text-slate-400">
+              Chưa có lịch sử cuộc trò chuyện nào
+            </div>
+          ) : (
+            conversations.map((conv) => {
+              const isActive = conv.id === activeConvId
+              return (
+                <div
+                  key={conv.id}
+                  onClick={() => handleSelectConversation(conv)}
+                  className={`group flex items-center gap-3 p-3 rounded-xl cursor-pointer transition-all text-sm font-medium ${
+                    isActive
+                      ? "bg-blue-50/80 border border-blue-100 text-blue-700"
+                      : "text-slate-600 hover:bg-slate-50 border border-transparent"
+                  }`}
+                >
+                  <MessageSquare size={16} className={isActive ? "text-blue-600" : "text-slate-400"}/>
+                  <span className="truncate flex-1">{conv.title || "Cuộc trò chuyện"}</span>
+                </div>
+              )
+            })
+          )}
         </div>
 
         <div className="p-4 border-t border-slate-100 bg-white/50">
@@ -184,13 +365,6 @@ export default function Chat() {
                     Xin chào! Tôi là trợ lý học vụ của Đại học Cần Thơ. 
                   </p>
                 </div>
-                <div className="flex flex-wrap justify-center gap-2 pt-4">
-                  {["Môn tiên quyết là gì?", "Cấu trúc ngành CNTT", "Quy định thôi học"].map(q => (
-                    <button key={q} onClick={() => setInput(q)} className="px-4 py-2 bg-white border border-slate-200 rounded-full text-xs font-semibold text-slate-600 hover:border-blue-400 hover:text-blue-600 hover:shadow-md transition-all">
-                      {q}
-                    </button>
-                  ))}
-                </div>
               </div>
             ) : (
               messages.map(m => (
@@ -209,9 +383,9 @@ export default function Chat() {
                         ? "bg-blue-600 text-white shadow-blue-100 shadow-lg rounded-tr-none" 
                         : "bg-white border border-slate-200 text-slate-800 shadow-sm rounded-tl-none hover:border-slate-300"
                     }`}>
-                      {/* Markdown Rendering for Professional Look */}
-                      <article className={`prose prose-sm max-w-none ${m.role === 'user' ? 'prose-invert' : 'prose-slate'}`}>
-                        <div className="whitespace-pre-wrap break-words [&_p]:mb-2">
+                      {/* Markdown Rendering */}
+                      <article className={`prose prose-sm max-w-none ${m.role === 'user' ? 'prose-invert text-white [&_p]:text-white' : 'prose-slate'}`}>
+                        <div className="whitespace-pre-words break-words [&_p]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_table]:border-collapse [&_table]:w-full [&_th]:border [&_th]:border-slate-300 [&_th]:p-2 [&_th]:bg-slate-50 [&_td]:border [&_td]:border-slate-300 [&_td]:p-2">
                           <ReactMarkdown remarkPlugins={[remarkGfm]}>
                             {m.parts?.[0]?.text}
                           </ReactMarkdown>
@@ -220,11 +394,10 @@ export default function Chat() {
                     </div>
                     
                     {/* Bot Actions Area */}
-                    {m.role === "assistant" && m.parts[0].text && (
+                    {m.role === "assistant" && m.parts[0]?.text && (
                       <div className="flex items-center gap-1 ml-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                        <button className="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-md transition-all"><Copy size={14}/></button>
-                        <button className="p-1.5 text-slate-400 hover:text-emerald-600 hover:bg-emerald-50 rounded-md transition-all"><ThumbsUp size={14}/></button>
-                        <button className="p-1.5 text-slate-400 hover:text-orange-600 hover:bg-orange-50 rounded-md transition-all"><RefreshCw size={14}/></button>
+                        <button title="Hữu ích" className="p-1.5 text-slate-400 hover:text-emerald-600 hover:bg-emerald-50 rounded-md transition-all cursor-pointer"><ThumbsUp size={14}/></button>
+                        <button title="Tạo lại" className="p-1.5 text-slate-400 hover:text-orange-600 hover:bg-orange-50 rounded-md transition-all cursor-pointer"><RefreshCw size={14}/></button>
                       </div>
                     )}
                   </div>
@@ -262,7 +435,7 @@ export default function Chat() {
                   onKeyDown={(e) => {
                     if (e.key === "Enter" && !e.shiftKey) {
                       e.preventDefault()
-                      handleSend(e as any)
+                      handleSend(e)
                     }
                   }}  
                   placeholder="Hỏi bất cứ điều gì về học vụ CTU..."
@@ -271,9 +444,9 @@ export default function Chat() {
                 <button
                   type="submit"
                   disabled={status === "streaming" || !input.trim()}
-                  className={`mb-1 mr-1 p-3 rounded-2xl transition-all flex items-center justify-center ${
+                  className={`mb-1 mr-1 p-3 rounded-2xl transition-all flex items-center justify-center cursor-pointer ${
                     status === "streaming" || !input.trim()
-                      ? "bg-slate-50 text-slate-300"
+                      ? "bg-slate-50 text-slate-300 cursor-not-allowed"
                       : "bg-blue-600 text-white hover:bg-blue-700 shadow-lg shadow-blue-200 active:scale-95"
                   }`}
                 >

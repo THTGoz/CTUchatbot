@@ -14,6 +14,7 @@ DOMAIN_THONG_BAO = "thong_bao"
 
 EXPANSION_SOURCES = {
     "document_muc_expansion",
+    "document_related_muc_expansion",
     "document_table_expansion",
     "document_table_row_expansion",
 }
@@ -341,13 +342,36 @@ def _render_notification_bundle(
             lines.append("Cột: " + " | ".join(str(header) for header in headers))
 
         lines.extend(["DÒNG SEED:", _row_text(seed, headers)])
+        owner_muc_expansions = [
+            item for item in expansions
+            if item["source"] == "document_muc_expansion"
+        ]
         lines.extend(
             _render_document_mucs(
                 seed,
-                expansions,
+                owner_muc_expansions,
                 heading="MỤC CHỨA BẢNG:",
             )
         )
+
+        related_mucs = [
+            item for item in expansions
+            if item["source"] == "document_related_muc_expansion"
+        ]
+        if related_mucs:
+            lines.append("MỤC LIÊN QUAN CÙNG TÀI LIỆU:")
+            seen_related_mucs: set[str] = set()
+            for section in related_mucs:
+                identity = str(section["properties"].get("id") or section["node_id"])
+                if identity in seen_related_mucs:
+                    continue
+                seen_related_mucs.add(identity)
+                content = _muc_text(section)
+                label = _muc_label(section["properties"])
+                lines.append(
+                    f"- {label}: {content}"
+                    if content else f"- {label}"
+                )
 
         related_rows = [
             item for item in expansions
