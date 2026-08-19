@@ -118,7 +118,7 @@ export default function Chat() {
             <Bot size={24} />
           </div>
           <div>
-            <h1 className="font-bold text-slate-800 tracking-tight leading-none">CTU GraphRAG</h1>
+            <h1 className="font-bold text-slate-800 tracking-tight leading-none">CTUChatbot</h1>
             <span className="text-[10px] text-blue-600 font-bold uppercase tracking-widest">Enterprise Edition</span>
           </div>
         </div>
@@ -146,8 +146,8 @@ export default function Chat() {
               <User size={20}/>
             </div>
             <div className="flex-1 overflow-hidden">
-              <div className="text-sm font-bold truncate text-slate-800">Linh - CTU Student</div>
-              <div className="text-[10px] text-slate-400 font-medium">linh.ctu.edu.vn</div>
+              <div className="text-sm font-bold truncate text-slate-800">Tinh - CTU Student</div>
+              <div className="text-[10px] text-slate-400 font-medium">Tinh.ctu.edu.vn</div>
             </div>
           </div>
         </div>
@@ -181,7 +181,7 @@ export default function Chat() {
                 <div className="space-y-2">
                   <h2 className="text-3xl font-extrabold text-slate-800 tracking-tight">Trợ lý học vụ CTU</h2>
                   <p className="text-slate-500 max-w-sm mx-auto text-sm leading-relaxed">
-                    Tôi là hệ thống GraphRAG được huấn luyện để giải đáp mọi thắc mắc về đào tạo tại Đại học Cần Thơ.
+                    Xin chào! Tôi là trợ lý học vụ của Đại học Cần Thơ. 
                   </p>
                 </div>
                 <div className="flex flex-wrap justify-center gap-2 pt-4">
@@ -282,7 +282,6 @@ export default function Chat() {
               </div>
             </div>
             <p className="text-[10px] text-center text-slate-400 mt-4 font-bold uppercase tracking-widest opacity-60">
-              Powered by CTU GraphRAG Engine • 2026
             </p>
           </form>
         </footer>

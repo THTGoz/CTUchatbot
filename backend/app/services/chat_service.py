@@ -204,29 +204,30 @@ def _contains_any(text: str, keywords: Tuple[str, ...]) -> bool:
 def _rule_based_domain(query: str) -> Tuple[str, bool, str]:
     text = (query or "").strip()
     if not text:
-        return "CTDT", False, "empty"
+        return "", False, "empty"
 
-    lowered = text.lower()
-    qchv_hit = _contains_any(lowered, _QCHV_HINTS)
-    ctdt_hit = _contains_any(lowered, _CTDT_HINTS)
-    thong_bao_hit = _contains_any(lowered, _THONG_BAO_HINTS)
-    social_hit = _contains_any(lowered, _SOCIAL_HINTS)
+    lowered = text.lower().strip()
 
-    # Tín hiệu thông báo/thời gian cụ thể được ưu tiên.
-    # Ví dụ "điều chỉnh đăng ký học phần" vẫn là THONG_BAO
-    # dù đồng thời chứa từ "học phần".
-    if thong_bao_hit and not social_hit:
-        return "THONG_BAO", True, "rule"
+    # Chỉ bắt SOCIAL khi câu gần như thuần hội thoại.
+    # Ba miền dữ liệu QCHV / CTDT / THONG_BAO được giao cho LLM phân loại
+    # để tránh chốt sai chỉ vì một từ khóa như "học phần" hoặc "đăng ký".
+    social_patterns = {
+        "chào",
+        "chào bạn",
+        "xin chào",
+        "hello",
+        "hi",
+        "cảm ơn",
+        "cảm ơn bạn",
+        "thanks",
+        "thank you",
+    }
 
-    if social_hit and not (qchv_hit or ctdt_hit):
-        return "SOCIAL", True, "rule"
-    if qchv_hit and not (ctdt_hit or social_hit):
-        return "QCHV", True, "rule"
-    if ctdt_hit and not (qchv_hit or social_hit):
-        return "CTDT", True, "rule"
-    if social_hit or qchv_hit or ctdt_hit:
-        return "", False, "conflict"
-    return "", False, "fallback"
+    normalized = re.sub(r"[!?.]+$", "", lowered).strip()
+    if normalized in social_patterns:
+        return "SOCIAL", True, "rule_social"
+
+    return "", False, "llm_required"
 
 
 def _normalize_domain_value(domain: str) -> str:
@@ -622,16 +623,110 @@ class ChatService:
     async def _classify_domain_with_llm(self, query: str, history_text: str) -> str:
         logger.info("[chat][pipeline][domain_llm_prompt] query=%s history=%s", query, history_text or "[empty]")
         prompt = f"""
-Bạn là bộ phân loại domain cho chatbot tư vấn học vụ.
+Bạn là bộ phân loại miền dữ liệu cho Trợ lý ảo học vụ Đại học Cần Thơ.
 
-Quy tắc output:
-- Chỉ trả về JSON đúng format: {{"domain": "QCHV | CTDT | THONG_BAO | SOCIAL"}}
-- Không giải thích.
+Nhiệm vụ:
+Phân loại câu hỏi vào đúng MỘT trong bốn miền:
+- QCHV
+- CTDT
+- THONG_BAO
+- SOCIAL
 
-Lưu ý:
-- QCHV: quy chế học vụ, học lại, cảnh báo học vụ, đình chỉ, điểm rèn luyện.
-- CTDT: môn học, tín chỉ, học phần, chương trình, ngành.
-- SOCIAL: chào hỏi, cảm ơn, hello.
+Chỉ trả về JSON đúng format:
+{{"domain": "QCHV"}}
+
+Không giải thích và không thêm nội dung khác.
+
+ĐỊNH NGHĨA MIỀN
+
+1. QCHV — Quy chế học vụ
+
+Dùng khi câu hỏi hỏi về quy định, khái niệm, điều kiện, quyền, nghĩa vụ
+hoặc nguyên tắc học vụ áp dụng chung cho sinh viên.
+
+Bao gồm:
+- cảnh báo học tập, đình chỉ, học lại;
+- quy định đăng ký học phần;
+- kế hoạch học tập chuẩn toàn khóa;
+- quy định về điểm rèn luyện;
+- điều kiện, quy trình học vụ hoặc tốt nghiệp mang tính quy định chung.
+
+Ví dụ:
+"Học phần tiên quyết là gì?" -> QCHV
+"Kế hoạch học tập chuẩn toàn khóa là gì?" -> QCHV
+"Sinh viên bị cảnh báo học tập khi nào?" -> QCHV
+"Sinh viên được học lại trong trường hợp nào?" -> QCHV
+
+2. CTDT — Chương trình đào tạo
+
+Dùng khi câu hỏi yêu cầu dữ liệu thuộc một chương trình đào tạo, ngành
+hoặc học phần cụ thể.
+
+Bao gồm:
+- thông tin hoặc mã học phần;
+- số tín chỉ;
+- học phần tiên quyết/song hành của một học phần cụ thể;
+- cấu trúc chương trình đào tạo;
+- chuẩn đầu ra, mục tiêu đào tạo;
+- tổng số tín chỉ của ngành/chương trình;
+- dữ liệu được mô tả trong một CTĐT cụ thể.
+
+Ví dụ:
+"CT177 có học phần tiên quyết nào?" -> CTDT
+"Ngành Khoa học máy tính có bao nhiêu tín chỉ?" -> CTDT
+"Niên luận cơ sở ngành KHMT yêu cầu học phần tiên quyết nào?" -> CTDT
+
+3. THONG_BAO — Thông báo, kế hoạch
+
+Dùng khi câu hỏi hỏi về một sự kiện, lịch, danh sách hoặc đợt triển khai thực tế.
+
+Bao gồm:
+- ngày, giờ, thời hạn;
+- năm học, học kỳ, đợt;
+- lịch đăng ký học phần;
+- điều chỉnh đăng ký học phần;
+- thời gian nhập hoặc điều chỉnh KHHT;
+- lịch đánh giá điểm rèn luyện;
+- ngày nghỉ;
+- danh sách lớp học phần bị xóa;
+- danh sách sinh viên;
+- chuyển ngành/chuyển lớp;
+- nội dung của một thông báo hoặc kế hoạch cụ thể.
+
+Ví dụ:
+"Khi nào mở đăng ký học phần?" -> THONG_BAO
+"HK1 năm học 2026-2027 bắt đầu ngày nào?" -> THONG_BAO
+"CT219-01 có bị xóa sau đợt 1 không?" -> THONG_BAO
+"K50 bắt đầu đăng ký học phần lúc mấy giờ?" -> THONG_BAO
+
+4. SOCIAL
+
+Chỉ dùng cho hội thoại không cần truy xuất dữ liệu học vụ.
+
+Ví dụ:
+"Xin chào" -> SOCIAL
+"Cảm ơn bạn" -> SOCIAL
+
+QUY TẮC PHÂN BIỆT QUAN TRỌNG
+
+- Không phân loại chỉ dựa vào một từ khóa.
+- Từ "học phần" có thể xuất hiện trong QCHV, CTDT và THONG_BAO.
+- Từ "đăng ký học phần" không tự động có nghĩa là THONG_BAO.
+- Hỏi quy định hoặc khái niệm chung -> QCHV.
+- Hỏi dữ liệu của ngành/học phần/CTĐT cụ thể -> CTDT.
+- Hỏi lịch, thời điểm, đợt, danh sách hoặc sự kiện thực tế -> THONG_BAO.
+
+Ví dụ phân biệt:
+"Học phần tiên quyết là gì?" -> QCHV
+"CT177 tiên quyết môn nào?" -> CTDT
+"Sinh viên được điều chỉnh đăng ký học phần khi nào trong học kỳ này?" -> THONG_BAO
+"Sinh viên có được điều chỉnh đăng ký học phần không?" -> QCHV
+
+LỊCH SỬ HỘI THOẠI
+
+Chỉ sử dụng History để hiểu câu hỏi nối tiếp hoặc đại từ chưa rõ.
+Nếu câu hỏi hiện tại đã nêu rõ chủ đề thì ưu tiên câu hỏi hiện tại,
+không để domain của câu trước chi phối câu hiện tại.
 
 History:
 {history_text or "[empty]"}
