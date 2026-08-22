@@ -62,6 +62,14 @@ const CATEGORY_LABEL_MAP: Record<UploadCategory, string> = {
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_BACKEND_URL || "http://127.0.0.1:8000";
 
+// Ham tao UUID an toan cho moi moi truong (HTTP/HTTPS/browser cu)
+const generateUniqueId = () => {
+  if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
+    return crypto.randomUUID();
+  }
+  return `${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;
+};
+
 // Hàm tiện ích để định dạng kích thước file
 const formatBytes = (bytes: number, decimals = 2) => {
   if (bytes === 0) return "0 Bytes";
@@ -262,7 +270,7 @@ export default function AdminKnowledgeManager() {
         if (existingKeys.has(key)) return;
 
         next.push({
-          localId: crypto.randomUUID(),
+          localId: generateUniqueId(),
           key,
           file: f,
           status: "ready",
@@ -623,9 +631,8 @@ export default function AdminKnowledgeManager() {
                 onDragOver={handleDragOver}
                 onDragLeave={handleDragLeave}
                 onDrop={onFileDrop}
-                className={`relative border-2 border-dashed rounded-2xl p-10 text-center transition-all ${
-                  dragOver ? "border-blue-500 bg-blue-50" : "border-slate-300 hover:border-slate-400"
-                }`}
+                className={`relative border-2 border-dashed rounded-2xl p-10 text-center transition-all ${dragOver ? "border-blue-500 bg-blue-50" : "border-slate-300 hover:border-slate-400"
+                  }`}
               >
                 <svg className={`w-14 h-14 mx-auto mb-4 ${dragOver ? "text-blue-500" : "text-slate-300"}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -726,11 +733,10 @@ export default function AdminKnowledgeManager() {
               <button
                 onClick={handleIngest}
                 disabled={isBusy || !uploadItems.length}
-                className={`w-full flex items-center justify-center gap-2 py-3.5 cursor-pointer rounded-xl font-semibold text-white transition-all ${
-                  isBusy || !uploadItems.length
+                className={`w-full flex items-center justify-center gap-2 py-3.5 cursor-pointer rounded-xl font-semibold text-white transition-all ${isBusy || !uploadItems.length
                     ? "bg-slate-400 cursor-not-allowed"
                     : "bg-blue-600 hover:bg-blue-700 shadow-sm shadow-blue-200"
-                }`}
+                  }`}
               >
                 {isBusy ? (
                   <>
@@ -912,11 +918,10 @@ export default function AdminKnowledgeManager() {
                         type="button"
                         onClick={saveJsonEdits}
                         disabled={jsonEditorLoading || !jsonEditorDirty}
-                        className={`text-xs px-3 py-1.5 rounded-md text-white ${
-                          jsonEditorLoading || !jsonEditorDirty
+                        className={`text-xs px-3 py-1.5 rounded-md text-white ${jsonEditorLoading || !jsonEditorDirty
                             ? "bg-slate-400 cursor-not-allowed"
                             : "bg-emerald-600 hover:bg-emerald-700"
-                        }`}
+                          }`}
                       >
                         {jsonEditorLoading ? "Đang lưu..." : "Lưu JSON"}
                       </button>
@@ -924,11 +929,10 @@ export default function AdminKnowledgeManager() {
                         type="button"
                         onClick={confirmNeo4jImport}
                         disabled={jsonConfirmLoading || jsonEditorDirty || selectedDetailItem?.status === "success"}
-                        className={`text-xs px-3 py-1.5 rounded-md text-white ${
-                          jsonConfirmLoading || jsonEditorDirty || selectedDetailItem?.status === "success"
+                        className={`text-xs px-3 py-1.5 rounded-md text-white ${jsonConfirmLoading || jsonEditorDirty || selectedDetailItem?.status === "success"
                             ? "bg-slate-400 cursor-not-allowed"
                             : "bg-blue-600 hover:bg-blue-700"
-                        }`}
+                          }`}
                       >
                         {jsonConfirmLoading ? "Đang nạp dữ liệu..." : "Xác nhận nạp Neo4j"}
                       </button>

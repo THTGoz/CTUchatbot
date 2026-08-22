@@ -32,8 +32,6 @@ OLLAMA_GENERATE_URL = os.getenv("OLLAMA_GENERATE_URL", f"{OLLAMA_BASE_URL}/api/g
 OLLAMA_CHAT_URL = os.getenv("OLLAMA_CHAT_URL", f"{OLLAMA_BASE_URL}/api/chat")
 DEFAULT_TIMEOUT_SECONDS = int(os.getenv("OLLAMA_TIMEOUT_SECONDS", "180"))
 MODEL_PRIMARY_9B = _get_env("QWEN3_5_MODEL_9B", "OLLAMA_MODEL_9B", default="qwen3.5:9b")
-MODEL_AUX_7B = _get_env("QWEN2_5_MODEL_7B", "OLLAMA_MODEL_7B", default="qwen2.5-coder:7b-instruct")
-MODEL_AUX_4B = _get_env("QWEN3_5_MODEL_4B", "OLLAMA_MODEL_4B", default="qwen3.5:4b")
 
 logger = logging.getLogger("app.llm")
 _loaded_models: set[str] = set()
@@ -124,23 +122,6 @@ async def call_model_json(model: str, prompt: str) -> Dict[str, Any]:
     text = await call_model(model, prompt, temperature=0.3)
     return _extract_json_object(text)
 
-
-async def call_model_3b(prompt: str):
-    # Backward-compatible alias kept for existing imports.
-    return await call_model(MODEL_AUX_4B, prompt, temperature=0.3)
-
-
-async def call_model_7b(prompt: str, temperature: float = 0.3):
-    return await call_model(MODEL_AUX_7B, prompt, temperature=temperature)
-
-
-async def call_model_3b_json(prompt: str) -> Dict[str, Any]:
-    # Backward-compatible alias kept for existing imports.
-    return await call_model_json(MODEL_AUX_4B, prompt)
-
-
-async def call_model_4b_json(prompt: str) -> Dict[str, Any]:
-    return await call_model_json(MODEL_AUX_4B, prompt)
 
 
 async def call_model_9b(prompt: str, temperature: float = 0.3):
@@ -382,12 +363,7 @@ class LLMService:
 
             Query: {query}
         """
-        model_order = [MODEL_AUX_4B, MODEL_AUX_7B, MODEL_PRIMARY_9B] if self.fast_routing else [MODEL_PRIMARY_9B, MODEL_AUX_7B, MODEL_AUX_4B]
-        data: Dict[str, Any] = {}
-        for model in model_order:
-            data = await call_model_json(model, prompt)
-            if data:
-                break
+        data = await call_model_json(MODEL_PRIMARY_9B, prompt)
         result = str(data.get("domain", "ctdt")).strip().lower()
         self._set_cache(cache_key, result)
         return result
@@ -441,12 +417,9 @@ class LLMService:
             ## Query
             {query}
         """
-        model_order = [MODEL_AUX_7B, MODEL_AUX_4B, MODEL_PRIMARY_9B] if self.fast_routing else [MODEL_PRIMARY_9B, MODEL_AUX_7B, MODEL_AUX_4B]
+        data = await call_model_json(MODEL_PRIMARY_9B, prompt)
         data: Dict[str, Any] = {}
-        for model in model_order:
-            data = await call_model_json(model, prompt)
-            if data:
-                break
+        data = await call_model_json(MODEL_PRIMARY_9B, prompt)
         result = str(data.get("intent", "factual")).strip().lower()
         self._set_cache(cache_key, result)
         return result
@@ -507,9 +480,6 @@ class LLMService:
         """
         return await call_model_json(MODEL_PRIMARY_9B, prompt)
 
-    async def call_model_4b_json(self, prompt: str) -> Dict[str, Any]:
-        """Compatibility wrapper for services expecting instance-level JSON calls."""
-        return await call_model_4b_json(prompt)
 
     async def extract_entities(self, query: str) -> Dict[str, Any]:
         cache_key = self._cache_key("extract_entities", {"query": query})
@@ -562,10 +532,6 @@ class LLMService:
         """
 
         data = await call_model_json(MODEL_PRIMARY_9B, prompt)
-        if not data:
-            data = await call_model_json(MODEL_AUX_7B, prompt)
-        if not data:
-            data = await call_model_4b_json(prompt)
 
         # fallback nếu model trả lỗi
         if not isinstance(data, dict):

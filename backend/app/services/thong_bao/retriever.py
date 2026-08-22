@@ -121,7 +121,6 @@ def _gia_tri_khop_bat_ky(
 
 
 def doc_gia_tri_exact_co_ban(cau_hoi: str) -> dict[str, list[str]]:
-    """Rút tất cả giá trị exact cơ bản; một loại có thể có nhiều giá trị."""
     exact: dict[str, list[str]] = {}
     courses = re.findall(
         r"(?<![A-Z0-9])([A-Z]{2,4}\d{3}[A-Z]?)(?![A-Z0-9])",
@@ -143,24 +142,43 @@ def doc_gia_tri_exact_co_ban(cau_hoi: str) -> dict[str, list[str]]:
 
 
 def _group_exact_rows_by_table(candidates: list[Candidate]) -> list[Candidate]:
-    """Giữ một dòng cosine cao nhất mỗi bảng rồi xếp các bảng theo cosine."""
+    """
+    Giữ một dòng cosine cao nhất cho mỗi (thông báo, bảng, exact value).
+
+    Nếu câu hỏi chứa nhiều giá trị exact cùng loại, ví dụ K48 và K50,
+    mỗi giá trị được giữ một representative riêng dù cùng nằm trong một bảng.
+    """
     rows_without_table: list[Candidate] = []
-    by_table: dict[tuple[str, str], Candidate] = {}
+    by_table_and_exact: dict[tuple[Any, ...], Candidate] = {}
+
     for candidate in candidates:
-        notification_id = str(candidate["metadata"].get("notification_id") or "")
-        table_id = str(candidate["metadata"].get("parent_table_id") or "")
+        metadata = candidate["metadata"]
+        notification_id = str(metadata.get("notification_id") or "")
+        table_id = str(metadata.get("parent_table_id") or "")
+
         if not table_id:
             rows_without_table.append(candidate)
             continue
-        key = (notification_id, table_id)
-        current = by_table.get(key)
-        if current is None or candidate["cosine_score"] > current["cosine_score"]:
-            by_table[key] = candidate
 
-    # Sau khi mỗi bảng chỉ còn một representative, các representative của
-    # những bảng khác nhau vẫn phải cạnh tranh trực tiếp bằng cosine.
+        exact_columns = metadata.get("exact_columns") or {}
+        exact_signature = tuple(
+            (
+                exact_type,
+                tuple(
+                    _chuan_hoa_gia_tri(value)
+                    for value in _danh_sach_exact(values)
+                ),
+            )
+            for exact_type, values in sorted(exact_columns.items())
+        )
+
+        key = (notification_id, table_id, exact_signature)
+        current = by_table_and_exact.get(key)
+        if current is None or candidate["cosine_score"] > current["cosine_score"]:
+            by_table_and_exact[key] = candidate
+
     return sorted(
-        [*rows_without_table, *by_table.values()],
+        [*rows_without_table, *by_table_and_exact.values()],
         key=lambda item: (-item["cosine_score"], item["node_id"]),
     )
 
@@ -249,7 +267,7 @@ def _tu_ban_ghi(
     item: dict[str, Any],
     *,
     source: str,
-    exact_columns: dict[str, str] | None = None,
+    exact_columns: dict[str, list[str]] | None = None,
 ) -> Candidate:
     """Chuyển một record Neo4j thành candidate chung của chatbot."""
     metadata: dict[str, Any] = {
@@ -510,21 +528,32 @@ class ThongBaoRetriever:
             }
             if not constraints:
                 continue
-            matches = {
-                exact_type: any(
-                    _loai_exact_cua_header(str(header)) == exact_type
-                    and index < len(values)
-                    and _gia_tri_khop_bat_ky(exact_type, values[index], exact_values)
-                    for index, header in enumerate(headers)
-                )
-                for exact_type, exact_values in constraints.items()
-            }
-            if all(matches.values()):
+            matched_exact_columns: dict[str, list[str]] = {}
+
+            for exact_type, exact_values in constraints.items():
+                matched_values: list[str] = []
+
+                for exact_value in exact_values:
+                    matched = any(
+                        _loai_exact_cua_header(str(header)) == exact_type
+                        and index < len(values)
+                        and _gia_tri_khop(exact_type, values[index], exact_value)
+                        for index, header in enumerate(headers)
+                    )
+                    if matched:
+                        matched_values.append(exact_value)
+
+                if matched_values:
+                    matched_exact_columns[exact_type] = matched_values
+
+            # Mỗi loại exact có mặt trong bảng phải khớp ít nhất một giá trị.
+            # Candidate chỉ mang những exact value thực sự khớp với dòng này.
+            if len(matched_exact_columns) == len(constraints):
                 result.append(
                     _tu_ban_ghi(
                         item,
                         source="exact",
-                        exact_columns=constraints,
+                        exact_columns=matched_exact_columns,
                     )
                 )
         return result
@@ -655,7 +684,7 @@ class ThongBaoRetriever:
             candidates = vector_candidates
 
         for candidate in candidates:
-            candidate["metadata"]["exact_columns"] = exact_columns
+            candidate["metadata"].setdefault("exact_columns", exact_columns)
         return ThongBaoRetrievalResult(
             temporal_scope=temporal_scope,
             type_classification=type_classification,

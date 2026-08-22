@@ -20,6 +20,9 @@ router = APIRouter()
 MAX_FILE_SIZE = 50 * 1024 * 1024  # 50MB
 UPLOAD_DIR = Path(__file__).resolve().parents[3] / "uploads"
 BACKEND_ROOT = Path(__file__).resolve().parents[2]
+import sys
+if str(BACKEND_ROOT) not in sys.path:
+    sys.path.insert(0, str(BACKEND_ROOT))
 
 load_dotenv(BACKEND_ROOT / ".env")
 
@@ -112,10 +115,26 @@ class HuongDanThuTucProcessor(BaseCategoryProcessor):
 
 class ThongBaoKeHoachProcessor(BaseCategoryProcessor):
     async def process(self, file_path: str) -> dict:
+        pdf_path = Path(file_path).resolve()
+
+        # 1. Chay pipeline 6 buoc parse PDF -> sinh file *_chunks.json
+        output_dir = pdf_path.parent / f"{pdf_path.stem}_processed"
+        output_dir.mkdir(parents=True, exist_ok=True)
+
+        from app.scripts.thong_bao.preprocess.pdf_pipeline.pipeline import run_single_input
+        chunks_json_path = await asyncio.to_thread(
+            run_single_input, pdf_path, output_dir, from_step=1, to_step=6
+        )
+
+        # 2. Nap chunks.json vao Neo4j va sinh embeddings BGE-M3
+        from app.scripts.thong_bao.preprocess.kg_importer.nhap_file_moi import nhap_file_moi
+        import_result = await asyncio.to_thread(nhap_file_moi, Path(chunks_json_path))
+
         return {
-            "message": "Da luu file Thong bao ke hoach. Class xu ly thuc te se duoc bo sung sau.",
-            "ingestion_applied": False,
-            "saved_file": file_path,
+            "message": "Da xu ly PDF va nap Thong bao ke hoach vao Neo4j thanh cong",
+            "ingestion_applied": True,
+            "chunks_json": str(chunks_json_path),
+            "import_result": import_result,
         }
 
 

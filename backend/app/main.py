@@ -1,5 +1,13 @@
 import logging
 import os
+import sys
+from pathlib import Path
+
+# Dam bao backend luon co trong sys.path
+BACKEND_DIR = Path(__file__).resolve().parents[1]
+if str(BACKEND_DIR) not in sys.path:
+    sys.path.insert(0, str(BACKEND_DIR))
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import asyncio
@@ -25,18 +33,19 @@ _setup_logging()
 
 app = FastAPI(title="CTU GraphRAG Assistant API")
 
-app.include_router(auth.router, prefix="/admin")
-app.include_router(chat.router)
-app.include_router(graph.router, prefix="/graph")
-
-# Giữ nguyên cấu trúc CORS
+# CORS cho phep moi origin (localhost, 127.0.0.1 tren moi port)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"], 
+    allow_origin_regex=r"^https?://.*$",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+    expose_headers=["*"],
 )
+
+app.include_router(auth.router, prefix="/admin")
+app.include_router(chat.router)
+app.include_router(graph.router, prefix="/graph")
 
 
 @app.on_event("startup")

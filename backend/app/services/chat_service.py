@@ -5,7 +5,7 @@ import re
 import threading
 from dataclasses import dataclass, field
 from typing import Any, Dict, List, Tuple
-
+import time
 from app.db.neo4j import get_driver
 from app.scripts.Embedding import EmbeddingModel
 from app.scripts.schema import GRAPH_SCHEMA
@@ -208,9 +208,6 @@ def _rule_based_domain(query: str) -> Tuple[str, bool, str]:
 
     lowered = text.lower().strip()
 
-    # Chỉ bắt SOCIAL khi câu gần như thuần hội thoại.
-    # Ba miền dữ liệu QCHV / CTDT / THONG_BAO được giao cho LLM phân loại
-    # để tránh chốt sai chỉ vì một từ khóa như "học phần" hoặc "đăng ký".
     social_patterns = {
         "chào",
         "chào bạn",
@@ -536,6 +533,7 @@ class ChatService:
 
         if state.domain == "QCHV":
             logger.info("[chat][pipeline][qchv] query=%s history=%s", state.query, history_text or "[empty]")
+            t_start = time.perf_counter()  # <-- 1. Bắt đầu bấm giờ khi vào luồng
             try:
                 result = await quyche_service.handle_query(state.query, cleaned_history)
                 answer = str(result.get("answer", "")).strip()
@@ -544,29 +542,34 @@ class ChatService:
             except Exception:
                 logger.exception("[chat][pipeline][qchv_error] fallback_to_stub")
                 answer = await self.handle_quy_che_stub(state, cleaned_history)
-            logger.info("[chat][pipeline][done] path=qchv answer=%s", answer)
+            elapsed = time.perf_counter() - t_start  # <-- 2. Tính tổng thời gian
+            logger.info("[chat][pipeline][qchv_duration] duration=%.3fs", elapsed)
+            logger.info("[chat][pipeline][done] path=qchv answer=%s ", answer)
             return {"answer": answer, "state": state.__dict__}
 
         if state.domain == "THONG_BAO":
             logger.info("[chat][pipeline][thong_bao] query=%s", state.query)
-
+            t_start = time.perf_counter()  # <-- 1. Bắt đầu bấm giờ khi vào luồng
             result = await self.thong_bao_pipeline.run(state.query)
 
             answer = await self._generate_thong_bao_answer(
                 query=result.normalized_query or state.query,
                 context=result.context,
             )
-
-            logger.info("[chat][pipeline][done] path=thong_bao")
+            elapsed = time.perf_counter() - t_start  # <-- 2. Tính tổng thời gian
+            logger.info("[chat][pipeline][done] path=thong_bao duration=%.3fs", elapsed)
             return {"answer": answer, "state": state.__dict__}
 
+        t0 = time.perf_counter()
         analysis = await self._analyze_ctdt_query(state.query, history_text)
+        t_analyze = time.perf_counter() - t0
         state.analysis = analysis
         state.rewritten_query = analysis.get("rewrite", state.query)
         state.intent = analysis.get("query_type", "description")
         state.entities = analysis.get("entities", [])
         state.vector_targets = analysis.get("vector_targets", []) or ["HocPhan", "DieuKienTotNghiep"]
 
+        t0 = time.perf_counter()
         retrieval_analysis = dict(analysis)
         retrieval_analysis["query"] = state.query
         graph_result = await asyncio.to_thread(self.subgraph_retriever.retrieve, retrieval_analysis)
@@ -584,6 +587,7 @@ class ChatService:
         state.graph_context = graph_context
         state.vector_context = vector_context
         state.context = _format_hybrid_context(graph_context, vector_context)
+        t_retrieval = time.perf_counter() - t0
 
         logger.info(
             "[chat][pipeline][ctdt_analysis_result] analysis=%s",
@@ -610,12 +614,16 @@ class ChatService:
             state.used_default_ctdt,
         )
 
+        t0 = time.perf_counter()
         answer = await self._generate_answer(
             original_query=state.query,
             rewritten_query=state.rewritten_query,
             context=state.context,
             used_default_ctdt=state.used_default_ctdt,
         )
+        t_answer = time.perf_counter() - t0
+        t_total = t_analyze + t_retrieval + t_answer
+        print(f"\n[CTĐT] Tổng: {t_total:.3f}s | Phân tích: {t_analyze:.3f}s | Retrieval: {t_retrieval:.3f}s | LLM: {t_answer:.3f}s\n")
         logger.info("[chat][pipeline][answer_done] answer=%s", answer)
         logger.info("[chat][pipeline][done] path=ctdt")
         return {"answer": answer, "state": state.__dict__}
@@ -843,13 +851,12 @@ Chỉ trả lời dựa trên Context bên dưới.
 Quy tắc bắt buộc:
 - Trả lời chính xác ngày nếu có thay vì khoảng thời gian chung.
 - Trả lời đúng phần người dùng hỏi, không tóm tắt toàn bộ Context.
-- Câu hỏi đơn giản: ưu tiên 1-3 câu ngắn.
 - Chỉ dùng bullet khi có nhiều ý hoặc nhiều trường hợp cần phân biệt.
 - Không đưa thông tin không cần thiết.
 - Không dùng kiến thức ngoài Context.
-- Không suy đoán hoặc bịa dữ liệu.
+- Trả lời ngắn gọn.
+- Không suy đoán dữ liệu.
 - Nếu Context không đủ, nói ngắn gọn rằng chưa tìm thấy đủ thông tin.
-- Không thêm lời mời hỏi tiếp hoặc kết luận dài.
 
 Context:
 {context or "[Không có context]"}
