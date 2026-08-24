@@ -264,9 +264,6 @@ class LLMService:
             - Nếu câu hỏi cần dữ liệu cụ thể → nói rõ rằng cần kiểm tra dữ liệu
             - Không suy diễn hoặc tự tạo thông tin
 
-            ## History (nếu có)
-            {history or "[empty]"}
-
             ## User
             {query}
 

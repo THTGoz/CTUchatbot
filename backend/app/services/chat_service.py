@@ -683,6 +683,7 @@ Ví dụ:
 "CT177 có học phần tiên quyết nào?" -> CTDT
 "Ngành Khoa học máy tính có bao nhiêu tín chỉ?" -> CTDT
 "Niên luận cơ sở ngành KHMT yêu cầu học phần tiên quyết nào?" -> CTDT
+"Sinh viên cần tích lũy tối thiểu bao nhiêu tín chỉ để được làm Luận văn tốt nghiệp?" -> CTDT
 
 3. THONG_BAO — Thông báo, kế hoạch
 
@@ -736,8 +737,6 @@ Chỉ sử dụng History để hiểu câu hỏi nối tiếp hoặc đại t�
 Nếu câu hỏi hiện tại đã nêu rõ chủ đề thì ưu tiên câu hỏi hiện tại,
 không để domain của câu trước chi phối câu hiện tại.
 
-History:
-{history_text or "[empty]"}
 
 Query:
 {query}
@@ -792,9 +791,6 @@ Ràng buộc bắt buộc:
 
 Schema:
 {GRAPH_SCHEMA}
-
-History:
-{history_text or "[empty]"}
 
 Query:
 {query}

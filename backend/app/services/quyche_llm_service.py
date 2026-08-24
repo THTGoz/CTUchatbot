@@ -171,7 +171,6 @@ class QuyCheLLMService:
     def answer_chitchat(self, question: str, history: list) -> str:
         msgs = (
             [{"role": "system", "content": CHITCHAT_RESPONSE_SYSTEM}]
-            + history[-6:]
             + [{"role": "user", "content": question}]
         )
         return self._call_llm(msgs, temperature=0.5)
@@ -204,7 +203,6 @@ class QuyCheLLMService:
         return default_result
 
     def generate_answer(self, question: str, context: str, history: list, vb_display: str = "") -> str:
-        history_msgs = history[-6:]
         source_note = f"\nNguồn: {vb_display}" if vb_display else ""
         user_content = (
             f"Câu hỏi: {question}\n\n"
@@ -216,7 +214,6 @@ class QuyCheLLMService:
         )
         messages = (
             [{"role": "system", "content": ANSWER_SYSTEM}]
-            + history_msgs
             + [{"role": "user", "content": user_content}]
         )
         return self._call_llm(messages, temperature=0.2)
