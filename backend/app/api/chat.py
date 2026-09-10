@@ -1,6 +1,7 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
 from typing import List, Optional
+import asyncio
 import json
 from fastapi.responses import StreamingResponse
 from app.services.chat_service import ChatService
@@ -50,8 +51,12 @@ async def chat(req: ChatRequest):
         answer_text = "Xin loi, he thong chua tao duoc cau tra loi."
 
     async def stream_results():
-        # Vercel AI data stream format: each text chunk starts with "0:".
-        yield f"0:{json.dumps(answer_text)}\n"
+    # Chia nhỏ câu trả lời theo từng từ để tạo hiệu ứng gõ chữ và không bị tràn bộ đệm JSON
+        words = answer_text.split(" ")
+        for i, word in enumerate(words):
+            piece = word + (" " if i < len(words) - 1 else "")
+            yield f"0:{json.dumps(piece)}\n"
+            await asyncio.sleep(0.005)
 
     return StreamingResponse(
         stream_results(),

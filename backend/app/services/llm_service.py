@@ -27,12 +27,11 @@ def _get_env(*keys: str, default: str) -> str:
 
 _load_env_files()
 
-OLLAMA_BASE_URL = _get_env("OLLAMA_BASE_URL", "OLLAMA_HOST", default="http://localhost:11434").rstrip("/")
+OLLAMA_BASE_URL = _get_env("OLLAMA_BASE_URL", "OLLAMA_HOST", default="http://127.0.0.1:11434").rstrip("/")
 OLLAMA_GENERATE_URL = os.getenv("OLLAMA_GENERATE_URL", f"{OLLAMA_BASE_URL}/api/generate")
 OLLAMA_CHAT_URL = os.getenv("OLLAMA_CHAT_URL", f"{OLLAMA_BASE_URL}/api/chat")
 DEFAULT_TIMEOUT_SECONDS = int(os.getenv("OLLAMA_TIMEOUT_SECONDS", "180"))
 MODEL_PRIMARY_9B = _get_env("QWEN3_5_MODEL_9B", "OLLAMA_MODEL_9B", default="qwen3.5:9b")
-
 logger = logging.getLogger("app.llm")
 _loaded_models: set[str] = set()
 
@@ -71,16 +70,16 @@ def _extract_json_object(text: str) -> Dict[str, Any]:
     return {}
 
 
-async def call_model(model: str, prompt: str, temperature: float = 0.3, keep_alive: str = "1h"):
+async def call_model(model: str, prompt: str, temperature: float = 0.3, keep_alive: str = "1h", think: bool = False):
     async with httpx.AsyncClient(timeout=DEFAULT_TIMEOUT_SECONDS) as client:
         try:
-            # Preferred endpoint for prompt-style calls.
             res = await client.post(
                 OLLAMA_GENERATE_URL,
                 json={
                     "model": model,
                     "prompt": prompt,
                     "stream": False,
+                    "think": think,
                     "temperature": temperature,
                     "top_p": 0.9,
                     "top_k": 40,
@@ -96,7 +95,6 @@ async def call_model(model: str, prompt: str, temperature: float = 0.3, keep_ali
             _mark_model_used(model)
             return payload["response"]
         except httpx.HTTPStatusError as e:
-            # Fallback for runtimes exposing /api/chat but not /api/generate.
             if e.response is not None and e.response.status_code == 404:
                 chat_res = await client.post(
                     OLLAMA_CHAT_URL,
@@ -118,14 +116,15 @@ async def call_model(model: str, prompt: str, temperature: float = 0.3, keep_ali
             raise
 
 
-async def call_model_json(model: str, prompt: str) -> Dict[str, Any]:
-    text = await call_model(model, prompt, temperature=0.3)
+async def call_model_json(model: str, prompt: str, think: bool = False) -> Dict[str, Any]:
+    text = await call_model(model, prompt, temperature=0.3, think=think)
     return _extract_json_object(text)
 
 
 
-async def call_model_9b(prompt: str, temperature: float = 0.3):
-    return await call_model(MODEL_PRIMARY_9B, prompt, temperature=temperature)
+
+async def call_model_9b(prompt: str, temperature: float = 0.3, think: bool = False):
+    return await call_model(MODEL_PRIMARY_9B, prompt, temperature=temperature, think=think)
 
 
 async def warmup_llm_model() -> bool:

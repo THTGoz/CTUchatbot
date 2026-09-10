@@ -159,7 +159,6 @@ class CurriculumETL:
         lines = md_text.split('\n')
         new_lines = []
         
-        # Regex Cải tiến:
         # 1. (?:[\*_]+)? : Chấp nhận in đậm/nghiêng ở đầu (VD: **1.)
         # 2. (?:Phần|Chương|Mục)? : Chấp nhận từ khóa tiền tố
         # 3. ([IVX]+|\d+(?:\.\d+)*) : GROUP 1 - Bắt Số La Mã hoặc Số Ả Rập (1, 1.2, 3.4.5)

@@ -757,45 +757,71 @@ Phải trả về JSON STRICT với format sau:
   "query_type": "attribute | relation | path | aggregation | description | list",
   "constraints": {{"depth": 2, "limit": 10}},
   "ctdt_filters": {{"khoa": 51, "he": "đại trà"}},
-    "vector_targets": ["HocPhan", "DieuKienTotNghiep", "ChuanDauRa", "VanBanPhapLy"],
-    "graph_plan": {{
-            "anchor_node_types": ["HocPhan", "Nganh", "ChuongTrinhDaoTao"],
-            "focus_relations": ["YEU_CAU_TIEN_QUYET", "CO_THE_SONG_HANH", "GOM", "CO", "YEU_CAU", "THUOC_VE"],
-            "expansion_policy": {{"max_depth": 2, "max_paths": 60, "max_nodes": 70}},
-            "answer_shape": "single | list | path | summary"
-    }}
+  "vector_targets": ["HocPhan", "DieuKienTotNghiep", "ChuanDauRa", "VanBanPhapLy"],
+  "graph_plan": {{
+      "anchor_node_types": ["HocPhan", "Nganh", "ChuongTrinhDaoTao"],
+      "focus_relations": ["YEU_CAU_TIEN_QUYET", "CO_THE_SONG_HANH", "GOM", "CO", "YEU_CAU", "THUOC_VE"],
+      "expansion_policy": {{"max_depth": 2, "max_paths": 60, "max_nodes": 70}},
+      "answer_shape": "single | list | path | summary"
+  }}
 }}
 
 Ràng buộc bắt buộc:
-- Chỉ dùng 1 lần gọi LLM.
-- rewrite phải là câu hỏi độc lập, rõ nghĩa, dùng lịch sử chat nếu cần.
-- entities là danh sách linh hoạt, chỉ chứa thực thể thật xuất hiện hoặc suy ra trực tiếp từ câu hỏi.
-- relations chỉ lấy từ schema, nếu không chắc thì []
-- query_type chọn 1 giá trị duy nhất.
-- Định nghĩa query_type:
-    + attribute: hỏi 1 thuộc tính cụ thể của 1 thực thể (ví dụ: tong_tin_chi của ChuongTrinhDaoTao, so_tin_chi của HocPhan).
-    + relation: hỏi các thực thể liên quan qua 1 quan hệ (ví dụ: CTDT có những ChuanDauRa nào).
-    + path: hỏi đường đi/chuỗi quan hệ giữa các thực thể.
-    + aggregation: hỏi thống kê tổng hợp nhiều bản ghi (count/sum/group), KHÔNG dùng cho thuộc tính đơn lẻ của 1 thực thể.
-    + description: câu mô tả chung, chưa đủ tín hiệu để chọn nhánh cụ thể.
-    + list: yêu cầu liệt kê danh sách (ưu tiên trả nhiều bản ghi).
-- Với câu hỏi "tổng số tín chỉ cần hoàn thành của CTDT" thì ưu tiên query_type="attribute" và trọng tâm thuộc tính ct.tong_tin_chi.
-- constraints chỉ điền khi thực sự cần; nếu không có thì {{}}
-- ctdt_filters chỉ chứa giá trị được nêu rõ; KHÔNG tự thêm default khoa/he.
-- vector_targets chỉ chọn trong tập: HocPhan, DieuKienTotNghiep, ChuanDauRa, VanBanPhapLy.
-- Nếu không chắc thì vector_targets = []
-- graph_plan phải tương thích schema:
-    + anchor_node_types chỉ dùng label có trong schema.
-    + focus_relations chỉ dùng quan hệ có trong schema.
-    + answer_shape mô tả dạng đầu ra mong muốn, không ảnh hưởng trực tiếp tới Cypher.
+- rewrite phải là câu hỏi độc lập, rõ nghĩa.
+- entities: BẮT BUỘC trích xuất tên Ngành, tên Học phần, mã môn nếu xuất hiện trong câu.
+  + Nếu hỏi về ngành "Khoa học máy tính" hoặc "KHMT" -> entities: [{{"type": "Nganh", "value": "Khoa học máy tính"}}, {{"type": "Nganh", "value": "KHMT"}}]
+  + Nếu hỏi về mã môn "CT177" -> entities: [{{"type": "HocPhan", "value": "CT177"}}]
+- query_type:
+  + Nếu hỏi "tổng số tín chỉ", "thời gian đào tạo", "mục tiêu", "chuẩn đầu ra" -> "attribute".
+  + Nếu hỏi "tiên quyết", "song hành", "học phần thuộc khối" -> "relation".
+  + Nếu hỏi "liệt kê danh sách các môn" -> "list".
 
+Ví dụ mẫu:
+Ví dụ 1:
+Query: "Tổng số tín chỉ và thời gian đào tạo chuẩn của ngành Khoa học máy tính (KHMT) là bao nhiêu?"
+Output JSON:
+{{
+  "rewrite": "Tổng số tín chỉ và thời gian đào tạo chuẩn của ngành Khoa học máy tính (KHMT) là bao nhiêu?",
+  "entities": [{{"type": "Nganh", "value": "Khoa học máy tính"}}, {{"type": "Nganh", "value": "KHMT"}}],
+  "relations": ["DAO_TAO", "CO"],
+  "query_type": "attribute",
+  "constraints": {{}},
+  "ctdt_filters": {{}},
+  "vector_targets": ["DieuKienTotNghiep"],
+  "graph_plan": {{
+      "anchor_node_types": ["Nganh", "ChuongTrinhDaoTao"],
+      "focus_relations": ["DAO_TAO", "CO"],
+      "expansion_policy": {{"max_depth": 2, "max_paths": 60, "max_nodes": 70}},
+      "answer_shape": "summary"
+  }}
+}}
+
+Ví dụ 2:
+Query: "Học phần CT177 có mấy tín chỉ và tiên quyết môn nào?"
+Output JSON:
+{{
+  "rewrite": "Học phần CT177 có mấy tín chỉ và học phần tiên quyết là gì?",
+  "entities": [{{"type": "HocPhan", "value": "CT177"}}],
+  "relations": ["YEU_CAU_TIEN_QUYET"],
+  "query_type": "relation",
+  "constraints": {{}},
+  "ctdt_filters": {{}},
+  "vector_targets": ["HocPhan"],
+  "graph_plan": {{
+      "anchor_node_types": ["HocPhan"],
+      "focus_relations": ["YEU_CAU_TIEN_QUYET"],
+      "expansion_policy": {{"max_depth": 2, "max_paths": 60, "max_nodes": 70}},
+      "answer_shape": "single"
+  }}
+}}
 Schema:
 {GRAPH_SCHEMA}
 
 Query:
 {query}
 """
-        raw = await call_model_json(MODEL_PRIMARY_9B, prompt)
+
+        raw = await call_model_json(MODEL_PRIMARY_9B, prompt, think=True)
         normalized = _normalize_analysis_payload(raw, query)
         if not normalized.get("vector_targets"):
             normalized["vector_targets"] = []
@@ -906,6 +932,6 @@ Context:
 
 Hãy trả lời ngắn gọn, chính xác, và chỉ dùng thông tin trong context.
 """
-        answer = await call_model_9b(prompt, temperature=0.2)
+        answer = await call_model_9b(prompt, temperature=0.2, think=False)
         logger.info("[chat][pipeline][answer_model_output] answer=%s", answer)
         return (answer or "").strip()

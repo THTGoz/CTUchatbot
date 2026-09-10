@@ -129,6 +129,7 @@ class QuyCheLLMService:
             "model": self.model_primary,
             "messages": messages,
             "stream": False,
+            "think": False,
             "options": {"temperature": temperature},
         }
         try:
@@ -140,14 +141,15 @@ class QuyCheLLMService:
             return ""
 
     def preprocess_question(self, raw: str) -> str:
-        msgs = [
-            {"role": "system", "content": PREPROCESS_SYSTEM},
-            {"role": "user",   "content": raw.strip()},
-        ]
-        result = self._call_llm(msgs, temperature=0.0)
-        if not result or len(result) > 500:
-            return raw
-        return result.strip()
+    # Chuẩn hóa khoảng trắng
+        text = " ".join((raw or "").strip().split())
+    # Đổi "chương 1" -> "Chương I" bằng regex thuần mà không cần gọi LLM
+        roman_map = {1: "I", 2: "II", 3: "III", 4: "IV", 5: "V", 6: "VI", 7: "VII", 8: "VIII", 9: "IX", 10: "X"}
+
+        def _replace_chuong(m):
+            num = int(m.group(1))
+            return f"Chương {roman_map.get(num, str(num))}"
+        return re.sub(r"[Cc]hương\s+(\d+)", _replace_chuong, text)
 
     def is_chitchat(self, question: str) -> bool:
         import re
